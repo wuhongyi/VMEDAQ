@@ -1,0 +1,5 @@
+You need to define where the libanacore.so is installed with TARTSYS environment parameter.
+
+setup.sh located at the top directory can be used for setting the environment parameter:
+
+source setup.sh

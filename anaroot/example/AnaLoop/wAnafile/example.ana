@@ -1,0 +1,54 @@
+//
+// <-- comment out
+//
+// example of anafile
+//
+
+<gate> 101, 1,1,1,2, 1400,1500, "turaw 101 gate"
+<gate> 102, 1,1,1,4,  200, 400, "auraw 101 gate"
+<gate> 103, 1,1,1,5,  100, 300, "adraw 101 gate"
+
+// include another anafile(hcut is written in the same grammar)
+<include> "cut/example.cut"
+
+<and>  104, 101,102, "turaw 101 and auraw 101"
+<or>   105, 101,102, "turaw 101  or auraw 101"
+
+<and>  106, 101,102,103, "101 and 102 and 103"
+
+//circle cut: {index x}, {index y}, center x, center y, radius x, radius y,
+<cc>   201, 1,1,1,2,  1,1,1,4, 1450,300,100,100, "turaw 101 vs auraw 101"
+
+//1d hist:
+// gate, analyser,index begin, index end, wnum, bin, low, up, "name"
+//2d hist:
+// gate, analyser,index begin, index end, wnum, bin, low, up, analyser, index begin, ...., "name"
+
+0,     1,1,  1,2, 1000,   0,4000, "turaw 101"
+0,     1,1,  1,4, 1000,   0,4000, "auraw 101"
+101,   1,1,  1,2, 1000,   0,4000, "turaw 101 gated"
+102,   1,1,  1,4, 1000,   0,4000, "auraw 101 gated"
+
+0,     1,1,150,1,  150,0.5,150.5, 1,1,150,2, 4100,0,4100, "id vs turaw 1-150"
+0,     1,1,150,1,  150,0.5,150.5, 1,1,150,3, 4100,0,4100, "id vs tdraw 1-150"
+0,     1,1,150,1,  150,0.5,150.5, 1,1,150,4, 4100,0,4100, "id vs auraw 1-150"
+0,     1,1,150,1,  150,0.5,150.5, 1,1,150,5, 4100,0,4100, "id vs adraw 1-150"
+
+0,     1,1,  1,2,  200,1000,2000, 1,1,  1,4,  200,0,1000, "turaw 101 vs auraw 101"
+101,   1,1,  1,2,  200,1000,2000, 1,1,  1,4,  200,0,1000, "turaw 101 vs auraw 101 t gate"
+-101,  1,1,  1,2,  200,1000,2000, 1,1,  1,4,  200,0,1000, "turaw 101 vs auraw 101 t -gate"
+102,   1,1,  1,2,  200,1000,2000, 1,1,  1,4,  200,0,1000, "turaw 101 vs auraw 101 a gate"
+104,   1,1,  1,2,  200,1000,2000, 1,1,  1,4,  200,0,1000, "turaw 101 vs auraw 101 t and a gate"
+-104,  1,1,  1,2,  200,1000,2000, 1,1,  1,4,  200,0,1000, "turaw 101 vs auraw 101 -t and a gate"
+105,   1,1,  1,2,  200,1000,2000, 1,1,  1,4,  200,0,1000, "turaw 101 vs auraw 101 t or a gate"
+1002,  1,1,  1,2,  200,1000,2000, 1,1,  1,4,  200,0,1000, "turaw 101 vs auraw 101 hcut"
+106,   1,1,  1,2,  200,1000,2000, 1,1,  1,4,  200,0,1000, "turaw 101 vs auraw 101 106"
+201,   1,1,  1,2,  200,1000,2000, 1,1,  1,4,  200,0,1000, "turaw 101 vs auraw 101 cc"
+-201,  1,1,  1,2,  200,1000,2000, 1,1,  1,4,  200,0,1000, "turaw 101 vs auraw 101 -cc"
+
+<include> "ana/example2.ana"
+
+0,     1,2,  2,4,  200,100,2000, 1,2,  2,5,  200,100,2000, "nadeko x nadeko"
+1001,  1,2,  2,4,  200,100,2000, 1,2,  2,5,  200,100,2000, "nadeko x nadeko hcut"
+-1001, 1,2,  2,4,  200,100,2000, 1,2,  2,5,  200,100,2000, "nadeko x nadeko -hcut"
+

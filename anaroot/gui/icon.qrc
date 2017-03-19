@@ -1,0 +1,8 @@
+<RCC>
+  <qresource prefix="arrow">
+    <file>up.png</file>
+    <file>down.png</file>
+    <file>left.png</file>
+    <file>right.png</file>
+  </qresource>
+</RCC>

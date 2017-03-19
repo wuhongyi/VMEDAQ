@@ -1,0 +1,26 @@
+AC_INIT(configure.in)
+
+AM_INIT_AUTOMAKE(anasamurai, 1.00)
+AC_PROG_CXX(CC g++)
+AC_ENABLE_STATIC(no)
+AC_PROG_LIBTOOL
+
+dnl   no point in suppressing warnings people should
+dnl   at least see them, so here we go for gcc: -Wall
+if test $ac_cv_prog_gxx = yes; then
+   CXXFLAGS="$CXXFLAGS -Wall"
+fi
+
+ROOTLIBS="`$ROOTSYS/bin/root-config --glibs`"
+AC_SUBST(ROOTLIBS)
+
+# Checks for libraries
+AC_CHECK_LIB(g2c,s_cat)
+
+if test "`uname -m`" = "x86_64" ; then
+AC_SUBST(X11DIR,[/usr/lib64])
+else
+AC_SUBST(X11DIR,[/usr/X11R6/lib])
+fi
+
+AC_OUTPUT(Makefile)

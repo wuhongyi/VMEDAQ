@@ -1,0 +1,17 @@
+
+GUI for Analoop made by T.Isobe
+
+Developed with Qt4.8
+You need to compile ROOT with following Qt option:
+
+./configure --enable-qt --with-qt-incdir=/usr/include/
+
+# how to compile Analoop
+
+./segidlistc.pl $TARTSYS/include/segidlist.hh 
+qmake AnaLoop.pro
+make
+
+# how to compile python ui
+
+pyuic4 AnafileEditor.ui > ui_AnafileEditor.py

@@ -1,0 +1,11 @@
+MakeBigRIPSTree.C : making bigrips tree for offline event building(pre-analysis)
+
+MakeFullBigRIPSTree.C : making bigrips tree for offline event building(pre-analysis). including tof, rips and beam information need to be checked.
+
+MakeSiTree.C : making si stopper tree for offline event building.
+
+CombineTS.C : macro to combine tree files: bigrips, si and ge. 
+
+ShowTS.C : macro to check time-stamp information of a root file.
+
+Analysis.C : a sample macro to analyze combined tree.

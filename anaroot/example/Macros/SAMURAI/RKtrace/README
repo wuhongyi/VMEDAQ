@@ -1,0 +1,3 @@
+raytracing tracing for SAMURAI is available from Aug. 2013.
+Routines made for J-PARC SKS spectrometer is implemented for SAMURAI analysis by T. Isobe.
+You need to source setup.sh to tell anaroot files which are nessesary for raytracing.

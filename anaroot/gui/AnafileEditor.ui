@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1000</width>
+    <height>702</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Anafile Editor</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QTreeWidget" name="lvWidget">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Maximum" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>160</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="columnCount">
+       <number>1</number>
+      </property>
+      <attribute name="headerVisible">
+       <bool>false</bool>
+      </attribute>
+      <column>
+       <property name="text">
+        <string notr="true">Name</string>
+       </property>
+      </column>
+     </widget>
+    </item>
+    <item>
+     <layout class="QVBoxLayout" name="mainLayout">
+      <item>
+       <layout class="QHBoxLayout" name="anafileLayout">
+        <item>
+         <widget class="QLabel" name="aLabel">
+          <property name="text">
+           <string>Anafile: </string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="anafileLabel">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="openButton">
+          <property name="text">
+           <string>OPEN</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="saveButton">
+          <property name="text">
+           <string>SAVE</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="saveasButton">
+          <property name="text">
+           <string>SAVE AS</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="quitButton">
+          <property name="text">
+           <string>QUIT</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QFrame" name="histframe">
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+         <item>
+          <layout class="QHBoxLayout" name="makehLayout">
+           <item>
+            <widget class="QPushButton" name="make1dhButton">
+             <property name="text">
+              <string>Make 1D Histogram</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="make2dhButton">
+             <property name="text">
+              <string>Make 2D Histogram</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="xysetButton">
+             <property name="text">
+              <string>Set Value to Current Row</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="deletehButton">
+             <property name="text">
+              <string>Delete Histogram</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="QTableWidget" name="htableWidget">
+           <property name="sortingEnabled">
+            <bool>true</bool>
+           </property>
+           <column>
+            <property name="text">
+             <string>Cut ID</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Title</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Analyzer</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>ID start</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>ID end</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>WID</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>NBin</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Min</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Max</string>
+            </property>
+           </column>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QFrame" name="cutframe">
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_3">
+         <item>
+          <layout class="QHBoxLayout" name="makecLayout">
+           <item>
+            <widget class="QPushButton" name="makecButton">
+             <property name="text">
+              <string>Make New Cut</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="csetButton">
+             <property name="text">
+              <string>Set Value to Current Row</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="deletecButton">
+             <property name="text">
+              <string>Delete Cut</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="QTableWidget" name="ctableWidget">
+           <property name="sortingEnabled">
+            <bool>true</bool>
+           </property>
+           <property name="columnCount">
+            <number>8</number>
+           </property>
+           <column>
+            <property name="text">
+             <string>Cut ID</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Title</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Analyzer</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>ID start</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>ID end</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>WID</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Min</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Max</string>
+            </property>
+           </column>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1000</width>
+     <height>25</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
