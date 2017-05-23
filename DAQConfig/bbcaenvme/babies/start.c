@@ -2,9 +2,7 @@ void start(void){
   // Reconfigure 5th lemo output on v2718 front panel
   v2718_init_ioport(4,0,0);
 
-  // moniter berr signal by 4th
-  //v2718_mon_berr();
-  //v2718_clear_ioport(3);
+
 
   // set v2718 1st ioport to generate pulse period: 8us width 1.6us
   v2718_init_ioport(0,0,0);
@@ -14,44 +12,43 @@ void start(void){
   v830_clear_all(SCAADDR0);
   
   v7xx_rst_counter(ADC0ADDR);
-  v7xx_rst_counter(ADC1ADDR);
+  // v7xx_rst_counter(ADC1ADDR);
   // v7xx_rst_counter(ADC2ADDR);
   // v7xx_rst_counter(ADC3ADDR);
   // v7xx_rst_counter(ADC4ADDR);
   //v7xx_mrst_counter(MSTTDCADDR);
 
   v7xx_clear(ADC0ADDR);
-  v7xx_clear(ADC1ADDR);
+  // v7xx_clear(ADC1ADDR);
   // v7xx_clear(ADC2ADDR);
   // v7xx_clear(ADC3ADDR);
   // v7xx_clear(ADC4ADDR);
   //v7xx_mclear(MSTTDCADDR);
   
-  v1190_clear(V1190ADDR0);
+  // v1190_clear(V1190ADDR0);
   // v1190_clear(V1190ADDR1);
   
-  // 以下部分弃用
-  //madc32_stop_acq(MADC0ADDR);
-  //madc32_clear(MADC0ADDR);
-  //madc32_irq_level(MADC0ADDR,0);
-  //madc32_reset_ctra_counters(MADC0ADDR);
-  //madc32_fifo_reset(MADC0ADDR);
-  //madc32_start_acq(MADC0ADDR);
 
   // 初始化全部madc32插件
-  madc32_mclear(MSTMDCADDR);
-  madc32_mirq_level(MSTMDCADDR,0);
-  madc32_mreset_ctra_counters(MSTMDCADDR);
-  madc32_mfifo_reset(MSTMDCADDR);
-  madc32_mstart_acq(MSTMDCADDR);
+  // madc32_mclear(MSTMDCADDR);
+  // madc32_mirq_level(MSTMDCADDR,0);
+  // madc32_mreset_ctra_counters(MSTMDCADDR);
+  // madc32_mfifo_reset(MSTMDCADDR);
+  // madc32_mstart_acq(MSTMDCADDR);
 
+
+
+
+
+
+
+  // ==================
+  
   v7xx_intlevel(ADC0ADDR, intlevel);
-  // v830_intlevel(SCAADDR0, intlevel);
 
   vme_define_intlevel(intlevel);
   vme_enable_interrupt();
 
-  // v2718_clear_ioport(4);
   v2718_pulse_ioport(4);
   printf("Start\n");
 }

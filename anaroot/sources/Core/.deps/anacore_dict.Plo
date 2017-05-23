@@ -1,9 +1,8 @@
-anacore_dict.lo: anacore_dict.cc /opt/root53436/include/RConfig.h \
- /opt/root53436/include/RVersion.h /usr/include/features.h \
- /usr/include/sys/cdefs.h /usr/include/bits/wordsize.h \
- /usr/include/gnu/stubs.h /usr/include/gnu/stubs-64.h anacore_dict.h \
+anacore_dict.lo: anacore_dict.cc \
  /usr/lib/gcc/x86_64-unknown-linux-gnu/4.9.2/include/stddef.h \
- /usr/include/stdio.h /usr/include/bits/types.h \
+ /usr/include/stdio.h /usr/include/features.h /usr/include/sys/cdefs.h \
+ /usr/include/bits/wordsize.h /usr/include/gnu/stubs.h \
+ /usr/include/gnu/stubs-64.h /usr/include/bits/types.h \
  /usr/include/bits/typesizes.h /usr/include/libio.h \
  /usr/include/_G_config.h /usr/include/wchar.h \
  /usr/lib/gcc/x86_64-unknown-linux-gnu/4.9.2/include/stdarg.h \
@@ -19,42 +18,39 @@ anacore_dict.lo: anacore_dict.cc /opt/root53436/include/RConfig.h \
  /usr/include/bits/huge_valf.h /usr/include/bits/huge_vall.h \
  /usr/include/bits/inf.h /usr/include/bits/nan.h \
  /usr/include/bits/mathdef.h /usr/include/bits/mathcalls.h \
- /usr/include/string.h /opt/root53436/include/G__ci.h \
- /usr/include/signal.h /usr/include/bits/signum.h \
- /usr/include/bits/siginfo.h /usr/include/bits/sigaction.h \
- /usr/include/bits/sigcontext.h /usr/include/bits/sigstack.h \
- /usr/include/sys/ucontext.h /usr/include/bits/sigthread.h \
- /usr/include/assert.h \
- /usr/lib/gcc/x86_64-unknown-linux-gnu/4.9.2/include-fixed/limits.h \
- /usr/lib/gcc/x86_64-unknown-linux-gnu/4.9.2/include-fixed/syslimits.h \
- /usr/include/limits.h /usr/include/bits/posix1_lim.h \
- /usr/include/bits/local_lim.h /usr/include/linux/limits.h \
- /usr/include/bits/posix2_lim.h /usr/include/bits/xopen_lim.h \
- /usr/include/setjmp.h /usr/include/bits/setjmp.h /usr/include/ctype.h \
- /usr/include/fcntl.h /usr/include/bits/fcntl.h /usr/include/bits/uio.h \
- /usr/include/bits/stat.h /usr/include/unistd.h \
- /usr/include/bits/posix_opt.h /usr/include/bits/environments.h \
- /usr/include/bits/confname.h /usr/include/getopt.h \
- /opt/root53436/include/G__ci_fproto.h \
- /opt/root53436/include/FastAllocString.h /opt/root53436/include/G__ci.h \
- /opt/root53436/include/TObject.h /opt/root53436/include/Rtypes.h \
- /opt/root53436/include/DllImport.h /opt/root53436/include/Rtypeinfo.h \
+ /usr/include/string.h /usr/include/assert.h \
+ /opt/root60606/include/RConfig.h /opt/root60606/include/RVersion.h \
+ /opt/root60606/include/TClass.h /opt/root60606/include/TDictionary.h \
+ /opt/root60606/include/TNamed.h /opt/root60606/include/TObject.h \
+ /opt/root60606/include/Rtypes.h /opt/root60606/include/RtypesCore.h \
+ /opt/root60606/include/DllImport.h /opt/root60606/include/Rtypeinfo.h \
  /usr/include/c++/4.9.2/typeinfo /usr/include/c++/4.9.2/exception \
  /usr/include/c++/4.9.2/x86_64-unknown-linux-gnu/bits/c++config.h \
  /usr/include/c++/4.9.2/x86_64-unknown-linux-gnu/bits/os_defines.h \
  /usr/include/c++/4.9.2/x86_64-unknown-linux-gnu/bits/cpu_defines.h \
  /usr/include/c++/4.9.2/bits/atomic_lockfree_defines.h \
- /opt/root53436/include/snprintf.h /opt/root53436/include/strlcpy.h \
- /opt/root53436/include/TGenericClassInfo.h /usr/include/c++/4.9.2/vector \
+ /usr/include/c++/4.9.2/bits/exception_ptr.h \
+ /usr/include/c++/4.9.2/bits/exception_defines.h \
+ /usr/include/c++/4.9.2/bits/nested_exception.h \
+ /usr/include/c++/4.9.2/bits/hash_bytes.h \
+ /opt/root60606/include/snprintf.h /opt/root60606/include/strlcpy.h \
+ /usr/include/unistd.h /usr/include/bits/posix_opt.h \
+ /usr/include/bits/environments.h /usr/include/bits/confname.h \
+ /usr/include/getopt.h /usr/include/c++/4.9.2/atomic \
+ /usr/include/c++/4.9.2/bits/atomic_base.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.9.2/include/stdbool.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.9.2/include/stdint.h \
+ /usr/include/stdint.h /usr/include/bits/wchar.h \
+ /opt/root60606/include/TGenericClassInfo.h /usr/include/c++/4.9.2/vector \
  /usr/include/c++/4.9.2/bits/stl_algobase.h \
  /usr/include/c++/4.9.2/bits/functexcept.h \
- /usr/include/c++/4.9.2/bits/exception_defines.h \
  /usr/include/c++/4.9.2/bits/cpp_type_traits.h \
  /usr/include/c++/4.9.2/ext/type_traits.h \
  /usr/include/c++/4.9.2/ext/numeric_traits.h \
  /usr/include/c++/4.9.2/bits/stl_pair.h \
  /usr/include/c++/4.9.2/bits/move.h \
  /usr/include/c++/4.9.2/bits/concept_check.h \
+ /usr/include/c++/4.9.2/type_traits \
  /usr/include/c++/4.9.2/bits/stl_iterator_base_types.h \
  /usr/include/c++/4.9.2/bits/stl_iterator_base_funcs.h \
  /usr/include/c++/4.9.2/debug/debug.h \
@@ -67,20 +63,23 @@ anacore_dict.lo: anacore_dict.cc /opt/root53436/include/RConfig.h \
  /usr/include/c++/4.9.2/bits/memoryfwd.h \
  /usr/include/c++/4.9.2/bits/stl_construct.h \
  /usr/include/c++/4.9.2/ext/alloc_traits.h \
+ /usr/include/c++/4.9.2/bits/alloc_traits.h \
  /usr/include/c++/4.9.2/bits/stl_uninitialized.h \
  /usr/include/c++/4.9.2/bits/stl_vector.h \
+ /usr/include/c++/4.9.2/initializer_list \
  /usr/include/c++/4.9.2/bits/stl_bvector.h \
+ /usr/include/c++/4.9.2/bits/functional_hash.h \
  /usr/include/c++/4.9.2/bits/range_access.h \
  /usr/include/c++/4.9.2/bits/vector.tcc \
- /opt/root53436/include/TSchemaHelper.h /usr/include/c++/4.9.2/string \
+ /opt/root60606/include/TSchemaHelper.h /usr/include/c++/4.9.2/string \
  /usr/include/c++/4.9.2/bits/stringfwd.h \
  /usr/include/c++/4.9.2/bits/char_traits.h \
  /usr/include/c++/4.9.2/bits/postypes.h /usr/include/c++/4.9.2/cwchar \
- /usr/include/bits/wchar.h /usr/include/c++/4.9.2/bits/localefwd.h \
+ /usr/include/c++/4.9.2/cstdint /usr/include/c++/4.9.2/bits/localefwd.h \
  /usr/include/c++/4.9.2/x86_64-unknown-linux-gnu/bits/c++locale.h \
  /usr/include/c++/4.9.2/clocale /usr/include/locale.h \
  /usr/include/bits/locale.h /usr/include/c++/4.9.2/iosfwd \
- /usr/include/c++/4.9.2/cctype \
+ /usr/include/c++/4.9.2/cctype /usr/include/ctype.h \
  /usr/include/c++/4.9.2/bits/ostream_insert.h \
  /usr/include/c++/4.9.2/bits/cxxabi_forced.h \
  /usr/include/c++/4.9.2/bits/stl_function.h \
@@ -90,18 +89,137 @@ anacore_dict.lo: anacore_dict.cc /opt/root53436/include/RConfig.h \
  /usr/include/c++/4.9.2/x86_64-unknown-linux-gnu/bits/gthr.h \
  /usr/include/c++/4.9.2/x86_64-unknown-linux-gnu/bits/gthr-default.h \
  /usr/include/pthread.h /usr/include/sched.h /usr/include/bits/sched.h \
+ /usr/include/bits/setjmp.h \
  /usr/include/c++/4.9.2/x86_64-unknown-linux-gnu/bits/atomic_word.h \
+ /usr/include/c++/4.9.2/ext/string_conversions.h \
+ /usr/include/c++/4.9.2/cstdlib /usr/include/c++/4.9.2/cstdio \
+ /usr/include/c++/4.9.2/cerrno /usr/include/errno.h \
+ /usr/include/bits/errno.h /usr/include/linux/errno.h \
+ /usr/include/asm/errno.h /usr/include/asm-generic/errno.h \
+ /usr/include/asm-generic/errno-base.h \
  /usr/include/c++/4.9.2/bits/basic_string.tcc \
- /opt/root53436/include/TStorage.h /opt/root53436/include/TVersionCheck.h \
- /opt/root53436/include/Riosfwd.h /opt/root53436/include/TBuffer.h \
- /opt/root53436/include/TMemberInspector.h include/segidlist.hh \
+ /opt/root60606/include/TStorage.h /opt/root60606/include/TVersionCheck.h \
+ /opt/root60606/include/Riosfwd.h /opt/root60606/include/TBuffer.h \
+ /opt/root60606/include/TString.h /opt/root60606/include/TMathBase.h \
+ /usr/include/c++/4.9.2/cmath /opt/root60606/include/RStringView.h \
+ /opt/root60606/include/RConfigure.h \
+ /opt/root60606/include/RWrap_libcpp_string_view.h \
+ /usr/include/c++/4.9.2/algorithm /usr/include/c++/4.9.2/utility \
+ /usr/include/c++/4.9.2/bits/stl_relops.h \
+ /usr/include/c++/4.9.2/bits/stl_algo.h \
+ /usr/include/c++/4.9.2/bits/algorithmfwd.h \
+ /usr/include/c++/4.9.2/bits/stl_heap.h \
+ /usr/include/c++/4.9.2/bits/stl_tempbuf.h /usr/include/c++/4.9.2/random \
+ /usr/include/c++/4.9.2/limits /usr/include/c++/4.9.2/bits/random.h \
+ /usr/include/c++/4.9.2/x86_64-unknown-linux-gnu/bits/opt_random.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.9.2/include/x86intrin.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.9.2/include/ia32intrin.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.9.2/include/mmintrin.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.9.2/include/xmmintrin.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.9.2/include/mm_malloc.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.9.2/include/emmintrin.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.9.2/include/pmmintrin.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.9.2/include/tmmintrin.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.9.2/include/ammintrin.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.9.2/include/smmintrin.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.9.2/include/popcntintrin.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.9.2/include/wmmintrin.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.9.2/include/immintrin.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.9.2/include/avxintrin.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.9.2/include/avx2intrin.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.9.2/include/avx512fintrin.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.9.2/include/avx512erintrin.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.9.2/include/avx512pfintrin.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.9.2/include/avx512cdintrin.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.9.2/include/shaintrin.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.9.2/include/lzcntintrin.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.9.2/include/bmiintrin.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.9.2/include/bmi2intrin.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.9.2/include/fmaintrin.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.9.2/include/f16cintrin.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.9.2/include/rtmintrin.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.9.2/include/xtestintrin.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.9.2/include/mm3dnow.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.9.2/include/prfchwintrin.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.9.2/include/fma4intrin.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.9.2/include/xopintrin.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.9.2/include/lwpintrin.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.9.2/include/tbmintrin.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.9.2/include/rdseedintrin.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.9.2/include/fxsrintrin.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.9.2/include/xsaveintrin.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.9.2/include/xsaveoptintrin.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.9.2/include/adxintrin.h \
+ /usr/include/c++/4.9.2/bits/random.tcc /usr/include/c++/4.9.2/numeric \
+ /usr/include/c++/4.9.2/bits/stl_numeric.h \
+ /usr/include/c++/4.9.2/iterator /usr/include/c++/4.9.2/ostream \
+ /usr/include/c++/4.9.2/ios /usr/include/c++/4.9.2/bits/ios_base.h \
+ /usr/include/c++/4.9.2/bits/locale_classes.h \
+ /usr/include/c++/4.9.2/bits/locale_classes.tcc \
+ /usr/include/c++/4.9.2/streambuf \
+ /usr/include/c++/4.9.2/bits/streambuf.tcc \
+ /usr/include/c++/4.9.2/bits/basic_ios.h \
+ /usr/include/c++/4.9.2/bits/locale_facets.h \
+ /usr/include/c++/4.9.2/cwctype /usr/include/wctype.h \
+ /usr/include/c++/4.9.2/x86_64-unknown-linux-gnu/bits/ctype_base.h \
+ /usr/include/c++/4.9.2/bits/streambuf_iterator.h \
+ /usr/include/c++/4.9.2/x86_64-unknown-linux-gnu/bits/ctype_inline.h \
+ /usr/include/c++/4.9.2/bits/locale_facets.tcc \
+ /usr/include/c++/4.9.2/bits/basic_ios.tcc \
+ /usr/include/c++/4.9.2/bits/ostream.tcc /usr/include/c++/4.9.2/istream \
+ /usr/include/c++/4.9.2/bits/istream.tcc \
+ /usr/include/c++/4.9.2/bits/stream_iterator.h \
+ /usr/include/c++/4.9.2/iomanip /usr/include/c++/4.9.2/locale \
+ /usr/include/c++/4.9.2/bits/locale_facets_nonio.h \
+ /usr/include/c++/4.9.2/ctime \
+ /usr/include/c++/4.9.2/x86_64-unknown-linux-gnu/bits/time_members.h \
+ /usr/include/c++/4.9.2/x86_64-unknown-linux-gnu/bits/messages_members.h \
+ /usr/include/libintl.h /usr/include/c++/4.9.2/bits/codecvt.h \
+ /usr/include/c++/4.9.2/bits/locale_facets_nonio.tcc \
+ /usr/include/c++/4.9.2/stdexcept \
+ /opt/root60606/include/libcpp_string_view.h \
+ /opt/root60606/include/ESTLType.h /opt/root60606/include/TObjArray.h \
+ /opt/root60606/include/TSeqCollection.h \
+ /opt/root60606/include/TCollection.h /opt/root60606/include/TIterator.h \
+ /opt/root60606/include/TObjString.h /usr/include/c++/4.9.2/map \
+ /usr/include/c++/4.9.2/bits/stl_tree.h \
+ /usr/include/c++/4.9.2/ext/aligned_buffer.h \
+ /usr/include/c++/4.9.2/bits/stl_map.h /usr/include/c++/4.9.2/tuple \
+ /usr/include/c++/4.9.2/array \
+ /usr/include/c++/4.9.2/bits/uses_allocator.h \
+ /usr/include/c++/4.9.2/bits/stl_multimap.h /usr/include/c++/4.9.2/set \
+ /usr/include/c++/4.9.2/bits/stl_set.h \
+ /usr/include/c++/4.9.2/bits/stl_multiset.h \
+ /usr/include/c++/4.9.2/unordered_set \
+ /usr/include/c++/4.9.2/bits/hashtable.h \
+ /usr/include/c++/4.9.2/bits/hashtable_policy.h \
+ /usr/include/c++/4.9.2/bits/unordered_set.h \
+ /opt/root60606/include/ThreadLocalStorage.h \
+ /opt/root60606/include/TDictAttributeMap.h \
+ /opt/root60606/include/THashTable.h \
+ /opt/root60606/include/TInterpreter.h \
+ /opt/root60606/include/TVirtualMutex.h /opt/root60606/include/TROOT.h \
+ /opt/root60606/include/TDirectory.h /opt/root60606/include/TList.h \
+ /opt/root60606/include/TDatime.h /opt/root60606/include/TUUID.h \
+ /opt/root60606/include/TBuffer.h \
+ /opt/root60606/include/TMemberInspector.h \
+ /opt/root60606/include/TVirtualMutex.h /opt/root60606/include/TError.h \
+ /opt/root60606/include/RtypesImp.h \
+ /opt/root60606/include/TMemberInspector.h \
+ /opt/root60606/include/TError.h /opt/root60606/include/TIsAProxy.h \
+ /opt/root60606/include/TVirtualIsAProxy.h \
+ /opt/root60606/include/TFileMergeInfo.h \
+ /opt/root60606/include/TCollectionProxyInfo.h \
+ /usr/include/c++/4.9.2/forward_list \
+ /usr/include/c++/4.9.2/bits/forward_list.h \
+ /usr/include/c++/4.9.2/bits/forward_list.tcc \
+ /opt/root60606/include/TDataMember.h include/segidlist.hh \
  include/TArtConfig.hh include/TArtCore.hh include/TArtDataObject.hh \
- /opt/root53436/include/TString.h /opt/root53436/include/TMathBase.h \
- /usr/include/c++/4.9.2/cstdlib /usr/include/c++/4.9.2/cmath \
+ /opt/root60606/include/TObject.h /opt/root60606/include/TString.h \
  include/TArtDataSource.hh include/TArtDecoderA3100.hh \
  include/TArtDecoder.hh include/TArtRawSegmentObject.hh \
  include/TArtConfig.hh include/TArtRawDataObject.hh \
- /opt/root53436/include/TNamed.h include/TArtRawFADCDataObject.hh \
+ /opt/root60606/include/TNamed.h include/TArtRawFADCDataObject.hh \
  include/TArtCore.hh include/TArtDecoderAD413A.hh \
  include/TArtDecoderAMTTDC.hh include/TArtDecoderCBLT.hh \
  include/TArtDecoderCTM405.hh include/TArtDecoderDSP.hh \
@@ -118,54 +236,24 @@ anacore_dict.lo: anacore_dict.cc /opt/root53436/include/RConfig.h \
  /usr/include/sys/ipc.h /usr/include/bits/ipctypes.h \
  /usr/include/bits/ipc.h /usr/include/sys/shm.h /usr/include/bits/shm.h \
  /usr/include/sys/sem.h /usr/include/bits/sem.h \
- /usr/include/c++/4.9.2/fstream /usr/include/c++/4.9.2/istream \
- /usr/include/c++/4.9.2/ios /usr/include/c++/4.9.2/bits/ios_base.h \
- /usr/include/c++/4.9.2/bits/locale_classes.h \
- /usr/include/c++/4.9.2/bits/locale_classes.tcc \
- /usr/include/c++/4.9.2/streambuf \
- /usr/include/c++/4.9.2/bits/streambuf.tcc \
- /usr/include/c++/4.9.2/bits/basic_ios.h \
- /usr/include/c++/4.9.2/bits/locale_facets.h \
- /usr/include/c++/4.9.2/cwctype /usr/include/wctype.h \
- /usr/include/c++/4.9.2/x86_64-unknown-linux-gnu/bits/ctype_base.h \
- /usr/include/c++/4.9.2/bits/streambuf_iterator.h \
- /usr/include/c++/4.9.2/x86_64-unknown-linux-gnu/bits/ctype_inline.h \
- /usr/include/c++/4.9.2/bits/locale_facets.tcc \
- /usr/include/c++/4.9.2/bits/basic_ios.tcc /usr/include/c++/4.9.2/ostream \
- /usr/include/c++/4.9.2/bits/ostream.tcc \
- /usr/include/c++/4.9.2/bits/istream.tcc \
- /usr/include/c++/4.9.2/bits/codecvt.h /usr/include/c++/4.9.2/cstdio \
+ /usr/include/c++/4.9.2/fstream \
  /usr/include/c++/4.9.2/x86_64-unknown-linux-gnu/bits/basic_file.h \
  /usr/include/c++/4.9.2/x86_64-unknown-linux-gnu/bits/c++io.h \
  /usr/include/c++/4.9.2/bits/fstream.tcc include/TArtParser.hh \
  include/TArtDataSource.hh include/TArtRawEventObject.hh \
  include/TArtRawScalerObject.hh include/TArtStoreManager.hh \
- /opt/root53436/include/TList.h /opt/root53436/include/TSeqCollection.h \
- /opt/root53436/include/TCollection.h /opt/root53436/include/TIterator.h \
- /usr/include/c++/4.9.2/iterator \
- /usr/include/c++/4.9.2/bits/stream_iterator.h \
- /opt/root53436/include/TTree.h /opt/root53436/include/TBranch.h \
- /opt/root53436/include/TObjArray.h /opt/root53436/include/TAttFill.h \
- /opt/root53436/include/TDataType.h /opt/root53436/include/TDictionary.h \
- /opt/root53436/include/Property.h /opt/root53436/include/ESTLType.h \
- /opt/root53436/include/TAttLine.h /opt/root53436/include/TAttMarker.h \
- /opt/root53436/include/TArrayD.h /opt/root53436/include/TArray.h \
- /opt/root53436/include/TArrayI.h /opt/root53436/include/TClass.h \
- /opt/root53436/include/TObjString.h /usr/include/c++/4.9.2/map \
- /usr/include/c++/4.9.2/bits/stl_tree.h \
- /usr/include/c++/4.9.2/bits/stl_map.h \
- /usr/include/c++/4.9.2/bits/stl_multimap.h \
- /opt/root53436/include/ThreadLocalStorage.h \
- /opt/root53436/include/RConfigure.h \
- /opt/root53436/include/TVirtualTreePlayer.h \
- /opt/root53436/include/TClonesArray.h include/TArtFileDataSource.hh \
+ /opt/root60606/include/TList.h /opt/root60606/include/TTree.h \
+ /opt/root60606/include/TBranch.h /opt/root60606/include/TAttFill.h \
+ /opt/root60606/include/TDataType.h /opt/root60606/include/TAttLine.h \
+ /opt/root60606/include/TAttMarker.h /opt/root60606/include/TArrayD.h \
+ /opt/root60606/include/TArray.h /opt/root60606/include/TArrayI.h \
+ /opt/root60606/include/TVirtualTreePlayer.h \
+ /opt/root60606/include/TClonesArray.h include/TArtFileDataSource.hh \
  /usr/include/zlib.h /usr/include/zconf.h /usr/include/c++/4.9.2/iostream \
- /usr/include/sys/stat.h include/TArtMap.hh \
- /opt/root53436/include/Riostream.h /usr/include/c++/4.9.2/iomanip \
- include/TArtMath.hh /opt/root53436/include/TROOT.h \
- /opt/root53436/include/TDirectory.h /opt/root53436/include/TDatime.h \
- /opt/root53436/include/TUUID.h include/TArtParserFactory.hh \
- include/TArtParser.hh include/TArtParserRDF.hh include/TArtParserRIDF.hh \
+ /usr/include/sys/stat.h /usr/include/bits/stat.h include/TArtMap.hh \
+ /opt/root60606/include/Riostream.h include/TArtMath.hh \
+ include/TArtParserFactory.hh include/TArtParser.hh \
+ include/TArtParserRDF.hh include/TArtParserRIDF.hh \
  include/TArtEventStore.hh include/TArtRawDataObject.hh \
  include/TArtRawEventObject.hh include/TArtRawFADCDataObject.hh \
  include/TArtRawScalerObject.hh include/TArtRawSegmentObject.hh \
@@ -173,25 +261,11 @@ anacore_dict.lo: anacore_dict.cc /opt/root53436/include/RConfig.h \
  include/TArtSharedMemoryDataSource.hh include/TArtSharedMemory.hh \
  include/TArtSemaphore.hh include/TArtSharedMemory.hh \
  include/TArtStoreManager.hh include/TArtStreamingDataSource.hh \
- include/TArtUtil.hh /usr/include/c++/4.9.2/algorithm \
- /usr/include/c++/4.9.2/utility /usr/include/c++/4.9.2/bits/stl_relops.h \
- /usr/include/c++/4.9.2/bits/stl_algo.h \
- /usr/include/c++/4.9.2/bits/algorithmfwd.h \
- /usr/include/c++/4.9.2/bits/stl_heap.h \
- /usr/include/c++/4.9.2/bits/stl_tempbuf.h \
- /opt/root53436/include/TCollectionProxyInfo.h \
- /opt/root53436/include/TError.h /opt/root53436/include/TClass.h \
- /opt/root53436/include/TBuffer.h /opt/root53436/include/TInterpreter.h \
- /opt/root53436/include/TVirtualMutex.h /opt/root53436/include/TError.h \
- /opt/root53436/include/RtypesImp.h \
- /opt/root53436/include/TMemberInspector.h \
- /opt/root53436/include/TIsAProxy.h \
- /opt/root53436/include/TVirtualIsAProxy.h \
- /opt/root53436/include/TFileMergeInfo.h
+ include/TArtUtil.hh
 
-/opt/root53436/include/RConfig.h:
+/usr/lib/gcc/x86_64-unknown-linux-gnu/4.9.2/include/stddef.h:
 
-/opt/root53436/include/RVersion.h:
+/usr/include/stdio.h:
 
 /usr/include/features.h:
 
@@ -202,12 +276,6 @@ anacore_dict.lo: anacore_dict.cc /opt/root53436/include/RConfig.h \
 /usr/include/gnu/stubs.h:
 
 /usr/include/gnu/stubs-64.h:
-
-anacore_dict.h:
-
-/usr/lib/gcc/x86_64-unknown-linux-gnu/4.9.2/include/stddef.h:
-
-/usr/include/stdio.h:
 
 /usr/include/bits/types.h:
 
@@ -275,79 +343,27 @@ anacore_dict.h:
 
 /usr/include/string.h:
 
-/opt/root53436/include/G__ci.h:
-
-/usr/include/signal.h:
-
-/usr/include/bits/signum.h:
-
-/usr/include/bits/siginfo.h:
-
-/usr/include/bits/sigaction.h:
-
-/usr/include/bits/sigcontext.h:
-
-/usr/include/bits/sigstack.h:
-
-/usr/include/sys/ucontext.h:
-
-/usr/include/bits/sigthread.h:
-
 /usr/include/assert.h:
 
-/usr/lib/gcc/x86_64-unknown-linux-gnu/4.9.2/include-fixed/limits.h:
+/opt/root60606/include/RConfig.h:
 
-/usr/lib/gcc/x86_64-unknown-linux-gnu/4.9.2/include-fixed/syslimits.h:
+/opt/root60606/include/RVersion.h:
 
-/usr/include/limits.h:
+/opt/root60606/include/TClass.h:
 
-/usr/include/bits/posix1_lim.h:
+/opt/root60606/include/TDictionary.h:
 
-/usr/include/bits/local_lim.h:
+/opt/root60606/include/TNamed.h:
 
-/usr/include/linux/limits.h:
+/opt/root60606/include/TObject.h:
 
-/usr/include/bits/posix2_lim.h:
+/opt/root60606/include/Rtypes.h:
 
-/usr/include/bits/xopen_lim.h:
+/opt/root60606/include/RtypesCore.h:
 
-/usr/include/setjmp.h:
+/opt/root60606/include/DllImport.h:
 
-/usr/include/bits/setjmp.h:
-
-/usr/include/ctype.h:
-
-/usr/include/fcntl.h:
-
-/usr/include/bits/fcntl.h:
-
-/usr/include/bits/uio.h:
-
-/usr/include/bits/stat.h:
-
-/usr/include/unistd.h:
-
-/usr/include/bits/posix_opt.h:
-
-/usr/include/bits/environments.h:
-
-/usr/include/bits/confname.h:
-
-/usr/include/getopt.h:
-
-/opt/root53436/include/G__ci_fproto.h:
-
-/opt/root53436/include/FastAllocString.h:
-
-/opt/root53436/include/G__ci.h:
-
-/opt/root53436/include/TObject.h:
-
-/opt/root53436/include/Rtypes.h:
-
-/opt/root53436/include/DllImport.h:
-
-/opt/root53436/include/Rtypeinfo.h:
+/opt/root60606/include/Rtypeinfo.h:
 
 /usr/include/c++/4.9.2/typeinfo:
 
@@ -361,19 +377,47 @@ anacore_dict.h:
 
 /usr/include/c++/4.9.2/bits/atomic_lockfree_defines.h:
 
-/opt/root53436/include/snprintf.h:
+/usr/include/c++/4.9.2/bits/exception_ptr.h:
 
-/opt/root53436/include/strlcpy.h:
+/usr/include/c++/4.9.2/bits/exception_defines.h:
 
-/opt/root53436/include/TGenericClassInfo.h:
+/usr/include/c++/4.9.2/bits/nested_exception.h:
+
+/usr/include/c++/4.9.2/bits/hash_bytes.h:
+
+/opt/root60606/include/snprintf.h:
+
+/opt/root60606/include/strlcpy.h:
+
+/usr/include/unistd.h:
+
+/usr/include/bits/posix_opt.h:
+
+/usr/include/bits/environments.h:
+
+/usr/include/bits/confname.h:
+
+/usr/include/getopt.h:
+
+/usr/include/c++/4.9.2/atomic:
+
+/usr/include/c++/4.9.2/bits/atomic_base.h:
+
+/usr/lib/gcc/x86_64-unknown-linux-gnu/4.9.2/include/stdbool.h:
+
+/usr/lib/gcc/x86_64-unknown-linux-gnu/4.9.2/include/stdint.h:
+
+/usr/include/stdint.h:
+
+/usr/include/bits/wchar.h:
+
+/opt/root60606/include/TGenericClassInfo.h:
 
 /usr/include/c++/4.9.2/vector:
 
 /usr/include/c++/4.9.2/bits/stl_algobase.h:
 
 /usr/include/c++/4.9.2/bits/functexcept.h:
-
-/usr/include/c++/4.9.2/bits/exception_defines.h:
 
 /usr/include/c++/4.9.2/bits/cpp_type_traits.h:
 
@@ -386,6 +430,8 @@ anacore_dict.h:
 /usr/include/c++/4.9.2/bits/move.h:
 
 /usr/include/c++/4.9.2/bits/concept_check.h:
+
+/usr/include/c++/4.9.2/type_traits:
 
 /usr/include/c++/4.9.2/bits/stl_iterator_base_types.h:
 
@@ -413,17 +459,23 @@ anacore_dict.h:
 
 /usr/include/c++/4.9.2/ext/alloc_traits.h:
 
+/usr/include/c++/4.9.2/bits/alloc_traits.h:
+
 /usr/include/c++/4.9.2/bits/stl_uninitialized.h:
 
 /usr/include/c++/4.9.2/bits/stl_vector.h:
 
+/usr/include/c++/4.9.2/initializer_list:
+
 /usr/include/c++/4.9.2/bits/stl_bvector.h:
+
+/usr/include/c++/4.9.2/bits/functional_hash.h:
 
 /usr/include/c++/4.9.2/bits/range_access.h:
 
 /usr/include/c++/4.9.2/bits/vector.tcc:
 
-/opt/root53436/include/TSchemaHelper.h:
+/opt/root60606/include/TSchemaHelper.h:
 
 /usr/include/c++/4.9.2/string:
 
@@ -435,7 +487,7 @@ anacore_dict.h:
 
 /usr/include/c++/4.9.2/cwchar:
 
-/usr/include/bits/wchar.h:
+/usr/include/c++/4.9.2/cstdint:
 
 /usr/include/c++/4.9.2/bits/localefwd.h:
 
@@ -450,6 +502,8 @@ anacore_dict.h:
 /usr/include/c++/4.9.2/iosfwd:
 
 /usr/include/c++/4.9.2/cctype:
+
+/usr/include/ctype.h:
 
 /usr/include/c++/4.9.2/bits/ostream_insert.h:
 
@@ -473,19 +527,311 @@ anacore_dict.h:
 
 /usr/include/bits/sched.h:
 
+/usr/include/bits/setjmp.h:
+
 /usr/include/c++/4.9.2/x86_64-unknown-linux-gnu/bits/atomic_word.h:
+
+/usr/include/c++/4.9.2/ext/string_conversions.h:
+
+/usr/include/c++/4.9.2/cstdlib:
+
+/usr/include/c++/4.9.2/cstdio:
+
+/usr/include/c++/4.9.2/cerrno:
+
+/usr/include/errno.h:
+
+/usr/include/bits/errno.h:
+
+/usr/include/linux/errno.h:
+
+/usr/include/asm/errno.h:
+
+/usr/include/asm-generic/errno.h:
+
+/usr/include/asm-generic/errno-base.h:
 
 /usr/include/c++/4.9.2/bits/basic_string.tcc:
 
-/opt/root53436/include/TStorage.h:
+/opt/root60606/include/TStorage.h:
 
-/opt/root53436/include/TVersionCheck.h:
+/opt/root60606/include/TVersionCheck.h:
 
-/opt/root53436/include/Riosfwd.h:
+/opt/root60606/include/Riosfwd.h:
 
-/opt/root53436/include/TBuffer.h:
+/opt/root60606/include/TBuffer.h:
 
-/opt/root53436/include/TMemberInspector.h:
+/opt/root60606/include/TString.h:
+
+/opt/root60606/include/TMathBase.h:
+
+/usr/include/c++/4.9.2/cmath:
+
+/opt/root60606/include/RStringView.h:
+
+/opt/root60606/include/RConfigure.h:
+
+/opt/root60606/include/RWrap_libcpp_string_view.h:
+
+/usr/include/c++/4.9.2/algorithm:
+
+/usr/include/c++/4.9.2/utility:
+
+/usr/include/c++/4.9.2/bits/stl_relops.h:
+
+/usr/include/c++/4.9.2/bits/stl_algo.h:
+
+/usr/include/c++/4.9.2/bits/algorithmfwd.h:
+
+/usr/include/c++/4.9.2/bits/stl_heap.h:
+
+/usr/include/c++/4.9.2/bits/stl_tempbuf.h:
+
+/usr/include/c++/4.9.2/random:
+
+/usr/include/c++/4.9.2/limits:
+
+/usr/include/c++/4.9.2/bits/random.h:
+
+/usr/include/c++/4.9.2/x86_64-unknown-linux-gnu/bits/opt_random.h:
+
+/usr/lib/gcc/x86_64-unknown-linux-gnu/4.9.2/include/x86intrin.h:
+
+/usr/lib/gcc/x86_64-unknown-linux-gnu/4.9.2/include/ia32intrin.h:
+
+/usr/lib/gcc/x86_64-unknown-linux-gnu/4.9.2/include/mmintrin.h:
+
+/usr/lib/gcc/x86_64-unknown-linux-gnu/4.9.2/include/xmmintrin.h:
+
+/usr/lib/gcc/x86_64-unknown-linux-gnu/4.9.2/include/mm_malloc.h:
+
+/usr/lib/gcc/x86_64-unknown-linux-gnu/4.9.2/include/emmintrin.h:
+
+/usr/lib/gcc/x86_64-unknown-linux-gnu/4.9.2/include/pmmintrin.h:
+
+/usr/lib/gcc/x86_64-unknown-linux-gnu/4.9.2/include/tmmintrin.h:
+
+/usr/lib/gcc/x86_64-unknown-linux-gnu/4.9.2/include/ammintrin.h:
+
+/usr/lib/gcc/x86_64-unknown-linux-gnu/4.9.2/include/smmintrin.h:
+
+/usr/lib/gcc/x86_64-unknown-linux-gnu/4.9.2/include/popcntintrin.h:
+
+/usr/lib/gcc/x86_64-unknown-linux-gnu/4.9.2/include/wmmintrin.h:
+
+/usr/lib/gcc/x86_64-unknown-linux-gnu/4.9.2/include/immintrin.h:
+
+/usr/lib/gcc/x86_64-unknown-linux-gnu/4.9.2/include/avxintrin.h:
+
+/usr/lib/gcc/x86_64-unknown-linux-gnu/4.9.2/include/avx2intrin.h:
+
+/usr/lib/gcc/x86_64-unknown-linux-gnu/4.9.2/include/avx512fintrin.h:
+
+/usr/lib/gcc/x86_64-unknown-linux-gnu/4.9.2/include/avx512erintrin.h:
+
+/usr/lib/gcc/x86_64-unknown-linux-gnu/4.9.2/include/avx512pfintrin.h:
+
+/usr/lib/gcc/x86_64-unknown-linux-gnu/4.9.2/include/avx512cdintrin.h:
+
+/usr/lib/gcc/x86_64-unknown-linux-gnu/4.9.2/include/shaintrin.h:
+
+/usr/lib/gcc/x86_64-unknown-linux-gnu/4.9.2/include/lzcntintrin.h:
+
+/usr/lib/gcc/x86_64-unknown-linux-gnu/4.9.2/include/bmiintrin.h:
+
+/usr/lib/gcc/x86_64-unknown-linux-gnu/4.9.2/include/bmi2intrin.h:
+
+/usr/lib/gcc/x86_64-unknown-linux-gnu/4.9.2/include/fmaintrin.h:
+
+/usr/lib/gcc/x86_64-unknown-linux-gnu/4.9.2/include/f16cintrin.h:
+
+/usr/lib/gcc/x86_64-unknown-linux-gnu/4.9.2/include/rtmintrin.h:
+
+/usr/lib/gcc/x86_64-unknown-linux-gnu/4.9.2/include/xtestintrin.h:
+
+/usr/lib/gcc/x86_64-unknown-linux-gnu/4.9.2/include/mm3dnow.h:
+
+/usr/lib/gcc/x86_64-unknown-linux-gnu/4.9.2/include/prfchwintrin.h:
+
+/usr/lib/gcc/x86_64-unknown-linux-gnu/4.9.2/include/fma4intrin.h:
+
+/usr/lib/gcc/x86_64-unknown-linux-gnu/4.9.2/include/xopintrin.h:
+
+/usr/lib/gcc/x86_64-unknown-linux-gnu/4.9.2/include/lwpintrin.h:
+
+/usr/lib/gcc/x86_64-unknown-linux-gnu/4.9.2/include/tbmintrin.h:
+
+/usr/lib/gcc/x86_64-unknown-linux-gnu/4.9.2/include/rdseedintrin.h:
+
+/usr/lib/gcc/x86_64-unknown-linux-gnu/4.9.2/include/fxsrintrin.h:
+
+/usr/lib/gcc/x86_64-unknown-linux-gnu/4.9.2/include/xsaveintrin.h:
+
+/usr/lib/gcc/x86_64-unknown-linux-gnu/4.9.2/include/xsaveoptintrin.h:
+
+/usr/lib/gcc/x86_64-unknown-linux-gnu/4.9.2/include/adxintrin.h:
+
+/usr/include/c++/4.9.2/bits/random.tcc:
+
+/usr/include/c++/4.9.2/numeric:
+
+/usr/include/c++/4.9.2/bits/stl_numeric.h:
+
+/usr/include/c++/4.9.2/iterator:
+
+/usr/include/c++/4.9.2/ostream:
+
+/usr/include/c++/4.9.2/ios:
+
+/usr/include/c++/4.9.2/bits/ios_base.h:
+
+/usr/include/c++/4.9.2/bits/locale_classes.h:
+
+/usr/include/c++/4.9.2/bits/locale_classes.tcc:
+
+/usr/include/c++/4.9.2/streambuf:
+
+/usr/include/c++/4.9.2/bits/streambuf.tcc:
+
+/usr/include/c++/4.9.2/bits/basic_ios.h:
+
+/usr/include/c++/4.9.2/bits/locale_facets.h:
+
+/usr/include/c++/4.9.2/cwctype:
+
+/usr/include/wctype.h:
+
+/usr/include/c++/4.9.2/x86_64-unknown-linux-gnu/bits/ctype_base.h:
+
+/usr/include/c++/4.9.2/bits/streambuf_iterator.h:
+
+/usr/include/c++/4.9.2/x86_64-unknown-linux-gnu/bits/ctype_inline.h:
+
+/usr/include/c++/4.9.2/bits/locale_facets.tcc:
+
+/usr/include/c++/4.9.2/bits/basic_ios.tcc:
+
+/usr/include/c++/4.9.2/bits/ostream.tcc:
+
+/usr/include/c++/4.9.2/istream:
+
+/usr/include/c++/4.9.2/bits/istream.tcc:
+
+/usr/include/c++/4.9.2/bits/stream_iterator.h:
+
+/usr/include/c++/4.9.2/iomanip:
+
+/usr/include/c++/4.9.2/locale:
+
+/usr/include/c++/4.9.2/bits/locale_facets_nonio.h:
+
+/usr/include/c++/4.9.2/ctime:
+
+/usr/include/c++/4.9.2/x86_64-unknown-linux-gnu/bits/time_members.h:
+
+/usr/include/c++/4.9.2/x86_64-unknown-linux-gnu/bits/messages_members.h:
+
+/usr/include/libintl.h:
+
+/usr/include/c++/4.9.2/bits/codecvt.h:
+
+/usr/include/c++/4.9.2/bits/locale_facets_nonio.tcc:
+
+/usr/include/c++/4.9.2/stdexcept:
+
+/opt/root60606/include/libcpp_string_view.h:
+
+/opt/root60606/include/ESTLType.h:
+
+/opt/root60606/include/TObjArray.h:
+
+/opt/root60606/include/TSeqCollection.h:
+
+/opt/root60606/include/TCollection.h:
+
+/opt/root60606/include/TIterator.h:
+
+/opt/root60606/include/TObjString.h:
+
+/usr/include/c++/4.9.2/map:
+
+/usr/include/c++/4.9.2/bits/stl_tree.h:
+
+/usr/include/c++/4.9.2/ext/aligned_buffer.h:
+
+/usr/include/c++/4.9.2/bits/stl_map.h:
+
+/usr/include/c++/4.9.2/tuple:
+
+/usr/include/c++/4.9.2/array:
+
+/usr/include/c++/4.9.2/bits/uses_allocator.h:
+
+/usr/include/c++/4.9.2/bits/stl_multimap.h:
+
+/usr/include/c++/4.9.2/set:
+
+/usr/include/c++/4.9.2/bits/stl_set.h:
+
+/usr/include/c++/4.9.2/bits/stl_multiset.h:
+
+/usr/include/c++/4.9.2/unordered_set:
+
+/usr/include/c++/4.9.2/bits/hashtable.h:
+
+/usr/include/c++/4.9.2/bits/hashtable_policy.h:
+
+/usr/include/c++/4.9.2/bits/unordered_set.h:
+
+/opt/root60606/include/ThreadLocalStorage.h:
+
+/opt/root60606/include/TDictAttributeMap.h:
+
+/opt/root60606/include/THashTable.h:
+
+/opt/root60606/include/TInterpreter.h:
+
+/opt/root60606/include/TVirtualMutex.h:
+
+/opt/root60606/include/TROOT.h:
+
+/opt/root60606/include/TDirectory.h:
+
+/opt/root60606/include/TList.h:
+
+/opt/root60606/include/TDatime.h:
+
+/opt/root60606/include/TUUID.h:
+
+/opt/root60606/include/TBuffer.h:
+
+/opt/root60606/include/TMemberInspector.h:
+
+/opt/root60606/include/TVirtualMutex.h:
+
+/opt/root60606/include/TError.h:
+
+/opt/root60606/include/RtypesImp.h:
+
+/opt/root60606/include/TMemberInspector.h:
+
+/opt/root60606/include/TError.h:
+
+/opt/root60606/include/TIsAProxy.h:
+
+/opt/root60606/include/TVirtualIsAProxy.h:
+
+/opt/root60606/include/TFileMergeInfo.h:
+
+/opt/root60606/include/TCollectionProxyInfo.h:
+
+/usr/include/c++/4.9.2/forward_list:
+
+/usr/include/c++/4.9.2/bits/forward_list.h:
+
+/usr/include/c++/4.9.2/bits/forward_list.tcc:
+
+/opt/root60606/include/TDataMember.h:
 
 include/segidlist.hh:
 
@@ -495,13 +841,9 @@ include/TArtCore.hh:
 
 include/TArtDataObject.hh:
 
-/opt/root53436/include/TString.h:
+/opt/root60606/include/TObject.h:
 
-/opt/root53436/include/TMathBase.h:
-
-/usr/include/c++/4.9.2/cstdlib:
-
-/usr/include/c++/4.9.2/cmath:
+/opt/root60606/include/TString.h:
 
 include/TArtDataSource.hh:
 
@@ -515,7 +857,7 @@ include/TArtConfig.hh:
 
 include/TArtRawDataObject.hh:
 
-/opt/root53436/include/TNamed.h:
+/opt/root60606/include/TNamed.h:
 
 include/TArtRawFADCDataObject.hh:
 
@@ -587,48 +929,6 @@ include/TArtEventStore.hh:
 
 /usr/include/c++/4.9.2/fstream:
 
-/usr/include/c++/4.9.2/istream:
-
-/usr/include/c++/4.9.2/ios:
-
-/usr/include/c++/4.9.2/bits/ios_base.h:
-
-/usr/include/c++/4.9.2/bits/locale_classes.h:
-
-/usr/include/c++/4.9.2/bits/locale_classes.tcc:
-
-/usr/include/c++/4.9.2/streambuf:
-
-/usr/include/c++/4.9.2/bits/streambuf.tcc:
-
-/usr/include/c++/4.9.2/bits/basic_ios.h:
-
-/usr/include/c++/4.9.2/bits/locale_facets.h:
-
-/usr/include/c++/4.9.2/cwctype:
-
-/usr/include/wctype.h:
-
-/usr/include/c++/4.9.2/x86_64-unknown-linux-gnu/bits/ctype_base.h:
-
-/usr/include/c++/4.9.2/bits/streambuf_iterator.h:
-
-/usr/include/c++/4.9.2/x86_64-unknown-linux-gnu/bits/ctype_inline.h:
-
-/usr/include/c++/4.9.2/bits/locale_facets.tcc:
-
-/usr/include/c++/4.9.2/bits/basic_ios.tcc:
-
-/usr/include/c++/4.9.2/ostream:
-
-/usr/include/c++/4.9.2/bits/ostream.tcc:
-
-/usr/include/c++/4.9.2/bits/istream.tcc:
-
-/usr/include/c++/4.9.2/bits/codecvt.h:
-
-/usr/include/c++/4.9.2/cstdio:
-
 /usr/include/c++/4.9.2/x86_64-unknown-linux-gnu/bits/basic_file.h:
 
 /usr/include/c++/4.9.2/x86_64-unknown-linux-gnu/bits/c++io.h:
@@ -645,63 +945,29 @@ include/TArtRawScalerObject.hh:
 
 include/TArtStoreManager.hh:
 
-/opt/root53436/include/TList.h:
+/opt/root60606/include/TList.h:
 
-/opt/root53436/include/TSeqCollection.h:
+/opt/root60606/include/TTree.h:
 
-/opt/root53436/include/TCollection.h:
+/opt/root60606/include/TBranch.h:
 
-/opt/root53436/include/TIterator.h:
+/opt/root60606/include/TAttFill.h:
 
-/usr/include/c++/4.9.2/iterator:
+/opt/root60606/include/TDataType.h:
 
-/usr/include/c++/4.9.2/bits/stream_iterator.h:
+/opt/root60606/include/TAttLine.h:
 
-/opt/root53436/include/TTree.h:
+/opt/root60606/include/TAttMarker.h:
 
-/opt/root53436/include/TBranch.h:
+/opt/root60606/include/TArrayD.h:
 
-/opt/root53436/include/TObjArray.h:
+/opt/root60606/include/TArray.h:
 
-/opt/root53436/include/TAttFill.h:
+/opt/root60606/include/TArrayI.h:
 
-/opt/root53436/include/TDataType.h:
+/opt/root60606/include/TVirtualTreePlayer.h:
 
-/opt/root53436/include/TDictionary.h:
-
-/opt/root53436/include/Property.h:
-
-/opt/root53436/include/ESTLType.h:
-
-/opt/root53436/include/TAttLine.h:
-
-/opt/root53436/include/TAttMarker.h:
-
-/opt/root53436/include/TArrayD.h:
-
-/opt/root53436/include/TArray.h:
-
-/opt/root53436/include/TArrayI.h:
-
-/opt/root53436/include/TClass.h:
-
-/opt/root53436/include/TObjString.h:
-
-/usr/include/c++/4.9.2/map:
-
-/usr/include/c++/4.9.2/bits/stl_tree.h:
-
-/usr/include/c++/4.9.2/bits/stl_map.h:
-
-/usr/include/c++/4.9.2/bits/stl_multimap.h:
-
-/opt/root53436/include/ThreadLocalStorage.h:
-
-/opt/root53436/include/RConfigure.h:
-
-/opt/root53436/include/TVirtualTreePlayer.h:
-
-/opt/root53436/include/TClonesArray.h:
+/opt/root60606/include/TClonesArray.h:
 
 include/TArtFileDataSource.hh:
 
@@ -713,21 +979,13 @@ include/TArtFileDataSource.hh:
 
 /usr/include/sys/stat.h:
 
+/usr/include/bits/stat.h:
+
 include/TArtMap.hh:
 
-/opt/root53436/include/Riostream.h:
-
-/usr/include/c++/4.9.2/iomanip:
+/opt/root60606/include/Riostream.h:
 
 include/TArtMath.hh:
-
-/opt/root53436/include/TROOT.h:
-
-/opt/root53436/include/TDirectory.h:
-
-/opt/root53436/include/TDatime.h:
-
-/opt/root53436/include/TUUID.h:
 
 include/TArtParserFactory.hh:
 
@@ -766,41 +1024,3 @@ include/TArtStoreManager.hh:
 include/TArtStreamingDataSource.hh:
 
 include/TArtUtil.hh:
-
-/usr/include/c++/4.9.2/algorithm:
-
-/usr/include/c++/4.9.2/utility:
-
-/usr/include/c++/4.9.2/bits/stl_relops.h:
-
-/usr/include/c++/4.9.2/bits/stl_algo.h:
-
-/usr/include/c++/4.9.2/bits/algorithmfwd.h:
-
-/usr/include/c++/4.9.2/bits/stl_heap.h:
-
-/usr/include/c++/4.9.2/bits/stl_tempbuf.h:
-
-/opt/root53436/include/TCollectionProxyInfo.h:
-
-/opt/root53436/include/TError.h:
-
-/opt/root53436/include/TClass.h:
-
-/opt/root53436/include/TBuffer.h:
-
-/opt/root53436/include/TInterpreter.h:
-
-/opt/root53436/include/TVirtualMutex.h:
-
-/opt/root53436/include/TError.h:
-
-/opt/root53436/include/RtypesImp.h:
-
-/opt/root53436/include/TMemberInspector.h:
-
-/opt/root53436/include/TIsAProxy.h:
-
-/opt/root53436/include/TVirtualIsAProxy.h:
-
-/opt/root53436/include/TFileMergeInfo.h:

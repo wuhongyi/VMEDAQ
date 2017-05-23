@@ -40,7 +40,7 @@ void Online()
 
  TArtRawEventObject *rawevent = estore->GetRawEventObject();//the basic type of data from VME
  estore->Open(0);//open the shared memory to get the data from VME,actually rawevent is a memberof estore
- // estore->Open("/home/wuhongyi/data/data0006.ridf");//open the RIDF file,offline model
+ // estore->Open("/home/wuhongyi/data/data0078.ridf");//open the RIDF file,offline model
 
 
  TCanvas *c1=new TCanvas("c1","ADC",1100,1000);//create a canvas

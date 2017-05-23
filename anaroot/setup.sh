@@ -1,5 +1,5 @@
 #!/bin/bash
 
-source /opt/root53436/bin/thisroot.sh
-export TARTSYS=/home/wuhongyi/VME_DAQ/anaroot
+source /opt/root60606/bin/thisroot.sh
+export TARTSYS=/home/wuhongyi/VMEDAQ/anaroot
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$TARTSYS/lib

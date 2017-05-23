@@ -14,6 +14,8 @@ void evt(void) {
       v7xx_dmasegdata(MSTTDCADDR, 4000);
       babies_end_segment();
 
+      // 以下部分无用
+      
       // babies_init_segment(MKSEGID(0, 0, PLAQ, CBLT));
       // babies_init_segment(MKSEGID(0, 0, PLAQ, MADC32));
       // madc32_dmasegdata(MSTQDCADDR, 4000);
@@ -36,9 +38,6 @@ void evt(void) {
 
       // End of event
       babies_end_event();
-
-//      vme_enable_interrupt();
       
-
 }
 

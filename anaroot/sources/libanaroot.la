@@ -17,7 +17,7 @@ old_library=''
 inherited_linker_flags=' -pthread'
 
 # Libraries that this one depends upon.
-dependency_libs=' /home/wuhongyi/VME_DAQ/anaroot/sources/Core/libanacore.la -L/opt/root53436/lib -lGui -lCore -lCint -lRIO -lNet -lHist -lGraf -lGraf3d -lGpad -lTree -lRint -lPostscript -lMatrix -lPhysics -lMathCore -lThread -ldl /usr/lib/gcc/x86_64-unknown-linux-gnu/4.9.2/../../../../lib64/libstdc++.la -lm'
+dependency_libs=' /home/wuhongyi/VMEDAQ/anaroot/sources/Core/libanacore.la -L/opt/root60606/lib -lGui -lCore -lRIO -lNet -lHist -lGraf -lGraf3d -lGpad -lTree -lRint -lPostscript -lMatrix -lPhysics -lMathCore -lThread -lMultiProc -ldl /usr/lib/gcc/x86_64-unknown-linux-gnu/4.9.2/../../../../lib64/libstdc++.la -lm'
 
 # Names of additional weak libraries provided by this library
 weak_library_names=''
@@ -38,5 +38,5 @@ dlopen=''
 dlpreopen=''
 
 # Directory that this library needs to be installed in:
-libdir='/home/wuhongyi/VME_DAQ/anaroot/lib'
-relink_command="(cd /home/wuhongyi/VME_DAQ/anaroot/sources; /bin/sh /home/wuhongyi/VME_DAQ/anaroot/libtool  --tag CC --mode=relink gcc -g -O2 -o libanaroot.la -rpath /home/wuhongyi/VME_DAQ/anaroot/lib Core/libanacore.la @inst_prefix_dir@)"
+libdir='/home/wuhongyi/VMEDAQ/anaroot/lib'
+relink_command="(cd /home/wuhongyi/VMEDAQ/anaroot/sources; /bin/sh /home/wuhongyi/VMEDAQ/anaroot/libtool  --tag CC --mode=relink gcc -g -O2 -o libanaroot.la -rpath /home/wuhongyi/VMEDAQ/anaroot/lib Core/libanacore.la @inst_prefix_dir@)"
