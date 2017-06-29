@@ -4,8 +4,12 @@ void stop(void){
   vme_disable_interrupt();
   // madc32_mstop_acq(MSTMDCADDR);
 
-
-
+  
+  //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
+  // 硬件busy
+  //v2718_set_ioport(4);
+  //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
+  
   v2718_stop_pulsea();
   
   printf("Stop\n");

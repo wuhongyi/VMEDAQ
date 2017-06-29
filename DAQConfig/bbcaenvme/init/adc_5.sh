@@ -1,9 +1,9 @@
 #!/bin/sh
 cmd="../cmdvme/cmdvme"
-BASEADDR=0x1001
+BASEADDR=0x1005
 
 # GEO 
-${cmd} -ww ${BASEADDR}1002 1
+${cmd} -ww ${BASEADDR}1002 5
 
 # SW reset
 #${cmd} -ww ${BASEADDR}1016 0x1
@@ -54,22 +54,22 @@ ${cmd} -ww ${BASEADDR}1092	0x00
 ${cmd} -ww ${BASEADDR}1094	0x00
 ${cmd} -ww ${BASEADDR}1096	0x00
 ${cmd} -ww ${BASEADDR}1098	0x00
-${cmd} -ww ${BASEADDR}109a	0xff
-${cmd} -ww ${BASEADDR}109c	0xff
-${cmd} -ww ${BASEADDR}109e	0xff
-${cmd} -ww ${BASEADDR}10a0	0xff
-${cmd} -ww ${BASEADDR}10a2	0xff
-${cmd} -ww ${BASEADDR}10a4	0xff
-${cmd} -ww ${BASEADDR}10a6	0xff
-${cmd} -ww ${BASEADDR}10a8	0xff
-${cmd} -ww ${BASEADDR}10aa	0xff
-${cmd} -ww ${BASEADDR}10ac	0xff
-${cmd} -ww ${BASEADDR}10ae	0xff
-${cmd} -ww ${BASEADDR}10b0	0xff
-${cmd} -ww ${BASEADDR}10b2	0xff
-${cmd} -ww ${BASEADDR}10b4	0xff
-${cmd} -ww ${BASEADDR}10b6	0xff
-${cmd} -ww ${BASEADDR}10b8	0xff
-${cmd} -ww ${BASEADDR}10ba	0xff
-${cmd} -ww ${BASEADDR}10bc	0xff
-${cmd} -ww ${BASEADDR}10be	0xff
+${cmd} -ww ${BASEADDR}109a	0x00
+${cmd} -ww ${BASEADDR}109c	0x00
+${cmd} -ww ${BASEADDR}109e	0x00
+${cmd} -ww ${BASEADDR}10a0	0x00
+${cmd} -ww ${BASEADDR}10a2	0x00
+${cmd} -ww ${BASEADDR}10a4	0x00
+${cmd} -ww ${BASEADDR}10a6	0x00
+${cmd} -ww ${BASEADDR}10a8	0x00
+${cmd} -ww ${BASEADDR}10aa	0x00
+${cmd} -ww ${BASEADDR}10ac	0x00
+${cmd} -ww ${BASEADDR}10ae	0x00
+${cmd} -ww ${BASEADDR}10b0	0x00
+${cmd} -ww ${BASEADDR}10b2	0x00
+${cmd} -ww ${BASEADDR}10b4	0x00
+${cmd} -ww ${BASEADDR}10b6	0x00
+${cmd} -ww ${BASEADDR}10b8	0x00
+${cmd} -ww ${BASEADDR}10ba	0x00
+${cmd} -ww ${BASEADDR}10bc	0x00
+${cmd} -ww ${BASEADDR}10be	0x00

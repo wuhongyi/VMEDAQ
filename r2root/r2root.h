@@ -33,7 +33,7 @@ class TArtRawSegmentObject;
 #include <iostream>
 using namespace std;
 
-const int adcnum=2;
+const int adcnum=6;
 const int gdcnum=2;
 //const int qdcnum=1;
 const int scanum=1;

@@ -58,7 +58,7 @@ void r2root::DecodeRaw()
 	  shit++;
 	}
       
-      if(geo<=1&&geo>=0)
+      if(geo<=9&&geo>=0)
 	{
 	  int ch = d->GetCh();
 	  int val = d->GetVal();
@@ -201,8 +201,8 @@ Bool_t r2root::BranchTree(TTree *tree)
   tree->Branch("amod",&amod,"amod[ahit]/I");
   tree->Branch("ach",&ach,"ach[ahit]/I");
   tree->Branch("aval",&aval,"aval[ahit]/I");
-  tree->Branch("adc",&adc,"adc[2][32]/I");
-  tree->Branch("acnt",&acnt,"acnt[2]/I");
+  tree->Branch("adc",&adc,TString::Format("adc[%d][32]/I",adcnum).Data());
+  tree->Branch("acnt",&acnt,TString::Format("acnt[%d]/I",adcnum).Data());
 
     //Branches of madc
   

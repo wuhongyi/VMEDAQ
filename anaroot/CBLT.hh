@@ -25,14 +25,14 @@
 
 #define v830m
 #define v830n 0
-#define v830num 1
+#define v830num 0
 #define v830chn 8 // how many channels are enabled  这里设置830开启路数
 #define v830head 0 //v830 no header
 #define v830geo 0 // if v830 header is not enabled 
  
 #define v7xxm
 #define v7xxn 1
-#define v7xxnum 1 // how many v7xx type modules
+#define v7xxnum 6 // how many v7xx type modules
 
 #define v1190m
 #define v1190n 2
