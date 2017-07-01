@@ -65,7 +65,7 @@ void start(void){
   v2718_pulse_ioport(3);
 
   // 硬件busy
-    v2718_clear_ioport(4);
+ //   v2718_clear_ioport(4);
   //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
   
   printf("Start\n");

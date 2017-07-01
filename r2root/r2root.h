@@ -38,7 +38,7 @@ const int gdcnum=2;
 //const int qdcnum=1;
 const int scanum=1;
 const int ghitmax=3000;
-const int madcnum=2;
+const int madcnum=6;
 
 class r2root
 {

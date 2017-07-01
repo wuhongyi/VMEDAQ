@@ -76,7 +76,7 @@ void r2root::DecodeRaw()
 	    }
 	}
 	   
-      if(geo>=10&&geo<=11)
+      if(geo>=10&&geo<=20)
 	{
 	  int ch=d->GetCh();
 	  int val=d->GetVal();
@@ -210,8 +210,8 @@ Bool_t r2root::BranchTree(TTree *tree)
   tree->Branch("mmod",&mmod,"mmod[mhit]/I");
   tree->Branch("mch",&mch,"mch[mhit]/I");
   tree->Branch("mval",&mval,"mval[mhit]/I");
-  tree->Branch("madc",&madc,"madc[2][32]/I");
-  tree->Branch("mcnt",&mcnt,"mcnt[2]/I");
+  tree->Branch("madc",&madc,TString::Format("madc[%d][32]/I",madcnum).Data());
+  tree->Branch("mcnt",&mcnt,TString::Format("mcnt[%d]/I",madcnum).Data());
   
 /*
   //Branches of qdc

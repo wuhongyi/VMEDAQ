@@ -103,8 +103,8 @@ void evtloop(void){
 //      v1290_clear(V1190ADDR0);
 //      v7xx_clear(ADC1ADDR);
 
-      clear();
       vme_enable_interrupt();
+      clear();
 
       break;
     case STAT_RUN_WAITSTOP:
