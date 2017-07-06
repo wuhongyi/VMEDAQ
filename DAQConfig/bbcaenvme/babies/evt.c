@@ -4,7 +4,7 @@ void evt(void) {
   //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
   // 测试
   // v2718_pulse_ioport(2);
-    v2718_pulse_ioport(2);
+  // v2718_pulse_ioport(2);
   //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
   
