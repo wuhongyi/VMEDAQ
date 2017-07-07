@@ -8,7 +8,7 @@ void start(void){
 
   //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
   // 测试
-  // v2718_init_ioport(2,0,0);
+  v2718_init_ioport(2,0,0);
   //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
   
@@ -17,7 +17,7 @@ void start(void){
   v2718_pulsea_configure(0,2,1,1,0);
   v2718_start_pulsea();
 
-  /* v830_clear_all(SCAADDR0); */
+  v830_clear_all(SCAADDR0);
   
   v7xx_rst_counter(ADC0ADDR);
   v7xx_rst_counter(ADC1ADDR);
@@ -64,7 +64,7 @@ void start(void){
   v2718_pulse_ioport(3);
 
   // 硬件busy
-  //  v2718_clear_ioport(4);
+  //   v2718_clear_ioport(4);
   //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
   
   printf("Start\n");

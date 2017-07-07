@@ -62,79 +62,71 @@ void sca(void){
 void evtloop(void){
   int status;
 
-  while((status = babies_status()) != -1)
-    {
-      switch(status)
-	{
-	case STAT_RUN_IDLE:
-	  /* noop */
-	  usleep(1000);
-	  break;
-	case STAT_RUN_START:
-	case STAT_RUN_NSSTA:
-	  if(vme_check_interrupt())
-	    {
-	      /* continue */
-	      //printf("interrupt ok\n");
-	    }
-	  else
-	    {
-	      //printf("interrupt non\n");
-	      usleep(10);
-	      break;
-	    }
-	  //printf("evtloop\n");
-	  //      if(vme_wait_interrupt(10000)){
-	  //      /* wait 10s for the interrupt, time units: ms*/
-	  //      }else {
-	  //      printf(" no interrupt in 10 sec !\n");
-	  //      printf(" babies will loop again!");
-	  //      break;
-	  //      }
+  while((status = babies_status()) != -1){
+    switch(status){
+    case STAT_RUN_IDLE:
+      /* noop */
+      usleep(1000);
+      break;
+    case STAT_RUN_START:
+    case STAT_RUN_NSSTA:
+//      if(vme_check_interrupt()){
+//	/* continue */
+//	//printf("interrupt ok\n");
+//      }else{
+//	//printf("interrupt non\n");
+//	usleep(10);
+//	break;
+//      }
+      //printf("evtloop\n");
+      if(vme_wait_interrupt(1000)){
+      /* wait 10s for the interrupt, time units: ms*/
+      }else {
+        printf(" no interrupt in 10 sec !\n");
+        printf(" babies will loop again!");
+        break;
+      }
       
-	  evt();
+      evt();
 
-	  // babies_chk_block(int maxbuff)
-	  // if block size is larger than maxbuff,
-	  //  data should be send to the event builder
-	  //  i.e., read scaler and flush
-	  // example : 8000 = 16kB
-	  if(babies_chk_block(8000))
-	    {
-	      //	sca();
-	      babies_flush();
-	    }
+      // babies_chk_block(int maxbuff)
+      // if block size is larger than maxbuff,
+      //  data should be send to the event builder
+      //  i.e., read scaler and flush
+      // example : 8000 = 16kB
+      if(babies_chk_block(8000)){
+//	sca();
+	babies_flush();
+      }
 
-	  // clear module is here (not in clear())
-	  //      v1290_clear(V1190ADDR0);
-	  //      v7xx_clear(ADC1ADDR);
+      // clear module is here (not in clear())
+//      v1290_clear(V1190ADDR0);
+//      v7xx_clear(ADC1ADDR);
 
-	  clear();
-	  //      vme_enable_interrupt();
+      vme_enable_interrupt();
+      clear();
 
-	  break;
-	case STAT_RUN_WAITSTOP:
-	  // for the last sequense of run
-	  v2718_set_ioport(4);
-	  //      sca();
-	  while(vme_check_interrupt())
-	    {
-	      //      while(vme_wait_interrupt(10000)){
-	      evt();
-	      clear();
-	      if(babies_chk_block(8000))
-		{
-		  babies_flush();
-		}
-	    }
-	  babies_flush();
-	  babies_last_block();
-	  printf("STAT_RUN_WATISTOP!\n");
-	  break;
-	default:
-	  break;
-	}
+      break;
+    case STAT_RUN_WAITSTOP:
+      // for the last sequense of run
+      v2718_set_ioport(4);
+//      sca();
+      while(vme_check_interrupt()){
+//      while(vme_wait_interrupt(10000)){
+        evt();
+      //  clear();
+        if(babies_chk_block(8000)){
+          babies_flush();
+        }
+      }
+      babies_flush();
+      babies_last_block();
+      printf("STAT_RUN_WATISTOP!\n");
+      break;
+    default:
+      break;
     }
+  }
 
   // write codes to quit safely
 
@@ -170,7 +162,7 @@ int main(int argc, char *argv[]){
   //default = /var/run/babies
   //in this example, use /tmp/babies
   mkpid(pidpath);
-  //  printf("*****************\n");
+//  printf("*****************\n");
   babies_main();
 
   return 0;

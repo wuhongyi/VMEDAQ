@@ -7,4 +7,4 @@
 # /bin/sh ./madcthres.sh
 # /bin/sh ./v1190_0.sh
 # /bin/sh ./v1190_1.sh
-#/bin/sh ./cblt.sh
+/bin/sh ./cblt.sh

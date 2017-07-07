@@ -7,7 +7,7 @@ void stop(void){
   
   //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
   // 硬件busy
-  //v2718_set_ioport(4);
+  v2718_set_ioport(4);
   //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
   
   v2718_stop_pulsea();
