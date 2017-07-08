@@ -3,7 +3,8 @@ BASEADDR=0x1000
 
 
 ####################################
-
+# 以下设置阈值 0x00 - 0xFF
+# 当前配置下，该参数为真实阈值除以2
 ../cmdvme/cmdvme -ww ${BASEADDR}1080	0x37
 ../cmdvme/cmdvme -ww ${BASEADDR}1082	0x31
 ../cmdvme/cmdvme -ww ${BASEADDR}1084	0x27
@@ -36,4 +37,6 @@ BASEADDR=0x1000
 ../cmdvme/cmdvme -ww ${BASEADDR}10ba	0x30
 ../cmdvme/cmdvme -ww ${BASEADDR}10bc	0x42
 ../cmdvme/cmdvme -ww ${BASEADDR}10be	0x3b
+
+#第一个插件ch0设置为0
 ../cmdvme/cmdvme -ww ${BASEADDR}1080    0x0	

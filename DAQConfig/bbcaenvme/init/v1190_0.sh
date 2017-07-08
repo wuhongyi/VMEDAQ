@@ -20,6 +20,8 @@ sleep 0
 ${cmd} $opt -ww ${BASEADDR}1016 1
 sleep 0
 
+
+#0x1000, read/write, D16 / Control Register
 # compansation enbale(0x0020)/disable(0x0000)
 # empty evt (0x0008)      : Write global header when there are no data
 # event fifo ena (0x0100) : Can read word count in one event 
