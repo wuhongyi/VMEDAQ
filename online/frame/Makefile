@@ -1,5 +1,5 @@
-OBJS = online
-sourcefile = Online.cc
+OBJ = online
+sourcefile = main.cc MainFrame.hh MainFrame.cc OnlineDict.cc
 
 ROOTCFLAGS  = $(shell root-config --cflags)
 ROOTLIBS    = $(shell root-config --libs) -lGui
@@ -8,10 +8,14 @@ CFLAGS = -Wall -O2 -I$(TARTSYS)/include -I$(ROOTSYS)/include -L$(TARTSYS)/lib -l
 
 GXX = g++ 
 
-all: $(OBJS)
+all:$(OBJ)
 
-$(OBJS): $(sourcefile)
+$(OBJ): $(sourcefile)
 	$(GXX) $(CFLAGS) $(ROOTCFLAGS) $(ROOTLIBS) -o $@ $(filter %.cc ,$(sourcefile))
 
+
+OnlineDict.cc:  MainFrame.hh Linkdef.h
+	rootcint -f $@ -c $^
+
 clean:
-	rm -f *~ *.o $(OBJS) 
+	rm -f *~ *.o $(OBJ)  *Dict*

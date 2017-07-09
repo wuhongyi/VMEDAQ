@@ -638,7 +638,7 @@ configure:17470: $? = 0
 configure:17492: result: yes
 configure:17501: checking for _doprnt
 configure:17557: gcc -o conftest -g -O2   conftest.c  >&5
-/tmp/ccfh3AvX.o: In function `main':
+/tmp/ccfUgT3i.o: In function `main':
 /home/wuhongyi/VMEDAQ/anaroot/conftest.c:68: undefined reference to `_doprnt'
 collect2: error: ld returned 1 exit status
 configure:17564: $? = 1
