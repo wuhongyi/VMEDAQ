@@ -17,7 +17,7 @@ void start(void){
   v2718_pulsea_configure(0,2,1,1,0);
   v2718_start_pulsea();
 
-  v830_clear_all(SCAADDR0);
+  // v830_clear_all(SCAADDR0);
   
   v7xx_rst_counter(ADC0ADDR);
   v7xx_rst_counter(ADC1ADDR);
