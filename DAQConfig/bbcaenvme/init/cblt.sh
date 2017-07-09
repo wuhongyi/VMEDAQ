@@ -24,6 +24,7 @@
 
 
 # CBLT ADDR For MADC32
+# CBLT ADDR 0xAA (default)
 # ../cmdvme/cmdvme -ww 0x20006022 0xbb
 # ../cmdvme/cmdvme -ww 0x20016022 0xbb
 # ../cmdvme/cmdvme -ww 0x20026022 0xbb
@@ -33,6 +34,7 @@
 # ../cmdvme/cmdvme -ww 0x20066022 0xbb
 
 # MCST ADDR For MADC32
+# MCST ADDR 0xbb (default)
 # ../cmdvme/cmdvme -ww 0x20006024 0xdd
 # ../cmdvme/cmdvme -ww 0x20016024 0xdd
 # ../cmdvme/cmdvme -ww 0x20026024 0xdd
@@ -54,7 +56,7 @@
 # For MADC32
 # 0xA2 1st
 # 0x82 mid
-# 0x8A last 
+# 0x8A last
 # ******************
 
 # ../cmdvme/cmdvme -ww 0x5000111e 0x2
@@ -77,3 +79,29 @@
 # ../cmdvme/cmdvme -ww 0x20056020 0x82
 # ../cmdvme/cmdvme -ww 0x20006020 0x8A
 
+
+
+
+
+
+# MADC32   CBLT MCST control register 0x6020 default 0x0
+# --------------------------------------------------------------------------
+# bit [ 7 6 5 4 3 2 1 0 ]
+#	W					R
+# 0	1 Disable CBLT				1 CBLT enabled
+#	0 no effect				0 CBLT disabled
+# 1	1 Enable CBLT          	                *
+#	0 no effect				*
+# 2	1 Disable last module in CBLT Chain     1 last module in chain
+# 	0 no effect				0 not last module in chain
+# 3	1 enbale last module in CBLT chain	*
+# 	0 no effect 				*
+# 4	1 disable 1st module in CBLT chain	1 1st module in chain
+# 	0 no effect				0 not 1st in chain
+# 5	1 enbale 1st module in CBLT chain	*
+# 	0 no effect				*
+# 6	1 disable MCST				1 MCST enabled
+#	0 no effect				0 MCST disabled
+# 7	1 enable MCST				*
+# 	0 no effect
+# ---------------------------------------------------------------------------
