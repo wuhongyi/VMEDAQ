@@ -1,10 +1,8 @@
-#include "r2root.h"
+#include "r2root.hh"
 
 r2root::r2root() : nevt(0)
 {
    estore=new TArtEventStore(); 
-
-
 }
 
 Bool_t r2root::Open(const char *filename)
@@ -15,7 +13,6 @@ Bool_t r2root::Open(const char *filename)
    rawevent=estore->GetRawEventObject();
    return flag;
 }
-
 
 Bool_t r2root::BuildEvent(TTree *tree,Int_t maxnevt)
 {
@@ -45,7 +42,7 @@ void r2root::DecodeRaw()
     {
       TArtRawDataObject *d = seg->GetData(j);//get rawdata
       int geo = d->GetGeo();
-//cout<<"geo: "<<geo<<endl;
+      //cout<<"geo: "<<geo<<endl;
       
       if(geo==30)
 	{

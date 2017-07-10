@@ -1,5 +1,6 @@
 // this file is used to configure the CBLT chain modules for decoding
-// for example, if CBLT chain is v830,v785,v785,v785,v775,v775,v775, // v792,v792,v792,v1190,madc,madc
+// for example, if CBLT chain is v830,v785,v785,v785,v775,v775,v775,
+// v792,v792,v792,v1190,madc,madc
 // this file should be modified like below
 // #define v830m
 // #define v830n 0
