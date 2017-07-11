@@ -4,9 +4,9 @@
 // Author: Hongyi Wu(吴鸿毅)
 // Email: wuhongyi@qq.com 
 // Created: 一 7月 10 16:37:37 2017 (+0800)
-// Last-Updated: 一 7月 10 21:48:04 2017 (+0800)
+// Last-Updated: 二 7月 11 20:08:18 2017 (+0800)
 //           By: Hongyi Wu(吴鸿毅)
-//     Update #: 4
+//     Update #: 6
 // URL: http://wuhongyi.cn 
 
 // 用户需要修改本文件中的参数
@@ -25,24 +25,24 @@ const int v830geo[v830num] = {30};//元素个数必须与 v830num 一致
 
 // adc
 #define v785_r2root //没有该插件则注释本行
-#define v785num 6
-const int v785geo[v785num] = {0,1,2,3,4,5};//元素个数必须与 v785num 一致
+#define v785num 1
+const int v785geo[v785num] = {0};//元素个数必须与 v785num 一致
 
 
 // qdc
 #define v792_r2root //没有该插件则注释本行
-#define v792num 2
-const int v792geo[v792num] = {0,1};//元素个数必须与 v792num 一致
+#define v792num 5
+const int v792geo[v792num] = {1,2,3,4,5};//元素个数必须与 v792num 一致
 
 
 // tdc
 #define v775_r2root //没有该插件则注释本行
 #define v775num 2
-const int v775geo[v775num] = {0,1};//元素个数必须与 v775num 一致
+const int v775geo[v775num] = {6,7};//元素个数必须与 v775num 一致
 
 
 // gdc
-#define v1190_r2root //没有该插件则注释本行
+// #define v1190_r2root //没有该插件则注释本行
 #define v1190num 2
 #define v1190multi 5 //gdc 数组第三维度
 #define v1190hitmax 3000

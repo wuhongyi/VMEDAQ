@@ -72,21 +72,21 @@ void Online()
   // madc32
  
   TCanvas *c2=new TCanvas("c2","MADC",1100,1000);//create a canvas
-  // c2->Divide(4,2);
+  c2->Divide(2,1);
   c2->Draw();
 
   TH2F* m1=new TH2F("m1","madc0",32,-0.5,31.5,8000,0,8000);//create a histogram
-  // TH2F* m2=new TH2F("m2","madc1",32,-0.5,31.5,8000,0,8000);//create a histogram
+  TH2F* m2=new TH2F("m2","madc1",32,-0.5,31.5,8000,0,8000);//create a histogram
   // TH2F* m3=new TH2F("m3","madc2",32,-0.5,31.5,8000,0,8000);//create a histogram
   // TH2F* m4=new TH2F("m4","madc3",32,-0.5,31.5,8000,0,8000);//create a histogram
   // TH2F* m5=new TH2F("m5","madc4",32,-0.5,31.5,8000,0,8000);//create a histogram
   // TH2F* m6=new TH2F("m6","madc5",32,-0.5,31.5,8000,0,8000);//create a histogram
   // TH2F* m7=new TH2F("m7","madc6",32,-0.5,31.5,8000,0,8000);//create a histogram
 
-  c2->cd();
-  m1->Draw();
-  // c2->cd(1);m1->Draw();
-  // c2->cd(2);m2->Draw();
+  // c2->cd();
+  // m1->Draw();
+  c2->cd(1);m1->Draw();
+  c2->cd(2);m2->Draw();
   // c2->cd(3);m3->Draw();
   // c2->cd(4);m4->Draw();
   // c2->cd(5);m5->Draw();
@@ -139,13 +139,15 @@ void Online()
 	    // if(geo == 5) std::cout<<ch<<"  "<<val<<std::endl;
    
 	    if(geo == 10) m1->Fill(ch,val);
-	    // if(geo == 11) m2->Fill(ch,val);
+	    if(geo == 11) m2->Fill(ch,val);
 	    // if(geo == 12) m3->Fill(ch,val);
 	    // if(geo == 13) m4->Fill(ch,val);
 	    // if(geo == 14) m5->Fill(ch,val);
 	    // if(geo == 15) m6->Fill(ch,val);
 	    // if(geo == 16) m7->Fill(ch,val);
-
+	    // if(geo == 10) std::cout<<geo<<"  "<<ch<<"  "<<val<<std::endl;
+	    // if(geo == 11) std::cout<<geo<<"  "<<ch<<"  "<<val<<std::endl;
+	    
 	    if(geo == 20) g1->Fill(ch,val);
 	    // if(geo == 21) g2->Fill(ch,val);
 	    
@@ -174,9 +176,9 @@ void Online()
 	  c1->cd(6); a5->Draw("colz");
 	  c1->Update();
 
-	  c2->cd(); m1->Draw("colz");
-	  // c2->cd(1); m1->Draw("colz");
-	  // c2->cd(2); m2->Draw("colz");
+	  // c2->cd(); m1->Draw("colz");
+	  c2->cd(1); m1->Draw("colz");
+	  c2->cd(2); m2->Draw("colz");
 	  // c2->cd(3); m3->Draw("colz");
 	  // c2->cd(4); m4->Draw("colz");
 	  // c2->cd(5); m5->Draw("colz");

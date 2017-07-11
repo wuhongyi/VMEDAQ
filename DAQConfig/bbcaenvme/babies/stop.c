@@ -2,8 +2,11 @@ void stop(void){
 
   v7xx_intlevel(ADC0ADDR,0);
   vme_disable_interrupt();
-  
-  // madc32_mstop_acq(MSTMDCADDR);
+
+  //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
+  // 有 MADC32 插件
+  madc32_mstop_acq(MSTMDCADDR);
+  //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
   
   //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......

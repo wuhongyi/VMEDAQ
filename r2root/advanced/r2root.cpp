@@ -4,9 +4,9 @@
 // Author: Hongyi Wu(吴鸿毅)
 // Email: wuhongyi@qq.com 
 // Created: 一 7月 10 21:12:35 2017 (+0800)
-// Last-Updated: 一 7月 10 23:04:55 2017 (+0800)
+// Last-Updated: 二 7月 11 19:20:58 2017 (+0800)
 //           By: Hongyi Wu(吴鸿毅)
-//     Update #: 11
+//     Update #: 14
 // URL: http://wuhongyi.cn 
 
 #include "UserDefine.hh"
@@ -423,36 +423,57 @@ void r2root::Clear()
 #ifdef v785_r2root
   ahit = 0;
   memset(adc,0,sizeof(adc));
+#if v785num > 1
   memset(acnt,0,sizeof(acnt));
+#else
+  acnt = 0;
+#endif  
 #endif
 
   //qdc
 #ifdef v792_r2root
   qhit = 0;
   memset(qdc,0,sizeof(qdc));
+#if v792num > 1
   memset(qcnt,0,sizeof(qcnt));
+#else
+  qcnt = 0;
+#endif
 #endif
 
   //tdc
 #ifdef v775_r2root
   thit = 0;
   memset(tdc,0,sizeof(tdc));
+
+#if v775num > 1
   memset(tcnt,0,sizeof(tcnt));
+#else
+  tcnt = 0;
+#endif  
 #endif
 
   //gdc
 #ifdef v1190_r2root
   ghit = 0;
   memset(gdc,0,sizeof(gdc));
-  memset(gcnt,0,sizeof(gcnt));
   memset(gmulti,0,sizeof(gmulti));
+#if v1190num > 1
+  memset(gcnt,0,sizeof(gcnt));
+#else
+  gcnt = 0;
+#endif  
 #endif
 
   //madc
 #ifdef madc32_r2root
   mhit = 0;
   memset(madc,0,sizeof(madc));
+#if madc32num > 1
   memset(mcnt,0,sizeof(mcnt));
+#else
+  mcnt = 0;
+#endif 
 #endif
 }
 
