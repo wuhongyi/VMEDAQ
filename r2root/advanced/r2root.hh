@@ -4,9 +4,9 @@
 // Author: Hongyi Wu(吴鸿毅)
 // Email: wuhongyi@qq.com 
 // Created: 一 7月 10 20:51:58 2017 (+0800)
-// Last-Updated: 一 7月 10 22:18:31 2017 (+0800)
+// Last-Updated: 三 7月 26 20:52:25 2017 (+0800)
 //           By: Hongyi Wu(吴鸿毅)
-//     Update #: 5
+//     Update #: 6
 // URL: http://wuhongyi.cn 
 
 //**********************************
@@ -19,6 +19,27 @@
 
 #ifndef R2ROOT_H
 #define R2ROOT_H
+
+// #ifdef XXX…(#else) … #endif
+
+// #ifdef v830_r2root
+// #endif
+
+// #ifdef v785_r2root
+// #endif
+
+
+// #ifdef v792_r2root
+// #endif
+
+// #ifdef v775_r2root
+// #endif
+
+// #ifdef v1190_r2root
+// #endif
+
+// #ifdef madc32_r2root
+// #endif
 
 class TArtRawEventObject;
 class TArtRawSegmentObject;
@@ -42,34 +63,7 @@ class TArtRawSegmentObject;
 #include <iostream>
 using namespace std;
 
-// #ifdef XXX…(#else) … #endif
-
-// #ifdef v830_r2root
-// #endif
-
-// #ifdef v785_r2root
-// #endif
-
-
-// #ifdef v792_r2root
-// #endif
-
-// #ifdef v775_r2root
-// #endif
-
-// #ifdef v1190_r2root
-// #endif
-
-// #ifdef madc32_r2root
-// #endif
-
-
-// const int adcnum=6;
-// const int gdcnum=2;
-// const int qdcnum=1;
-// const int scanum=1;
-// const int ghitmax=3000;
-// const int madcnum=6;
+//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 class r2root
 {

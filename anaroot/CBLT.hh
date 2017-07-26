@@ -35,12 +35,12 @@
 #define v7xxn 1
 #define v7xxnum 8 // how many v7xx type modules
 
-//#define v1190m
-//#define v1190n 2
-//#define v1190num 0
+#define v1190m
+#define v1190n 2
+#define v1190num 1
 
 #define madcm
-#define madcn 2
+#define madcn 3
 #define madcnum 2
 
 #endif

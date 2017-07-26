@@ -7,9 +7,9 @@
 pkill  babian
 pkill  babild
 pkill  babinfo
-rm -f /home/daq/babirl/run/babian
-rm -f /home/daq/babirl/run/babild
-rm -f /home/daq/babirl/run/babinfo
+rm -f /home/wuhongyi/babirl/run/babian
+rm -f /home/wuhongyi/babirl/run/babild
+rm -f /home/wuhongyi/babirl/run/babinfo
 
 ps aux | grep babi
 

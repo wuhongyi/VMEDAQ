@@ -4,9 +4,9 @@
 // Author: Hongyi Wu(吴鸿毅)
 // Email: wuhongyi@qq.com 
 // Created: 一 7月 10 21:12:35 2017 (+0800)
-// Last-Updated: 二 7月 11 19:20:58 2017 (+0800)
+// Last-Updated: 三 7月 26 20:51:50 2017 (+0800)
 //           By: Hongyi Wu(吴鸿毅)
-//     Update #: 14
+//     Update #: 15
 // URL: http://wuhongyi.cn 
 
 #include "UserDefine.hh"
@@ -335,7 +335,7 @@ void r2root::DecodeRaw()
 	      gmod[ghit] = geo;
 	      gch[ghit] = ch;
 	      gval[ghit] = val;
-	      gdc[i][ch][gmulti[ch]] = val;
+	      gdc[ch][gmulti[ch]] = val;
 	      gmulti[ch]++;
 	      ghit++;
 	      if(ghit >= v1190hitmax) 

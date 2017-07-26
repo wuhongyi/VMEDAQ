@@ -51,7 +51,7 @@ void Online()
   // v7xx
  
   TCanvas *c1=new TCanvas("c1","ADC",1100,1000);//create a canvas
-  c1->Divide(3,2); c1->Draw();
+  c1->Divide(3,3); c1->Draw();
 
   TH2F* a1=new TH2F("a1","adc0",32,-0.5,31.5,4000,0,4000);//create a histogram
   TH2F* a2=new TH2F("a2","adc1",32,-0.5,31.5,4000,0,4000);//create a histogram
@@ -59,13 +59,17 @@ void Online()
   TH2F* a4=new TH2F("a4","adc3",32,-0.5,31.5,4000,0,4000);//create a histogram
   TH2F* a5=new TH2F("a5","adc4",32,-0.5,31.5,4000,0,4000);//create a histogram
   TH2F* a6=new TH2F("a6","adc5",32,-0.5,31.5,4000,0,4000);//create a histogram
- 
+  TH2F* a7=new TH2F("a7","adc6",32,-0.5,31.5,4000,0,4000);//create a histogram
+  TH2F* a8=new TH2F("a8","adc7",32,-0.5,31.5,4000,0,4000);//create a histogram
+  
   c1->cd(1);a1->Draw();
   c1->cd(2);a2->Draw();
   c1->cd(3);a3->Draw();
   c1->cd(4);a4->Draw();
   c1->cd(5);a5->Draw();
   c1->cd(6);a6->Draw();
+  c1->cd(7);a7->Draw();
+  c1->cd(8);a8->Draw();
   c1->Modified();
   c1->Update();
 
@@ -136,7 +140,9 @@ void Online()
 	    if(geo == 3) a4->Fill(ch,val);
 	    if(geo == 4) a5->Fill(ch,val);
 	    if(geo == 5) a6->Fill(ch,val);
-	    // if(geo == 5) std::cout<<ch<<"  "<<val<<std::endl;
+	    if(geo == 6) a7->Fill(ch,val);
+	    if(geo == 7) a8->Fill(ch,val);
+	    // if(geo == 7) std::cout<<ch<<"  "<<val<<std::endl;
    
 	    if(geo == 10) m1->Fill(ch,val);
 	    if(geo == 11) m2->Fill(ch,val);
@@ -150,6 +156,7 @@ void Online()
 	    
 	    if(geo == 20) g1->Fill(ch,val);
 	    // if(geo == 21) g2->Fill(ch,val);
+	    // if(geo == 20) std::cout<<geo<<"  "<<ch<<"  "<<val<<std::endl;
 	    
 	    // 以上部分用户需要修改
 	    //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
@@ -173,7 +180,9 @@ void Online()
 	  c1->cd(3); a3->Draw("colz");
 	  c1->cd(4); a4->Draw("colz");
 	  c1->cd(5); a5->Draw("colz");
-	  c1->cd(6); a5->Draw("colz");
+	  c1->cd(6); a6->Draw("colz");
+	  c1->cd(7); a7->Draw("colz");
+	  c1->cd(8); a8->Draw("colz");
 	  c1->Update();
 
 	  // c2->cd(); m1->Draw("colz");

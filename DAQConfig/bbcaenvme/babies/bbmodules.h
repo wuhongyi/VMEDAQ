@@ -13,6 +13,9 @@
 #define IOEVTSTART 0x1
 #define IOEVTSTOP  0x2
 
+//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
+// 以下部分用户需要修改
+
 #define ADC0ADDR   0x10000000
 #define ADC1ADDR   0x10010000
 #define ADC2ADDR   0x10020000
@@ -47,6 +50,8 @@
 #define SCAADDR0   0x50000000
 #define SCA_NCH    32
 
+// 以上部分用户需要修改
+//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 #define MSTTDCADDR    0xbb000000
 #define MSTQDCADDR    0xcc000000
