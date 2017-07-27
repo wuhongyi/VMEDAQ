@@ -9,4 +9,5 @@ make -j$num
 cd ../babies
 make clean
 make -j$num
+#rm -f babies
 ln -sf caenvmebabies babies
