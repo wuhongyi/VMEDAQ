@@ -7,9 +7,11 @@ void stop(void){
   // 以下部分用户需要修改
   
   // 有 MADC32 插件
-  // 每个插件单独设置
-  madc32_mstop_acq(MADC0ADDR);
-  madc32_mstop_acq(MADC1ADDR);
+  madc32_mstop_acq(MSTMDCADDR);
+
+  // 也可以采用以下方式每个插件单独设置
+  // madc32_stop_acq(MADC0ADDR);
+  // madc32_stop_acq(MADC1ADDR);
 
   // 以上部分用户需要修改
   //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......

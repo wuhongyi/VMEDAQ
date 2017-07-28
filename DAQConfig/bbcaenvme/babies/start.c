@@ -75,18 +75,24 @@ void start(void){
   // 以下部分用户需要修改
   
   // 有 MADC32 插件
-  // 每个插件单独设置
-  madc32_mclear(MADC0ADDR);
-  madc32_mirq_level(MADC0ADDR,0);
-  madc32_mreset_ctra_counters(MADC0ADDR);
-  madc32_mfifo_reset(MADC0ADDR);
-  madc32_mstart_acq(MADC0ADDR);
+  madc32_mclear(MSTMDCADDR);
+  madc32_mirq_level(MSTMDCADDR,0);
+  madc32_mreset_ctra_counters(MSTMDCADDR);
+  madc32_mfifo_reset(MSTMDCADDR);
+  madc32_mstart_acq(MSTMDCADDR);
 
-  madc32_mclear(MADC1ADDR);
-  madc32_mirq_level(MADC1ADDR,0);
-  madc32_mreset_ctra_counters(MADC1ADDR);
-  madc32_mfifo_reset(MADC1ADDR);
-  madc32_mstart_acq(MADC1ADDR);
+
+  // 也可以采用以下方式每个插件单独设置
+  // madc32_clear(MADC0ADDR);
+  // madc32_irq_level(MADC0ADDR,0);
+  // madc32_reset_ctra_counters(MADC0ADDR);
+  // madc32_fifo_reset(MADC0ADDR);
+  // madc32_start_acq(MADC0ADDR);
+  // madc32_clear(MADC1ADDR);
+  // madc32_irq_level(MADC1ADDR,0);
+  // madc32_reset_ctra_counters(MADC1ADDR);
+  // madc32_fifo_reset(MADC1ADDR);
+  // madc32_start_acq(MADC1ADDR);
   
   // 以上部分用户需要修改
   //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
