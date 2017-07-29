@@ -4,9 +4,9 @@
 // Author: Hongyi Wu(吴鸿毅)
 // Email: wuhongyi@qq.com 
 // Created: 一 7月 10 21:12:35 2017 (+0800)
-// Last-Updated: 三 7月 26 20:51:50 2017 (+0800)
+// Last-Updated: 六 7月 29 20:54:24 2017 (+0800)
 //           By: Hongyi Wu(吴鸿毅)
-//     Update #: 15
+//     Update #: 16
 // URL: http://wuhongyi.cn 
 
 #include "UserDefine.hh"
@@ -141,7 +141,7 @@ void r2root::DecodeRaw()
 		  adc[i][ch] = val;
 		  ahit++;
 		}
-	      else if(ch==-1)
+	      else if(ch == -1)
 		{
 		  acnt[i] = d->GetEvtcnt();
 		}

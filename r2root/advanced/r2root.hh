@@ -4,9 +4,9 @@
 // Author: Hongyi Wu(吴鸿毅)
 // Email: wuhongyi@qq.com 
 // Created: 一 7月 10 20:51:58 2017 (+0800)
-// Last-Updated: 三 7月 26 20:52:25 2017 (+0800)
+// Last-Updated: 六 7月 29 20:54:24 2017 (+0800)
 //           By: Hongyi Wu(吴鸿毅)
-//     Update #: 6
+//     Update #: 7
 // URL: http://wuhongyi.cn 
 
 //**********************************
@@ -98,7 +98,7 @@ private:
 #ifdef v785_r2root //ok
 #if v785num > 1
   Int_t adc[v785num][32];
-  Int_t acnt[v785num];// if ch==-1
+  Int_t acnt[v785num];//event count  if ch==-1
 #else
   Int_t adc[32];
   Int_t acnt;// if ch==-1
