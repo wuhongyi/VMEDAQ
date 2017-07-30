@@ -4,9 +4,9 @@
 // Author: Hongyi Wu(吴鸿毅)
 // Email: wuhongyi@qq.com 
 // Created: 一 7月 10 21:12:35 2017 (+0800)
-// Last-Updated: 六 7月 29 20:54:24 2017 (+0800)
+// Last-Updated: 日 7月 30 17:52:04 2017 (+0800)
 //           By: Hongyi Wu(吴鸿毅)
-//     Update #: 16
+//     Update #: 19
 // URL: http://wuhongyi.cn 
 
 #include "UserDefine.hh"
@@ -325,6 +325,7 @@ void r2root::DecodeRaw()
 	{
 	  int ch = d->GetCh();
 	  int val = d->GetVal();
+	  // cout<<ch <<"  "<<d->GetEdge()<<endl; //用来判断 前沿/尾沿
 	  if(ch > -1)
 	    {
 	      if(gmulti[ch] > v1190multi)
