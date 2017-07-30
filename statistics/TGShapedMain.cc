@@ -4,9 +4,9 @@
 // Author: Hongyi Wu(吴鸿毅)
 // Email: wuhongyi@qq.com 
 // Created: 日 7月 30 21:31:12 2017 (+0800)
-// Last-Updated: 日 7月 30 22:11:10 2017 (+0800)
+// Last-Updated: 一 7月 31 00:00:05 2017 (+0800)
 //           By: Hongyi Wu(吴鸿毅)
-//     Update #: 12
+//     Update #: 14
 // URL: http://wuhongyi.cn 
 
 #include "TGShapedMain.hh"
@@ -26,11 +26,11 @@ TGShapedMain::TGShapedMain(const TGWindow *p, int w, int h) :
    AddFrame(fSpeedo, new TGLayoutHints(kLHintsCenterX | kLHintsCenterX));
    // fSpeedo->SetDisplayText("Used RAM", "[MB]");
 
-   fTimer = new TTimer(100);
+   // fTimer = new TTimer(100);
    // fTimer->SetCommand("Update()");
-   fTimer->Connect("Timeout()", "TGShapedMain",               
-		  this, "Update()"); 
-   fTimer->Start(100, kTRUE);
+   // fTimer->Connect("Timeout()", "TGShapedMain",               
+   // 		  this, "Update()"); 
+   // fTimer->Start(100, kTRUE);
    
    fBgnd = fSpeedo->GetPicture();
    gVirtualX->ShapeCombineMask(GetId(), 0, 0, fBgnd->GetMask());
@@ -61,7 +61,7 @@ TGShapedMain::TGShapedMain(const TGWindow *p, int w, int h) :
 TGShapedMain::~TGShapedMain()
 {
    // Destructor.
-  delete fTimer;
+  // delete fTimer;
   delete fSpeedo;
 }
 
@@ -76,8 +76,8 @@ void TGShapedMain::CloseWindow()
 void TGShapedMain::Update()
 {
 
-  fSpeedo->SetScaleValue(float(settime/1000), 10);
-  std::cout<<"update clock"<<std::endl;
+  fSpeedo->SetScaleValue(float(settime/1000), 1);
+  // std::cout<<"update clock"<<std::endl;
 }
 
 

@@ -4,9 +4,9 @@
 // Author: Hongyi Wu(吴鸿毅)
 // Email: wuhongyi@qq.com 
 // Created: 日 7月 30 19:20:57 2017 (+0800)
-// Last-Updated: 日 7月 30 21:49:09 2017 (+0800)
+// Last-Updated: 一 7月 31 00:42:12 2017 (+0800)
 //           By: Hongyi Wu(吴鸿毅)
-//     Update #: 33
+//     Update #: 49
 // URL: http://wuhongyi.cn 
 
 #include "TGShapedMain.hh"
@@ -69,18 +69,13 @@ void statistics()
   uint64_t ElapsedTime;
   PrevRateTime = get_time();
 
-  TGShapedMain *gMainWindow = new TGShapedMain(gClient->GetRoot(), 500, 200);
-  TGSpeedo *gSpeedo = gMainWindow->GetSpeedo();
-
-  // set threshold values
-  gSpeedo->SetThresholds(2.5, 5.0, 7.5);
-  // set threshold colors
-  gSpeedo->SetThresholdColors(TGSpeedo::kGreen, TGSpeedo::kOrange,
-			      TGSpeedo::kRed);
-  // enable threshold
-  gSpeedo->EnableThreshold();
-  gSpeedo->SetScaleValue(0.0, 5);
-  // enable peak marker
+  // TGShapedMain *gMainWindow = new TGShapedMain(gClient->GetRoot(), 500, 200);
+  // TGSpeedo *gSpeedo = gMainWindow->GetSpeedo();
+  // gSpeedo->SetThresholds(2.5, 5.0, 7.5);
+  // gSpeedo->SetThresholdColors(TGSpeedo::kGreen, TGSpeedo::kOrange,
+  // 			      TGSpeedo::kRed);
+  // gSpeedo->EnableThreshold();
+  // gSpeedo->SetScaleValue(0.0, 5);
   // gSpeedo->EnablePeakMark();
   
   //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
@@ -118,13 +113,21 @@ void statistics()
 
   int neve = 0;//the number of events
   bool flagcolor = true;
+  int flagtime = -1;
+  int tempint;
   while(estore->GetNextEvent())
     {
       CurrentTime = get_time();
       ElapsedTime = CurrentTime - PrevRateTime;
 
-      
-      
+      // tempint = ElapsedTime/1000;
+      // if(flagtime != tempint)
+      // 	{
+      // 	  gMainWindow->SetTime(ElapsedTime);
+      // 	  gMainWindow->Update();
+      // 	  flagtime = tempint;
+      // 	}
+     
       if(ElapsedTime > 10000)//10s
 	{
 	  if(gSystem->ProcessEvents()) break;
@@ -137,11 +140,18 @@ void statistics()
 	    }
 	  else
 	    {
-	      ltx->SetTextColor(1);
+	      ltx->SetTextColor(3);
 	      flagcolor = true;
 	    }
 	  c1->cd(); adc->Draw("text");
-	  ltx->DrawLatex(0.1,0.9,TString::Format("Event:  %d",neve).Data());
+	  // ltx->DrawLatex(0.1,0.9,TString::Format("Event:  %d    ",neve).Data());
+
+	  time_t lt = time(NULL);
+	  tm* current = localtime( &lt );
+	  char str[100];
+	  strftime( str , 100 , "Last Update: %Y%m%d -- %H:%M:%S", current);
+	  ltx->DrawLatex(0.1,0.9,TString::Format("%s          Event:  %d",str,neve).Data());
+	  
 	  c1->Modified();
       	  c1->Update();
 	  c2->cd(); gdc->Draw("text");
@@ -168,20 +178,41 @@ void statistics()
 
 	    //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 	    // 以下部分用户需要修改
+
+	    if(ch > -1)
+	      {
+		switch(geo)
+		  {
+		  case 0: adc->Fill(0.0,ch); break;
+		  case 1: adc->Fill(1.0,ch); break;
+		  case 2: adc->Fill(2.0,ch); break;
+		  case 3: adc->Fill(3.0,ch); break;
+		  case 4: adc->Fill(4.0,ch); break;
+		  case 5: adc->Fill(5.0,ch); break;
+		  case 6: adc->Fill(6.0,ch); break;
+		  case 7: adc->Fill(7.0,ch); break;
+		  case 10: adc->Fill(8.0,ch); break;
+		  case 11: adc->Fill(9.0,ch); break;
+
 	    
-	    if(geo == 0) adc->Fill(0.0,ch);
-	    if(geo == 1) adc->Fill(1.0,ch);
-	    if(geo == 2) adc->Fill(2.0,ch);
-	    if(geo == 3) adc->Fill(3.0,ch);
-	    if(geo == 4) adc->Fill(4.0,ch);
-	    if(geo == 5) adc->Fill(5.0,ch);
-	    if(geo == 6) adc->Fill(6.0,ch);
-	    if(geo == 7) adc->Fill(7.0,ch);
-	    if(geo == 10) adc->Fill(8.0,ch);
-	    if(geo == 11) adc->Fill(9.0,ch);
+		  case 20: gdc->Fill(ch/32,ch%32); break;
+		  default: break;
+		  }
+	      }
+	  
+	    // if(geo == 0) adc->Fill(0.0,ch);
+	    // if(geo == 1) adc->Fill(1.0,ch);
+	    // if(geo == 2) adc->Fill(2.0,ch);
+	    // if(geo == 3) adc->Fill(3.0,ch);
+	    // if(geo == 4) adc->Fill(4.0,ch);
+	    // if(geo == 5) adc->Fill(5.0,ch);
+	    // if(geo == 6) adc->Fill(6.0,ch);
+	    // if(geo == 7) adc->Fill(7.0,ch);
+	    // if(geo == 10) adc->Fill(8.0,ch);
+	    // if(geo == 11) adc->Fill(9.0,ch);
 
 
-	    if(geo == 20) gdc->Fill(ch/32,ch%32);
+	    // if(geo == 20) gdc->Fill(ch/32,ch%32);
 
 	    // 以上部分用户需要修改
 	    //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......

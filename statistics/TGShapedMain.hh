@@ -4,9 +4,9 @@
 // Author: Hongyi Wu(吴鸿毅)
 // Email: wuhongyi@qq.com 
 // Created: 日 7月 30 21:30:07 2017 (+0800)
-// Last-Updated: 日 7月 30 22:07:26 2017 (+0800)
+// Last-Updated: 日 7月 30 23:55:20 2017 (+0800)
 //           By: Hongyi Wu(吴鸿毅)
-//     Update #: 10
+//     Update #: 11
 // URL: http://wuhongyi.cn 
 
 #include "TGFrame.h"
@@ -23,7 +23,7 @@ class TGShapedMain : public TGMainFrame {
 
 protected:
   const TGPicture   *fBgnd;     // picture used as mask
-  TTimer            *fTimer;    // update timer
+  // TTimer            *fTimer;    // update timer
   TGSpeedo          *fSpeedo;   // analog meter
   uint64_t settime;
   
