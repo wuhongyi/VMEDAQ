@@ -1,5 +1,5 @@
 OBJS = statistics
-sourcefile = statistics.cc MainDict.cc TGShapedMain.cc TGShapedMain.hh
+sourcefile = statistics.cc 
 
 ROOTCFLAGS  = $(shell root-config --cflags)
 ROOTLIBS    = $(shell root-config --libs) -lGui
@@ -13,14 +13,11 @@ all: $(OBJS)
 $(OBJS): $(sourcefile)
 	$(GXX) $(CFLAGS) $(ROOTCFLAGS) $(ROOTLIBS) -o $@ $(filter %.cc ,$(sourcefile))
 
-MainDict.cc:TGShapedMain.hh wuLinkDef.h
-	rootcint -f $@ -c $^
-
 
 clean:
-	rm -f *~ *.o $(OBJS) *Dict*
+	rm -f *~ *.o $(OBJS) 
 
 very-clean:
-	rm -f $(OBJ) *.o *Dict* *~
+	rm -f $(OBJ) *.o *~
 
 .PHONY: clean very-clean

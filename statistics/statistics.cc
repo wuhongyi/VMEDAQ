@@ -4,12 +4,10 @@
 // Author: Hongyi Wu(吴鸿毅)
 // Email: wuhongyi@qq.com 
 // Created: 日 7月 30 19:20:57 2017 (+0800)
-// Last-Updated: 一 7月 31 00:42:12 2017 (+0800)
+// Last-Updated: 一 7月 31 13:36:32 2017 (+0800)
 //           By: Hongyi Wu(吴鸿毅)
-//     Update #: 49
+//     Update #: 53
 // URL: http://wuhongyi.cn 
-
-#include "TGShapedMain.hh"
 
 #include "TArtEventStore.hh"
 #include "TArtRawEventObject.hh"
@@ -69,15 +67,6 @@ void statistics()
   uint64_t ElapsedTime;
   PrevRateTime = get_time();
 
-  // TGShapedMain *gMainWindow = new TGShapedMain(gClient->GetRoot(), 500, 200);
-  // TGSpeedo *gSpeedo = gMainWindow->GetSpeedo();
-  // gSpeedo->SetThresholds(2.5, 5.0, 7.5);
-  // gSpeedo->SetThresholdColors(TGSpeedo::kGreen, TGSpeedo::kOrange,
-  // 			      TGSpeedo::kRed);
-  // gSpeedo->EnableThreshold();
-  // gSpeedo->SetScaleValue(0.0, 5);
-  // gSpeedo->EnablePeakMark();
-  
   //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
   // 以下部分用户需要修改
 
@@ -113,20 +102,12 @@ void statistics()
 
   int neve = 0;//the number of events
   bool flagcolor = true;
-  int flagtime = -1;
-  int tempint;
+  int eventnumber[2] = {0,0};
+  
   while(estore->GetNextEvent())
     {
       CurrentTime = get_time();
       ElapsedTime = CurrentTime - PrevRateTime;
-
-      // tempint = ElapsedTime/1000;
-      // if(flagtime != tempint)
-      // 	{
-      // 	  gMainWindow->SetTime(ElapsedTime);
-      // 	  gMainWindow->Update();
-      // 	  flagtime = tempint;
-      // 	}
      
       if(ElapsedTime > 10000)//10s
 	{
@@ -143,18 +124,19 @@ void statistics()
 	      ltx->SetTextColor(3);
 	      flagcolor = true;
 	    }
-	  c1->cd(); adc->Draw("text");
-	  // ltx->DrawLatex(0.1,0.9,TString::Format("Event:  %d    ",neve).Data());
 
 	  time_t lt = time(NULL);
 	  tm* current = localtime( &lt );
 	  char str[100];
 	  strftime( str , 100 , "Last Update: %Y%m%d -- %H:%M:%S", current);
-	  ltx->DrawLatex(0.1,0.9,TString::Format("%s          Event:  %d",str,neve).Data());
 	  
+	  c1->cd(); adc->Draw("text");
+	  ltx->DrawLatex(0.1,0.9,TString::Format("%s    Event Rate: %d /s  Draw: %d",str,(eventnumber[1]-eventnumber[0])/10,neve).Data());
 	  c1->Modified();
       	  c1->Update();
+	  
 	  c2->cd(); gdc->Draw("text");
+	  ltx->DrawLatex(0.1,0.9,TString::Format("%s    Event Rate: %d /s  Draw: %d",str,(eventnumber[1]-eventnumber[0])/10,neve).Data());
 	  c2->Modified();
       	  c2->Update();
 
@@ -163,6 +145,7 @@ void statistics()
 	  gdc->Reset();
 	  PrevRateTime = CurrentTime;
 	  neve = 0;
+	  eventnumber[0] = eventnumber[1];
 	}
       
       
@@ -194,10 +177,13 @@ void statistics()
 		  case 10: adc->Fill(8.0,ch); break;
 		  case 11: adc->Fill(9.0,ch); break;
 
-	    
 		  case 20: gdc->Fill(ch/32,ch%32); break;
 		  default: break;
 		  }
+	      }
+	    else
+	      {
+		eventnumber[1] = d->GetEvtcnt();
 	      }
 	  
 	    // if(geo == 0) adc->Fill(0.0,ch);
