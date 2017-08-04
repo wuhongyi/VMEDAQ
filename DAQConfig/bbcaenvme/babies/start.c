@@ -15,12 +15,15 @@ void start(void){
   v2718_init_ioport(2,0,0);
   //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-  
+  // v2718_pulsea_configure(unsigned int ioport, unsigned int period, unsigned int width, unsigned 
+  // int unit, unsigned int pulseno);
+  // ioport : 0 → 1, period: 1 → 255,  width: 1 → 255, unit: 0 → 4 : 25ns, 1.6us, 410us, 104ms, 
+  // pulseno: 0 → 255 , 0 is infinite
+
   // set v2718 1st ioport to generate pulse period
   v2718_init_ioport(0,0,0);
   v2718_pulsea_configure(0,2,1,1,0);// 8us width 1.6us
   v2718_start_pulsea();
-
 
   //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
   // 以下部分用户需要修改

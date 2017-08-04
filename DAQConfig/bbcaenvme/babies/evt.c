@@ -2,8 +2,8 @@ void evt(void) {
 
   //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
   // 测试
-  v2718_pulse_ioport(2);
-  //  v2718_pulse_ioport(2);
+  // v2718_pulse_ioport(2);
+  // v2718_pulse_ioport(2);
   //  v2718_set_ioport(4);
   //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
@@ -20,7 +20,7 @@ void evt(void) {
   babies_init_segment(MKSEGID(0, 0, PLAQ, CBLT));
   v7xx_dmasegdata(MSTTDCADDR, 4000);
   babies_end_segment();
-
+  
   
   //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
   // 测试 逐个插件逐个Event word去读取数据，速度较慢
@@ -38,7 +38,7 @@ void evt(void) {
 
   // End of event
   babies_end_event();
-      
+
 }
 
 

@@ -2,10 +2,10 @@ void clear(void){
 
   //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
   // 以下部分用户需要修改
-  
-  // 有 MADC32 插件
-  madc32_mclear(MSTMDCADDR);
 
+  // 有 MADC32 插件
+   madc32_mclear(MSTMDCADDR);
+  
   // 也可以采用以下方式每个插件单独设置
   // madc32_clear(MADC0ADDR);
   // madc32_clear(MADC1ADDR);

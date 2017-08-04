@@ -26,6 +26,14 @@ void madc32_mfifo_reset(unsigned int maddr){
   vmwrite16(maddr+MADC32_FIFO_RESET,&val);
 }
 
+void madc32_set_mevent(unsigned int maddr,short val){
+  vwrite16(maddr+MADC32_MULTIEVENT,&val);
+}
+
+void madc32_mset_mevent(unsigned int maddr,short val){
+  vmwrite16(maddr+MADC32_MULTIEVENT,&val);
+}
+
 void madc32_start_acq(unsigned int addr){
   short val;
   val = 1;

@@ -11,6 +11,10 @@ void madc32_fifo_reset(unsigned int addr);
 
 void madc32_mfifo_reset(unsigned int maddr);
 
+void madc32_set_mevent(unsigned int maddr,short val);
+
+void madc32_mset_mevent(unsigned int maddr,short val);
+
 // No gate will be accepted until this function is called
 void madc32_start_acq(unsigned int addr);
 
