@@ -4,7 +4,8 @@ void evt(void) {
   // 测试
   // v2718_pulse_ioport(2);
   // v2718_pulse_ioport(2);
-  //  v2718_set_ioport(4);
+  //  v2718_set_ioport(3);
+  // v2718_set_ioport(2);
   //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
   
@@ -39,6 +40,13 @@ void evt(void) {
   // End of event
   babies_end_event();
 
+
+  //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
+  // 测试
+  // v2718_clear_ioport(2);
+  //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
+
+  
 }
 
 

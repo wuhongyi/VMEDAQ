@@ -12,11 +12,11 @@
 ../cmdvme/cmdvme -ww 0x10001004 0xbb
 ../cmdvme/cmdvme -ww 0x10011004 0xbb
 ../cmdvme/cmdvme -ww 0x10021004 0xbb
-../cmdvme/cmdvme -ww 0x10031004 0xbb
-../cmdvme/cmdvme -ww 0x10041004 0xbb
-../cmdvme/cmdvme -ww 0x10051004 0xbb
-../cmdvme/cmdvme -ww 0x10061004 0xbb
-../cmdvme/cmdvme -ww 0x10071004 0xbb
+# ../cmdvme/cmdvme -ww 0x10031004 0xbb
+# ../cmdvme/cmdvme -ww 0x10041004 0xbb
+# ../cmdvme/cmdvme -ww 0x10051004 0xbb
+# ../cmdvme/cmdvme -ww 0x10061004 0xbb
+# ../cmdvme/cmdvme -ww 0x10071004 0xbb
 
 # CBLT/MCST ADDR For v1190AC
 ../cmdvme/cmdvme -ww 0x40001010 0xbb
@@ -66,11 +66,11 @@
 ../cmdvme/cmdvme -ww 0x1000101a 0x3
 ../cmdvme/cmdvme -ww 0x1001101a 0x3
 ../cmdvme/cmdvme -ww 0x1002101a 0x3
-../cmdvme/cmdvme -ww 0x1003101a 0x3
-../cmdvme/cmdvme -ww 0x1004101a 0x3
-../cmdvme/cmdvme -ww 0x1005101a 0x3
-../cmdvme/cmdvme -ww 0x1006101a 0x3
-../cmdvme/cmdvme -ww 0x1007101a 0x3
+# ../cmdvme/cmdvme -ww 0x1003101a 0x3
+# ../cmdvme/cmdvme -ww 0x1004101a 0x3
+# ../cmdvme/cmdvme -ww 0x1005101a 0x3
+# ../cmdvme/cmdvme -ww 0x1006101a 0x3
+# ../cmdvme/cmdvme -ww 0x1007101a 0x3
 
 ../cmdvme/cmdvme -ww 0x40001012 0x3
 # ../cmdvme/cmdvme -ww 0x40011012 0x3

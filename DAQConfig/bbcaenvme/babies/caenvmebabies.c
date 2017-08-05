@@ -109,7 +109,7 @@ void evtloop(void){
       break;
     case STAT_RUN_WAITSTOP:
       // for the last sequense of run
-      v2718_set_ioport(4);
+      v2718_set_ioport(3);//硬件BUSY VETO
       //      sca();
       while(vme_check_interrupt()){
 	//      while(vme_wait_interrupt(10000)){
@@ -155,8 +155,8 @@ int main(int argc, char *argv[]){
   init_caen_v2718();
   vme_amsr(0x09);
   
-  v2718_init_ioport(4,0,0);
-  v2718_set_ioport(4);
+  v2718_init_ioport(3,0,0);//硬件BUSY VETO
+  v2718_set_ioport(3);//硬件BUSY VETO
 
   //mkpid to use babimo
   //default = /var/run/babies

@@ -33,7 +33,7 @@
  
 #define v7xxm
 #define v7xxn 1
-#define v7xxnum 8 // how many v7xx type modules
+#define v7xxnum 3 // how many v7xx type modules
 
 #define v1190m
 #define v1190n 2

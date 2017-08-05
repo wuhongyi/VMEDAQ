@@ -5,14 +5,14 @@ void start(void){
   // 以下部分用户需要修改
   
   // 软件busy
-  v2718_init_ioport(3,0,0);
+  v2718_init_ioport(4,0,0);
 
   // 以上部分用户需要修改
   //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
   //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
   // 测试
-  v2718_init_ioport(2,0,0);
+  // v2718_init_ioport(2,0,0);
   //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
   // v2718_pulsea_configure(unsigned int ioport, unsigned int period, unsigned int width, unsigned 
@@ -22,7 +22,7 @@ void start(void){
 
   // set v2718 1st ioport to generate pulse period
   v2718_init_ioport(0,0,0);
-  v2718_pulsea_configure(0,2,1,1,0);// 8us width 1.6us
+  v2718_pulsea_configure(0,2,1,1,0);// 3.2us width 1.6us
   v2718_start_pulsea();
 
   //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
@@ -43,20 +43,20 @@ void start(void){
   v7xx_rst_counter(ADC0ADDR);
   v7xx_rst_counter(ADC1ADDR);
   v7xx_rst_counter(ADC2ADDR);
-  v7xx_rst_counter(ADC3ADDR);
-  v7xx_rst_counter(ADC4ADDR);
-  v7xx_rst_counter(ADC5ADDR);
-  v7xx_rst_counter(ADC6ADDR);
-  v7xx_rst_counter(ADC7ADDR);
+  // v7xx_rst_counter(ADC3ADDR);
+  // v7xx_rst_counter(ADC4ADDR);
+  // v7xx_rst_counter(ADC5ADDR);
+  // v7xx_rst_counter(ADC6ADDR);
+  // v7xx_rst_counter(ADC7ADDR);
   
   v7xx_clear(ADC0ADDR);
   v7xx_clear(ADC1ADDR);
   v7xx_clear(ADC2ADDR);
-  v7xx_clear(ADC3ADDR);
-  v7xx_clear(ADC4ADDR);
-  v7xx_clear(ADC5ADDR);
-  v7xx_clear(ADC6ADDR);
-  v7xx_clear(ADC7ADDR);
+  // v7xx_clear(ADC3ADDR);
+  // v7xx_clear(ADC4ADDR);
+  // v7xx_clear(ADC5ADDR);
+  // v7xx_clear(ADC6ADDR);
+  // v7xx_clear(ADC7ADDR);
 
   // 以上部分用户需要修改
   //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
@@ -111,10 +111,10 @@ void start(void){
   // 以下部分用户需要修改
   
   // 软件busy
-  v2718_pulse_ioport(3);
+  v2718_pulse_ioport(4);
 
   // 硬件busy
-  //   v2718_clear_ioport(4);
+  //   v2718_clear_ioport(3);
   
   // 以上部分用户需要修改
   //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......

@@ -50,7 +50,7 @@ ${cmd} -ww ${BASEADDR}604C 0
 # 1, no berr signal
 # 3, multievent buffering, after the number of readout words exceeds the number specified by 0x601A, the next end of event mark terminates transfer by emitting BERR.
 # bit [2] 1: EOB 0: BERR(default)
-${cmd} -ww ${BASEADDR}6036 0x3
+${cmd} -ww ${BASEADDR}6036 0x1
 
 
 # Max_transfer_data   default 1

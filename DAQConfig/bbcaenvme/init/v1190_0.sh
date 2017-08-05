@@ -115,3 +115,11 @@ sleep 0
 #This register contains the number Ne of complete events which is desirable to transfer via BLT. The number of events must be written in a 8 bit word. The Register’s default setting is 0, which means that the Event Aligned BLT is disabled. This Register must be accessed in D16 mode. 
 # read only 1 event from 1 CBLT cycle
 ${cmd} $opt -ww ${BASEADDR}1024 0x1
+
+
+
+# OUT_PROG Control Register
+#0x102C, read/write, D16
+#This register allows to set the function of the OUT_PROG ECL output on the control connector
+#0x0 DATA_READY, 0x1 FULL, 0x2 ALM_FULL, 0x3 ERROR
+#${cmd} $opt -ww ${BASEADDR}102C 0x0

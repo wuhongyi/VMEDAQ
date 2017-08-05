@@ -4,9 +4,9 @@
 ;; Author: Hongyi Wu(吴鸿毅)
 ;; Email: wuhongyi@qq.com 
 ;; Created: 日 7月  9 15:42:31 2017 (+0800)
-;; Last-Updated: 三 7月 26 21:04:06 2017 (+0800)
+;; Last-Updated: 六 8月  5 13:55:56 2017 (+0800)
 ;;           By: Hongyi Wu(吴鸿毅)
-;;     Update #: 7
+;;     Update #: 8
 ;; URL: http://wuhongyi.cn -->
 
 # README
@@ -133,6 +133,14 @@ sh autoPKU.sh
 ## online
 
 正在优化代码中。。。。
+
+
+----
+
+V2718前面板5个输出PORT，分别为0-4
+
+通电时候PORT0-3处于高电平，PORT4处于低电平。因此软件BUSY模式时候采用PORT4，硬件BUSY模式采用PORT3。
+
 
 
 <!-- README.md ends here -->
