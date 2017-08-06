@@ -12,7 +12,7 @@ void clear(void){
   // 软件BUSY模式下6036->0x1不需要以下清除，6036->0x3需要以下清除，6036->0x0需要以下清除
   
   // 有 MADC32 插件  
-  // madc32_mclear(MSTMDCADDR);
+  madc32_mclear(MSTMDCADDR);
   
   // 也可以采用以下方式每个插件单独设置
   // madc32_clear(MADC0ADDR);
@@ -32,7 +32,7 @@ void clear(void){
   // 以下部分用户需要修改
   
   // 软件busy
-  v2718_pulse_ioport(4);
+  // v2718_pulse_ioport(4);
 
   // 以上部分用户需要修改
   //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
