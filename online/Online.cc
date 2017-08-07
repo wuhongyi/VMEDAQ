@@ -134,30 +134,35 @@ void Online()
 	    //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 	    // 以下部分用户需要修改
 	    
-	    if(geo == 0) a1->Fill(ch,val);//pick the second ADC's 11th channel, coz we have 64 channels of every microstrip silicon detector, it's convenient to choose a few to show rather than all of them
-	    if(geo == 1) a2->Fill(ch,val);
-	    if(geo == 2) a3->Fill(ch,val);
-	    if(geo == 3) a4->Fill(ch,val);
-	    if(geo == 4) a5->Fill(ch,val);
-	    if(geo == 5) a6->Fill(ch,val);
-	    if(geo == 6) a7->Fill(ch,val);
-	    if(geo == 7) a8->Fill(ch,val);
-	    // if(geo == 7) std::cout<<ch<<"  "<<val<<std::endl;
+	    if (ch > -1)
+	      {
+
+		if(geo == 0) a1->Fill(ch,val);//pick the second ADC's 11th channel, coz we have 64 channels of every microstrip silicon detector, it's convenient to choose a few to show rather than all of them
+		if(geo == 1) a2->Fill(ch,val);
+		if(geo == 2) a3->Fill(ch,val);
+		if(geo == 3) a4->Fill(ch,val);
+		if(geo == 4) a5->Fill(ch,val);
+		if(geo == 5) a6->Fill(ch,val);
+		if(geo == 6) a7->Fill(ch,val);
+		if(geo == 7) a8->Fill(ch,val);
+		// if(geo == 7) std::cout<<ch<<"  "<<val<<std::endl;
    
-	    if(geo == 10) m1->Fill(ch,val);
-	    if(geo == 11) m2->Fill(ch,val);
-	    // if(geo == 12) m3->Fill(ch,val);
-	    // if(geo == 13) m4->Fill(ch,val);
-	    // if(geo == 14) m5->Fill(ch,val);
-	    // if(geo == 15) m6->Fill(ch,val);
-	    // if(geo == 16) m7->Fill(ch,val);
-	    // if(geo == 10) std::cout<<geo<<"  "<<ch<<"  "<<val<<std::endl;
-	    // if(geo == 11) std::cout<<geo<<"  "<<ch<<"  "<<val<<std::endl;
+		if(geo == 10) m1->Fill(ch,val);
+		if(geo == 11) m2->Fill(ch,val);
+		// if(geo == 12) m3->Fill(ch,val);
+		// if(geo == 13) m4->Fill(ch,val);
+		// if(geo == 14) m5->Fill(ch,val);
+		// if(geo == 15) m6->Fill(ch,val);
+		// if(geo == 16) m7->Fill(ch,val);
+		// if(geo == 10) std::cout<<geo<<"  "<<ch<<"  "<<val<<std::endl;
+		// if(geo == 11) std::cout<<geo<<"  "<<ch<<"  "<<val<<std::endl;
 	    
-	    if(geo == 20) g1->Fill(ch,val);
-	    // if(geo == 21) g2->Fill(ch,val);
-	    // if(geo == 20) std::cout<<geo<<"  "<<ch<<"  "<<val<<std::endl;
-	    
+		if(geo == 20) g1->Fill(ch,val);
+		// if(geo == 21) g2->Fill(ch,val);
+		// if(geo == 20) std::cout<<geo<<"  "<<ch<<"  "<<val<<std::endl;
+	    		
+	      }
+
 	    // 以上部分用户需要修改
 	    //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 	  }

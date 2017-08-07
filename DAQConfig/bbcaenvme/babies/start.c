@@ -102,7 +102,7 @@ void start(void){
 
 
   // ==================
-  
+
   v7xx_intlevel(ADC0ADDR, intlevel);
   vme_define_intlevel(intlevel);
   vme_enable_interrupt();
