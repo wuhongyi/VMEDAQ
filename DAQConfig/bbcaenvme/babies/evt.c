@@ -52,9 +52,10 @@ void evt(void) {
   // 以下部分用户需要修改
 
   // 软件BUSY模式下6036->0x1不需要以下清除，6036->0x3需要以下清除，6036->0x0需要以下清除
+  // 硬件BUSY模式下只能采用6036->0x3，需要以下清除
   
   // 有 MADC32 插件  
-  madc32_mclear(MSTMDCADDR);
+  // madc32_mclear(MSTMDCADDR);
   
   // 也可以采用以下方式每个插件单独设置
   // madc32_clear(MADC0ADDR);

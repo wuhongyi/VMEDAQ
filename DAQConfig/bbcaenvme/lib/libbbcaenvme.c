@@ -166,9 +166,15 @@ int vme_check_interrupt(void){
 // size in character
 int dma_vread32(unsigned int addr, char *buff, int size){
   int rsz;
+  // 硬件BUSY模式下 MADC32出现数据丢失问题！！！
+  // The function performs a VME block transfer read cycle. It can be used to
+  // perform MBLT transfers using 64 bit data width. The Address is not 
+  // incremented on the VMEBus during the cycle.   
+  // CAENVME_FIFOBLTReadCycle(BHandle, addr, buff, size, 0x0b, cvD32, &rsz);
 
-  CAENVME_FIFOBLTReadCycle(BHandle, addr, buff, size, 0x0b, cvD32, &rsz);
-  //CAENVME_BLTReadCycle(BHandle, addr, buff, size, 0x0b, cvD32, &rsz);
+  // The function performs a VME block transfer read cycle. It can be used to
+  // perform MBLT transfers using 64 bit data width.
+  CAENVME_BLTReadCycle(BHandle, addr, buff, size, 0x0b, cvD32, &rsz);
   
   return rsz;
 }

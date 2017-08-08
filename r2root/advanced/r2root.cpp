@@ -4,9 +4,9 @@
 // Author: Hongyi Wu(吴鸿毅)
 // Email: wuhongyi@qq.com 
 // Created: 一 7月 10 21:12:35 2017 (+0800)
-// Last-Updated: 日 7月 30 17:52:04 2017 (+0800)
+// Last-Updated: 二 8月  8 15:38:36 2017 (+0800)
 //           By: Hongyi Wu(吴鸿毅)
-//     Update #: 19
+//     Update #: 22
 // URL: http://wuhongyi.cn 
 
 #include "UserDefine.hh"
@@ -289,6 +289,7 @@ void r2root::DecodeRaw()
 	    {
 	      int ch = d->GetCh();
 	      int val = d->GetVal();
+	      int edge = d->GetEdge();//用来判断 前沿/尾沿
 	      if(ch > -1)
 		{
 		  if(gmulti[i][ch] > v1190multi)
@@ -299,7 +300,9 @@ void r2root::DecodeRaw()
 		  gmod[ghit] = geo;
 		  gch[ghit] = ch;
 		  gval[ghit] = val;
+		  gedge[ghit] = edge;
 		  gdc[i][ch][gmulti[i][ch]] = val;
+		  gdcedge[i][ch][gmulti[i][ch]] = edge;
 		  gmulti[i][ch]++;
 		  ghit++;
 		  if(ghit >= v1190hitmax) 
@@ -325,7 +328,8 @@ void r2root::DecodeRaw()
 	{
 	  int ch = d->GetCh();
 	  int val = d->GetVal();
-	  // cout<<ch <<"  "<<d->GetEdge()<<endl; //用来判断 前沿/尾沿
+	  int edge = d->GetEdge();//用来判断 前沿/尾沿
+
 	  if(ch > -1)
 	    {
 	      if(gmulti[ch] > v1190multi)
@@ -336,7 +340,9 @@ void r2root::DecodeRaw()
 	      gmod[ghit] = geo;
 	      gch[ghit] = ch;
 	      gval[ghit] = val;
+	      gedge[ghit] = edge;
 	      gdc[ch][gmulti[ch]] = val;
+	      gdcedge[ch][gmulti[ch]] = edge;
 	      gmulti[ch]++;
 	      ghit++;
 	      if(ghit >= v1190hitmax) 
@@ -458,6 +464,7 @@ void r2root::Clear()
 #ifdef v1190_r2root
   ghit = 0;
   memset(gdc,0,sizeof(gdc));
+  memset(gdcedge,0,sizeof(gdcedge));
   memset(gmulti,0,sizeof(gmulti));
 #if v1190num > 1
   memset(gcnt,0,sizeof(gcnt));
@@ -548,10 +555,12 @@ Bool_t r2root::BranchTree()
   //Branches of gdc
 #if v1190num > 1
   tree->Branch("gdc",&gdc,TString::Format("gdc[%d][128][%d]/I",v1190num,v1190multi).Data());
+  tree->Branch("gdcedge",&gdcedge,TString::Format("gdcedge[%d][128][%d]/I",v1190num,v1190multi).Data());
   tree->Branch("gmulti",&gmulti,TString::Format("gmulti[%d][128]/I",v1190num).Data());
   tree->Branch("gcnt",&gcnt,TString::Format("gcnt[%d]/I",v1190num).Data());
 #else
   tree->Branch("gdc",&gdc,TString::Format("gdc[128][%d]/I",v1190multi).Data());
+  tree->Branch("gdcedge",&gdcedge,TString::Format("gdcedge[128][%d]/I",v1190multi).Data());
   tree->Branch("gmulti",&gmulti,"gmulti[128]/I");
   tree->Branch("gcnt",&gcnt,"gcnt/I");
 #endif
@@ -559,6 +568,7 @@ Bool_t r2root::BranchTree()
   tree->Branch("gmod",&gmod,"gmod[ghit]/I");
   tree->Branch("gch",&gch,"gch[ghit]/I");
   tree->Branch("gval",&gval,"gval[ghit]/I");
+  tree->Branch("gedge",&gedge,"gedge[ghit]/I");
 #endif
 
 

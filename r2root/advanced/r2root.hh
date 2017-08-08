@@ -4,9 +4,9 @@
 // Author: Hongyi Wu(吴鸿毅)
 // Email: wuhongyi@qq.com 
 // Created: 一 7月 10 20:51:58 2017 (+0800)
-// Last-Updated: 六 7月 29 20:54:24 2017 (+0800)
+// Last-Updated: 二 8月  8 15:22:59 2017 (+0800)
 //           By: Hongyi Wu(吴鸿毅)
-//     Update #: 7
+//     Update #: 9
 // URL: http://wuhongyi.cn 
 
 //**********************************
@@ -158,10 +158,12 @@ private:
 #ifdef v1190_r2root //ok
 #if v1190num > 1
   Int_t gdc[v1190num][128][v1190multi];
+  Int_t gdcedge[v1190num][128][v1190multi];
   Int_t gmulti[v1190num][128];
   Int_t gcnt[v1190num];
 #else
   Int_t gdc[128][v1190multi];
+  Int_t gdcedge[128][v1190multi];
   Int_t gmulti[128];
   Int_t gcnt;
 #endif
@@ -169,6 +171,7 @@ private:
   Int_t gmod[v1190hitmax];
   Int_t gch[v1190hitmax];
   Int_t gval[v1190hitmax];
+  Int_t gedge[v1190hitmax];
 #endif
 
   Long64_t nevt;

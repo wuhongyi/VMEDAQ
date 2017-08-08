@@ -29,10 +29,10 @@ BASEADDR=0x2001
 ../cmdvme/cmdvme -ww ${BASEADDR}402c	0xFF
 ../cmdvme/cmdvme -ww ${BASEADDR}402e	0xFF
 ../cmdvme/cmdvme -ww ${BASEADDR}4030	0xFF
-../cmdvme/cmdvme -ww ${BASEADDR}4032	0xFF
-../cmdvme/cmdvme -ww ${BASEADDR}4034	0xFF
+../cmdvme/cmdvme -ww ${BASEADDR}4032	0x0F
+../cmdvme/cmdvme -ww ${BASEADDR}4034	0x0F
 ../cmdvme/cmdvme -ww ${BASEADDR}4036	0xFF
-../cmdvme/cmdvme -ww ${BASEADDR}4038	0xFF
-../cmdvme/cmdvme -ww ${BASEADDR}403a	0xFF
-../cmdvme/cmdvme -ww ${BASEADDR}403c	0xFF
-../cmdvme/cmdvme -ww ${BASEADDR}403e	0xFF
+../cmdvme/cmdvme -ww ${BASEADDR}4038	0x24
+../cmdvme/cmdvme -ww ${BASEADDR}403a	0x01
+../cmdvme/cmdvme -ww ${BASEADDR}403c	0x10
+../cmdvme/cmdvme -ww ${BASEADDR}403e	0x0

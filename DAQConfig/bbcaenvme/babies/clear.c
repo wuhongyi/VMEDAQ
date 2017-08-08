@@ -11,7 +11,7 @@ void clear(void){
   // 以下部分用户需要修改
   
   // 软件busy
-  // v2718_pulse_ioport(4);
+  v2718_pulse_ioport(4);
 
   // 以上部分用户需要修改
   //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
