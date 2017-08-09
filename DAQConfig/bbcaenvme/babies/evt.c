@@ -55,7 +55,7 @@ void evt(void) {
   // 硬件BUSY模式下只能采用6036->0x3，需要以下清除
   
   // 有 MADC32 插件  
-  // madc32_mclear(MSTMDCADDR);
+  madc32_mclear(MSTMDCADDR);
   
   // 也可以采用以下方式每个插件单独设置
   // madc32_clear(MADC0ADDR);

@@ -1,5 +1,5 @@
 OBJ = convert 
-sourcefile = convert.cpp r2root.cpp r2root.hh 
+sourcefile = convert.cpp r2root.cpp r2root.hh UserDefine.hh
 
 
 ROOTCFLAGS  = $(shell root-config --cflags)

@@ -5,7 +5,7 @@ void start(void){
   // 以下部分用户需要修改
   
   // 软件busy
-  v2718_init_ioport(4,0,0);
+  // v2718_init_ioport(4,0,0);
 
   // 以上部分用户需要修改
   //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
@@ -111,10 +111,10 @@ void start(void){
   // 以下部分用户需要修改
   
   // 软件busy
-  v2718_pulse_ioport(4);
+  // v2718_pulse_ioport(4);
 
   // 硬件busy
-  // v2718_clear_ioport(3);
+  v2718_clear_ioport(3);
   
   // 以上部分用户需要修改
   //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
