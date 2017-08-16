@@ -5,9 +5,9 @@
 # Author: Hongyi Wu(吴鸿毅)
 # Email: wuhongyi@qq.com 
 # Created: 二 8月 15 20:37:39 2017 (+0800)
-# Last-Updated: 二 8月 15 21:08:32 2017 (+0800)
+# Last-Updated: 三 8月 16 15:50:50 2017 (+0800)
 #           By: Hongyi Wu(吴鸿毅)
-#     Update #: 4
+#     Update #: 5
 # URL: http://wuhongyi.cn 
 
 if [ `whoami` = "root" ];then 
@@ -41,6 +41,8 @@ sed -i  $yonghumingtihuan /home/$USER/babirl/rcd/babimo
 ######################################################################
 
 echo 'PATH=$PATH:/home/'$USER'/babirl/bin/' >> ~/.bashrc
+echo 'export TARTSYS=/home/'$USER'/VMEDAQ/anaroot' >> ~/.bashrc
+echo 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$TARTSYS/lib:$TARTSYS/sources/Core' >> ~/.bashrc
 
 # 
 # autoinstallbabirl.sh ends here

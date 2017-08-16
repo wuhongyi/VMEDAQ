@@ -5,9 +5,9 @@
 # Author: Hongyi Wu(吴鸿毅)
 # Email: wuhongyi@qq.com 
 # Created: 二 8月 15 20:56:42 2017 (+0800)
-# Last-Updated: 三 8月 16 13:41:41 2017 (+0800)
+# Last-Updated: 三 8月 16 15:50:23 2017 (+0800)
 #           By: Hongyi Wu(吴鸿毅)
-#     Update #: 3
+#     Update #: 4
 # URL: http://wuhongyi.cn 
 
 #以下需要用户修改
@@ -31,8 +31,7 @@ ln -sf /etc/init.d/babimo /etc/rc5.d/S99babimo
 
 
 echo 'PATH=$PATH:'$usernamedir'/babirl/bin/' >> ~/.bashrc
-echo 'export TARTSYS='$usernamedir'/VMEDAQ/anaroot' >> ~/.bashrc
-echo 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$TARTSYS/lib:$TARTSYS/sources/Core' >> ~/.bashrc
+
 
 
 ps aux|grep babi*
