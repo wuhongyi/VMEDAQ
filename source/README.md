@@ -4,12 +4,17 @@
 ;; Author: Hongyi Wu(吴鸿毅)
 ;; Email: wuhongyi@qq.com 
 ;; Created: 六 8月  5 12:10:59 2017 (+0800)
-;; Last-Updated: 二 8月 15 21:18:24 2017 (+0800)
+;; Last-Updated: 三 8月 16 13:52:34 2017 (+0800)
 ;;           By: Hongyi Wu(吴鸿毅)
-;;     Update #: 5
+;;     Update #: 6
 ;; URL: http://wuhongyi.cn -->
 
 # README
+
+```text
+V2718 FW CONET2 Compliant 	2.14_1.5 	April, 2014
+```
+
 
 ```bash
 # A2818Drv-1.20-build20161118.tgz
