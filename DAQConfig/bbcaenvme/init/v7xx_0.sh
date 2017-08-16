@@ -108,3 +108,7 @@ ${cmd} -ww ${BASEADDR}10be	0x00
 # If N (counts) ounts = 0x1E TLSB is 297 ps (FSR = 1.21 µs);
 # It is recommended not to set the Full Scale Range register with values smaller than 0x18.
 #${cmd} -ww ${BASEADDR}1060  180    #24-255 参数与LSB对应关系可自行计算或者查图
+
+#Allows to select Common Start or Common Stop mode.
+#${cmd} -ww ${BASEADDR}1032 0x400  #Common Stop mode
+#${cmd} -ww ${BASEADDR}1034 0x400  #Common Start mode
