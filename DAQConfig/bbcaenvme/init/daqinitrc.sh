@@ -5,6 +5,7 @@
 # /bin/sh ./adcthres.sh
 /bin/sh ./v1190_0.sh
 # /bin/sh ./v1190_1.sh
+/bin/sh ./v1290.sh
 /bin/sh ./madcall.sh
 /bin/sh ./madcthres.sh
 /bin/sh ./cblt.sh

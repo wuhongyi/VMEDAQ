@@ -37,7 +37,7 @@
 
 #define v1190m
 #define v1190n 2
-#define v1190num 1
+#define v1190num 2
 
 #define madcm
 #define madcn 3

@@ -106,10 +106,10 @@ void Online()
   c3->cd();g1->Draw();
   c3->Modified(); c3->Update();
 
-  // TCanvas *c4=new TCanvas("c4","GDC1",1100,1000);//create a canvas
-  // TH2F* g2=new TH2F("g2","gdc2",128,-0.5,127.5,50000,0,50000);//create a histogram
-  // c4->cd();g2->Draw();
-  // c4->Modified(); c4->Update();
+  TCanvas *c4=new TCanvas("c4","GDC1",1100,1000);//create a canvas
+  TH2F* g2=new TH2F("g2","gdc2",128,-0.5,127.5,50000,0,50000);//create a histogram
+  c4->cd();g2->Draw();
+  c4->Modified(); c4->Update();
 
   // 以上部分用户需要修改
   //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
@@ -158,7 +158,7 @@ void Online()
 		// if(geo == 11) std::cout<<geo<<"  "<<ch<<"  "<<val<<std::endl;
 	    
 		if(geo == 20) g1->Fill(ch,val);
-		// if(geo == 21) g2->Fill(ch,val);
+		if(geo == 21) g2->Fill(ch,val);
 		// if(geo == 20) std::cout<<geo<<"  "<<ch<<"  "<<val<<std::endl;
 	    		
 	      }
@@ -203,8 +203,8 @@ void Online()
 	  c3->cd();g1->Draw("colz");
 	  c3->Update();
 
-	  // c4->cd();g2->Draw("colz");
-	  // c4->Update();
+	  c4->cd();g2->Draw("colz");
+	  c4->Update();
 
 	  // 以上部分用户需要修改
 	  //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......

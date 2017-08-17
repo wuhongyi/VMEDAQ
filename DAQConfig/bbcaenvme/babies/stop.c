@@ -21,7 +21,7 @@ void stop(void){
   // 以下部分用户需要修改
   
   // 硬件busy
-  v2718_set_ioport(3);
+  // v2718_set_ioport(3);
 
   // 以上部分用户需要修改
   //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......

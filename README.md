@@ -4,9 +4,9 @@
 ;; Author: Hongyi Wu(吴鸿毅)
 ;; Email: wuhongyi@qq.com 
 ;; Created: 日 7月  9 15:42:31 2017 (+0800)
-;; Last-Updated: 六 8月  5 13:55:56 2017 (+0800)
+;; Last-Updated: 四 8月 17 20:40:30 2017 (+0800)
 ;;           By: Hongyi Wu(吴鸿毅)
-;;     Update #: 8
+;;     Update #: 9
 ;; URL: http://wuhongyi.cn -->
 
 # README
@@ -140,6 +140,15 @@ sh autoPKU.sh
 V2718前面板5个输出PORT，分别为0-4
 
 通电时候PORT0-3处于高电平，PORT4处于低电平。因此软件BUSY模式时候采用PORT4，硬件BUSY模式采用PORT3。
+
+
+----
+
+确定各插件固件版本是否为最新版本
+
+- V1190/V1290
+	- Firmware Revision Register(Base Address + 0x1026, read only, D16) 
+	- This register contains the firmware revision number coded on 8 bit. 
 
 
 

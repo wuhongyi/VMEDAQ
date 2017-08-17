@@ -4,9 +4,9 @@
 // Author: Hongyi Wu(吴鸿毅)
 // Email: wuhongyi@qq.com 
 // Created: 日 7月 30 19:20:57 2017 (+0800)
-// Last-Updated: 一 7月 31 13:36:32 2017 (+0800)
+// Last-Updated: 四 8月 17 21:07:39 2017 (+0800)
 //           By: Hongyi Wu(吴鸿毅)
-//     Update #: 53
+//     Update #: 55
 // URL: http://wuhongyi.cn 
 
 #include "TArtEventStore.hh"
@@ -88,7 +88,7 @@ void statistics()
 
 
   TCanvas *c2 = new TCanvas("c2","GDC",1100,1000);
-  TH2F* gdc = new TH2F("gdc","",4,-0.5,3.5,32,-0.5,31.5);
+  TH2F* gdc = new TH2F("gdc","",6,-0.5,5.5,32,-0.5,31.5);
   gdc->SetStats(kFALSE);
   c2->cd();
   gdc->Draw("text");
@@ -178,6 +178,7 @@ void statistics()
 		  case 11: adc->Fill(9.0,ch); break;
 
 		  case 20: gdc->Fill(ch/32,ch%32); break;
+		  case 21: gdc->Fill(4+ch/32,ch%32); break;
 		  default: break;
 		  }
 	      }

@@ -1,0 +1,93 @@
+
+-----------------------------------------------------------------------------------
+
+                   --- CAEN SpA - Front End R&D Division --- 
+
+-----------------------------------------------------------------------------------
+
+
+This document is updated for every official release of the CAEN V1x90x/V1x90x-2eSST
+FPGA firmware and it contains various information specific to this software 
+which can not be found in the User's Manual, available together with the
+software or on the CAEN web site: http://www.caen.it.
+  
+  
+==================================================================================
+Release 1.1
+==================================================================================
+
+    New Features / Changes	:
+
+      * Fixed bug concerning address pipelining on the VMEbus with SBC and 
+      non CAEN Bridges
+
+==================================================================================
+ INTERMEDIATE VERSIONS ARE FOR INTERNAL USE AND NOT REPORTED HERE
+==================================================================================
+
+Release 0.C
+==================================================================================
+
+    New Features / Changes	:
+
+      * Implemented MEB access with 16MB address range in BLT/MBLT/2eVME and 2eSST
+	(added the bit 12 to the control register (@ address 0x1000) to enable it)
+
+      
+=================================================================================
+Release 0.B
+=================================================================================
+      
+    Bug fix                     :
+    
+      * Modified the power-on sequence to fix a timing issue during initialization.
+        (problem experienced with the new models V1x90x-2eSST)
+      
+=================================================================================
+Release 0.A
+=================================================================================
+
+    New Features / Changes	:
+
+      * Implemented 2eVME and 2eSST protocol supported only by new models
+        V1x90x-2eSST with PCB revision >= 3.
+    
+    NOTE: upload of the firmware on V1x90x (i.e. PCB rev. < 3) is possible, but
+         2eVME and 2eSST can't be used. 
+      
+=================================================================================
+Release 0.9
+=================================================================================
+    
+    New Features / Changes	:
+
+      * Further optimization in the VME interface
+
+    Bug fix                     :
+    
+      * Minor bug fixing
+
+=================================================================================
+Release 0.8
+=================================================================================
+    
+    New Features / Changes	:
+
+      * Optimization in VME interface
+
+=================================================================================
+Release 0.7
+=================================================================================
+ 
+    New Features / Changes	:
+
+      * Implemented extended Trigger Time Tag with single clock cycle resolution
+       
+
+=================================================================================
+Release 0.6
+=================================================================================
+ 
+    New Features / Changes	:
+
+     * Implemented a more efficient VME interface 

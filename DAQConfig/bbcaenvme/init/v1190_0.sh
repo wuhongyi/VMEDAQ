@@ -102,6 +102,7 @@ sleep 1
 
 
 # disable TDC Header, Trailer
+#It allows to disable the TDCs’ Header and Trailer during data readout.
 #${cmd} $opt -qn ${BASEADDR}0000 0x3100
 #sleep 1
 
