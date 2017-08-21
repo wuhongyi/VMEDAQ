@@ -86,3 +86,6 @@ ${cmd} -ww ${BASEADDR}10b8	0x00
 ${cmd} -ww ${BASEADDR}10ba	0x00
 ${cmd} -ww ${BASEADDR}10bc	0x00
 ${cmd} -ww ${BASEADDR}10be	0x00
+
+${cmd} -ww ${BASEADDR}1060  0xFF    #24-255 参数与LSB对应关系可自行计算或者查图
+${cmd} -ww ${BASEADDR}1032 0x400  #Common Stop mode

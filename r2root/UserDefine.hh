@@ -4,9 +4,9 @@
 // Author: Hongyi Wu(吴鸿毅)
 // Email: wuhongyi@qq.com 
 // Created: 一 7月 10 16:37:37 2017 (+0800)
-// Last-Updated: 四 8月 17 21:10:15 2017 (+0800)
+// Last-Updated: 日 8月 20 12:27:59 2017 (+0800)
 //           By: Hongyi Wu(吴鸿毅)
-//     Update #: 9
+//     Update #: 10
 // URL: http://wuhongyi.cn 
 
 // 用户需要修改本文件中的参数
@@ -31,14 +31,14 @@ const int v785geo[v785num] = {0};//元素个数必须与 v785num 一致
 
 // qdc
 #define v792_r2root //没有该插件则注释本行
-#define v792num 2
-const int v792geo[v792num] = {1,2};//元素个数必须与 v792num 一致
+#define v792num 1
+const int v792geo[v792num] = {1};//元素个数必须与 v792num 一致
 
 
 // tdc
-// #define v775_r2root //没有该插件则注释本行
-#define v775num 2
-const int v775geo[v775num] = {6,7};//元素个数必须与 v775num 一致
+#define v775_r2root //没有该插件则注释本行
+#define v775num 1
+const int v775geo[v775num] = {2};//元素个数必须与 v775num 一致
 
 
 // gdc

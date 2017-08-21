@@ -37,10 +37,17 @@
 
 #define v1190m
 #define v1190n 2
-#define v1190num 2
+#define v1190num 1
+
+#define v1290m
+#define v1290n 3
+#define v1290num 1
+
 
 #define madcm
-#define madcn 3
+#define madcn 4
 #define madcnum 2
+
+
 
 #endif

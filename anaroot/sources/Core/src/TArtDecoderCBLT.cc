@@ -35,6 +35,11 @@ TArtDecoderCBLT::TArtDecoderCBLT()
   module[madcn].m=madc;
   ModuleN++;
 #endif
+#ifdef v1290m
+  module[v1290n].n=v1290num;
+  module[v1290n].m=v1290;
+  ModuleN++;
+#endif
 }
 
 TArtDecoderCBLT::~TArtDecoderCBLT()
@@ -172,6 +177,45 @@ int TArtDecoderCBLT::Decode(unsigned char* &buf, const unsigned int& size, TArtR
 	   }
 	 }
          break;
+	 case v1290 :
+            ih = evtdata[i]&v1290HeaderMask;
+            if (ih == v1290GlobalHeader) {
+               evtflag = 1;
+               igeo = (evtdata[i]&v1290MaskGeometry)>>v1290ShiftGeometry;
+	       idata = (evtdata[i]&v1290MaskEventCounter)>>v1290ShiftEventCounter;
+	       TArtRawDataObject *rdata = new TArtRawDataObject(igeo,idata);
+	       rawseg->PutData(rdata);
+               //printf("V1290 [Global Header] : 0x%08x\n", evtdata[i]);
+            } else if (ih == v1290TDCHeader) {
+              //printf("V1290 [TDC    Header] : 0x%08x\n", evtdata[i]);
+               if (evtflag != 1) break;
+               //thf = 1;
+               // bncid = (evtdata[i]&v1290MaskBunchID)>>v1290ShiftBunchID;
+               // evtid = (evtdata[i]&v1290MaskEventCounter)>>v1290ShiftEventCounter;
+            } else if (ih == v1290TDCMeasurement) {
+              //printf("V1290 [TDC Measureme] : 0x%08x\n", evtdata[i]);
+               //if (thf != 1) continue;
+               ich = (evtdata[i]&v1290MaskChannel) >> v1290ShiftChannel;
+               TArtRawDataObject *rdata = new TArtRawDataObject(igeo,ich,(evtdata[i]&v1290MaskMeasure) >> v1290ShiftMeasure);
+               rdata->SetEdge((evtdata[i]&v1290MaskEdgeType) >> v1290ShiftEdgeType);
+         
+               rawseg->PutData(rdata);
+         
+            } else if (ih == v1290TDCTrailer) {
+              //printf("V1290 [TDC Trailer  ] : 0x%08x\n", evtdata[i]);
+               //thf = 0;
+            } else if (ih == v1290TDCError) {
+              //printf("V1290 [TDC Error    ] : 0x%08x\n", evtdata[i]);
+            } else if (ih == v1290GlobalTrailer) {
+               evtflag = 0;
+               modulenum++;
+	       if(modulenum == module[moduleid].n) {
+	         moduleid++;
+	         modulenum=0;
+	         if(moduleid < ModuleN) currentM = module[moduleid].m;
+	       }
+            }
+	 break;
        default :
          break;
      }

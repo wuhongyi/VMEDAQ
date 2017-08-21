@@ -8,7 +8,8 @@ typedef enum ModuleT {
   v830 = 1,
   v7xx = 2,
   v1190= 3,
-  madc = 4
+  madc = 4,
+  v1290= 5
 } ModuleT;
 
 typedef struct Moudle{
@@ -24,7 +25,7 @@ public:
   static TArtDecoder* Instance();
   ~TArtDecoderCBLT();
   int Decode(unsigned char* &buf, const unsigned int& size, TArtRawSegmentObject *rawseg);
-  Module module[4];
+  Module module[5];
   int ModuleN; // how many kinds of modules
   int scachn;
   int scageo;
@@ -73,6 +74,28 @@ public:
   static const unsigned int madc32data          = 0x00000000;
   static const unsigned int madc32ender         = 0xc0000000;
 
+// v1290 Decaoder parameter
+   static const unsigned int v1290HeaderMask        = 0xf8000000;
+   static const unsigned int v1290GlobalHeader      = 0x40000000;
+   static const unsigned int v1290TDCHeader         = 0x08000000;
+   static const unsigned int v1290TDCMeasurement    = 0x00000000;
+   static const unsigned int v1290TDCTrailer        = 0x18000000;
+   static const unsigned int v1290TDCError          = 0x20000000;
+   static const unsigned int v1290GlobalTrailer     = 0x80000000;
+   static const unsigned int v1290MaskGeometry      = 0x0000001f;
+   static const unsigned int v1290MaskEventCounter  = 0x7ffffe0;
+   static const unsigned int v1290MaskBunchID       = 0x00000fff;
+   static const unsigned int v1290MaskEventID       = 0x00000fff;
+   static const unsigned int v1290MaskChannel       = 0x03e00000;
+   static const unsigned int v1290MaskMeasure       = 0x001fffff;
+   static const unsigned int v1290MaskEdgeType      = 0x04000000;
+   static const int v1290ShiftGeometry     = 0;
+   static const int v1290ShiftEventCounter = 5;
+   static const int v1290ShiftBunchID      = 0;
+   static const int v1290ShiftEventID      = 12;
+   static const int v1290ShiftChannel      = 21;
+   static const int v1290ShiftMeasure      = 0;
+   static const int v1290ShiftEdgeType     = 26;
 
 };
 

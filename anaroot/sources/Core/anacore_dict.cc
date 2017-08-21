@@ -1182,7 +1182,7 @@ namespace ROOT {
       ::TArtDecoderCBLT *ptr = 0;
       static ::TVirtualIsAProxy* isa_proxy = new ::TIsAProxy(typeid(::TArtDecoderCBLT));
       static ::ROOT::TGenericClassInfo 
-         instance("TArtDecoderCBLT", "TArtDecoderCBLT.hh", 19,
+         instance("TArtDecoderCBLT", "TArtDecoderCBLT.hh", 20,
                   typeid(::TArtDecoderCBLT), ::ROOT::Internal::DefineBehavior(ptr, ptr),
                   &TArtDecoderCBLT_Dictionary, isa_proxy, 3,
                   sizeof(::TArtDecoderCBLT) );
