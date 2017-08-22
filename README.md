@@ -4,9 +4,9 @@
 ;; Author: Hongyi Wu(吴鸿毅)
 ;; Email: wuhongyi@qq.com 
 ;; Created: 日 7月  9 15:42:31 2017 (+0800)
-;; Last-Updated: 四 8月 17 20:40:30 2017 (+0800)
+;; Last-Updated: 二 8月 22 10:48:21 2017 (+0800)
 ;;           By: Hongyi Wu(吴鸿毅)
-;;     Update #: 9
+;;     Update #: 10
 ;; URL: http://wuhongyi.cn -->
 
 # README
@@ -149,7 +149,8 @@ V2718前面板5个输出PORT，分别为0-4
 - V1190/V1290
 	- Firmware Revision Register(Base Address + 0x1026, read only, D16) 
 	- This register contains the firmware revision number coded on 8 bit. 
-
+- madc32
+	- 0x600E firmware_revision 
 
 
 <!-- README.md ends here -->
