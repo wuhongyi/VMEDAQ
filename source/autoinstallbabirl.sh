@@ -5,9 +5,9 @@
 # Author: Hongyi Wu(吴鸿毅)
 # Email: wuhongyi@qq.com 
 # Created: 二 8月 15 20:37:39 2017 (+0800)
-# Last-Updated: 三 8月 16 15:50:50 2017 (+0800)
+# Last-Updated: 六 9月  2 21:23:32 2017 (+0800)
 #           By: Hongyi Wu(吴鸿毅)
-#     Update #: 5
+#     Update #: 6
 # URL: http://wuhongyi.cn 
 
 if [ `whoami` = "root" ];then 
@@ -22,7 +22,9 @@ num=`cat /proc/cpuinfo | grep processor | wc -l`
 
 ######################################################################
 
-cp babirl* ~
+rm -rf ~/babirl  #删除存在的软连接
+
+cp babirl150401.tar.gz ~
 cd ~
 tar -zxvf babirl150401.tar.gz
 ln -sf babirl150401 babirl
@@ -40,9 +42,27 @@ sed -i  $yonghumingtihuan /home/$USER/babirl/rcd/babimo
 
 ######################################################################
 
-echo 'PATH=$PATH:/home/'$USER'/babirl/bin/' >> ~/.bashrc
-echo 'export TARTSYS=/home/'$USER'/VMEDAQ/anaroot' >> ~/.bashrc
-echo 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$TARTSYS/lib:$TARTSYS/sources/Core' >> ~/.bashrc
+grep 'PATH=$PATH:/home/'$USER'/babirl/bin/' ~/.bashrc >/dev/null
+if [ $? -eq 0 ]; then
+    
+else
+    echo 'PATH=$PATH:/home/'$USER'/babirl/bin/' >> ~/.bashrc
+fi
+
+grep 'export TARTSYS=/home/'$USER'/VMEDAQ/anaroot' ~/.bashrc >/dev/null
+if [ $? -eq 0 ]; then
+    
+else
+    echo 'export TARTSYS=/home/'$USER'/VMEDAQ/anaroot' >> ~/.bashrc
+fi
+
+grep 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$TARTSYS/lib:$TARTSYS/sources/Core' ~/.bashrc >/dev/null
+if [ $? -eq 0 ]; then
+    
+else
+    echo 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$TARTSYS/lib:$TARTSYS/sources/Core' >> ~/.bashrc
+fi
+
 
 # 
 # autoinstallbabirl.sh ends here
