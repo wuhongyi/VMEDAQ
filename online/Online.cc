@@ -107,7 +107,7 @@ void Online()
   c3->Modified(); c3->Update();
 
   TCanvas *c4=new TCanvas("c4","GDC1",1100,1000);//create a canvas
-  TH2F* g2=new TH2F("g2","gdc2",128,-0.5,127.5,50000,0,50000);//create a histogram
+  TH2F* g2=new TH2F("g2","gdc2",128,-0.5,127.5,50000,0,500000);//create a histogram
   c4->cd();g2->Draw();
   c4->Modified(); c4->Update();
 
@@ -159,7 +159,7 @@ void Online()
 	    
 		if(geo == 20) g1->Fill(ch,val);
 		if(geo == 21) g2->Fill(ch,val);
-		// if(geo == 20) std::cout<<geo<<"  "<<ch<<"  "<<val<<std::endl;
+		// if(geo == 21) std::cout<<geo<<"  "<<ch<<"  "<<val<<std::endl;
 	    		
 	      }
 

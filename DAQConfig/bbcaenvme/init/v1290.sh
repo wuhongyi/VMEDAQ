@@ -64,9 +64,9 @@ echo "done"
 # 10.5us = 10500ns = 420
 # 15.5us = 15500ns = 620
 # 40.5us = 15500ns = 1620
-#It allows to set the width of the match window. After this OPCODE is sent, a 16-bit word must be written at the same location of the OPCODE itself. The microcontroller will remain in a wait status until this 16-bit word is written. The value of the word can be set in a range from 1 to 2088 (significant bits: [0;11]), or hex FFF, taking into account the Timing Constraints (see § 0): the relevant window width is the word value times the clock period (25 ns).
+#It allows to set the width of the match window. After this OPCODE is sent, a 16-bit word must be written at the same location of the OPCODE itself. The microcontroller will remain in a wait status until this 16-bit word is written. The value of the word can be set in a range from 1 to 2088 (significant bits: [0;11]), or hex FFF, taking into account the Timing Constraints: the relevant window width is the word value times the clock period (25 ns).
 #Default setting: 0x14 -> 500 ns
-$cmdvme $opt -qw ${BASEADDR}0000 0x1000 100
+$cmdvme $opt -qw ${BASEADDR}0000 0x1000 240
 sleep 1
 
 # Set Window Offset (-2048 to +40, 1=25ns, -4=-100ns)
@@ -75,7 +75,7 @@ sleep 1
 # -40us = -15000ns = -1600
 #It allows to set the offset of the match window with respect to the trigger itself, i.e. the time difference (expressed in clock cycles, 1 cycle = 25 ns) between the start of the match window and the trigger time. After this OPCODE is sent, a 16-bit word must be written at the same location of the OPCODE itself (the window offset is a 12 bit signed number; the transfer on the VME bus takes place on 16 bit, therefore the sign bit must be extended to the full word in order to avoid mistakes). The microcontroller will remain in a wait status until a 16-bit word is written. The window offset value must be set in the range from -2048 (hex 0xF800) to +40 (hex 0x0028). The offset and width value must be set according to the constraints described in § 0. The window offset is synchronised with the clock cycle, thus there could be a jitter of one clock cycle in the actual offset position.
 #Default setting: 0xFFD8 -> -1 μs
-$cmdvme $opt -qw ${BASEADDR}0000 0x1100 -96
+$cmdvme $opt -qw ${BASEADDR}0000 0x1100 -248
 sleep 1
 
 # Set Edge Detection (1=trailing, 2=leading, 3=both)
@@ -116,4 +116,4 @@ sleep 0
 #0x1024, read/write, D16
 #This register contains the number Ne of complete events which is desirable to transfer via BLT. The number of events must be written in a 8 bit word. The Register’s default setting is 0, which means that the Event Aligned BLT is disabled. This Register must be accessed in D16 mode. 
 # read only 1 event from 1 CBLT cycle
-${cmd} $opt -ww ${BASEADDR}1024 0x1
+${cmdvme} $opt -ww ${BASEADDR}1024 0x1

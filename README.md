@@ -4,20 +4,13 @@
 ;; Author: Hongyi Wu(吴鸿毅)
 ;; Email: wuhongyi@qq.com 
 ;; Created: 日 7月  9 15:42:31 2017 (+0800)
-;; Last-Updated: 二 8月 22 10:48:21 2017 (+0800)
+;; Last-Updated: 五 9月  1 10:41:49 2017 (+0800)
 ;;           By: Hongyi Wu(吴鸿毅)
-;;     Update #: 10
+;;     Update #: 13
 ;; URL: http://wuhongyi.cn -->
 
 # README
 
-在文件 .bashrc 中添加以下三行，其中 /home/wuhongyi/ 替换为文件夹放置位置
-
-```bash
-PATH=$PATH:/home/wuhongyi/babirl/bin/
-export TARTSYS=/home/wuhongyi/VMEDAQ/anaroot
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$TARTSYS/lib:$TARTSYS/sources/Core
-```
 
 文件夹内有以下文件/文件夹：
 
@@ -126,7 +119,7 @@ sh autoPKU.sh
 
 ## r2root
 
-简易版本测试中，仅仅需要修改插件定义即可，无需修改其它代码。
+仅仅需要修改插件定义即可，无需修改其它代码。
 
 修改文件 UserDefine.hh，按照提示修改即可。 
 
@@ -144,7 +137,7 @@ V2718前面板5个输出PORT，分别为0-4
 
 ----
 
-确定各插件固件版本是否为最新版本
+## 确定各插件固件版本是否为最新版本
 
 - V1190/V1290
 	- Firmware Revision Register(Base Address + 0x1026, read only, D16) 
