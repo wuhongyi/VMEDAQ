@@ -237,7 +237,7 @@ hardcode_into_libs=yes
 sys_lib_search_path_spec="/usr/lib/gcc/x86_64-unknown-linux-gnu/4.9.2 /usr/lib64 /lib64"
 
 # Run-time system search path for libraries.
-sys_lib_dlsearch_path_spec="/lib64 /usr/lib64 /lib /usr/lib /usr/lib64/R/lib /usr/lib64/atlas /usr/local/lib64/digilent/adept  /usr/lib64/cmpi /usr/lib64/llvm /usr/lib64/mysql /usr/lib64/opencryptoki /usr/lib64/opencryptoki/stdll /usr/lib64/oprofile /usr/lib64/papi-4.1.3 /usr/lib64/papi-5.1.1/usr/lib /usr/lib64/qt-3.3/lib /usr/lib64/cmpi /usr/lib64/cmpi /usr/lib64/cmpi /usr/lib64/cmpi /usr/lib64/cmpi /usr/lib64/cmpi /usr/lib64/cmpi /usr/lib64/cmpi /usr/lib64/cmpi /usr/lib64/tcl8.5 /usr/lib64/xulrunner "
+sys_lib_dlsearch_path_spec="/lib64 /usr/lib64 /lib /usr/lib /usr/lib64/R/lib /usr/lib64/atlas /usr/local/lib64/digilent/adept  /usr/lib64/cmpi /usr/lib64/llvm /usr/lib64/mysql /usr/lib64/opencryptoki /usr/lib64/opencryptoki/stdll /usr/lib64/oprofile /usr/lib64/papi-4.1.3 /usr/lib64/papi-5.1.1/usr/lib /usr/lib64/qt-3.3/lib /usr/lib64/cmpi /usr/lib64/cmpi /usr/lib64/cmpi /usr/lib64/cmpi /usr/lib64/cmpi /usr/lib64/cmpi /usr/lib64/cmpi /usr/lib64/cmpi /usr/lib64/cmpi /usr/lib64 /usr/lib64/tcl8.5 /usr/lib64/xulrunner "
 
 # Whether dlopen is supported.
 dlopen_support=unknown

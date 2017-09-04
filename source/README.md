@@ -4,22 +4,25 @@
 ;; Author: Hongyi Wu(吴鸿毅)
 ;; Email: wuhongyi@qq.com 
 ;; Created: 六 8月  5 12:10:59 2017 (+0800)
-;; Last-Updated: 五 9月  1 10:41:49 2017 (+0800)
+;; Last-Updated: 一 9月  4 20:12:23 2017 (+0800)
 ;;           By: Hongyi Wu(吴鸿毅)
-;;     Update #: 11
+;;     Update #: 14
 ;; URL: http://wuhongyi.cn -->
 
 # README
 
+
+## 当前固件版本
+
 ```text
 V2718 FW CONET2 Compliant 	2.14_1.5 	April, 2014
-
-v1190  
-
+v1190   1.1
 MADC32  0224
-
 ```
 
+## 程序安装
+
+### A2818驱动
 
 ```bash
 # A2818Drv-1.20-build20161118.tgz
@@ -33,6 +36,7 @@ make
 #添加 /bin/sh /opt/A2818Drv-1.20/a2818_load
 ```
 
+### RIKEN babirl
 
 babirl自动化安装方法
 
@@ -42,6 +46,9 @@ autoinstallbabirl.sh
 afterinstallbabirl.sh
 ```
 
+----
+
+## 其它配置
 
 V2718PCB板上DIP开关：Prog: 0 off, 1 off, 2 off, 3 on, 4 off, I/O NIM
 

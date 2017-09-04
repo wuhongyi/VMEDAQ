@@ -20,8 +20,10 @@ ${cmd} -ww ${BASEADDR}1122 0x1 #A write access to this register allows performin
 
 
 #0x110C, MCST, D16, write only /  Control Bit Clear Register
-${cmd} -ww ${BASEADDR}110c 0x11  #???这里是否有问题？ 0x3
-#0x110A, MCST, D16, write only / Control Bit Set Register 
+#N.B.: a write access to this register causes the Counters Registers, the MEB, the Trigger Counter and the MEB Event Number Register to be cleared. 
+${cmd} -ww ${BASEADDR}110c 0x11
+#0x110A, MCST, D16, write only / Control Bit Set Register
+#N.B.: a write access to this register causes the Counters Registers, the MEB, the Trigger Counter and the MEB Event Number Register to be cleared. 
 ${cmd} -ww ${BASEADDR}110a 0x01  #Trigger random (external or from VME)
 
 #/usr/nbbq/bin/cmdvme -ww 0x50001108 0x0

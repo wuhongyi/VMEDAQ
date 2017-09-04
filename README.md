@@ -4,9 +4,9 @@
 ;; Author: Hongyi Wu(吴鸿毅)
 ;; Email: wuhongyi@qq.com 
 ;; Created: 日 7月  9 15:42:31 2017 (+0800)
-;; Last-Updated: 五 9月  1 10:41:49 2017 (+0800)
+;; Last-Updated: 一 9月  4 20:13:40 2017 (+0800)
 ;;           By: Hongyi Wu(吴鸿毅)
-;;     Update #: 13
+;;     Update #: 15
 ;; URL: http://wuhongyi.cn -->
 
 # README
@@ -34,23 +34,25 @@ sh autoPKU.sh
 
 修改 **CBLT.hh** 文件，其中设置应该与CBLT模式下的插件设置顺序一致。
 
-当前CBLT chain支持v830、v7xx、v1190、madc四种类型的插件，如下所示：
+当前CBLT chain支持v830、v7xx、v1190、v1290、madc四种类型的插件，如下所示：
 
 ```bash
 #define v830m
 #define v7xxm
 #define v1190m
+#define v1290m
 #define madcm
 ```
 
 **获取中如果没有哪一种类型插件，则需注释掉该类型的定义！！！**
 
-以下*xxxn*为启用插件的数据顺序，从0开始编码，如果四种类型插件都有，则为以下设置：
+以下*xxxn*为启用插件的数据顺序，从0开始编码，如果五种类型插件都有，则为以下设置：
 ```bash
 #define v830n 0
 #define v7xxn 1
 #define v1190n 2
-#define madcn 3
+#define v1290n 3
+#define madcn 4
 ```
 
 如果只含有v7xx、madc两种类型的插件，则定义如下：
@@ -72,9 +74,10 @@ sh autoPKU.sh
 
 ```bash
 #define v830num
-#define v7xxn
-#define v1190n
-#define madcn
+#define v7xxnum
+#define v1190num
+#define v1290num
+#define madcnum
 ```
 
 以下是v830的其它设置
@@ -125,8 +128,9 @@ sh autoPKU.sh
 
 ## online
 
-正在优化代码中。。。。
+按照提示修改Online.cc文件
 
+图形化界面开发中。。。
 
 ----
 
@@ -144,6 +148,20 @@ V2718前面板5个输出PORT，分别为0-4
 	- This register contains the firmware revision number coded on 8 bit. 
 - madc32
 	- 0x600E firmware_revision 
+
+----
+
+## 程序修改建议顺序
+
+- anaroot/CBLT.hh
+- DAQConfig/babies/bbmodules.h
+- DAQConfig/babies/start.c
+- DAQConfig/babies/evt.c
+- DAQConfig/babies/clear.c
+- DAQConfig/babies/stop.c
+- DAQConfig/init/daqinitrc.sh
+
+
 
 
 <!-- README.md ends here -->

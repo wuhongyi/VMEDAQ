@@ -65,11 +65,16 @@ void start(void){
   //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
   // 以下部分用户需要修改
   
-  // 有 V1190 插件
+  // 有 V1190/V1290 插件
   // 每个插件单独clear
-  v1190_clear(V1190ADDR0);
-  v1190_clear(V1190ADDR1);
+  v1190_clear(V1x90ADDR0);
+  v1290_clear(V1x90ADDR1);
 
+  // v1190_clear(V1x90ADDR0);
+  // v1190_clear(V1x90ADDR1);
+  // v1290_clear(V1x90ADDR0);
+  // v1290_clear(V1x90ADDR1);
+  
   // 以上部分用户需要修改
   //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 

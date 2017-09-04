@@ -37,7 +37,4 @@ ${cmd} -ww ${BASEADDR}10b6	0x26
 ${cmd} -ww ${BASEADDR}10b8	0x33
 ${cmd} -ww ${BASEADDR}10ba	0x30
 ${cmd} -ww ${BASEADDR}10bc	0x42
-${cmd} -ww ${BASEADDR}10be	0x3b
-
-#第一个插件ch0设置为0
-${cmd} -ww ${BASEADDR}1080    0x0	
+${cmd} -ww ${BASEADDR}10be	0x3b	

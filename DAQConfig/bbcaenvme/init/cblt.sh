@@ -18,9 +18,9 @@
 # ../cmdvme/cmdvme -ww 0x10061004 0xbb
 # ../cmdvme/cmdvme -ww 0x10071004 0xbb
 
-# CBLT/MCST ADDR For v1190AC
+# CBLT/MCST ADDR For v1190AC/v1290A
 ../cmdvme/cmdvme -ww 0x40001010 0xbb
-../cmdvme/cmdvme -ww 0x40011010 0xbb
+# ../cmdvme/cmdvme -ww 0x40011010 0xbb
 
 
 # CBLT ADDR For MADC32
@@ -73,7 +73,7 @@
 # ../cmdvme/cmdvme -ww 0x1007101a 0x3
 
 ../cmdvme/cmdvme -ww 0x40001012 0x3
-../cmdvme/cmdvme -ww 0x40011012 0x3
+# ../cmdvme/cmdvme -ww 0x40011012 0x3
 
 ../cmdvme/cmdvme -ww 0x20006020 0x82
 ../cmdvme/cmdvme -ww 0x20016020 0x8A

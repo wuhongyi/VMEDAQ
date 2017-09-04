@@ -4,9 +4,9 @@
 // Author: Hongyi Wu(吴鸿毅)
 // Email: wuhongyi@qq.com 
 // Created: 一 7月 10 20:51:58 2017 (+0800)
-// Last-Updated: 二 8月  8 15:22:59 2017 (+0800)
+// Last-Updated: 一 9月  4 18:46:49 2017 (+0800)
 //           By: Hongyi Wu(吴鸿毅)
-//     Update #: 9
+//     Update #: 10
 // URL: http://wuhongyi.cn 
 
 //**********************************
@@ -35,7 +35,7 @@
 // #ifdef v775_r2root
 // #endif
 
-// #ifdef v1190_r2root
+// #ifdef v1x90_r2root
 // #endif
 
 // #ifdef madc32_r2root
@@ -155,23 +155,23 @@ private:
 #endif
 
   
-#ifdef v1190_r2root //ok
-#if v1190num > 1
-  Int_t gdc[v1190num][128][v1190multi];
-  Int_t gdcedge[v1190num][128][v1190multi];
-  Int_t gmulti[v1190num][128];
-  Int_t gcnt[v1190num];
+#ifdef v1x90_r2root //ok
+#if v1x90num > 1
+  Int_t gdc[v1x90num][128][v1x90multi];
+  Int_t gdcedge[v1x90num][128][v1x90multi];
+  Int_t gmulti[v1x90num][128];
+  Int_t gcnt[v1x90num];
 #else
-  Int_t gdc[128][v1190multi];
-  Int_t gdcedge[128][v1190multi];
+  Int_t gdc[128][v1x90multi];
+  Int_t gdcedge[128][v1x90multi];
   Int_t gmulti[128];
   Int_t gcnt;
 #endif
   Int_t ghit;
-  Int_t gmod[v1190hitmax];
-  Int_t gch[v1190hitmax];
-  Int_t gval[v1190hitmax];
-  Int_t gedge[v1190hitmax];
+  Int_t gmod[v1x90hitmax];
+  Int_t gch[v1x90hitmax];
+  Int_t gval[v1x90hitmax];
+  Int_t gedge[v1x90hitmax];
 #endif
 
   Long64_t nevt;

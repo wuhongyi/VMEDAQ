@@ -99,7 +99,7 @@ void Online()
   c2->Modified();
   c2->Update();
 
-  // v1190
+  // v1190/v1290
  
   TCanvas *c3=new TCanvas("c3","GDC0",1100,1000);//create a canvas
   TH2F* g1=new TH2F("g1","gdc1",128,-0.5,127.5,50000,0,50000);//create a histogram

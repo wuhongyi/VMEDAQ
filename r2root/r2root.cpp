@@ -4,9 +4,9 @@
 // Author: Hongyi Wu(吴鸿毅)
 // Email: wuhongyi@qq.com 
 // Created: 一 7月 10 21:12:35 2017 (+0800)
-// Last-Updated: 二 8月  8 15:38:36 2017 (+0800)
+// Last-Updated: 一 9月  4 18:47:15 2017 (+0800)
 //           By: Hongyi Wu(吴鸿毅)
-//     Update #: 22
+//     Update #: 23
 // URL: http://wuhongyi.cn 
 
 #include "UserDefine.hh"
@@ -280,21 +280,21 @@ void r2root::DecodeRaw()
 
       
       //gdc
-#ifdef v1190_r2root
-#if v1190num > 1
+#ifdef v1x90_r2root
+#if v1x90num > 1
       flag = false;
-      for (int i = 0; i < v1190num; ++i)
+      for (int i = 0; i < v1x90num; ++i)
 	{
-	  if(geo == v1190geo[i])
+	  if(geo == v1x90geo[i])
 	    {
 	      int ch = d->GetCh();
 	      int val = d->GetVal();
 	      int edge = d->GetEdge();//用来判断 前沿/尾沿
 	      if(ch > -1)
 		{
-		  if(gmulti[i][ch] > v1190multi)
+		  if(gmulti[i][ch] > v1x90multi)
 		    {
-		      cout<<"gmulti["<<i<<"]["<<ch<<"]"<<" is more than "<<v1190multi<<endl; 
+		      cout<<"gmulti["<<i<<"]["<<ch<<"]"<<" is more than "<<v1x90multi<<endl; 
 		      continue;
 		    }
 		  gmod[ghit] = geo;
@@ -305,11 +305,11 @@ void r2root::DecodeRaw()
 		  gdcedge[i][ch][gmulti[i][ch]] = edge;
 		  gmulti[i][ch]++;
 		  ghit++;
-		  if(ghit >= v1190hitmax) 
+		  if(ghit >= v1x90hitmax) 
 		    {
 		      cout<<"*************************************"<<endl;
-		      cout<<"* Too Much hits for v1190!!!"<<endl;
-		      cout<<"* Pls modify const int v1190hitmax"<<endl;
+		      cout<<"* Too Much hits for v1x90!!!"<<endl;
+		      cout<<"* Pls modify const int v1x90hitmax"<<endl;
 		      cout<<"*************************************"<<endl;
 		    }
 		}
@@ -324,7 +324,7 @@ void r2root::DecodeRaw()
 	}
       if(flag) continue;
 #else
-      if(geo == v1190geo[0])
+      if(geo == v1x90geo[0])
 	{
 	  int ch = d->GetCh();
 	  int val = d->GetVal();
@@ -332,9 +332,9 @@ void r2root::DecodeRaw()
 
 	  if(ch > -1)
 	    {
-	      if(gmulti[ch] > v1190multi)
+	      if(gmulti[ch] > v1x90multi)
 		{
-		  cout<<"gmulti["<<ch<<"]"<<" is more than "<<v1190multi<<endl; 
+		  cout<<"gmulti["<<ch<<"]"<<" is more than "<<v1x90multi<<endl; 
 		  continue;
 		}
 	      gmod[ghit] = geo;
@@ -345,11 +345,11 @@ void r2root::DecodeRaw()
 	      gdcedge[ch][gmulti[ch]] = edge;
 	      gmulti[ch]++;
 	      ghit++;
-	      if(ghit >= v1190hitmax) 
+	      if(ghit >= v1x90hitmax) 
 		{
 		  cout<<"*************************************"<<endl;
-		  cout<<"* Too Much hits for v1190!!!"<<endl;
-		  cout<<"* Pls modify const int v1190hitmax"<<endl;
+		  cout<<"* Too Much hits for v1x90!!!"<<endl;
+		  cout<<"* Pls modify const int v1x90hitmax"<<endl;
 		  cout<<"*************************************"<<endl;
 		}
 	    }
@@ -461,12 +461,12 @@ void r2root::Clear()
 #endif
 
   //gdc
-#ifdef v1190_r2root
+#ifdef v1x90_r2root
   ghit = 0;
   memset(gdc,0,sizeof(gdc));
   memset(gdcedge,0,sizeof(gdcedge));
   memset(gmulti,0,sizeof(gmulti));
-#if v1190num > 1
+#if v1x90num > 1
   memset(gcnt,0,sizeof(gcnt));
 #else
   gcnt = 0;
@@ -551,16 +551,16 @@ Bool_t r2root::BranchTree()
 #endif
 
 
-#ifdef v1190_r2root //ok
+#ifdef v1x90_r2root //ok
   //Branches of gdc
-#if v1190num > 1
-  tree->Branch("gdc",&gdc,TString::Format("gdc[%d][128][%d]/I",v1190num,v1190multi).Data());
-  tree->Branch("gdcedge",&gdcedge,TString::Format("gdcedge[%d][128][%d]/I",v1190num,v1190multi).Data());
-  tree->Branch("gmulti",&gmulti,TString::Format("gmulti[%d][128]/I",v1190num).Data());
-  tree->Branch("gcnt",&gcnt,TString::Format("gcnt[%d]/I",v1190num).Data());
+#if v1x90num > 1
+  tree->Branch("gdc",&gdc,TString::Format("gdc[%d][128][%d]/I",v1x90num,v1x90multi).Data());
+  tree->Branch("gdcedge",&gdcedge,TString::Format("gdcedge[%d][128][%d]/I",v1x90num,v1x90multi).Data());
+  tree->Branch("gmulti",&gmulti,TString::Format("gmulti[%d][128]/I",v1x90num).Data());
+  tree->Branch("gcnt",&gcnt,TString::Format("gcnt[%d]/I",v1x90num).Data());
 #else
-  tree->Branch("gdc",&gdc,TString::Format("gdc[128][%d]/I",v1190multi).Data());
-  tree->Branch("gdcedge",&gdcedge,TString::Format("gdcedge[128][%d]/I",v1190multi).Data());
+  tree->Branch("gdc",&gdc,TString::Format("gdc[128][%d]/I",v1x90multi).Data());
+  tree->Branch("gdcedge",&gdcedge,TString::Format("gdcedge[128][%d]/I",v1x90multi).Data());
   tree->Branch("gmulti",&gmulti,"gmulti[128]/I");
   tree->Branch("gcnt",&gcnt,"gcnt/I");
 #endif
