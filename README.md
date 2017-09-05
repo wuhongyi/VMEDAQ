@@ -4,9 +4,9 @@
 ;; Author: Hongyi Wu(吴鸿毅)
 ;; Email: wuhongyi@qq.com 
 ;; Created: 日 7月  9 15:42:31 2017 (+0800)
-;; Last-Updated: 一 9月  4 20:13:40 2017 (+0800)
+;; Last-Updated: 一 9月  4 20:48:41 2017 (+0800)
 ;;           By: Hongyi Wu(吴鸿毅)
-;;     Update #: 15
+;;     Update #: 16
 ;; URL: http://wuhongyi.cn -->
 
 # README
@@ -34,7 +34,7 @@ sh autoPKU.sh
 
 修改 **CBLT.hh** 文件，其中设置应该与CBLT模式下的插件设置顺序一致。
 
-当前CBLT chain支持v830、v7xx、v1190、v1290、madc四种类型的插件，如下所示：
+当前CBLT chain支持v830、v7xx、v1190、v1290、madc五种类型的插件，如下所示：
 
 ```bash
 #define v830m

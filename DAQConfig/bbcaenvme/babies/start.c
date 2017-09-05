@@ -67,11 +67,11 @@ void start(void){
   
   // 有 V1190/V1290 插件
   // 每个插件单独clear
-  v1190_clear(V1x90ADDR0);
-  v1290_clear(V1x90ADDR1);
-
   // v1190_clear(V1x90ADDR0);
-  // v1190_clear(V1x90ADDR1);
+  // v1290_clear(V1x90ADDR1);
+
+  v1190_clear(V1x90ADDR0);
+  v1190_clear(V1x90ADDR1);
   // v1290_clear(V1x90ADDR0);
   // v1290_clear(V1x90ADDR1);
   

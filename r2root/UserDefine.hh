@@ -4,9 +4,9 @@
 // Author: Hongyi Wu(吴鸿毅)
 // Email: wuhongyi@qq.com 
 // Created: 一 7月 10 16:37:37 2017 (+0800)
-// Last-Updated: 一 9月  4 18:51:43 2017 (+0800)
+// Last-Updated: 二 9月  5 18:31:11 2017 (+0800)
 //           By: Hongyi Wu(吴鸿毅)
-//     Update #: 13
+//     Update #: 14
 // URL: http://wuhongyi.cn 
 
 // 用户需要修改本文件中的参数
@@ -43,10 +43,10 @@ const int v775geo[v775num] = {2};//元素个数必须与 v775num 一致
 
 // gdc
 #define v1x90_r2root //没有该插件则注释本行
-#define v1x90num 1
+#define v1x90num 2
 #define v1x90multi 5 //gdc 数组第三维度
 #define v1x90hitmax 3000
-const int v1x90geo[v1x90num] = {20};//元素个数必须与 v1x90num 一致
+const int v1x90geo[v1x90num] = {20,21};//元素个数必须与 v1x90num 一致
 
 
 // madc
