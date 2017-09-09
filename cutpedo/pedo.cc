@@ -4,9 +4,9 @@
 // Author: Hongyi Wu(吴鸿毅)
 // Email: wuhongyi@qq.com 
 // Created: 五 9月  8 19:52:09 2017 (+0800)
-// Last-Updated: 五 9月  8 23:19:14 2017 (+0800)
+// Last-Updated: 六 9月  9 13:07:28 2017 (+0800)
 //           By: Hongyi Wu(吴鸿毅)
-//     Update #: 24
+//     Update #: 36
 // URL: http://wuhongyi.cn 
 
 #include "pedo.hh"
@@ -20,7 +20,8 @@ pedo::pedo(TString rootfile)
 {
   RootFile = rootfile;
   Benchmark = new TBenchmark;
-
+  tree = NULL;
+  file = NULL;
 
 #ifdef v785_pedo 
 #if v785num > 1
@@ -58,34 +59,57 @@ pedo::~pedo()
 {
 #ifdef v785_pedo 
 #if v785num > 1
-
+  for (int i = 0; i < v785num; ++i)
+    {
+      for(int j = 0;j < 32; j++)
+	{
+	  delete adc_data[i][j];
+	}
+    }
 #else
-
+  for(int j = 0;j < 32; j++)
+    {
+      delete adc_data[j];
+    }
 #endif
-
 #endif  
 
-
-
+      
 #ifdef v792_pedo 
 #if v792num > 1
-
+  for (int i = 0; i < v792num; ++i)
+    {
+      for(int j = 0;j < 32; j++)
+	{
+	  delete qdc_data[i][j];
+	}
+    }
 #else
-
+  for(int j = 0;j < 32; j++)
+    {
+      delete qdc_data[j];
+    }
 #endif
-
 #endif  
   
 
 #ifdef madc32_pedo 
 #if madc32num > 1
-
+  for (int i = 0; i < madc32num; ++i)
+    {
+      for(int j = 0;j < 32; j++)
+	{
+	  delete madc_data[i][j];
+	}
+    }
 #else
-
+  for(int j = 0;j < 32; j++)
+    {
+      delete madc_data[j];
+    }
 #endif
-
 #endif  
-
+  file->Close();
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
@@ -103,37 +127,6 @@ void pedo::Process()
   Record();
   RecordText();
   RecordPicture();
-  RecordHisto();
-  
-#ifdef v785_pedo 
-#if v785num > 1
-
-#else
-
-#endif
-
-#endif  
-
-
-
-#ifdef v792_pedo 
-#if v792num > 1
-
-#else
-
-#endif
-
-#endif  
-  
-
-#ifdef madc32_pedo 
-#if madc32num > 1
-
-#else
-
-#endif
-
-#endif  
 
   Benchmark->Show("tree");//计时结束并输出时间
 }
@@ -217,7 +210,6 @@ Bool_t pedo::Init(const char * filename)
     }
 #endif
 #endif
- 
   return 1;
 }
  
@@ -245,7 +237,6 @@ void pedo::FillHistogram()
 #endif
 #endif  
 
-      
 #ifdef v792_pedo 
 #if v792num > 1
       for (int i = 0; i < v792num; ++i)
@@ -262,8 +253,7 @@ void pedo::FillHistogram()
 	}
 #endif
 #endif  
-
-      
+    
 #ifdef madc32_pedo 
 #if madc32num > 1
       for (int i = 0; i < madc32num; ++i)
@@ -291,7 +281,7 @@ void pedo::FitHistogram()
     {
       for(int j = 0;j < 32; j++)
 	{
-	  if(adc_data[i][j]->Fit("gaus","QL","",adc_data[i][j]->GetMaximumBin()-v785fitrange,adc_data[i][j]->GetMaximumBin()+v785fitrange) != 0)
+	  if(adc_data[i][j]->Fit("gaus","QL","",adc_data[i][j]->GetBinCenter(adc_data[i][j]->GetMaximumBin())-v785fitrange,adc_data[i][j]->GetBinCenter(adc_data[i][j]->GetMaximumBin())+v785fitrange) != 0)
 	    {
 	      cout<<"ADC  mod:"<<i<<" ch:"<<j<<"Fit error!!!"<<endl;
 	    }
@@ -300,7 +290,7 @@ void pedo::FitHistogram()
 #else
   for(int j = 0;j < 32; j++)
     {
-      if(adc_data[j]->Fit("gaus","QL","",adc_data[j]->GetMaximumBin()-v785fitrange,adc_data[j]->GetMaximumBin()+v785fitrange) != 0)
+      if(adc_data[j]->Fit("gaus","QL","",adc_data[j]->GetBinCenter(adc_data[j]->GetMaximumBin())-v785fitrange,adc_data[j]->GetBinCenter(adc_data[j]->GetMaximumBin())+v785fitrange) != 0)
 	{
 	  cout<<"ADC  mod:0"<<" ch:"<<j<<"Fit error!!!"<<endl;
 	}
@@ -314,7 +304,7 @@ void pedo::FitHistogram()
     {
       for(int j = 0;j < 32; j++)
 	{
-	  if(qdc_data[i][j]->Fit("gaus","QL","",qdc_data[i][j]->GetMaximumBin()-v792fitrange,qdc_data[i][j]->GetMaximumBin()+v792fitrange) != 0)
+	  if(qdc_data[i][j]->Fit("gaus","QL","",qdc_data[i][j]->GetBinCenter(qdc_data[i][j]->GetMaximumBin())-v792fitrange,qdc_data[i][j]->GetBinCenter(qdc_data[i][j]->GetMaximumBin())+v792fitrange) != 0)
 	    {
 	      cout<<"QDC  mod:"<<i<<" ch:"<<j<<"Fit error!!!"<<endl;
 	    }
@@ -323,8 +313,7 @@ void pedo::FitHistogram()
 #else
   for(int j = 0;j < 32; j++)
     {
-      if(j == 0) qdc_data[j]->Print();
-      if(qdc_data[j]->Fit("gaus","QL","",qdc_data[j]->GetMaximumBin()-v792fitrange,qdc_data[j]->GetMaximumBin()+v792fitrange) != 0)
+      if(qdc_data[j]->Fit("gaus","QL","",qdc_data[j]->GetBinCenter(qdc_data[j]->GetMaximumBin())-v792fitrange,qdc_data[j]->GetBinCenter(qdc_data[j]->GetMaximumBin())+v792fitrange) != 0)
 	{
 	  cout<<"QDC  mod:0"<<" ch:"<<j<<"Fit error!!!"<<endl;
 	}
@@ -338,7 +327,7 @@ void pedo::FitHistogram()
     {
       for(int j = 0;j < 32; j++)
 	{
-	  if(madc_data[i][j]->Fit("gaus","QL","",madc_data[i][j]->GetMaximumBin()-madc32fitrange,madc_data[i][j]->GetMaximumBin()+madc32fitrange) != 0)
+	  if(madc_data[i][j]->Fit("gaus","QL","",madc_data[i][j]->GetBinCenter(madc_data[i][j]->GetMaximumBin())-madc32fitrange,madc_data[i][j]->GetBinCenter(madc_data[i][j]->GetMaximumBin())+madc32fitrange) != 0)
 	    {
 	      cout<<"MADC  mod:"<<i<<" ch:"<<j<<"Fit error!!!"<<endl;
 	    }
@@ -347,7 +336,7 @@ void pedo::FitHistogram()
 #else
       for(int j = 0;j < 32; j++)
 	{
-	  if(madc_data[j]->Fit("gaus","QL","",madc_data[j]->GetMaximumBin()-madc32fitrange,madc_data[j]->GetMaximumBin()+madc32fitrange) != 0)
+	  if(madc_data[j]->Fit("gaus","QL","",madc_data[j]->GetBinCenter(madc_data[j]->GetMaximumBin())-madc32fitrange,madc_data[j]->GetBinCenter(madc_data[j]->GetMaximumBin())+madc32fitrange) != 0)
 	    {
 	      cout<<"MADC  mod:0"<<" ch:"<<j<<"Fit error!!!"<<endl;
 	    }
@@ -454,7 +443,6 @@ void pedo::Record()
 	}
       for(int j = 0;j < 32; j++)
 	{
-	  cout<<j<<"  "<<int((qdc_data[i][j]->GetFunction("gaus")->GetParameter(1)+qdc_data[i][j]->GetFunction("gaus")->GetParameter(2)*v792msigma)/v792D2D16+1)<<endl;
 	  writesh<<"${cmd} -ww ${BASEADDR}"<<hex<<j*2+4224<<"\t"<<"0x"<<int((qdc_data[i][j]->GetFunction("gaus")->GetParameter(1)+qdc_data[i][j]->GetFunction("gaus")->GetParameter(2)*v792msigma)/v792D2D16+1)<<endl;
 	}
       writesh.close();      
@@ -490,12 +478,9 @@ void pedo::Record()
     }
   for(int j = 0;j < 32; j++)
     {
-      cout<<j<<"  "<<int((qdc_data[j]->GetFunction("gaus")->GetParameter(1)+qdc_data[j]->GetFunction("gaus")->GetParameter(2)*v792msigma)/v792D2D16+1)<<endl;
       writesh<<"${cmd} -ww ${BASEADDR}"<<hex<<j*2+4224<<"\t"<<"0x"<<int((qdc_data[j]->GetFunction("gaus")->GetParameter(1)+qdc_data[j]->GetFunction("gaus")->GetParameter(2)*v792msigma)/v792D2D16+1)<<endl;
     }
   writesh.close();
-
-  
 #endif
 #endif  
   
@@ -543,17 +528,26 @@ void pedo::Record()
 
 void pedo::RecordPicture()
 {
+  TCanvas *c1 = new TCanvas("c1","",600,400);
+  c1->cd();
+  c1->Print("save.pdf[");
+  
 #ifdef v785_pedo 
 #if v785num > 1
   for (int i = 0; i < v785num; ++i)
     {
       for(int j = 0;j < 32; j++)
 	{
-
+	  adc_data[i][j]->Draw();
+	  c1->Print("save.pdf");
 	}
     }
 #else
-
+  for(int j = 0;j < 32; j++)
+    {
+      adc_data[j]->Draw();
+      c1->Print("save.pdf");
+    }
 #endif
 #endif  
 
@@ -563,11 +557,16 @@ void pedo::RecordPicture()
     {
       for(int j = 0;j < 32; j++)
 	{
-
+	  qdc_data[i][j]->Draw();
+	  c1->Print("save.pdf");
 	}
     }
 #else
-
+  for(int j = 0;j < 32; j++)
+    {
+      qdc_data[j]->Draw();
+      c1->Print("save.pdf");
+    }
 #endif
 #endif  
   
@@ -577,64 +576,89 @@ void pedo::RecordPicture()
     {
       for(int j = 0;j < 32; j++)
 	{
-
+	  madc_data[i][j]->Draw();
+	  c1->Print("save.pdf");
 	}
     }
 #else
-
+  for(int j = 0;j < 32; j++)
+    {
+      madc_data[j]->Draw();
+      c1->Print("save.pdf");
+    }
 #endif
-#endif  
+#endif
+  c1->Print("save.pdf]");
+  delete c1;
 }
   
-void pedo::RecordHisto()
-{
-#ifdef v785_pedo 
-#if v785num > 1
-  for (int i = 0; i < v785num; ++i)
-    {
-      for(int j = 0;j < 32; j++)
-	{
-
-	}
-    }
-#else
-
-#endif
-#endif  
-
-#ifdef v792_pedo 
-#if v792num > 1
-  for (int i = 0; i < v792num; ++i)
-    {
-      for(int j = 0;j < 32; j++)
-	{
-
-	}
-    }
-#else
-
-#endif
-#endif  
-  
-#ifdef madc32_pedo 
-#if madc32num > 1
-  for (int i = 0; i < madc32num; ++i)
-    {
-      for(int j = 0;j < 32; j++)
-	{
-
-	}
-    }
-#else
-
-#endif
-#endif  
-}
 
 void pedo::RecordText()
 {
+  std::ofstream writetxt;//fstream
+  writetxt.open("save.txt");//ios::bin ios::app
+  if(!writetxt.is_open())
+    {
+      std::cout<<"can't open file save.txt."<<std::endl;
+    }
+  writetxt<<"mod    ch    mean    sigma"<<endl<<endl;
+#ifdef v785_pedo
+  writetxt<<"###### ADC ######"<<endl;
+#if v785num > 1
+  for (int i = 0; i < v785num; ++i)
+    {
+      for(int j = 0;j < 32; j++)
+	{
+	  writetxt<<i<<"  "<<j<<"  "<<adc_data[i][j]->GetFunction("gaus")->GetParameter(1)<<"  "<<adc_data[i][j]->GetFunction("gaus")->GetParameter(2)<<endl;
+	}
+    }
+#else
+  for(int j = 0;j < 32; j++)
+    {
+      writetxt<<"0"<<"  "<<j<<"  "<<adc_data[j]->GetFunction("gaus")->GetParameter(1)<<"  "<<adc_data[j]->GetFunction("gaus")->GetParameter(2)<<endl;
+    }
+#endif
+  writetxt<<endl<<endl;
+#endif  
 
-
+#ifdef v792_pedo
+  writetxt<<"###### QDC ######"<<endl;
+#if v792num > 1
+  for (int i = 0; i < v792num; ++i)
+    {
+      for(int j = 0;j < 32; j++)
+	{
+	  writetxt<<i<<"  "<<j<<"  "<<qdc_data[i][j]->GetFunction("gaus")->GetParameter(1)<<"  "<<qdc_data[i][j]->GetFunction("gaus")->GetParameter(2)<<endl;
+	}
+    }
+#else
+  for(int j = 0;j < 32; j++)
+    {
+      writetxt<<"0"<<"  "<<j<<"  "<<qdc_data[j]->GetFunction("gaus")->GetParameter(1)<<"  "<<qdc_data[j]->GetFunction("gaus")->GetParameter(2)<<endl;
+    }
+#endif
+  writetxt<<endl<<endl;
+#endif  
+  
+#ifdef madc32_pedo
+   writetxt<<"###### MADC ######"<<endl;
+#if madc32num > 1
+  for (int i = 0; i < madc32num; ++i)
+    {
+      for(int j = 0;j < 32; j++)
+	{
+	  writetxt<<i<<"  "<<j<<"  "<<madc_data[i][j]->GetFunction("gaus")->GetParameter(1)<<"  "<<madc_data[i][j]->GetFunction("gaus")->GetParameter(2)<<endl;
+	}
+    }
+#else
+  for(int j = 0;j < 32; j++)
+    {
+      writetxt<<"0"<<"  "<<j<<"  "<<madc_data[j]->GetFunction("gaus")->GetParameter(1)<<"  "<<madc_data[j]->GetFunction("gaus")->GetParameter(2)<<endl;
+    }
+#endif
+  writetxt<<endl<<endl;
+#endif  
+  writetxt.close();
 }
 
 

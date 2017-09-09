@@ -4,9 +4,9 @@
 // Author: Hongyi Wu(吴鸿毅)
 // Email: wuhongyi@qq.com 
 // Created: 五 9月  8 19:51:48 2017 (+0800)
-// Last-Updated: 五 9月  8 22:23:02 2017 (+0800)
+// Last-Updated: 六 9月  9 13:07:28 2017 (+0800)
 //           By: Hongyi Wu(吴鸿毅)
-//     Update #: 7
+//     Update #: 9
 // URL: http://wuhongyi.cn 
 
 #ifndef _PEDO_H_
@@ -14,6 +14,7 @@
 
 #include "UserDefine.hh"
 
+#include "TCanvas.h"
 #include "TFile.h"
 #include "TTree.h"
 #include "TH1.h"
@@ -43,7 +44,6 @@ private:
   void Record();
   void RecordText();
   void RecordPicture();
-  void RecordHisto();
   
 private:
 #ifdef v785_pedo 
