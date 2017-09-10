@@ -5,9 +5,9 @@
 # Author: Hongyi Wu(吴鸿毅)
 # Email: wuhongyi@qq.com 
 # Created: 二 8月 15 20:37:39 2017 (+0800)
-# Last-Updated: 六 9月  2 21:23:32 2017 (+0800)
+# Last-Updated: 六 9月  9 13:16:23 2017 (+0800)
 #           By: Hongyi Wu(吴鸿毅)
-#     Update #: 6
+#     Update #: 7
 # URL: http://wuhongyi.cn 
 
 if [ `whoami` = "root" ];then 
@@ -44,21 +44,21 @@ sed -i  $yonghumingtihuan /home/$USER/babirl/rcd/babimo
 
 grep 'PATH=$PATH:/home/'$USER'/babirl/bin/' ~/.bashrc >/dev/null
 if [ $? -eq 0 ]; then
-    
+    echo 'PATH=$PATH:/home/'$USER'/babirl/bin/ already exists in ~/.bashrc'
 else
     echo 'PATH=$PATH:/home/'$USER'/babirl/bin/' >> ~/.bashrc
 fi
 
 grep 'export TARTSYS=/home/'$USER'/VMEDAQ/anaroot' ~/.bashrc >/dev/null
 if [ $? -eq 0 ]; then
-    
+    echo 'export TARTSYS=/home/'$USER'/VMEDAQ/anaroot already exists in ~/.bashrc'
 else
     echo 'export TARTSYS=/home/'$USER'/VMEDAQ/anaroot' >> ~/.bashrc
 fi
 
 grep 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$TARTSYS/lib:$TARTSYS/sources/Core' ~/.bashrc >/dev/null
 if [ $? -eq 0 ]; then
-    
+    echo 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$TARTSYS/lib:$TARTSYS/sources/Core already exists in ~/.bashrc'
 else
     echo 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$TARTSYS/lib:$TARTSYS/sources/Core' >> ~/.bashrc
 fi

@@ -4,9 +4,9 @@
 // Author: Hongyi Wu(吴鸿毅)
 // Email: wuhongyi@qq.com 
 // Created: 五 9月  8 19:48:49 2017 (+0800)
-// Last-Updated: 五 9月  8 23:11:36 2017 (+0800)
+// Last-Updated: 日 9月 10 15:45:14 2017 (+0800)
 //           By: Hongyi Wu(吴鸿毅)
-//     Update #: 5
+//     Update #: 7
 // URL: http://wuhongyi.cn 
 
 // 用户需要修改本文件中的参数
@@ -15,6 +15,11 @@
 
 #ifndef _USERDEFINE_H_
 #define _USERDEFINE_H_
+
+#define ROOTFILEPATH "/home/wuhongyi/data/rootfile/"
+#define ROOTFILENAME "data"
+
+
 
 // adc
 #define v785_pedo //没有该插件则注释本行

@@ -9,7 +9,6 @@ fi
 
 num=`cat /proc/cpuinfo | grep processor | wc -l`
 
-cd tar
 tar -xzvf CAENVMELib-2.50.tgz
 cd CAENVMELib-2.50/lib
 sh install_x64

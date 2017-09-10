@@ -4,14 +4,10 @@
 // Author: Hongyi Wu(吴鸿毅)
 // Email: wuhongyi@qq.com 
 // Created: 一 7月 10 21:28:29 2017 (+0800)
-// Last-Updated: 一 7月 10 21:50:54 2017 (+0800)
+// Last-Updated: 日 9月 10 15:48:08 2017 (+0800)
 //           By: Hongyi Wu(吴鸿毅)
-//     Update #: 3
+//     Update #: 4
 // URL: http://wuhongyi.cn 
-
-// 用户需要修改本文件中的文件路径,文件名
-
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 #include "r2root.hh"
 
@@ -19,9 +15,9 @@ int main(int argc, char **argv)
 {
   //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
   // 用户需要修改以下内容
-  TString rootpath = "/home/wuhongyi/data/rootfile/";
-  TString rawpath = "/home/wuhongyi/data/";
-  TString File = "data";//file name
+  TString rootpath = ROOTFILEPATH;
+  TString rawpath = RAWFILEPATH;
+  TString File = RAWFILENAME;//file name
   // 用户需要修改以上内容
   //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 

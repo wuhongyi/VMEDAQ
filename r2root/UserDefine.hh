@@ -4,9 +4,9 @@
 // Author: Hongyi Wu(吴鸿毅)
 // Email: wuhongyi@qq.com 
 // Created: 一 7月 10 16:37:37 2017 (+0800)
-// Last-Updated: 二 9月  5 18:31:11 2017 (+0800)
+// Last-Updated: 日 9月 10 15:48:08 2017 (+0800)
 //           By: Hongyi Wu(吴鸿毅)
-//     Update #: 14
+//     Update #: 15
 // URL: http://wuhongyi.cn 
 
 // 用户需要修改本文件中的参数
@@ -16,6 +16,13 @@
 
 #ifndef _USERDEFINE_H_
 #define _USERDEFINE_H_
+
+#define ROOTFILEPATH "/home/wuhongyi/data/rootfile/"
+#define RAWFILEPATH "/home/wuhongyi/data/"
+#define RAWFILENAME "data"
+
+
+
 
 // scaler
 #define v830_r2root //没有该插件则注释本行
