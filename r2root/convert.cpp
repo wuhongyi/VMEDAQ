@@ -4,22 +4,18 @@
 // Author: Hongyi Wu(吴鸿毅)
 // Email: wuhongyi@qq.com 
 // Created: 一 7月 10 21:28:29 2017 (+0800)
-// Last-Updated: 日 9月 10 15:48:08 2017 (+0800)
+// Last-Updated: 五 10月 13 21:07:58 2017 (+0800)
 //           By: Hongyi Wu(吴鸿毅)
-//     Update #: 4
+//     Update #: 5
 // URL: http://wuhongyi.cn 
 
 #include "r2root.hh"
 
 int main(int argc, char **argv)
 {
-  //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-  // 用户需要修改以下内容
   TString rootpath = ROOTFILEPATH;
   TString rawpath = RAWFILEPATH;
   TString File = RAWFILENAME;//file name
-  // 用户需要修改以上内容
-  //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
   gSystem->Load("libanacore.so");
 
