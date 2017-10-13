@@ -4,24 +4,36 @@
 ;; Author: Hongyi Wu(吴鸿毅)
 ;; Email: wuhongyi@qq.com 
 ;; Created: 日 7月  9 15:42:31 2017 (+0800)
-;; Last-Updated: 一 9月  4 20:48:41 2017 (+0800)
+;; Last-Updated: 五 10月 13 22:57:51 2017 (+0800)
 ;;           By: Hongyi Wu(吴鸿毅)
-;;     Update #: 16
+;;     Update #: 17
 ;; URL: http://wuhongyi.cn -->
 
 # README
 
+本获取经过Scientific Linux 6/7 系统测试。
+
+
 
 文件夹内有以下文件/文件夹：
 
-- anaroot
-- DAQConfig
-- online（在线监视）
+- analysis（一些用来辅助分析的代码）
+- anaroot（底层库，用来将原始数据转为ROOT及在线统计）
+- checkcnt（自动检查数据事件关联情况）
+- cutpedo（自动拟合推荐合适pedo）
+- DAQConfig（获取控制包）
+- online（在线监视能量，能谱）
 - r2root（数据转换）
 - source（babirl源码，将会配置自动化安装脚本）
+- statistics(时时监视每路信号的计数率，每10ns更新一次)
 - README.md（本文件）
 
 ----
+
+## analysis
+
+存放辅助分析程序，当前只放置一个MakeProcess模板。
+
 
 ## anaroot
 
@@ -88,6 +100,13 @@ sh autoPKU.sh
 #define v830geo 0 // 不要修改
 ```
 
+## checkcnt
+
+用来辅助检查文件中事件是否关联。执行程序之后将会在该文件夹内生成一个pdf文件，检查该文件内每张图数值是否有异常。
+
+## cutpedo
+
+用来辅助设置pedo数值。高斯拟合pedo，并给出三倍sigma的上限作为推荐数值，并生成初始文件夹init内脚本。
 
 ## DAQConfig
 
@@ -120,13 +139,9 @@ sh autoPKU.sh
 **重点是修改 cblt.hh 文件，对启用的插件设置CBLT ADDR 为0xbb，其中MADC还得设置MCST ADDR为0xdd。还得设置每一个插件在CBLT中的顺序，first、mid、last。至少得两个插件才能组成CBLT**
 
 
-## r2root
-
-仅仅需要修改插件定义即可，无需修改其它代码。
-
-修改文件 UserDefine.hh，按照提示修改即可。 
-
 ## online
+
+时时监视每路信号的能量信息。
 
 按照提示修改Online.cc文件
 
@@ -137,6 +152,23 @@ sh autoPKU.sh
 V2718前面板5个输出PORT，分别为0-4
 
 通电时候PORT0-3处于高电平，PORT4处于低电平。因此软件BUSY模式时候采用PORT4，硬件BUSY模式采用PORT3。
+
+
+## r2root
+
+仅仅需要修改插件定义即可，无需修改其它代码。
+
+修改文件 UserDefine.hh，按照提示修改即可。 
+
+
+## source
+
+存放获取驱动、依赖库等以及自动安装脚本。详细内容请阅读文件source/README.md
+
+
+## statistics
+
+用来监视每路的计数率。
 
 
 ----
