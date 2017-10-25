@@ -4,9 +4,9 @@
 // Author: Hongyi Wu(吴鸿毅)
 // Email: wuhongyi@qq.com 
 // Created: 五 10月 13 21:05:34 2017 (+0800)
-// Last-Updated: 五 10月 13 22:17:58 2017 (+0800)
+// Last-Updated: 三 10月 25 16:39:53 2017 (+0800)
 //           By: Hongyi Wu(吴鸿毅)
-//     Update #: 14
+//     Update #: 15
 // URL: http://wuhongyi.cn 
 
 #include "UserDefine.hh"
@@ -129,7 +129,23 @@ int main(int argc, char *argv[])
   c1->Print(pdffilename);
 #endif    
 #endif
-  
+
+#ifdef v1x90_checkcnt //ok
+#if v1x90num > 1
+  for (int i = 0; i < v1x90num; ++i)
+    {
+      sprintf(tempchar,"acnt[0]-gcnt[%d]",i);
+      t->Draw(tempchar);
+      c1->Update();
+      c1->Print(pdffilename);
+    }
+#else
+  t->Draw("acnt[0]-gcnt");
+  c1->Update();
+  c1->Print(pdffilename);
+#endif  
+#endif
+
 #else //v785==1
 
 #ifdef v792_checkcnt //ok
@@ -180,6 +196,22 @@ int main(int argc, char *argv[])
 #endif    
 #endif
 
+#ifdef v1x90_checkcnt //ok
+#if v1x90num > 1
+  for (int i = 0; i < v1x90num; ++i)
+    {
+      sprintf(tempchar,"acnt-gcnt[%d]",i);
+      t->Draw(tempchar);
+      c1->Update();
+      c1->Print(pdffilename);
+    }
+#else
+  t->Draw("acnt-gcnt");
+  c1->Update();
+  c1->Print(pdffilename);
+#endif  
+#endif
+  
 #endif//v785>=1
   printpdf = pdffilename + printpdfcloseflag;
   c1->Print(printpdf.Data());//No actual print, just close.
