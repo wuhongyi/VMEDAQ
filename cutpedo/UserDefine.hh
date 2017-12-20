@@ -4,9 +4,9 @@
 // Author: Hongyi Wu(吴鸿毅)
 // Email: wuhongyi@qq.com 
 // Created: 五 9月  8 19:48:49 2017 (+0800)
-// Last-Updated: 日 9月 10 15:45:14 2017 (+0800)
+// Last-Updated: 二 10月 31 23:59:34 2017 (+0800)
 //           By: Hongyi Wu(吴鸿毅)
-//     Update #: 7
+//     Update #: 10
 // URL: http://wuhongyi.cn 
 
 // 用户需要修改本文件中的参数
@@ -23,16 +23,16 @@
 
 // adc
 #define v785_pedo //没有该插件则注释本行
-#define v785num 1
+#define v785num 7
 #define v785binmin 0
-#define v785binmax 500
+#define v785binmax 200
 #define v785fitrange 50  //+-
 #define v785D2D16 2 // 2/16
 #define v785msigma 3
 
 
 // qdc
-#define v792_pedo //没有该插件则注释本行
+// #define v792_pedo //没有该插件则注释本行
 #define v792num 1
 #define v792binmin 2000
 #define v792binmax 2500
@@ -43,10 +43,10 @@
 
 // madc
 #define madc32_pedo //没有该插件则注释本行
-#define madc32num 2
+#define madc32num 1
 #define madc32binmin 0
-#define madc32binmax 500
-#define madc32fitrange 50  //+-
+#define madc32binmax 100
+#define madc32fitrange 4  //+-
 #define madc32msigma 3
 
 

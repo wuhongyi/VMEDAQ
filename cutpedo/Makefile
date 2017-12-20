@@ -16,4 +16,4 @@ $(OBJ): $(sourcefile)
 	$(GXX) $(CFLAGS) $(ROOTCFLAGS) $(ROOTLIBS) -o $@ $(filter %.cc ,$(sourcefile))
 
 clean:
-	rm -f *~ *.o $(OBJ) save.* *.sh
+	rm -f *~ *.o $(OBJ) save.* *.sh *.root

@@ -4,9 +4,9 @@
 // Author: Hongyi Wu(吴鸿毅)
 // Email: wuhongyi@qq.com 
 // Created: 五 9月  8 19:51:48 2017 (+0800)
-// Last-Updated: 六 9月  9 13:07:28 2017 (+0800)
+// Last-Updated: 三 11月  1 00:13:15 2017 (+0800)
 //           By: Hongyi Wu(吴鸿毅)
-//     Update #: 9
+//     Update #: 10
 // URL: http://wuhongyi.cn 
 
 #ifndef _PEDO_H_
@@ -44,6 +44,7 @@ private:
   void Record();
   void RecordText();
   void RecordPicture();
+  void RecordHistogram();
   
 private:
 #ifdef v785_pedo 

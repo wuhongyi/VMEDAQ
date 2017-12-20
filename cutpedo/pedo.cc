@@ -4,9 +4,9 @@
 // Author: Hongyi Wu(吴鸿毅)
 // Email: wuhongyi@qq.com 
 // Created: 五 9月  8 19:52:09 2017 (+0800)
-// Last-Updated: 六 9月  9 13:07:28 2017 (+0800)
+// Last-Updated: 三 11月  1 00:14:02 2017 (+0800)
 //           By: Hongyi Wu(吴鸿毅)
-//     Update #: 36
+//     Update #: 40
 // URL: http://wuhongyi.cn 
 
 #include "pedo.hh"
@@ -127,7 +127,8 @@ void pedo::Process()
   Record();
   RecordText();
   RecordPicture();
-
+  RecordHistogram();
+  
   Benchmark->Show("tree");//计时结束并输出时间
 }
 
@@ -205,7 +206,7 @@ Bool_t pedo::Init(const char * filename)
 #else
   for(int j = 0;j < 32; j++)
     {
-      sprintf(histoname,"madc32_mod%02d_ch%02d",i,j);
+      sprintf(histoname,"madc32_ch%02d",j);
       madc_data[j] = new TH1D(histoname,"",madc32binmax-madc32binmin,madc32binmin,madc32binmax);
     }
 #endif
@@ -660,6 +661,74 @@ void pedo::RecordText()
 #endif  
   writetxt.close();
 }
+
+void pedo::RecordHistogram()
+{
+  TFile *rootfile = new TFile("save.root","RECREATE");//"RECREATE" "READ"
+  if(!rootfile->IsOpen())
+    {
+      std::cout<<"Can't open root file"<<std::endl;
+    }
+  rootfile->cd();
+  
+#ifdef v785_pedo 
+#if v785num > 1
+  for (int i = 0; i < v785num; ++i)
+    {
+      for(int j = 0;j < 32; j++)
+	{
+	  adc_data[i][j]->Write();
+	}
+    }
+#else
+    for(int j = 0;j < 32; j++)
+      {
+	adc_data[j]->Write();
+      }
+#endif
+#endif  
+
+#ifdef v792_pedo 
+#if v792num > 1
+  for (int i = 0; i < v792num; ++i)
+    {
+      for(int j = 0;j < 32; j++)
+	{
+	  qdc_data[i][j]->Write();
+	}
+    }
+#else
+  for(int j = 0;j < 32; j++)
+    {
+      qdc_data[j]->Write();
+    }
+#endif
+#endif  
+  
+#ifdef madc32_pedo 
+#if madc32num > 1
+  for (int i = 0; i < madc32num; ++i)
+    {
+      for(int j = 0;j < 32; j++)
+	{
+	  madc_data[i][j]->Write();
+	}
+    }
+#else
+  for(int j = 0;j < 32; j++)
+    {
+      madc_data[j]->Write();
+    }
+#endif
+#endif  
+  // rootfile->ls("");
+  // TObject->Write();
+  // TH1D *h = (TH1D*)rootfile->Get("name");
+  rootfile->Write();
+  rootfile->Close();
+  
+}
+
 
 
 // 
