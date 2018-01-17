@@ -31,20 +31,31 @@ public:
    static const unsigned int kTDCTrailer        = 0x18000000;
    static const unsigned int kTDCError          = 0x20000000;
    static const unsigned int kGlobalTrailer     = 0x80000000;
-   static const unsigned int kMaskGeometry      = 0x0000001f;
-   static const unsigned int kMaskEventCounter  = 0x7ffffe0;
-   static const unsigned int kMaskBunchID       = 0x00000fff;
-   static const unsigned int kMaskEventID       = 0x00000fff;
-   static const unsigned int kMaskChannel       = 0x03f80000;
-   static const unsigned int kMaskMeasure       = 0x0007ffff;
-   static const unsigned int kMaskEdgeType      = 0x04000000;
-   static const int kShiftGeometry     = 0;
-   static const int kShiftEventCounter = 5;
-   static const int kShiftBunchID      = 0;
-   static const int kShiftEventID      = 12;
-   static const int kShiftChannel      = 19;
-   static const int kShiftMeasure      = 0;
-   static const int kShiftEdgeType     = 26;
+
+
+  static const unsigned int kMaskGlobalTrailerStatus = 0x07000000;
+  static const int kShiftGlobalTrailerStatus = 24;
+
+  static const unsigned int kMaskTDCErrorFlags = 0x00007FFF;
+  static const int kShiftTDCErrorFlags = 0;
+  
+  static const unsigned int kMaskGeometry      = 0x0000001f;
+  static const int kShiftGeometry     = 0;
+  static const unsigned int kMaskEventCounter  = 0x7ffffe0;
+  static const int kShiftEventCounter = 5;
+
+  static const unsigned int kMaskBunchID       = 0x00000fff;
+  static const int kShiftBunchID      = 0;
+  static const unsigned int kMaskEventID       = 0x00fff000;
+  static const int kShiftEventID      = 12;
+
+  static const unsigned int kMaskChannel       = 0x03f80000;
+  static const int kShiftChannel      = 19;
+  static const unsigned int kMaskMeasure       = 0x0007ffff;
+  static const int kShiftMeasure      = 0;
+  static const unsigned int kMaskEdgeType      = 0x04000000;
+  static const int kShiftEdgeType     = 26;
+
 
 };
 #endif // end of #ifdef TARTDECODERV1190_H

@@ -49,7 +49,7 @@ int TArtDecoderV1190::Decode(unsigned char* &buf, const unsigned int& size,
 	bncid = (evtdata[i]&kMaskBunchID)>>kShiftBunchID;
 	evtid = (evtdata[i]&kMaskEventCounter)>>kShiftEventCounter;
       } else if (ih == kTDCMeasurement) {
-	//printf("V1190 [TDC Measureme] : 0x%08x\n", evtdata[i]);
+	// printf("V1190 [TDC Measureme] : 0x%08x\n", evtdata[i]);
 	//if (thf != 1) continue;
 	ich = (evtdata[i]&kMaskChannel) >> kShiftChannel;
 	edge = (evtdata[i]&kMaskEdgeType) >> kShiftEdgeType;
@@ -60,9 +60,9 @@ int TArtDecoderV1190::Decode(unsigned char* &buf, const unsigned int& size,
 	//printf("V1190 [TDC Trailer  ] : 0x%08x\n", evtdata[i]);
 	//thf = 0;
       } else if (ih == kTDCError) {
-	//printf("V1190 [TDC Error    ] : 0x%08x\n", evtdata[i]);
+	// printf("V1190 [TDC Error    ] : 0x%08x\n", evtdata[i]);
       } else if (ih == kGlobalTrailer) {
-	//printf("V1190 [Global Traile] : 0x%08x\n", evtdata[i]);
+	// printf("V1190 [Global Traile] : 0x%08x\n", evtdata[i]);
          ghf = 0;
       }
    }

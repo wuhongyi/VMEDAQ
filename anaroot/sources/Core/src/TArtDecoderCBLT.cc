@@ -138,9 +138,11 @@ int TArtDecoderCBLT::Decode(unsigned char* &buf, const unsigned int& size, TArtR
 	   rawseg->PutData(rdata);
 	 } else if(ih == v1190tdcerror && evtflag ==2) {
 	   // here read tdc error info
+	if(((evtdata[i]&v1190tdcerrorflagsmask) >> v1190tdcerrorflagsshift) > 0) printf("V1190 [TDC Error    ] : %d\n", ((evtdata[i]&v1190tdcerrorflagsmask) >> v1190tdcerrorflagsshift));
 	 } else if(ih == v1190tdctrailer && evtflag ==2){
 	   // here read tdc trailer
 	 } else if(ih == v1190globaltrailer && evtflag == 2){
+	   if(((evtdata[i]&v1190globaltrailerstatusmask) >> v1190globaltrailerstatusshift) > 0) printf("V1190 [Global Traile] : %d\n", ((evtdata[i]&v1190globaltrailerstatusmask) >> v1190globaltrailerstatusshift));
 	   evtflag = 0;
            modulenum++;
 	   if(modulenum == module[moduleid].n) {

@@ -57,6 +57,13 @@ public:
   static const unsigned int v1190globaltrailer  = 0x80000000;
   static const unsigned int v1190globalTTT      = 0x88000000;
   static const unsigned int v1190typemask       = 0xf8000000;
+
+  static const unsigned int v1190globaltrailerstatusmask = 0x07000000;
+  static const int v1190globaltrailerstatusshift = 24;
+
+  static const unsigned int v1190tdcerrorflagsmask = 0x00007FFF;
+  static const int v1190tdcerrorflagsshift = 0;
+  
   static const unsigned int v1190geomask        = 0x0000001f;
   static const unsigned int v1190geoshift       = 0x0;
   static const unsigned int v1190cntmask        = 0x07ffffe0;
@@ -68,6 +75,8 @@ public:
   static const unsigned int v1190edgemask       = 0x04000000;
   static const unsigned int v1190edgeshift      = 26;
 
+
+  
 // madc32 Decoder parameter
   static const unsigned int madc32typemask      = 0xc0000000;
   static const unsigned int madc32header        = 0x40000000;

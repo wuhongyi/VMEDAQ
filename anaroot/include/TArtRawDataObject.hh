@@ -20,10 +20,17 @@ class TArtRawDataObject : public TNamed
 		    unsigned int inevtcnt){
     geo=ingeo;
     evtcnt=inevtcnt;
-
-    edge=-1; categoryid=-1; detectorid=-1; datatype=-1;channel=-1;
+    channel=-1;
+    edge=-1; categoryid=-1; detectorid=-1; datatype=-1;
   }
 
+  // GOTO
+  // channel >= 0 real channel
+  // channel == -1 event count
+  // channel == -2 v1x90 global trailer status
+  // channel == -3 v1x90 TDC error flags
+  
+  
   virtual ~TArtRawDataObject(){};
 
   virtual void SetGeo(const int ingeo){geo = ingeo;} 
@@ -62,6 +69,8 @@ class TArtRawDataObject : public TNamed
   // edge: -1:undefined, 0: rising, 1: falling
   int edge;
 
+
+  
   // Event counter for most caen modules
   int evtcnt;
   
