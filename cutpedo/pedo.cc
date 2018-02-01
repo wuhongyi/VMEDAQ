@@ -4,9 +4,9 @@
 // Author: Hongyi Wu(吴鸿毅)
 // Email: wuhongyi@qq.com 
 // Created: 五 9月  8 19:52:09 2017 (+0800)
-// Last-Updated: 三 11月  1 00:14:02 2017 (+0800)
+// Last-Updated: 四 2月  1 16:36:30 2018 (+0800)
 //           By: Hongyi Wu(吴鸿毅)
-//     Update #: 40
+//     Update #: 44
 // URL: http://wuhongyi.cn 
 
 #include "pedo.hh"
@@ -223,7 +223,7 @@ void pedo::FillHistogram()
 
 #ifdef v785_pedo 
 #if v785num > 1
-      for (int i = 0; i < v792num; ++i)
+      for (int i = 0; i < v785num; ++i)
 	{
 	  for(int j = 0;j < 32; j++)
 	    {
@@ -276,13 +276,17 @@ void pedo::FillHistogram()
 
 void pedo::FitHistogram()
 {
+  double left,right;
+  
 #ifdef v785_pedo 
 #if v785num > 1
   for (int i = 0; i < v785num; ++i)
     {
       for(int j = 0;j < 32; j++)
 	{
-	  if(adc_data[i][j]->Fit("gaus","QL","",adc_data[i][j]->GetBinCenter(adc_data[i][j]->GetMaximumBin())-v785fitrange,adc_data[i][j]->GetBinCenter(adc_data[i][j]->GetMaximumBin())+v785fitrange) != 0)
+	  // if(adc_data[i][j]->Fit("gaus","QL","",adc_data[i][j]->GetBinCenter(adc_data[i][j]->GetMaximumBin())-v785fitrange,adc_data[i][j]->GetBinCenter(adc_data[i][j]->GetMaximumBin())+v785fitrange) != 0)
+	  GetRangeAbove(adc_data[i][j],v785fitrangeabove,left,right);
+	  if(adc_data[i][j]->Fit("gaus","QL","",left,right) != 0)
 	    {
 	      cout<<"ADC  mod:"<<i<<" ch:"<<j<<"Fit error!!!"<<endl;
 	    }
@@ -291,7 +295,9 @@ void pedo::FitHistogram()
 #else
   for(int j = 0;j < 32; j++)
     {
-      if(adc_data[j]->Fit("gaus","QL","",adc_data[j]->GetBinCenter(adc_data[j]->GetMaximumBin())-v785fitrange,adc_data[j]->GetBinCenter(adc_data[j]->GetMaximumBin())+v785fitrange) != 0)
+      // if(adc_data[j]->Fit("gaus","QL","",adc_data[j]->GetBinCenter(adc_data[j]->GetMaximumBin())-v785fitrange,adc_data[j]->GetBinCenter(adc_data[j]->GetMaximumBin())+v785fitrange) != 0)
+      GetRangeAbove(adc_data[j],v785fitrangeabove,left,right);
+      if(adc_data[j]->Fit("gaus","QL","",left,right) != 0)
 	{
 	  cout<<"ADC  mod:0"<<" ch:"<<j<<"Fit error!!!"<<endl;
 	}
@@ -305,7 +311,9 @@ void pedo::FitHistogram()
     {
       for(int j = 0;j < 32; j++)
 	{
-	  if(qdc_data[i][j]->Fit("gaus","QL","",qdc_data[i][j]->GetBinCenter(qdc_data[i][j]->GetMaximumBin())-v792fitrange,qdc_data[i][j]->GetBinCenter(qdc_data[i][j]->GetMaximumBin())+v792fitrange) != 0)
+	  // if(qdc_data[i][j]->Fit("gaus","QL","",qdc_data[i][j]->GetBinCenter(qdc_data[i][j]->GetMaximumBin())-v792fitrange,qdc_data[i][j]->GetBinCenter(qdc_data[i][j]->GetMaximumBin())+v792fitrange) != 0)
+	  GetRangeAbove(qdc_data[i][j],v792fitrangeabove,left,right);
+	  if(qdc_data[i][j]->Fit("gaus","QL","",left,right) != 0)
 	    {
 	      cout<<"QDC  mod:"<<i<<" ch:"<<j<<"Fit error!!!"<<endl;
 	    }
@@ -314,7 +322,9 @@ void pedo::FitHistogram()
 #else
   for(int j = 0;j < 32; j++)
     {
-      if(qdc_data[j]->Fit("gaus","QL","",qdc_data[j]->GetBinCenter(qdc_data[j]->GetMaximumBin())-v792fitrange,qdc_data[j]->GetBinCenter(qdc_data[j]->GetMaximumBin())+v792fitrange) != 0)
+      // if(qdc_data[j]->Fit("gaus","QL","",qdc_data[j]->GetBinCenter(qdc_data[j]->GetMaximumBin())-v792fitrange,qdc_data[j]->GetBinCenter(qdc_data[j]->GetMaximumBin())+v792fitrange) != 0)
+      GetRangeAbove(qdc_data[j],v792fitrangeabove,left,right);
+      if(qdc_data[j]->Fit("gaus","QL","",left,right) != 0)
 	{
 	  cout<<"QDC  mod:0"<<" ch:"<<j<<"Fit error!!!"<<endl;
 	}
@@ -328,7 +338,9 @@ void pedo::FitHistogram()
     {
       for(int j = 0;j < 32; j++)
 	{
-	  if(madc_data[i][j]->Fit("gaus","QL","",madc_data[i][j]->GetBinCenter(madc_data[i][j]->GetMaximumBin())-madc32fitrange,madc_data[i][j]->GetBinCenter(madc_data[i][j]->GetMaximumBin())+madc32fitrange) != 0)
+	  // if(madc_data[i][j]->Fit("gaus","QL","",madc_data[i][j]->GetBinCenter(madc_data[i][j]->GetMaximumBin())-madc32fitrange,madc_data[i][j]->GetBinCenter(madc_data[i][j]->GetMaximumBin())+madc32fitrange) != 0)
+	  GetRangeAbove(madc_data[i][j],madc32fitrangeabove,left,right);
+	  if(madc_data[i][j]->Fit("gaus","QL","",left,right) != 0)
 	    {
 	      cout<<"MADC  mod:"<<i<<" ch:"<<j<<"Fit error!!!"<<endl;
 	    }
@@ -337,7 +349,9 @@ void pedo::FitHistogram()
 #else
       for(int j = 0;j < 32; j++)
 	{
-	  if(madc_data[j]->Fit("gaus","QL","",madc_data[j]->GetBinCenter(madc_data[j]->GetMaximumBin())-madc32fitrange,madc_data[j]->GetBinCenter(madc_data[j]->GetMaximumBin())+madc32fitrange) != 0)
+	  // if(madc_data[j]->Fit("gaus","QL","",madc_data[j]->GetBinCenter(madc_data[j]->GetMaximumBin())-madc32fitrange,madc_data[j]->GetBinCenter(madc_data[j]->GetMaximumBin())+madc32fitrange) != 0)
+	  GetRangeAbove(madc_data[j],madc32fitrangeabove,left,right);
+	  if(madc_data[j]->Fit("gaus","QL","",left,right) != 0)
 	    {
 	      cout<<"MADC  mod:0"<<" ch:"<<j<<"Fit error!!!"<<endl;
 	    }
@@ -729,6 +743,14 @@ void pedo::RecordHistogram()
   
 }
 
+
+void pedo::GetRangeAbove(TH1 *h,double thre,double &left,double &right)
+{
+  double maxbincontent = h->GetBinContent(h->GetMaximumBin());
+  left = h->GetBinCenter(h->FindFirstBinAbove(thre*maxbincontent));
+  right = h->GetBinCenter(h->FindLastBinAbove(thre*maxbincontent));
+  // std::cout<<"Fit Range: "<<left<<"  "<<right<<std::endl;
+}
 
 
 // 

@@ -6,7 +6,7 @@ ROOTCFLAGS  = $(shell root-config --cflags)
 ROOTLIBS    = $(shell root-config --libs)
 
 
-CFLAGS = -Wall -O2 -I$(TARTSYS)/include -I$(ROOTSYS)/include -L$(TARTSYS)/lib -lanacore -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64
+CFLAGS = -Wall -O2 -I$(TARTSYS)/include -I$(ROOTSYS)/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64
 
 GXX = g++ 
 
