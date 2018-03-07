@@ -4,15 +4,16 @@
 ;; Author: Hongyi Wu(吴鸿毅)
 ;; Email: wuhongyi@qq.com 
 ;; Created: 日 7月  9 15:42:31 2017 (+0800)
-;; Last-Updated: 五 10月 13 22:57:51 2017 (+0800)
+;; Last-Updated: 三 3月  7 14:16:19 2018 (+0800)
 ;;           By: Hongyi Wu(吴鸿毅)
-;;     Update #: 17
+;;     Update #: 18
 ;; URL: http://wuhongyi.cn -->
 
 # README
 
 本获取经过Scientific Linux 6/7 系统测试。
 
+支持多个机箱同步获取。将插件分散在多个机箱，可大大减少数据传输的死时间。
 
 
 文件夹内有以下文件/文件夹：

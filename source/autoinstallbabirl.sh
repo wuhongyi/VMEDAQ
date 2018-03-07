@@ -5,9 +5,9 @@
 # Author: Hongyi Wu(吴鸿毅)
 # Email: wuhongyi@qq.com 
 # Created: 二 8月 15 20:37:39 2017 (+0800)
-# Last-Updated: 六 9月  9 13:16:23 2017 (+0800)
+# Last-Updated: 三 3月  7 14:09:36 2018 (+0800)
 #           By: Hongyi Wu(吴鸿毅)
-#     Update #: 7
+#     Update #: 8
 # URL: http://wuhongyi.cn 
 
 if [ `whoami` = "root" ];then 
@@ -24,10 +24,10 @@ num=`cat /proc/cpuinfo | grep processor | wc -l`
 
 rm -rf ~/babirl  #删除存在的软连接
 
-cp babirl150401.tar.gz ~
+cp babirl170125.tar.gz ~
 cd ~
-tar -zxvf babirl150401.tar.gz
-ln -sf babirl150401 babirl
+tar -zxvf babirl170125.tar.gz
+ln -sf babirl170125 babirl
 
 echo '#define BABIRLDIR "/home/'$USER'/babirl"'  >> ~/babirl/include/userdefine.h
 echo '#define PIDDIR    "/home/'$USER'/babirl/run"' >> ~/babirl/include/userdefine.h
