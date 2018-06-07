@@ -4,11 +4,8 @@
 // modified by Hongyi Wu
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-// 以下部分用户需要修改
-// ...                     用户只需要修改夹在该标记之间的内容
-// 以上部分用户需要修改
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
- 
+
+#include "UserDefine.hh"
 #include "TArtEventStore.hh"
 #include "TArtRawEventObject.hh"
 
@@ -19,6 +16,7 @@
 #include "THttpServer.h"
 #include "TRint.h"
 #include "TObject.h"
+#include "TString.h"
 
 #include <signal.h>
 #include <iostream>
@@ -42,9 +40,13 @@ void Online()
   // estore->SetInterrupt(&stoploop);//stop thr event loop
 
   TArtRawEventObject *rawevent = estore->GetRawEventObject();//the basic type of data from VME
-  // estore->Open(0);//open the shared memory to get the data from VME,actually rawevent is a memberof estore
-  estore->Open("/home/wuhongyi/data/data0100.ridf");//open the RIDF file,offline model
 
+#if DATA_MODE == DATA_MODE_ONLINE
+  estore->Open(FILE_ONLINE_SID);//open the shared memory to get the data from VME,actually rawevent is a memberof estore
+#elif DATA_MODE == DATA_MODE_OFFLINE
+  estore->Open(FILE_OFFLINE_DATA);//open the RIDF file,offline model
+#endif
+  
   if (gSystem->AccessPathName("auth.txt") != 0)
     {
       std::cout<<"Please start macro from directory where auth.txt file is available\n"<<std::endl;
@@ -53,65 +55,131 @@ void Online()
     }
 
   //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-  // 以下部分用户需要修改
-  
+
   // v7xx
-
-  TH2I *v7xx[10];
-
-  for (int i = 0; i < 8; ++i)
+  TH2I *v7xx[24];
+#ifdef V7XX_CRATE
+  for (int i = 0; i < V7XX_CRATE_NUM; ++i)
     {
-      v7xx[i] = new TH2I(TString::Format("v7xx%02d",i).Data(),"",4200,0,4200,32,-0.5,31.5);
+      v7xx[i] = new TH2I(TString::Format("v7xx%02d",i).Data(),"V7XX",V7XX_HIST_BIN,V7XX_HIST_MIN,V7XX_HIST_MAX,32,-0.5,31.5);
       v7xx[i]->SetDirectory(0);
     }
+#endif
   
   // madc32
-  TH2I *madc[10];
-  for (int i = 0; i < 2; ++i)
+  TH2I *madc[24];
+#ifdef MADC_CRATE  
+  for (int i = 0; i < MADC_CRATE_NUM; ++i)
     {
-      madc[i] = new TH2I(TString::Format("madc%02d",i).Data(),"",8000,0,8000,32,-0.5,31.5);
+      madc[i] = new TH2I(TString::Format("madc%02d",i).Data(),"MADC32",MADC_HIST_BIN,MADC_HIST_MIN,MADC_HIST_MAX,32,-0.5,31.5);
       madc[i]->SetDirectory(0);
     }
-
+#endif
   
+  // v1190
+  TH2I *v1190[24];
+#ifdef V1190_CRATE
+  for (int i = 0; i < V1190_CRATE_NUM; ++i)
+    {
+      v1190[i] = new TH2I(TString::Format("v1190_%02d",i).Data(),"V1190",128,-0.5,127.5,V1190_HIST_BIN,V1190_HIST_MIN,V1190_HIST_MAX);
+      v1190[i]->SetDirectory(0);
+    }
+#endif  
+  
+  //v1290
+  TH2I *v1290[24];
+#ifdef V1290_CRATE
+  for (int i = 0; i < V1290_CRATE_NUM; ++i)
+    {
+      v1290[i] = new TH2I(TString::Format("v1290_%02d",i).Data(),"V1290",32,-0.5,31.5,V1290_HIST_BIN,V1290_HIST_MIN,V1290_HIST_MAX);
+      v1290[i]->SetDirectory(0);
+    }
+#endif 
 
-
-  // v1190/v1290
-  TH2F* g1=new TH2F("g1","gdc1",128,-0.5,127.5,50000,0,50000);//create a histogram
-  g1->SetDirectory(0);
-  TH2F* g2=new TH2F("g2","gdc2",128,-0.5,127.5,50000,0,500000);//create a histogram
-  g2->SetDirectory(0);
-
-  // 以上部分用户需要修改
   //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-
 
   THttpServer* serv = new THttpServer("http:8080?top=PKU VME DAQ Online&auth_file=auth.txt&auth_domain=root");
   // serv->SetJSROOT("https://root.cern.ch/js/latest/");
 
-  for (int i = 0; i < 8; ++i)
+#ifdef V7XX_CRATE
+  for (int i = 0; i < V7XX_CRATE_NUM; ++i)
     {
-      serv->Register("/", v7xx[i]);
+      serv->Register("/V7XX/", v7xx[i]);
     }
-  for (int i = 0; i < 2; ++i)
-    {
-      serv->Register("/", madc[i]);
-    }
-  serv->Register("/", g1);
-  serv->Register("/", g2);
+#endif
 
-  serv->SetItemField("/","_monitoring","5000");
-  serv->SetItemField("/","_drawopt","colz");
+#ifdef MADC_CRATE  
+  for (int i = 0; i < MADC_CRATE_NUM; ++i)
+    {
+      serv->Register("/MADC32/", madc[i]);
+    }
+#endif
   
+#ifdef V1190_CRATE
+  for (int i = 0; i < V1190_CRATE_NUM; ++i)
+    {
+      serv->Register("/V1X90/", v1190[i]);
+    }
+#endif  
+
+#ifdef V1290_CRATE
+  for (int i = 0; i < V1290_CRATE_NUM; ++i)
+    {
+      serv->Register("/V1X90/", v1290[i]);
+    }
+#endif  
+
+
+#ifdef V7XX_CRATE
+  for (int i = 0; i < V7XX_CRATE_NUM; ++i)
+    {
+      serv->RegisterCommand(TString::Format("/Control/V7XX/v7xx%02d",i).Data(),TString::Format("/V7XX/v7xx%02d/->Reset()",i).Data(), "rootsys/icons/ed_delete.png");
+      serv->SetItemField(TString::Format("/Control/V7XX/v7xx%02d",i).Data(),"_update_item", TString::Format("v7xx%02d",i).Data()); // let browser update histogram view after commands execution
+    }
+#endif
+
+#ifdef MADC_CRATE  
+  for (int i = 0; i < MADC_CRATE_NUM; ++i)
+    {
+      serv->RegisterCommand(TString::Format("/Control/MADC32/madc%02d",i).Data(),TString::Format("/MADC32/madc%02d/->Reset()",i).Data(), "rootsys/icons/ed_delete.png");
+      serv->SetItemField(TString::Format("/Control/MADC32/madc%02d",i).Data(),"_update_item", TString::Format("madc%02d",i).Data());
+    }
+#endif
+
+#ifdef V1190_CRATE
+  for (int i = 0; i < V1190_CRATE_NUM; ++i)
+    {
+      serv->RegisterCommand(TString::Format("/Control/V1X90/v1190_%02d",i).Data(),TString::Format("/V1X90/v1190_%02d/->Reset()",i).Data(), "rootsys/icons/ed_delete.png");
+      serv->SetItemField(TString::Format("/Control/V1X90/v1190_%02d",i).Data(),"_update_item", TString::Format("v1190_%02d",i).Data());
+    }
+#endif  
+
+#ifdef V1290_CRATE
+  for (int i = 0; i < V1290_CRATE_NUM; ++i)
+    {
+      serv->RegisterCommand(TString::Format("/Control/V1X90/v1290_%02d",i).Data(),TString::Format("/V1X90/v1290_%02d/->Reset()",i).Data(), "rootsys/icons/ed_delete.png");
+      serv->SetItemField(TString::Format("/Control/V1X90/v1290_%02d",i).Data(),"_update_item", TString::Format("v1290_%02d",i).Data());
+    }
+#endif  
+   
+  serv->Restrict("/Control",  "visible=admin");
+  // serv->Restrict("/Control", "hidden=guest");
+  serv->RegisterCommand("/Control/Exit","gSystem->Exit()");
+
+  
+  serv->SetItemField("/","_monitoring","5000");
+  serv->SetItemField("/V7XX/","_drawopt","colz");
+  serv->SetItemField("/MADC32/","_drawopt","colz");
+  serv->SetItemField("/V1X90/","_drawopt","colz");
+   
   //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
   
-
   int neve = 0;//the number of events
 
   while(estore->GetNextEvent())
     {
       gSystem->Sleep(1);//ms
-      std::cout<<neve<<std::endl;
+      // std::cout<<neve<<std::endl;
       
       // cout<<"number of seg:"<<rawevent->GetNumSeg()<<endl;
       for(int i=0;i<rawevent->GetNumSeg();i++){//get the number of segment, usually the types of modules, because the data of same module is sent together
@@ -127,39 +195,52 @@ void Online()
 	    //the structure of data_array:geo+channel+value, anaroot will convert it
 
 	    //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-	    // 以下部分用户需要修改
 	    
 	    if (ch > -1)
 	      {
+  
+#ifdef V7XX_CRATE
+		for (int i = 0; i < V7XX_CRATE_NUM; ++i)
+		  {
+		    if(geo == V7XX_CRATE_GEO[i])
+		      {
+			if(val > 4095) val = 4100;
+			v7xx[i]->Fill(val,ch);
+		      }
+		  }
+#endif
 
-		if(geo == 0) v7xx[0]->Fill(val,ch);//pick the second ADC's 11th channel, coz we have 64 channels of every microstrip silicon detector, it's convenient to choose a few to show rather than all of them
-		if(geo == 1) v7xx[1]->Fill(val,ch);
-		if(geo == 2) v7xx[2]->Fill(val,ch);
-		if(geo == 3) v7xx[3]->Fill(val,ch);
-		if(geo == 4) v7xx[4]->Fill(val,ch);
-		if(geo == 5) v7xx[5]->Fill(val,ch);
-		if(geo == 6) v7xx[6]->Fill(val,ch);
-		if(geo == 7) v7xx[7]->Fill(val,ch);
-		// if(geo == 7) std::cout<<ch<<"  "<<val<<std::endl;
-   
-		if(geo == 10) madc[0]->Fill(val,ch);
-		if(geo == 11) madc[1]->Fill(val,ch);
-		// if(geo == 12) m3->Fill(ch,val);
-		// if(geo == 13) m4->Fill(ch,val);
-		// if(geo == 14) m5->Fill(ch,val);
-		// if(geo == 15) m6->Fill(ch,val);
-		// if(geo == 16) m7->Fill(ch,val);
-		// if(geo == 10) std::cout<<geo<<"  "<<ch<<"  "<<val<<std::endl;
-		// if(geo == 11) std::cout<<geo<<"  "<<ch<<"  "<<val<<std::endl;
-	    
-		if(geo == 20) g1->Fill(ch,val);
-		if(geo == 21) g2->Fill(ch,val);
-		// if(geo == 21) std::cout<<geo<<"  "<<ch<<"  "<<val<<std::endl;
-	    		
+#ifdef MADC_CRATE
+		for (int i = 0; i < MADC_CRATE_NUM; ++i)
+		  {
+		    if(geo == MADC_CRATE_GEO[i])
+		      {
+		        madc[i]->Fill(val,ch);
+		      }
+		  }
+#endif
+		
+#ifdef V1190_CRATE
+		for (int i = 0; i < V1190_CRATE_NUM; ++i)
+		  {
+		    if(geo == V1190_CRATE_GEO[i])
+		      {
+			v1190[i]->Fill(ch,val);
+		      }
+		  }
+#endif
+
+#ifdef V1290_CRATE
+		for (int i = 0; i < V1290_CRATE_NUM; ++i)
+		  {
+		    if(geo == V1290_CRATE_GEO[i])
+		      {
+			v1290[i]->Fill(ch,val);
+		      }
+		  }   
+#endif		
+		
 	      }
-
-	    // 以上部分用户需要修改
-	    //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 	  }
       }
 
@@ -168,7 +249,7 @@ void Online()
       neve ++;//record the number of events
       // cout<<"the number of event is:"<<neve<<endl;
 
-      if(neve%100 == 0)//every 100 events update the canvas
+      if(neve%100 == 0)//every 100 events update
 	{
 	  if(gSystem->ProcessEvents()) break;
 	}
