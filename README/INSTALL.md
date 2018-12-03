@@ -4,16 +4,16 @@
 ;; Author: Hongyi Wu(吴鸿毅)
 ;; Email: wuhongyi@qq.com 
 ;; Created: 一 12月  3 10:24:55 2018 (+0800)
-;; Last-Updated: 一 12月  3 11:09:49 2018 (+0800)
+;; Last-Updated: 一 12月  3 17:52:35 2018 (+0800)
 ;;           By: Hongyi Wu(吴鸿毅)
-;;     Update #: 5
+;;     Update #: 9
 ;; URL: http://wuhongyi.cn -->
 
 # 软件安装
 
 <!-- toc -->
 
-本页面安装设计软件放置在 source 文件夹内，里面包括**获取驱动、依赖库等以及自动安装脚本**。
+本页面安装软件放置在 source 文件夹内，里面包括**获取驱动、依赖库等以及自动安装脚本**。
 
 
 ## 系统要求
@@ -26,23 +26,80 @@
 
 ----
 
+## CAEN Lib
+
+本程序依赖 CAENVMELib/CAENComm/CAENUpgrader 三个库文件。
+
+其中 CAENVMELib/CAENComm 为获取运行必须的库。CAENUpgrader 用来更新固件。
+
+进入 source 文件夹内，在 ROOT 权限下执行 setup.sh 脚本，将会自动安装以上三个依赖库。
+
+```bash
+# 在 source 文件夹内，ROOT 权限下执行以下命令
+
+sh setup.sh
+```
+
+## 检查CAENVMELib安装
+
+进入 CheckRegisterToolByV2718 文件夹，make 编译里面程序，如果生成一个名为 pku 的可执行文件，则软件安装成功。
+
+```bash
+cd CheckRegisterToolByV2718
+make
+```
+
+
+## 检查CAENUpgrader安装
+
+安装后在终端中输入 
+```
+CAENUpgraderGUI
+```
+将会弹出 CAEN Upgrader GUI 的图形界面。
+
+
+
+----
+
+## V1718
+
+如果您使用 V1718，则需要安装 USB 驱动。
+
+
 ## A2818驱动
+
+如果您使用 A2818，则安装以下驱动。
 
 ```bash
 # A2818Drv-1.20-build20161118.tgz
 #将该文件夹复制到 /opt 并安装在该位置
+tar -zxvf A2818Drv-1.20-build20161118.tgz
 cp -r A2818Drv-1.20 /opt
 cd /opt/A2818Drv-1.20
 cp ./Makefile.2.6-3.x Makefile
 make
+
 #设置开机自动执行该脚本
-#   emacs /etc/rc.d/rc.local
-#添加 /bin/sh /opt/A2818Drv-1.20/a2818_load
+#在文件 /etc/rc.d/rc.local 中添加以下一行内容
+#/bin/sh /opt/A2818Drv-1.20/a2818_load
 ```
 
 ----
 
 ## A3818驱动
+
+如果您使用 A3818，则安装以下驱动。
+
+```bash
+#
+tar -zxvf A3818Drv-1.6.0-build20160510.tgz
+
+
+
+
+
+```
 
 **待补充**
 

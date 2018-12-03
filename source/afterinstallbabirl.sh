@@ -5,9 +5,9 @@
 # Author: Hongyi Wu(吴鸿毅)
 # Email: wuhongyi@qq.com 
 # Created: 二 8月 15 20:56:42 2017 (+0800)
-# Last-Updated: 六 9月  9 13:16:23 2017 (+0800)
+# Last-Updated: 一 12月  3 17:23:22 2018 (+0800)
 #           By: Hongyi Wu(吴鸿毅)
-#     Update #: 8
+#     Update #: 10
 # URL: http://wuhongyi.cn 
 
 
@@ -24,9 +24,11 @@ fi
 
 
 if [ `whoami` = "root" ];then 
-    echo "当前为root用户，能够执行此脚本！" 
-else 
-    echo "请在ROOT权限下执行此脚本！！！"
+    echo "---P--K--U---------V--M--E----D--A--Q-------------"
+else
+    echo "==ERROR==========================================="
+    echo "请在 ROOT 权限下执行本脚本！！！"
+    echo "=================================================="
     exit 1
 fi
 

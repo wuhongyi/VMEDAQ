@@ -5,17 +5,19 @@
 # Author: Hongyi Wu(吴鸿毅)
 # Email: wuhongyi@qq.com 
 # Created: 二 8月 15 20:37:39 2017 (+0800)
-# Last-Updated: 三 3月  7 14:09:36 2018 (+0800)
+# Last-Updated: 一 12月  3 17:23:48 2018 (+0800)
 #           By: Hongyi Wu(吴鸿毅)
-#     Update #: 8
+#     Update #: 12
 # URL: http://wuhongyi.cn 
 
-if [ `whoami` = "root" ];then 
-    echo "当前为root用户，不能够执行此脚本！"
-    echo "请在ROOT权限下执行此脚本！！！"
+if [ `whoami` = "root" ];then
+    echo "==ERROR==========================================="
+    echo "当前为 root 权限，不能执行本脚本！"
+    echo "请在非 ROOT 权限下执行本脚本！！！"
+    echo "=================================================="
     exit 1
 else 
-    echo "当前为非root用户，能够执行此脚本！"
+    echo "---P--K--U---------V--M--E----D--A--Q-------------"
 fi
 
 num=`cat /proc/cpuinfo | grep processor | wc -l`
