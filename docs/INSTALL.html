@@ -398,9 +398,9 @@
 ;; Author: Hongyi Wu(吴鸿毅)
 ;; Email: wuhongyi@qq.com 
 ;; Created: 一 12月  3 10:24:55 2018 (+0800)
-;; Last-Updated: 一 12月  3 17:52:35 2018 (+0800)
+;; Last-Updated: 一 12月  3 21:56:00 2018 (+0800)
 ;;           By: Hongyi Wu(吴鸿毅)
-;;     Update #: 9
+;;     Update #: 17
 ;; URL: http://wuhongyi.cn -->
 <h1 id="&#x8F6F;&#x4EF6;&#x5B89;&#x88C5;"><a name="&#x8F6F;&#x4EF6;&#x5B89;&#x88C5;" class="plugin-anchor" href="#&#x8F6F;&#x4EF6;&#x5B89;&#x88C5;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8F6F;&#x4EF6;&#x5B89;&#x88C5;</h1>
 <!-- toc -->
@@ -442,6 +442,7 @@ make
 <hr>
 <h2 id="v1718"><a name="v1718" class="plugin-anchor" href="#v1718"><i class="fa fa-link" aria-hidden="true"></i></a>V1718</h2>
 <p>&#x5982;&#x679C;&#x60A8;&#x4F7F;&#x7528; V1718&#xFF0C;&#x5219;&#x9700;&#x8981;&#x5B89;&#x88C5; USB &#x9A71;&#x52A8;&#x3002;</p>
+<p><strong>&#x8865;&#x5145;USB&#x5B89;&#x88C5;</strong></p>
 <h2 id="a2818&#x9A71;&#x52A8;"><a name="a2818&#x9A71;&#x52A8;" class="plugin-anchor" href="#a2818&#x9A71;&#x52A8;"><i class="fa fa-link" aria-hidden="true"></i></a>A2818&#x9A71;&#x52A8;</h2>
 <p>&#x5982;&#x679C;&#x60A8;&#x4F7F;&#x7528; A2818&#xFF0C;&#x5219;&#x5B89;&#x88C5;&#x4EE5;&#x4E0B;&#x9A71;&#x52A8;&#x3002;</p>
 <pre><code class="lang-bash"><span class="hljs-comment"># A2818Drv-1.20-build20161118.tgz</span>
@@ -454,24 +455,63 @@ make
 
 <span class="hljs-comment">#&#x8BBE;&#x7F6E;&#x5F00;&#x673A;&#x81EA;&#x52A8;&#x6267;&#x884C;&#x8BE5;&#x811A;&#x672C;</span>
 <span class="hljs-comment">#&#x5728;&#x6587;&#x4EF6; /etc/rc.d/rc.local &#x4E2D;&#x6DFB;&#x52A0;&#x4EE5;&#x4E0B;&#x4E00;&#x884C;&#x5185;&#x5BB9;</span>
-<span class="hljs-comment">#/bin/sh /opt/A2818Drv-1.20/a2818_load</span>
+/bin/sh /opt/A2818Drv-1.20/a2818_load
 </code></pre>
-<hr>
+<p>&#x91CD;&#x542F;&#x673A;&#x7BB1;&#x540E;&#xFF0C;&#x5728;&#x7EC8;&#x7AEF;&#x5185;&#x8F93;&#x5165; dmesg &#x5C06;&#x4F1A;&#x770B;&#x5230;&#x4EE5;&#x4E0B;&#x7684;A2818&#x9A71;&#x52A8;&#x52A0;&#x8F7D;&#x4FE1;&#x606F;</p>
+<pre><code>Spectre V2 : WARNING: module &apos;a2818&apos; built without retpoline-enabled compiler, may affect Spectre v2 mitigation
+a2818: CAEN A2818 CONET controller driver v1.20s
+a2818:   Copyright 2004, CAEN SpA
+pci 0000:05:02.0: enabling device (0000 -&gt; 0003)
+pci 0000:05:02.0: PCI INT A -&gt; GSI 19 (level, low) -&gt; IRQ 19
+a2818: found A2818 adapter at iomem 0xf7800000 irq 0, PLX at 0xf7900000
+a2818:   CAEN A2818 Loaded.
+a2818:   CAEN A2818: 1 device(s) found.
+</code></pre><hr>
 <h2 id="a3818&#x9A71;&#x52A8;"><a name="a3818&#x9A71;&#x52A8;" class="plugin-anchor" href="#a3818&#x9A71;&#x52A8;"><i class="fa fa-link" aria-hidden="true"></i></a>A3818&#x9A71;&#x52A8;</h2>
-<p>&#x5982;&#x679C;&#x60A8;&#x4F7F;&#x7528; A3818&#xFF0C;&#x5219;&#x5B89;&#x88C5;&#x4EE5;&#x4E0B;&#x9A71;&#x52A8;&#x3002;</p>
-<pre><code class="lang-bash"><span class="hljs-comment">#</span>
-tar -zxvf A3818Drv-1.6.0-build20160510.tgz
+<p>&#x5982;&#x679C;&#x60A8;&#x4F7F;&#x7528; A3818&#xFF0C;&#x5219;&#x5B89;&#x88C5;&#x4EE5;&#x4E0B;&#x9A71;&#x52A8;&#x3002;&#x5B89;&#x88C5;&#x8BE5;&#x9A71;&#x52A8;&#x65F6;&#xFF0C;&#x7535;&#x8111;&#x673A;&#x7BB1;&#x5FC5;&#x987B;&#x63D2;&#x5165; A3818 &#x5361;&#xFF0C;&#x5426;&#x5219;&#x5C06;&#x4F1A;&#x62A5;&#x5B89;&#x88C5;&#x5931;&#x8D25;&#x3002;</p>
+<pre><code class="lang-bash">tar -zxvf A3818Drv-1.6.1.tgz
+<span class="hljs-built_in">cd</span> A3818Drv-1.6.1
+make 
+make install
 </code></pre>
-<p><strong>&#x5F85;&#x8865;&#x5145;</strong></p>
-<hr>
+<p>&#x7136;&#x540E;&#x5728;&#x7EC8;&#x7AEF;&#x5185;&#x8F93;&#x5165; dmesg &#x5C06;&#x4F1A;&#x770B;&#x5230;&#x4EE5;&#x4E0B;&#x7684;A3818&#x9A71;&#x52A8;&#x52A0;&#x8F7D;&#x4FE1;&#x606F;</p>
+<pre><code>fuse init (API version 7.14)
+CAEN A3818 PCI Express CONET2 controller driver v1.6.0s
+  Copyright 2013, CAEN SpA
+pci 0000:02:00.0: PCI INT A -&gt; GSI 16 (level, low) -&gt; IRQ 16
+  alloc irq_desc for 33 on node -1
+  alloc kstat_irqs on node -1
+pci 0000:02:00.0: irq 33 for MSI/MSI-X
+pci 0000:02:00.0: setting latency timer to 64
+Found A3818 - Common BAR at iomem ffffc900067d4000 irq 0
+Found A3818 with 1 link(s)
+found A3818 Link 0 BAR at iomem ffffc900067d6000 irq 0
+  CAEN A3818 Loaded.
+  CAEN PCIe: 1 device(s) found.
+</code></pre><hr>
 <h2 id="riken-babirl"><a name="riken-babirl" class="plugin-anchor" href="#riken-babirl"><i class="fa fa-link" aria-hidden="true"></i></a>RIKEN babirl</h2>
 <p>babirl&#x81EA;&#x52A8;&#x5316;&#x5B89;&#x88C5;&#x65B9;&#x6CD5;</p>
-<pre><code class="lang-bash"><span class="hljs-comment">#&#x4F1A;&#x81EA;&#x52A8;&#x6DFB;&#x52A0;&#x73AF;&#x5883;&#x53D8;&#x91CF;</span>
-autoinstallbabirl.sh
-afterinstallbabirl.sh
+<pre><code class="lang-bash"><span class="hljs-comment">#&#x5728;&#x4E2A;&#x4EBA;&#x7528;&#x6237;&#x76EE;&#x5F55;&#x4E0B;&#x5B89;&#x88C5;&#x7406;&#x7814;babirl&#x5E93;</span>
+<span class="hljs-comment">#&#x5728;&#x666E;&#x901A;&#x6743;&#x9650;&#x4E0B;&#x6267;&#x884C;&#x4EE5;&#x4E0B;&#x811A;&#x672C;</span>
+
+sh autoinstallbabirl.sh
+</code></pre>
+<h1 id="&#x4F1A;&#x81EA;&#x52A8;&#x6DFB;&#x52A0;&#x73AF;&#x5883;&#x53D8;&#x91CF;"><a name="&#x4F1A;&#x81EA;&#x52A8;&#x6DFB;&#x52A0;&#x73AF;&#x5883;&#x53D8;&#x91CF;" class="plugin-anchor" href="#&#x4F1A;&#x81EA;&#x52A8;&#x6DFB;&#x52A0;&#x73AF;&#x5883;&#x53D8;&#x91CF;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4F1A;&#x81EA;&#x52A8;&#x6DFB;&#x52A0;&#x73AF;&#x5883;&#x53D8;&#x91CF;</h1>
+<p>&#x5B89;&#x88C5;&#x7ED3;&#x675F;&#x540E;&#x67E5;&#x770B; .bashrc &#x6587;&#x4EF6;&#xFF0C;&#x6700;&#x540E;&#x5C06;&#x591A;&#x4E86;&#x4E09;&#x884C;&#x5982;&#x4E0B;&#x5185;&#x5BB9;</p>
+<pre><code class="lang-bash">PATH=<span class="hljs-variable">$PATH</span>:/home/wuhongyi/babirl/bin/
+<span class="hljs-built_in">export</span> TARTSYS=/home/wuhongyi/VMEDAQ/anaroot
+<span class="hljs-built_in">export</span> LD_LIBRARY_PATH=<span class="hljs-variable">$LD_LIBRARY_PATH</span>:<span class="hljs-variable">$TARTSYS</span>/lib:<span class="hljs-variable">$TARTSYS</span>/sources/Core
+</code></pre>
+<pre><code class="lang-bash"><span class="hljs-comment">#&#x5728;ROOT&#x6743;&#x9650;&#x4E0B;&#x6267;&#x884C;&#x4EE5;&#x4E0B;&#x811A;&#x672C;</span>
+
+sh afterinstallbabirl.sh [user name]
+
+<span class="hljs-comment">#&#x5176;&#x4E2D;&#x8FD9;&#x91CC;&#x7684; [user name] &#x6362;&#x6210;&#x4F60;&#x7684;&#x5E10;&#x53F7;&#x7528;&#x6237;&#x540D;&#xFF0C;&#x4F8B;&#x5982;&#x6211;&#x7684;&#x7528;&#x6237;&#x540D;&#x4E3A;wuhongyi</span>
+<span class="hljs-comment"># sh afterinstallbabirl.sh wuhongyi</span>
 </code></pre>
 <hr>
 <h2 id="&#x5176;&#x5B83;&#x914D;&#x7F6E;"><a name="&#x5176;&#x5B83;&#x914D;&#x7F6E;" class="plugin-anchor" href="#&#x5176;&#x5B83;&#x914D;&#x7F6E;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5176;&#x5B83;&#x914D;&#x7F6E;</h2>
+<p>&#x6267;&#x884C; DAQConfig &#x4E2D;&#x7684; StartDAQ.sh &#x5F00;&#x542F;&#x8FDB;&#x7A0B;</p>
 <p>&#x8FD0;&#x884C;babicon(&#x5B89;&#x88C5;&#x540E;&#x7B2C;&#x4E00;&#x6B21;&#x9700;&#x8F93;&#x5165;&#x4EE5;&#x4E0B;&#x521D;&#x59CB;&#x5316;)</p>
 <pre><code class="lang-bash">seteflist 10 add localhost localhost
 sethdlist 0 path /home/wuhongyi/data    <span class="hljs-comment">#&#x8FD9;&#x91CC;&#x4E3A;&#x6570;&#x636E;&#x5B58;&#x50A8;&#x8DEF;&#x5F84;</span>
@@ -499,7 +539,7 @@ systemctl <span class="hljs-built_in">enable</span> iptables.service <span class
 <!-- INSTALL.md ends here -->
 <script type="text/javascript">var className='atoc';</script>
 
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> <a href="http://wuhongyi.cn/" target="_blank">&#xA9; Hongyi Wu</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> <i>updated:</i> 2018-12-03 17:52:35 </span> </footer>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> <a href="http://wuhongyi.cn/" target="_blank">&#xA9; Hongyi Wu</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> <i>updated:</i> 2018-12-03 21:56:00 </span> </footer>
                                 
                                 </section>
                             
@@ -542,7 +582,7 @@ systemctl <span class="hljs-built_in">enable</span> iptables.service <span class
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"基础安装","level":"1.2","depth":1,"next":{"title":"固件","level":"1.3","depth":1,"path":"Firmware.md","ref":"Firmware.md","articles":[]},"previous":{"title":"简介","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["search","sharing","fontsettings","livereload","highlight","github","-prism","ad","alerts","atoc","splitter","sitemap","image-captions","anchors","latex-codecogs","-katex","mermaid","ace","page-footer-ex","sectionx","mcqx","fbqx","spoiler","anchor-navigation","youtubex","redirect","expandable-chapters"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"latex-codecogs":{"type":"gif"},"spoiler":{},"ad":{"contentBottom":"","contentTop":""},"ace":{},"github":{"url":"https://github.com/wuhongyi"},"fbqx":{},"livereload":{},"page-footer-ex":{"copyright":"[© Hongyi Wu](http://wuhongyi.cn/)","markdown":true,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"<i>updated:</i>"},"atoc":{"addClass":true,"className":"atoc"},"splitter":{},"search":{},"mermaid":{},"anchor-navigation":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"family":"serif","size":2,"theme":"sepia"},"sectionx":{},"highlight":{},"sitemap":{"hostname":"http://wuhongyi.cn/"},"youtubex":{"embedDescription":{"de":"Eingebettetes Video:","default":"Embedded video:"}},"alerts":{},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":true,"google":false,"instapaper":false,"twitter":true,"vk":false,"weibo":false},"redirect":{},"mcqx":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"expandable-chapters":{},"image-captions":{"variable_name":"_pictures"}},"theme":"default","author":"Hongyi Wu(吴鸿毅)","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"_pictures":[]},"title":"VMEDAQ","gitbook":"*","description":"北京大学实验核物理组VME获取"},"file":{"path":"INSTALL.md","mtime":"2018-12-03T09:52:35.380Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-12-03T11:04:40.556Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"基础安装","level":"1.2","depth":1,"next":{"title":"固件","level":"1.3","depth":1,"path":"Firmware.md","ref":"Firmware.md","articles":[]},"previous":{"title":"简介","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["search","sharing","fontsettings","livereload","highlight","github","-prism","ad","alerts","atoc","splitter","sitemap","image-captions","anchors","latex-codecogs","-katex","mermaid","ace","page-footer-ex","sectionx","mcqx","fbqx","spoiler","anchor-navigation","youtubex","redirect","expandable-chapters"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"latex-codecogs":{"type":"gif"},"spoiler":{},"ad":{"contentBottom":"","contentTop":""},"ace":{},"github":{"url":"https://github.com/wuhongyi"},"fbqx":{},"livereload":{},"page-footer-ex":{"copyright":"[© Hongyi Wu](http://wuhongyi.cn/)","markdown":true,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"<i>updated:</i>"},"atoc":{"addClass":true,"className":"atoc"},"splitter":{},"search":{},"mermaid":{},"anchor-navigation":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"family":"serif","size":2,"theme":"sepia"},"sectionx":{},"highlight":{},"sitemap":{"hostname":"http://wuhongyi.cn/"},"youtubex":{"embedDescription":{"de":"Eingebettetes Video:","default":"Embedded video:"}},"alerts":{},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":true,"google":false,"instapaper":false,"twitter":true,"vk":false,"weibo":false},"redirect":{},"mcqx":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"expandable-chapters":{},"image-captions":{"variable_name":"_pictures"}},"theme":"default","author":"Hongyi Wu(吴鸿毅)","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"_pictures":[{"backlink":"Firmware.html#fig1.3.1","level":"1.3","list_caption":"Figure: Get V1718 Version","alt":"Get V1718 Version","nro":1,"url":"V1718GetVersion.png","index":1,"caption_template":"Figure: _CAPTION_","label":"Get V1718 Version","attributes":{},"skip":false,"key":"1.3.1"},{"backlink":"Firmware.html#fig1.3.2","level":"1.3","list_caption":"Figure: Update V1718","alt":"Update V1718","nro":2,"url":"V1718UpdateVersion.png","index":2,"caption_template":"Figure: _CAPTION_","label":"Update V1718","attributes":{},"skip":false,"key":"1.3.2"},{"backlink":"Firmware.html#fig1.3.3","level":"1.3","list_caption":"Figure: Get V2718 Version","alt":"Get V2718 Version","nro":3,"url":"/img/V2718GetVersion.png","index":3,"caption_template":"Figure: _CAPTION_","label":"Get V2718 Version","attributes":{},"skip":false,"key":"1.3.3"},{"backlink":"Firmware.html#fig1.3.4","level":"1.3","list_caption":"Figure: Update V2718","alt":"Update V2718","nro":4,"url":"/img/V2718UpdateVersion.png","index":4,"caption_template":"Figure: _CAPTION_","label":"Update V2718","attributes":{},"skip":false,"key":"1.3.4"},{"backlink":"Firmware.html#fig1.3.5","level":"1.3","list_caption":"Figure: Get A2719 Version","alt":"Get A2719 Version","nro":5,"url":"A2719GetVersion.png","index":5,"caption_template":"Figure: _CAPTION_","label":"Get A2719 Version","attributes":{},"skip":false,"key":"1.3.5"},{"backlink":"Firmware.html#fig1.3.6","level":"1.3","list_caption":"Figure: Update A2719","alt":"Update A2719","nro":6,"url":"A2719UpdateVersion.png","index":6,"caption_template":"Figure: _CAPTION_","label":"Update A2719","attributes":{},"skip":false,"key":"1.3.6"},{"backlink":"Firmware.html#fig1.3.7","level":"1.3","list_caption":"Figure: Get A2818 Version","alt":"Get A2818 Version","nro":7,"url":"A2818GetVersion.png","index":7,"caption_template":"Figure: _CAPTION_","label":"Get A2818 Version","attributes":{},"skip":false,"key":"1.3.7"},{"backlink":"Firmware.html#fig1.3.8","level":"1.3","list_caption":"Figure: Update A2818","alt":"Update A2818","nro":8,"url":"A2818UpdateVersion.png","index":8,"caption_template":"Figure: _CAPTION_","label":"Update A2818","attributes":{},"skip":false,"key":"1.3.8"},{"backlink":"Firmware.html#fig1.3.9","level":"1.3","list_caption":"Figure: Get A3818 Version","alt":"Get A3818 Version","nro":9,"url":"A3818GetVersion.png","index":9,"caption_template":"Figure: _CAPTION_","label":"Get A3818 Version","attributes":{},"skip":false,"key":"1.3.9"},{"backlink":"Firmware.html#fig1.3.10","level":"1.3","list_caption":"Figure: Update A3818","alt":"Update A3818","nro":10,"url":"A3818UpdateVersion.png","index":10,"caption_template":"Figure: _CAPTION_","label":"Update A3818","attributes":{},"skip":false,"key":"1.3.10"}]},"title":"VMEDAQ","gitbook":"*","description":"北京大学实验核物理组VME获取"},"file":{"path":"INSTALL.md","mtime":"2018-12-03T13:56:00.799Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-12-03T15:20:44.284Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
