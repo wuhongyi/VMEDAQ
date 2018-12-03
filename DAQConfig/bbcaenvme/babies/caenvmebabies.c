@@ -82,7 +82,7 @@ void evtloop(void){
       if(vme_wait_interrupt(1000)){
 	/* wait 10s for the interrupt, time units: ms*/
       }else {
-        printf(" no interrupt in 10 sec !\n");
+        /*printf(" no interrupt in 10 sec !\n");*/
         printf(" babies will loop again!");
         break;
       }

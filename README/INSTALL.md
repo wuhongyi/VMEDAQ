@@ -4,9 +4,9 @@
 ;; Author: Hongyi Wu(吴鸿毅)
 ;; Email: wuhongyi@qq.com 
 ;; Created: 一 12月  3 10:24:55 2018 (+0800)
-;; Last-Updated: 一 12月  3 17:52:35 2018 (+0800)
+;; Last-Updated: 一 12月  3 21:56:00 2018 (+0800)
 ;;           By: Hongyi Wu(吴鸿毅)
-;;     Update #: 9
+;;     Update #: 17
 ;; URL: http://wuhongyi.cn -->
 
 # 软件安装
@@ -66,6 +66,9 @@ CAENUpgraderGUI
 
 如果您使用 V1718，则需要安装 USB 驱动。
 
+**补充USB安装**
+
+
 
 ## A2818驱动
 
@@ -82,26 +85,52 @@ make
 
 #设置开机自动执行该脚本
 #在文件 /etc/rc.d/rc.local 中添加以下一行内容
-#/bin/sh /opt/A2818Drv-1.20/a2818_load
+/bin/sh /opt/A2818Drv-1.20/a2818_load
+```
+
+重启机箱后，在终端内输入 dmesg 将会看到以下的A2818驱动加载信息
+
+```
+Spectre V2 : WARNING: module 'a2818' built without retpoline-enabled compiler, may affect Spectre v2 mitigation
+a2818: CAEN A2818 CONET controller driver v1.20s
+a2818:   Copyright 2004, CAEN SpA
+pci 0000:05:02.0: enabling device (0000 -> 0003)
+pci 0000:05:02.0: PCI INT A -> GSI 19 (level, low) -> IRQ 19
+a2818: found A2818 adapter at iomem 0xf7800000 irq 0, PLX at 0xf7900000
+a2818:   CAEN A2818 Loaded.
+a2818:   CAEN A2818: 1 device(s) found.
 ```
 
 ----
 
 ## A3818驱动
 
-如果您使用 A3818，则安装以下驱动。
+如果您使用 A3818，则安装以下驱动。安装该驱动时，电脑机箱必须插入 A3818 卡，否则将会报安装失败。
 
 ```bash
-#
-tar -zxvf A3818Drv-1.6.0-build20160510.tgz
-
-
-
-
-
+tar -zxvf A3818Drv-1.6.1.tgz
+cd A3818Drv-1.6.1
+make 
+make install
 ```
 
-**待补充**
+然后在终端内输入 dmesg 将会看到以下的A3818驱动加载信息
+```
+fuse init (API version 7.14)
+CAEN A3818 PCI Express CONET2 controller driver v1.6.0s
+  Copyright 2013, CAEN SpA
+pci 0000:02:00.0: PCI INT A -> GSI 16 (level, low) -> IRQ 16
+  alloc irq_desc for 33 on node -1
+  alloc kstat_irqs on node -1
+pci 0000:02:00.0: irq 33 for MSI/MSI-X
+pci 0000:02:00.0: setting latency timer to 64
+Found A3818 - Common BAR at iomem ffffc900067d4000 irq 0
+Found A3818 with 1 link(s)
+found A3818 Link 0 BAR at iomem ffffc900067d6000 irq 0
+  CAEN A3818 Loaded.
+  CAEN PCIe: 1 device(s) found.
+```
+
 
 ----
 
@@ -110,14 +139,39 @@ tar -zxvf A3818Drv-1.6.0-build20160510.tgz
 babirl自动化安装方法
 
 ```bash
-#会自动添加环境变量
-autoinstallbabirl.sh
-afterinstallbabirl.sh
+#在个人用户目录下安装理研babirl库
+#在普通权限下执行以下脚本
+
+sh autoinstallbabirl.sh
 ```
+
+#会自动添加环境变量
+安装结束后查看 .bashrc 文件，最后将多了三行如下内容
+
+```bash
+PATH=$PATH:/home/wuhongyi/babirl/bin/
+export TARTSYS=/home/wuhongyi/VMEDAQ/anaroot
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$TARTSYS/lib:$TARTSYS/sources/Core
+```
+
+
+```bash
+#在ROOT权限下执行以下脚本
+
+sh afterinstallbabirl.sh [user name]
+
+#其中这里的 [user name] 换成你的帐号用户名，例如我的用户名为wuhongyi
+# sh afterinstallbabirl.sh wuhongyi
+```
+
+
 
 ----
 
 ## 其它配置
+
+执行 DAQConfig 中的 StartDAQ.sh 开启进程
+
 
 运行babicon(安装后第一次需输入以下初始化)
 
