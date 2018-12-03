@@ -1,28 +1,32 @@
-<!-- README.md --- 
+<!-- INSTALL.md --- 
 ;; 
 ;; Description: 
 ;; Author: Hongyi Wu(吴鸿毅)
 ;; Email: wuhongyi@qq.com 
-;; Created: 六 8月  5 12:10:59 2017 (+0800)
-;; Last-Updated: 一 9月  4 20:12:23 2017 (+0800)
+;; Created: 一 12月  3 10:24:55 2018 (+0800)
+;; Last-Updated: 一 12月  3 11:09:49 2018 (+0800)
 ;;           By: Hongyi Wu(吴鸿毅)
-;;     Update #: 14
+;;     Update #: 5
 ;; URL: http://wuhongyi.cn -->
 
-# README
+# 软件安装
+
+<!-- toc -->
+
+本页面安装设计软件放置在 source 文件夹内，里面包括**获取驱动、依赖库等以及自动安装脚本**。
 
 
-## 当前固件版本
+## 系统要求
 
-```text
-V2718 FW CONET2 Compliant 	2.14_1.5 	April, 2014
-v1190   1.1
-MADC32  0224
-```
+本获取经过 Scientific Linux 6/7 系统测试。建议采用 CentOS 6/7 或者 Scientific Linux 6/7。
 
-## 程序安装
+本获取要求 CERN ROOT 5/6，建议优先选择 ROOT 6。
 
-### A2818驱动
+如果没有合适的系统，可参考我们的获取系统安装 [Install Scientific 7](http://wuhongyi.cn/CodeProject/ScientisicLinux72.html)。安装好系统之后，还需要对基础依赖工具做一些安装及升级，可以下载执行[自动化安装脚本](https://github.com/wuhongyi/BasicConfiguration)自动配置或者按照教程手动安装。
+
+----
+
+## A2818驱动
 
 ```bash
 # A2818Drv-1.20-build20161118.tgz
@@ -36,7 +40,15 @@ make
 #添加 /bin/sh /opt/A2818Drv-1.20/a2818_load
 ```
 
-### RIKEN babirl
+----
+
+## A3818驱动
+
+**待补充**
+
+----
+
+## RIKEN babirl
 
 babirl自动化安装方法
 
@@ -49,10 +61,6 @@ afterinstallbabirl.sh
 ----
 
 ## 其它配置
-
-V2718PCB板上DIP开关：Prog: 0 off, 1 off, 2 off, 3 on, 4 off, I/O NIM
-
-
 
 运行babicon(安装后第一次需输入以下初始化)
 
@@ -93,4 +101,6 @@ systemctl enable iptables.service #设置防火墙开机启动
 
 
 
-<!-- README.md ends here -->
+
+
+<!-- INSTALL.md ends here -->
