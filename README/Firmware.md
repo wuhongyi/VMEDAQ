@@ -4,9 +4,9 @@
 ;; Author: Hongyi Wu(吴鸿毅)
 ;; Email: wuhongyi@qq.com 
 ;; Created: 一 12月  3 10:26:33 2018 (+0800)
-;; Last-Updated: 一 12月  3 22:39:47 2018 (+0800)
+;; Last-Updated: 二 12月  4 09:01:16 2018 (+0800)
 ;;           By: Hongyi Wu(吴鸿毅)
-;;     Update #: 7
+;;     Update #: 8
 ;; URL: http://wuhongyi.cn -->
 
 # 固件要求
@@ -59,13 +59,13 @@ CAENUpgraderGUI
 
 如下图，查看 V1718 的固件版本，点击 *Get Fw Rel* 按钮。
 
-![Get V1718 Version](V1718GetVersion.png)
+![Get V1718 Version](/img/V1718GetVersion.png)
 
 如果该固件版本不是 **当前固件版本** 所列版本，则升级固件。
 
 升级界面如下图所示：
 
-![Update V1718](V1718UpdateVersion.png)
+![Update V1718](/img/V1718UpdateVersion.png)
 
 
 
@@ -87,38 +87,38 @@ V2718上固件包括主板V2718及子板上的A2719。
 
 如下图，查看子板 A2719 的固件版本，点击 *Get Fw Rel* 按钮。
 
-![Get A2719 Version](A2719GetVersion.png)
+![Get A2719 Version](/img/A2719GetVersion.png)
 
 如果该固件版本不是 **当前固件版本** 所列版本，则升级固件。
 
 升级界面如下图所示：
 
-![Update A2719](A2719UpdateVersion.png)
+![Update A2719](/img/A2719UpdateVersion.png)
 
 ### A2818
 
 如下图，查看 A2818 的固件版本，点击 *Get Fw Rel* 按钮。
 
-![Get A2818 Version](A2818GetVersion.png)
+![Get A2818 Version](/img/A2818GetVersion.png)
 
 如果该固件版本不是 **当前固件版本** 所列版本，则升级固件。
 
 升级界面如下图所示：
 
-![Update A2818](A2818UpdateVersion.png)
+![Update A2818](/img/A2818UpdateVersion.png)
 
 
 ### A3818
 
 如下图，查看 A3818 的固件版本，点击 *Get Fw Rel* 按钮。
 
-![Get A3818 Version](A3818GetVersion.png)
+![Get A3818 Version](/img/A3818GetVersion.png)
 
 如果该固件版本不是 **当前固件版本** 所列版本，则升级固件。
 
 升级界面如下图所示：
 
-![Update A3818](A3818UpdateVersion.png)
+![Update A3818](/img/A3818UpdateVersion.png)
 
 
 ### V1x90
