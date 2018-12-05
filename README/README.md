@@ -4,9 +4,9 @@
 ;; Author: Hongyi Wu(吴鸿毅)
 ;; Email: wuhongyi@qq.com 
 ;; Created: 六 8月  5 12:10:59 2017 (+0800)
-;; Last-Updated: 一 12月  3 23:17:55 2018 (+0800)
+;; Last-Updated: 三 12月  5 21:20:15 2018 (+0800)
 ;;           By: Hongyi Wu(吴鸿毅)
-;;     Update #: 21
+;;     Update #: 22
 ;; URL: http://wuhongyi.cn -->
 
 # README
@@ -32,7 +32,7 @@
 
 ### 准预览版本
 
-**准预览版本 2018.12.03**  
+**准预览版本 2018.12.05**  
 
 程序下载请访问:  [VMEDAQ](https://github.com/wuhongyi/VMEDAQ)
 

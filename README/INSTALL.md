@@ -4,9 +4,9 @@
 ;; Author: Hongyi Wu(吴鸿毅)
 ;; Email: wuhongyi@qq.com 
 ;; Created: 一 12月  3 10:24:55 2018 (+0800)
-;; Last-Updated: 三 12月  5 20:51:16 2018 (+0800)
+;; Last-Updated: 三 12月  5 21:19:18 2018 (+0800)
 ;;           By: Hongyi Wu(吴鸿毅)
-;;     Update #: 19
+;;     Update #: 20
 ;; URL: http://wuhongyi.cn -->
 
 # 软件安装
@@ -173,12 +173,24 @@ sh afterinstallbabirl.sh [user name]     #需要ROOT权限
 
 ----
 
-## 其它配置
+## 初始化babicon
 
 执行 DAQConfig 中的 StartDAQ.sh 开启进程
 
 
-运行babicon(安装后第一次需输入以下初始化)
+**运行babicon(安装后第一次需输入以下初始化)**
+
+
+新打开一个终端，然后输入
+```bash
+babicon
+```
+
+回车之后将看到以下界面
+
+![babicon](/img/babicon.png)
+
+以下进行基本的变量设置
 
 ```bash
 seteflist 10 add localhost localhost
@@ -190,6 +202,12 @@ setclinfo 0 id  0
 setclinfo 0 add [ip]   #[ip] 为接收端电脑IP 
 setclinfo 0 id  0
 ```
+
+![babicon setting](/img/babicon_setting.png)
+
+----
+
+## 防火墙设置
 
 将共享数据发送到Online电脑，需要做以下设置或者关闭防火墙
 
