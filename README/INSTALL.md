@@ -4,9 +4,9 @@
 ;; Author: Hongyi Wu(吴鸿毅)
 ;; Email: wuhongyi@qq.com 
 ;; Created: 一 12月  3 10:24:55 2018 (+0800)
-;; Last-Updated: 一 12月  3 21:56:00 2018 (+0800)
+;; Last-Updated: 三 12月  5 20:51:16 2018 (+0800)
 ;;           By: Hongyi Wu(吴鸿毅)
-;;     Update #: 17
+;;     Update #: 19
 ;; URL: http://wuhongyi.cn -->
 
 # 软件安装
@@ -37,7 +37,7 @@
 ```bash
 # 在 source 文件夹内，ROOT 权限下执行以下命令
 
-sh setup.sh
+sh setup.sh    #需要ROOT权限
 ```
 
 ## 检查CAENVMELib安装
@@ -66,8 +66,12 @@ CAENUpgraderGUI
 
 如果您使用 V1718，则需要安装 USB 驱动。
 
-**补充USB安装**
-
+```bash
+tar -xzvf CAENUSBdrvB-1.5.2.tgz
+cd CAENUSBdrvB-1.5.2
+make
+make install     #需要ROOT权限
+```
 
 
 ## A2818驱动
@@ -78,20 +82,20 @@ CAENUpgraderGUI
 # A2818Drv-1.20-build20161118.tgz
 #将该文件夹复制到 /opt 并安装在该位置
 tar -zxvf A2818Drv-1.20-build20161118.tgz
-cp -r A2818Drv-1.20 /opt
-cd /opt/A2818Drv-1.20
-cp ./Makefile.2.6-3.x Makefile
-make
+cp -r A2818Drv-1.20 /opt           #需要ROOT权限
+cd /opt/A2818Drv-1.20              #需要ROOT权限
+cp ./Makefile.2.6-3.x Makefile     #需要ROOT权限
+make                               #需要ROOT权限
 
 #设置开机自动执行该脚本
 #在文件 /etc/rc.d/rc.local 中添加以下一行内容
 /bin/sh /opt/A2818Drv-1.20/a2818_load
+#或者在开启电脑之后执行以上命令
 ```
 
-重启机箱后，在终端内输入 dmesg 将会看到以下的A2818驱动加载信息
+重启机箱后，在终端内输入 **dmesg|grep a2818** 将会看到以下的A2818驱动加载信息
 
 ```
-Spectre V2 : WARNING: module 'a2818' built without retpoline-enabled compiler, may affect Spectre v2 mitigation
 a2818: CAEN A2818 CONET controller driver v1.20s
 a2818:   Copyright 2004, CAEN SpA
 pci 0000:05:02.0: enabling device (0000 -> 0003)
@@ -111,10 +115,11 @@ a2818:   CAEN A2818: 1 device(s) found.
 tar -zxvf A3818Drv-1.6.1.tgz
 cd A3818Drv-1.6.1
 make 
-make install
+make install       #需要ROOT权限
 ```
 
 然后在终端内输入 dmesg 将会看到以下的A3818驱动加载信息
+
 ```
 fuse init (API version 7.14)
 CAEN A3818 PCI Express CONET2 controller driver v1.6.0s
@@ -158,7 +163,7 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$TARTSYS/lib:$TARTSYS/sources/Core
 ```bash
 #在ROOT权限下执行以下脚本
 
-sh afterinstallbabirl.sh [user name]
+sh afterinstallbabirl.sh [user name]     #需要ROOT权限
 
 #其中这里的 [user name] 换成你的帐号用户名，例如我的用户名为wuhongyi
 # sh afterinstallbabirl.sh wuhongyi
@@ -190,6 +195,7 @@ setclinfo 0 id  0
 
 对Scientific Linux 6，终端ROOT权限下输入**setup**，选择**防火墙配置**，去掉**启用**。  
 对cientific Linux 7，ROOT权限下终端输入以下信息关闭firewall  
+
 ```bash
 systemctl stop firewalld.service #停止firewall
 systemctl disable firewalld.service #禁止firewall开机启动
@@ -209,9 +215,6 @@ firewall-cmd --state #查看默认防火墙状态（关闭后显示notrunning，
 systemctl restart iptables.service #最后重启防火墙使配置生效
 systemctl enable iptables.service #设置防火墙开机启动
 ```
-
-
-
 
 
 <!-- INSTALL.md ends here -->

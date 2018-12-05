@@ -83,7 +83,7 @@ void evtloop(void){
 	/* wait 10s for the interrupt, time units: ms*/
       }else {
         /*printf(" no interrupt in 10 sec !\n");*/
-        printf(" babies will loop again!");
+        printf(" babies will loop again!\n");
         break;
       }
       
