@@ -17,7 +17,7 @@ old_library=''
 inherited_linker_flags=' -pthread'
 
 # Libraries that this one depends upon.
-dependency_libs=' /home/wuhongyi/workgithub/DAQ/VMEDAQ_new_20180606/anaroot/sources/Core/libanacore.la -L/opt/root61206/lib -lGui -lCore -lImt -lRIO -lNet -lHist -lGraf -lGraf3d -lGpad -lTree -lTreePlayer -lRint -lPostscript -lMatrix -lPhysics -lMathCore -lThread -lMultiProc -ldl /usr/lib/gcc/x86_64-unknown-linux-gnu/4.9.4/../../../../lib64/libstdc++.la -lm'
+dependency_libs=' /home/wuhongyi/workgithub/DAQ/VMEDAQ/anaroot/sources/Core/libanacore.la -L/opt/root61600/lib -lGui -lCore -lImt -lRIO -lNet -lHist -lGraf -lGraf3d -lGpad -lROOTVecOps -lTree -lTreePlayer -lRint -lPostscript -lMatrix -lPhysics -lMathCore -lThread -lMultiProc -lROOTDataFrame -ldl /usr/lib/gcc/x86_64-unknown-linux-gnu/4.9.4/../../../../lib64/libstdc++.la -lm'
 
 # Names of additional weak libraries provided by this library
 weak_library_names=''
@@ -38,5 +38,5 @@ dlopen=''
 dlpreopen=''
 
 # Directory that this library needs to be installed in:
-libdir='/home/wuhongyi/workgithub/DAQ/VMEDAQ_new_20180606/anaroot/lib'
-relink_command="(cd /home/wuhongyi/workgithub/DAQ/VMEDAQ_new_20180606/anaroot/sources; /bin/sh /home/wuhongyi/workgithub/DAQ/VMEDAQ_new_20180606/anaroot/libtool  --tag CC --mode=relink gcc -g -O2 -o libanaroot.la -rpath /home/wuhongyi/workgithub/DAQ/VMEDAQ_new_20180606/anaroot/lib Core/libanacore.la @inst_prefix_dir@)"
+libdir='/home/wuhongyi/workgithub/DAQ/VMEDAQ/anaroot/lib'
+relink_command="(cd /home/wuhongyi/workgithub/DAQ/VMEDAQ/anaroot/sources; /bin/sh /home/wuhongyi/workgithub/DAQ/VMEDAQ/anaroot/libtool  --tag CC --mode=relink gcc -g -O2 -o libanaroot.la -rpath /home/wuhongyi/workgithub/DAQ/VMEDAQ/anaroot/lib Core/libanacore.la @inst_prefix_dir@)"

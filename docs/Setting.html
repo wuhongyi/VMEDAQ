@@ -1,398 +1,180 @@
 
-<!DOCTYPE HTML>
-<html lang="" >
-    <head>
-        <meta charset="UTF-8">
-        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>配置 · VMEDAQ</title>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="description" content="">
-        <meta name="generator" content="GitBook 3.2.2">
-        <meta name="author" content="Hongyi Wu(吴鸿毅)">
-        
-        
-    
-    <link rel="stylesheet" href="gitbook/style.css">
 
-    
-            
-                
-                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
-                
-            
-                
-                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
-                
-            
-                
-                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
-                
-            
-                
-                <link rel="stylesheet" href="gitbook/gitbook-plugin-ad/plugin.css">
-                
-            
-                
-                <link rel="stylesheet" href="gitbook/gitbook-plugin-alerts/style.css">
-                
-            
-                
-                <link rel="stylesheet" href="gitbook/gitbook-plugin-atoc/atoc.css">
-                
-            
-                
-                <link rel="stylesheet" href="gitbook/gitbook-plugin-splitter/splitter.css">
-                
-            
-                
-                <link rel="stylesheet" href="gitbook/gitbook-plugin-image-captions/image-captions.css">
-                
-            
-                
-                <link rel="stylesheet" href="gitbook/gitbook-plugin-anchors/plugin.css">
-                
-            
-                
-                <link rel="stylesheet" href="gitbook/gitbook-plugin-latex-codecogs/latex-codecogs.css">
-                
-            
-                
-                <link rel="stylesheet" href="gitbook/gitbook-plugin-ace/ace.css">
-                
-            
-                
-                <link rel="stylesheet" href="gitbook/gitbook-plugin-page-footer-ex/style/plugin.css">
-                
-            
-                
-                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-                
-            
-                
-                <link rel="stylesheet" href="gitbook/gitbook-plugin-sectionx/sectionx.css">
-                
-            
-                
-                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-                
-            
-                
-                <link rel="stylesheet" href="gitbook/gitbook-plugin-mcqx/mcqx.css">
-                
-            
-                
-                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-                
-            
-                
-                <link rel="stylesheet" href="gitbook/gitbook-plugin-fbqx/fbqx.css">
-                
-            
-                
-                <link rel="stylesheet" href="gitbook/gitbook-plugin-spoiler/spoiler.css">
-                
-            
-                
-                <link rel="stylesheet" href="gitbook/gitbook-plugin-anchor-navigation/plugin.css">
-                
-            
-                
-                <link rel="stylesheet" href="gitbook/gitbook-plugin-youtubex/player.css">
-                
-            
-                
-                <link rel="stylesheet" href="gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
-                
-            
-        
-
-    
-
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-
-        
-    
-    
-    <meta name="HandheldFriendly" content="true"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
-    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
-
-    
-    <link rel="next" href="analysis.html" />
-    
-    
-    <link rel="prev" href="Firmware.html" />
-    
-
-    </head>
-    <body>
-        
-  <script>
-    var tag = document.createElement('script');
-    tag.src = "https://www.youtube.com/iframe_api";
-    var firstScriptTag = document.getElementsByTagName('script')[0];
-    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-  </script>
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
   
-<div class="book">
-    <div class="book-summary">
-        
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>获取配置 &mdash; VMEDAQ 0.0 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/translations.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" />
+    <link rel="next" title="analysis" href="analysis.html" />
+    <link rel="prev" title="固件要求" href="Firmware.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> VMEDAQ
+          
+
+          
+          </a>
+
+          
             
-<div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search" />
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
 </div>
 
-            
-                <nav role="navigation">
-                
+          
+        </div>
 
-
-<ul class="summary">
-    
-    
-
-    
-
-    
-        
-        
-    
-        <li class="chapter " data-level="1.1" data-path="./">
-            
-                <a href="./">
-            
-                    
-                    简介
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2" data-path="INSTALL.html">
-            
-                <a href="INSTALL.html">
-            
-                    
-                    基础安装
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3" data-path="Firmware.html">
-            
-                <a href="Firmware.html">
-            
-                    
-                    固件
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter active" data-level="1.4" data-path="Setting.html">
-            
-                <a href="Setting.html">
-            
-                    
-                    配置
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.4.1" data-path="analysis.html">
-            
-                <a href="analysis.html">
-            
-                    
-                    analysis
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.4.2" data-path="anaroot.html">
-            
-                <a href="anaroot.html">
-            
-                    
-                    anaroot
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.4.3" data-path="checkcnt.html">
-            
-                <a href="checkcnt.html">
-            
-                    
-                    checkcnt
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.4.4" data-path="cutpedo.html">
-            
-                <a href="cutpedo.html">
-            
-                    
-                    cutpedo
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.4.5" data-path="DAQConfig.html">
-            
-                <a href="DAQConfig.html">
-            
-                    
-                    DAQConfig
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.4.6" data-path="httponline.html">
-            
-                <a href="httponline.html">
-            
-                    
-                    httponline
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.4.7" data-path="online.html">
-            
-                <a href="online.html">
-            
-                    
-                    online
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.4.8" data-path="r2root.html">
-            
-                <a href="r2root.html">
-            
-                    
-                    r2root
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.4.9" data-path="statistics.html">
-            
-                <a href="statistics.html">
-            
-                    
-                    statistics
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-
-    
-
-    <li class="divider"></li>
-
-    <li>
-        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
-            Published with GitBook
-        </a>
-    </li>
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">简介</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="README.html">简介</a></li>
+</ul>
+<p class="caption"><span class="caption-text">安装</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="INSTALL.html">软件安装</a></li>
+</ul>
+<p class="caption"><span class="caption-text">固件</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Firmware.html">固件要求</a></li>
+</ul>
+<p class="caption"><span class="caption-text">配置</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">获取配置</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">程序修改建议顺序</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#v2718">V2718</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="analysis.html">analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="anaroot.html">anaroot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="checkcnt.html">checkcnt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cutpedo.html">cutpedo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DAQConfig.html">DAQConfig</a></li>
+<li class="toctree-l1"><a class="reference internal" href="httponline.html">httponline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="online.html">online</a></li>
+<li class="toctree-l1"><a class="reference internal" href="r2root.html">r2root</a></li>
+<li class="toctree-l1"><a class="reference internal" href="statistics.html">statistics</a></li>
 </ul>
 
-
-                </nav>
             
-        
-    </div>
+          
+        </div>
+      </div>
+    </nav>
 
-    <div class="book-body">
-        
-            <div class="body-inner">
-                
-                    
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
-<div class="book-header" role="navigation">
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">VMEDAQ</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
     
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>获取配置</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/Setting.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
 
-    <!-- Title -->
-    <h1>
-        <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >配置</a>
-    </h1>
+  
+  <hr/>
 </div>
-
-
-
-
-                    <div class="page-wrapper" tabindex="-1" role="main">
-                        <div class="page-inner">
-                            
-<div id="book-search-results">
-    <div class="search-noresults">
-    
-                                <section class="normal markdown-section">
-                                
-                                <!-- Setting.md --- 
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <!-- Setting.md --- 
 ;; 
 ;; Description: 
 ;; Author: Hongyi Wu(吴鸿毅)
@@ -401,176 +183,76 @@
 ;; Last-Updated: 一 12月  3 11:04:46 2018 (+0800)
 ;;           By: Hongyi Wu(吴鸿毅)
 ;;     Update #: 3
-;; URL: http://wuhongyi.cn -->
-<h1 id="&#x83B7;&#x53D6;&#x914D;&#x7F6E;"><a name="&#x83B7;&#x53D6;&#x914D;&#x7F6E;" class="plugin-anchor" href="#&#x83B7;&#x53D6;&#x914D;&#x7F6E;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x83B7;&#x53D6;&#x914D;&#x7F6E;</h1>
-<h2 id="&#x7A0B;&#x5E8F;&#x4FEE;&#x6539;&#x5EFA;&#x8BAE;&#x987A;&#x5E8F;"><a name="&#x7A0B;&#x5E8F;&#x4FEE;&#x6539;&#x5EFA;&#x8BAE;&#x987A;&#x5E8F;" class="plugin-anchor" href="#&#x7A0B;&#x5E8F;&#x4FEE;&#x6539;&#x5EFA;&#x8BAE;&#x987A;&#x5E8F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7A0B;&#x5E8F;&#x4FEE;&#x6539;&#x5EFA;&#x8BAE;&#x987A;&#x5E8F;</h2>
-<ul>
-<li>anaroot/CBLT.hh</li>
-<li>DAQConfig/babies/bbmodules.h</li>
-<li>DAQConfig/babies/start.c</li>
-<li>DAQConfig/babies/evt.c</li>
-<li>DAQConfig/babies/clear.c</li>
-<li>DAQConfig/babies/stop.c</li>
-<li>DAQConfig/init/daqinitrc.sh</li>
+;; URL: http://wuhongyi.cn --><div class="section" id="id1">
+<h1>获取配置<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id2">
+<h2>程序修改建议顺序<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li><p>anaroot/CBLT.hh</p></li>
+<li><p>DAQConfig/babies/bbmodules.h</p></li>
+<li><p>DAQConfig/babies/start.c</p></li>
+<li><p>DAQConfig/babies/evt.c</p></li>
+<li><p>DAQConfig/babies/clear.c</p></li>
+<li><p>DAQConfig/babies/stop.c</p></li>
+<li><p>DAQConfig/init/daqinitrc.sh</p></li>
 </ul>
-<hr>
-<h2 id="v2718"><a name="v2718" class="plugin-anchor" href="#v2718"><i class="fa fa-link" aria-hidden="true"></i></a>V2718</h2>
-<p>V2718PCB&#x677F;&#x4E0A;DIP&#x5F00;&#x5173;&#xFF1A;Prog: 0 off, 1 off, 2 off, 3 on, 4 off, I/O NIM</p>
-<p>V2718&#x524D;&#x9762;&#x677F;5&#x4E2A;&#x8F93;&#x51FA;PORT&#xFF0C;&#x5206;&#x522B;&#x4E3A;0-4</p>
-<p>&#x901A;&#x7535;&#x65F6;&#x5019;PORT0-3&#x5904;&#x4E8E;&#x9AD8;&#x7535;&#x5E73;&#xFF0C;PORT4&#x5904;&#x4E8E;&#x4F4E;&#x7535;&#x5E73;&#x3002;&#x56E0;&#x6B64;&#x8F6F;&#x4EF6;BUSY&#x6A21;&#x5F0F;&#x65F6;&#x5019;&#x91C7;&#x7528;PORT4&#xFF0C;&#x786C;&#x4EF6;BUSY&#x6A21;&#x5F0F;&#x91C7;&#x7528;PORT3&#x3002;</p>
-<!-- Setting.md ends here -->
-<script type="text/javascript">var className='atoc';</script>
-
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> <a href="http://wuhongyi.cn/" target="_blank">&#xA9; Hongyi Wu</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> <i>updated:</i> 2018-12-03 11:04:46 </span> </footer>
-                                
-                                </section>
-                            
-    </div>
-    <div class="search-results">
-        <div class="has-results">
-            
-            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
-            <ul class="search-results-list"></ul>
-            
-        </div>
-        <div class="no-results">
-            
-            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
-            
-        </div>
-    </div>
 </div>
-
-                        </div>
-                    </div>
-                
-            </div>
-
-            
-                
-                <a href="Firmware.html" class="navigation navigation-prev " aria-label="Previous page: 固件">
-                    <i class="fa fa-angle-left"></i>
-                </a>
-                
-                
-                <a href="analysis.html" class="navigation navigation-next " aria-label="Next page: analysis">
-                    <i class="fa fa-angle-right"></i>
-                </a>
-                
-            
-        
-    </div>
-
-    <script>
-        var gitbook = gitbook || [];
-        gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"配置","level":"1.4","depth":1,"next":{"title":"analysis","level":"1.4.1","depth":2,"path":"analysis.md","ref":"analysis.md","articles":[]},"previous":{"title":"固件","level":"1.3","depth":1,"path":"Firmware.md","ref":"Firmware.md","articles":[]},"dir":"ltr"},"config":{"plugins":["search","sharing","fontsettings","livereload","highlight","github","-prism","ad","alerts","atoc","splitter","sitemap","image-captions","anchors","latex-codecogs","-katex","mermaid","ace","page-footer-ex","sectionx","mcqx","fbqx","spoiler","anchor-navigation","youtubex","redirect","expandable-chapters"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"latex-codecogs":{"type":"gif"},"spoiler":{},"ad":{"contentBottom":"","contentTop":""},"ace":{},"github":{"url":"https://github.com/wuhongyi"},"fbqx":{},"livereload":{},"page-footer-ex":{"copyright":"[© Hongyi Wu](http://wuhongyi.cn/)","markdown":true,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"<i>updated:</i>"},"atoc":{"addClass":true,"className":"atoc"},"splitter":{},"search":{},"mermaid":{},"anchor-navigation":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"family":"serif","size":2,"theme":"sepia"},"sectionx":{},"highlight":{},"sitemap":{"hostname":"http://wuhongyi.cn/"},"youtubex":{"embedDescription":{"de":"Eingebettetes Video:","default":"Embedded video:"}},"alerts":{},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":true,"google":false,"instapaper":false,"twitter":true,"vk":false,"weibo":false},"redirect":{},"mcqx":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"expandable-chapters":{},"image-captions":{"variable_name":"_pictures"}},"theme":"default","author":"Hongyi Wu(吴鸿毅)","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"_pictures":[{"backlink":"INSTALL.html#fig1.2.1","level":"1.2","list_caption":"Figure: babicon","alt":"babicon","nro":1,"url":"/img/babicon.png","index":1,"caption_template":"Figure: _CAPTION_","label":"babicon","attributes":{},"skip":false,"key":"1.2.1"},{"backlink":"INSTALL.html#fig1.2.2","level":"1.2","list_caption":"Figure: babicon setting","alt":"babicon setting","nro":2,"url":"/img/babicon_setting.png","index":2,"caption_template":"Figure: _CAPTION_","label":"babicon setting","attributes":{},"skip":false,"key":"1.2.2"},{"backlink":"Firmware.html#fig1.3.1","level":"1.3","list_caption":"Figure: Get V1718 Version","alt":"Get V1718 Version","nro":3,"url":"/img/V1718GetVersion.png","index":1,"caption_template":"Figure: _CAPTION_","label":"Get V1718 Version","attributes":{},"skip":false,"key":"1.3.1"},{"backlink":"Firmware.html#fig1.3.2","level":"1.3","list_caption":"Figure: Update V1718","alt":"Update V1718","nro":4,"url":"/img/V1718UpdateVersion.png","index":2,"caption_template":"Figure: _CAPTION_","label":"Update V1718","attributes":{},"skip":false,"key":"1.3.2"},{"backlink":"Firmware.html#fig1.3.3","level":"1.3","list_caption":"Figure: Get V2718 Version","alt":"Get V2718 Version","nro":5,"url":"/img/V2718GetVersion.png","index":3,"caption_template":"Figure: _CAPTION_","label":"Get V2718 Version","attributes":{},"skip":false,"key":"1.3.3"},{"backlink":"Firmware.html#fig1.3.4","level":"1.3","list_caption":"Figure: Update V2718","alt":"Update V2718","nro":6,"url":"/img/V2718UpdateVersion.png","index":4,"caption_template":"Figure: _CAPTION_","label":"Update V2718","attributes":{},"skip":false,"key":"1.3.4"},{"backlink":"Firmware.html#fig1.3.5","level":"1.3","list_caption":"Figure: Get A2719 Version","alt":"Get A2719 Version","nro":7,"url":"/img/A2719GetVersion.png","index":5,"caption_template":"Figure: _CAPTION_","label":"Get A2719 Version","attributes":{},"skip":false,"key":"1.3.5"},{"backlink":"Firmware.html#fig1.3.6","level":"1.3","list_caption":"Figure: Update A2719","alt":"Update A2719","nro":8,"url":"/img/A2719UpdateVersion.png","index":6,"caption_template":"Figure: _CAPTION_","label":"Update A2719","attributes":{},"skip":false,"key":"1.3.6"},{"backlink":"Firmware.html#fig1.3.7","level":"1.3","list_caption":"Figure: Get A2818 Version","alt":"Get A2818 Version","nro":9,"url":"/img/A2818GetVersion.png","index":7,"caption_template":"Figure: _CAPTION_","label":"Get A2818 Version","attributes":{},"skip":false,"key":"1.3.7"},{"backlink":"Firmware.html#fig1.3.8","level":"1.3","list_caption":"Figure: Update A2818","alt":"Update A2818","nro":10,"url":"/img/A2818UpdateVersion.png","index":8,"caption_template":"Figure: _CAPTION_","label":"Update A2818","attributes":{},"skip":false,"key":"1.3.8"},{"backlink":"Firmware.html#fig1.3.9","level":"1.3","list_caption":"Figure: Get A3818 Version","alt":"Get A3818 Version","nro":11,"url":"/img/A3818GetVersion.png","index":9,"caption_template":"Figure: _CAPTION_","label":"Get A3818 Version","attributes":{},"skip":false,"key":"1.3.9"},{"backlink":"Firmware.html#fig1.3.10","level":"1.3","list_caption":"Figure: Update A3818","alt":"Update A3818","nro":12,"url":"/img/A3818UpdateVersion.png","index":10,"caption_template":"Figure: _CAPTION_","label":"Update A3818","attributes":{},"skip":false,"key":"1.3.10"}]},"title":"VMEDAQ","gitbook":"*","description":"北京大学实验核物理组VME获取"},"file":{"path":"Setting.md","mtime":"2018-12-03T03:04:46.114Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2019-06-08T12:23:38.214Z"},"basePath":".","book":{"language":""}});
-        });
-    </script>
+<hr class="docutils" />
+<div class="section" id="v2718">
+<h2>V2718<a class="headerlink" href="#v2718" title="永久链接至标题">¶</a></h2>
+<p>V2718PCB板上DIP开关：Prog: 0 off, 1 off, 2 off, 3 on, 4 off, I/O NIM</p>
+<p>V2718前面板5个输出PORT，分别为0-4</p>
+<p>通电时候PORT0-3处于高电平，PORT4处于低电平。因此软件BUSY模式时候采用PORT4，硬件BUSY模式采用PORT3。</p>
+<!-- Setting.md ends here --></div>
 </div>
 
 
-        
-    <script src="gitbook/gitbook.js"></script>
-    <script src="gitbook/theme.js"></script>
-    
-        
-        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
-        
-    
-        
-        <script src="gitbook/gitbook-plugin-search/search.js"></script>
-        
-    
-        
-        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
-        
-    
-        
-        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
-        
-    
-        
-        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
-        
-    
-        
-        <script src="gitbook/gitbook-plugin-github/plugin.js"></script>
-        
-    
-        
-        <script src="gitbook/gitbook-plugin-ad/plugin.js"></script>
-        
-    
-        
-        <script src="gitbook/gitbook-plugin-alerts/plugin.js"></script>
-        
-    
-        
-        <script src="gitbook/gitbook-plugin-atoc/atoc.js"></script>
-        
-    
-        
-        <script src="gitbook/gitbook-plugin-splitter/splitter.js"></script>
-        
-    
-        
-        <script src="gitbook/gitbook-plugin-ace/ace/ace.js"></script>
-        
-    
-        
-        <script src="gitbook/gitbook-plugin-ace/ace.js"></script>
-        
-    
-        
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        
-    
-        
-        <script src="gitbook/gitbook-plugin-sectionx/sectionx.js"></script>
-        
-    
-        
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-        
-    
-        
-        <script src="gitbook/gitbook-plugin-mcqx/js.cookie.js"></script>
-        
-    
-        
-        <script src="gitbook/gitbook-plugin-mcqx/mcqx.js"></script>
-        
-    
-        
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        
-    
-        
-        <script src="gitbook/gitbook-plugin-fbqx/fbqx.js"></script>
-        
-    
-        
-        <script src="gitbook/gitbook-plugin-spoiler/spoiler.js"></script>
-        
-    
-        
-        <script src="gitbook/gitbook-plugin-youtubex/player.js"></script>
-        
-    
-        
-        <script src="gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
-        
-    
-        
-        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
-        
-    
-        
-        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
-        
-    
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="analysis.html" class="btn btn-neutral float-right" title="analysis" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Firmware.html" class="btn btn-neutral float-left" title="固件要求" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
 
-    </body>
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Hongyi Wu(吴鸿毅)
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
 </html>
-

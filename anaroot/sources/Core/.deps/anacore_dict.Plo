@@ -16,17 +16,18 @@ anacore_dict.lo: anacore_dict.cc /usr/include/stdc-predef.h \
  /usr/include/bits/time.h /usr/include/sys/sysmacros.h \
  /usr/include/bits/pthreadtypes.h /usr/include/alloca.h \
  /usr/include/bits/stdlib-float.h /usr/include/string.h \
- /usr/include/assert.h /opt/root61206/include/RConfig.h \
- /opt/root61206/include/RVersion.h /opt/root61206/include/TClass.h \
- /opt/root61206/include/TDictionary.h /opt/root61206/include/TNamed.h \
- /opt/root61206/include/TObject.h /opt/root61206/include/RConfigure.h \
- /opt/root61206/include/Rtypes.h /opt/root61206/include/RtypesCore.h \
- /opt/root61206/include/RConfig.h /opt/root61206/include/DllImport.h \
- /opt/root61206/include/snprintf.h /opt/root61206/include/strlcpy.h \
- /usr/include/unistd.h /usr/include/bits/posix_opt.h \
- /usr/include/bits/environments.h /usr/include/bits/confname.h \
- /usr/include/getopt.h /usr/include/c++/4.9.4/atomic \
- /usr/include/c++/4.9.4/bits/atomic_base.h \
+ /usr/include/assert.h /opt/root61600/include/RConfig.h \
+ /opt/root61600/include/ROOT/RConfig.h \
+ /opt/root61600/include/ROOT/../RVersion.h \
+ /opt/root61600/include/RConfigure.h /opt/root61600/include/TClass.h \
+ /opt/root61600/include/TDictionary.h /opt/root61600/include/TNamed.h \
+ /opt/root61600/include/TObject.h /opt/root61600/include/RConfigure.h \
+ /opt/root61600/include/Rtypes.h /opt/root61600/include/RtypesCore.h \
+ /opt/root61600/include/DllImport.h /opt/root61600/include/snprintf.h \
+ /opt/root61600/include/strlcpy.h /usr/include/unistd.h \
+ /usr/include/bits/posix_opt.h /usr/include/bits/environments.h \
+ /usr/include/bits/confname.h /usr/include/getopt.h \
+ /usr/include/c++/4.9.4/atomic /usr/include/c++/4.9.4/bits/atomic_base.h \
  /usr/include/c++/4.9.4/x86_64-unknown-linux-gnu/bits/c++config.h \
  /usr/include/c++/4.9.4/x86_64-unknown-linux-gnu/bits/os_defines.h \
  /usr/include/c++/4.9.4/x86_64-unknown-linux-gnu/bits/cpu_defines.h \
@@ -39,7 +40,7 @@ anacore_dict.lo: anacore_dict.cc /usr/include/stdc-predef.h \
  /usr/include/c++/4.9.4/bits/exception_defines.h \
  /usr/include/c++/4.9.4/bits/nested_exception.h \
  /usr/include/c++/4.9.4/bits/hash_bytes.h \
- /opt/root61206/include/TGenericClassInfo.h /usr/include/c++/4.9.4/vector \
+ /opt/root61600/include/TGenericClassInfo.h /usr/include/c++/4.9.4/vector \
  /usr/include/c++/4.9.4/bits/stl_algobase.h \
  /usr/include/c++/4.9.4/bits/functexcept.h \
  /usr/include/c++/4.9.4/bits/cpp_type_traits.h \
@@ -69,7 +70,7 @@ anacore_dict.lo: anacore_dict.cc /usr/include/stdc-predef.h \
  /usr/include/c++/4.9.4/bits/functional_hash.h \
  /usr/include/c++/4.9.4/bits/range_access.h \
  /usr/include/c++/4.9.4/bits/vector.tcc \
- /opt/root61206/include/TSchemaHelper.h /usr/include/c++/4.9.4/string \
+ /opt/root61600/include/TSchemaHelper.h /usr/include/c++/4.9.4/string \
  /usr/include/c++/4.9.4/bits/stringfwd.h \
  /usr/include/c++/4.9.4/bits/char_traits.h \
  /usr/include/c++/4.9.4/bits/postypes.h /usr/include/c++/4.9.4/cwchar \
@@ -96,16 +97,15 @@ anacore_dict.lo: anacore_dict.cc /usr/include/stdc-predef.h \
  /usr/include/asm/errno.h /usr/include/asm-generic/errno.h \
  /usr/include/asm-generic/errno-base.h \
  /usr/include/c++/4.9.4/bits/basic_string.tcc \
- /opt/root61206/include/TIsAProxy.h \
- /opt/root61206/include/TVirtualIsAProxy.h \
- /opt/root61206/include/TStorage.h /opt/root61206/include/TVersionCheck.h \
- /opt/root61206/include/TString.h /opt/root61206/include/TMathBase.h \
- /usr/include/c++/4.9.4/cmath /usr/include/math.h \
- /usr/include/bits/huge_val.h /usr/include/bits/huge_valf.h \
- /usr/include/bits/huge_vall.h /usr/include/bits/inf.h \
- /usr/include/bits/nan.h /usr/include/bits/mathdef.h \
- /usr/include/bits/mathcalls.h /opt/root61206/include/RStringView.h \
- /opt/root61206/include/RWrap_libcpp_string_view.h \
+ /opt/root61600/include/TIsAProxy.h \
+ /opt/root61600/include/TVirtualIsAProxy.h \
+ /opt/root61600/include/TStorage.h /opt/root61600/include/TVersionCheck.h \
+ /opt/root61600/include/RVersion.h /opt/root61600/include/TString.h \
+ /opt/root61600/include/TMathBase.h /usr/include/c++/4.9.4/cmath \
+ /usr/include/math.h /usr/include/bits/huge_val.h \
+ /usr/include/bits/huge_valf.h /usr/include/bits/huge_vall.h \
+ /usr/include/bits/inf.h /usr/include/bits/nan.h \
+ /usr/include/bits/mathdef.h /usr/include/bits/mathcalls.h \
  /usr/include/c++/4.9.4/algorithm /usr/include/c++/4.9.4/utility \
  /usr/include/c++/4.9.4/bits/stl_relops.h \
  /usr/include/c++/4.9.4/bits/stl_algo.h \
@@ -154,6 +154,8 @@ anacore_dict.lo: anacore_dict.cc /usr/include/stdc-predef.h \
  /usr/lib/gcc/x86_64-unknown-linux-gnu/4.9.4/include/adxintrin.h \
  /usr/include/c++/4.9.4/bits/random.tcc /usr/include/c++/4.9.4/numeric \
  /usr/include/c++/4.9.4/bits/stl_numeric.h \
+ /opt/root61600/include/ROOT/RStringView.hxx \
+ /opt/root61600/include/ROOT/RWrap_libcpp_string_view.h \
  /usr/include/c++/4.9.4/iterator /usr/include/c++/4.9.4/ostream \
  /usr/include/c++/4.9.4/ios /usr/include/c++/4.9.4/bits/ios_base.h \
  /usr/include/c++/4.9.4/bits/locale_classes.h \
@@ -179,12 +181,8 @@ anacore_dict.lo: anacore_dict.cc /usr/include/stdc-predef.h \
  /usr/include/libintl.h /usr/include/c++/4.9.4/bits/codecvt.h \
  /usr/include/c++/4.9.4/bits/locale_facets_nonio.tcc \
  /usr/include/c++/4.9.4/stdexcept \
- /opt/root61206/include/libcpp_string_view.h \
- /opt/root61206/include/ESTLType.h /opt/root61206/include/TObjArray.h \
- /opt/root61206/include/TSeqCollection.h \
- /opt/root61206/include/TCollection.h /opt/root61206/include/TIterator.h \
- /opt/root61206/include/TVirtualRWMutex.h \
- /opt/root61206/include/TVirtualMutex.h /usr/include/c++/4.9.4/memory \
+ /opt/root61600/include/ROOT/libcpp_string_view.h \
+ /opt/root61600/include/ROOT/TypeTraits.hxx /usr/include/c++/4.9.4/memory \
  /usr/include/c++/4.9.4/bits/stl_raw_storage_iter.h \
  /usr/include/c++/4.9.4/ext/concurrence.h \
  /usr/include/c++/4.9.4/bits/uses_allocator.h \
@@ -194,7 +192,14 @@ anacore_dict.lo: anacore_dict.cc /usr/include/stdc-predef.h \
  /usr/include/c++/4.9.4/bits/shared_ptr_base.h \
  /usr/include/c++/4.9.4/ext/aligned_buffer.h \
  /usr/include/c++/4.9.4/backward/auto_ptr.h \
- /opt/root61206/include/TObjString.h /usr/include/c++/4.9.4/map \
+ /opt/root61600/include/ROOT/RSpan.hxx \
+ /opt/root61600/include/ROOT/span.hxx /usr/include/c++/4.9.4/cstddef \
+ /opt/root61600/include/ESTLType.h /opt/root61600/include/TObjArray.h \
+ /opt/root61600/include/TSeqCollection.h \
+ /opt/root61600/include/TCollection.h /opt/root61600/include/TIterator.h \
+ /opt/root61600/include/TVirtualRWMutex.h \
+ /opt/root61600/include/TVirtualMutex.h \
+ /opt/root61600/include/TObjString.h /usr/include/c++/4.9.4/map \
  /usr/include/c++/4.9.4/bits/stl_tree.h \
  /usr/include/c++/4.9.4/bits/stl_map.h \
  /usr/include/c++/4.9.4/bits/stl_multimap.h /usr/include/c++/4.9.4/set \
@@ -204,76 +209,79 @@ anacore_dict.lo: anacore_dict.cc /usr/include/stdc-predef.h \
  /usr/include/c++/4.9.4/bits/hashtable.h \
  /usr/include/c++/4.9.4/bits/hashtable_policy.h \
  /usr/include/c++/4.9.4/bits/unordered_set.h \
- /opt/root61206/include/ThreadLocalStorage.h \
- /opt/root61206/include/TDictAttributeMap.h \
- /opt/root61206/include/THashTable.h \
- /opt/root61206/include/TInterpreter.h /opt/root61206/include/TROOT.h \
- /opt/root61206/include/TDirectory.h /opt/root61206/include/TBuffer.h \
- /opt/root61206/include/TList.h /opt/root61206/include/TDatime.h \
- /opt/root61206/include/TUUID.h /opt/root61206/include/TBuffer.h \
- /opt/root61206/include/TMemberInspector.h \
- /opt/root61206/include/TVirtualMutex.h /opt/root61206/include/TError.h \
- /opt/root61206/include/RtypesImp.h \
- /opt/root61206/include/TMemberInspector.h \
- /opt/root61206/include/TError.h /opt/root61206/include/TIsAProxy.h \
- /opt/root61206/include/TFileMergeInfo.h \
- /opt/root61206/include/TCollectionProxyInfo.h \
+ /opt/root61600/include/ThreadLocalStorage.h \
+ /opt/root61600/include/TDictAttributeMap.h \
+ /opt/root61600/include/THashTable.h \
+ /opt/root61600/include/TInterpreter.h \
+ /opt/root61600/include/TInterpreterValue.h \
+ /opt/root61600/include/TROOT.h /opt/root61600/include/TDirectory.h \
+ /opt/root61600/include/TBuffer.h /opt/root61600/include/TList.h \
+ /opt/root61600/include/TDatime.h /opt/root61600/include/TUUID.h \
+ /opt/root61600/include/TBuffer.h \
+ /opt/root61600/include/TMemberInspector.h \
+ /opt/root61600/include/TVirtualMutex.h /opt/root61600/include/TError.h \
+ /opt/root61600/include/RtypesImp.h \
+ /opt/root61600/include/TMemberInspector.h \
+ /opt/root61600/include/TError.h /opt/root61600/include/TIsAProxy.h \
+ /opt/root61600/include/TFileMergeInfo.h \
+ /opt/root61600/include/TCollectionProxyInfo.h \
  /usr/include/c++/4.9.4/forward_list \
  /usr/include/c++/4.9.4/bits/forward_list.h \
  /usr/include/c++/4.9.4/bits/forward_list.tcc \
- /opt/root61206/include/TDataMember.h include/TArtDecoderCBLT.hh \
+ /opt/root61600/include/TDataMember.h include/TArtDecoderCBLT.hh \
  include/TArtDecoder.hh include/TArtRawSegmentObject.hh \
- include/TArtConfig.hh /opt/root61206/include/TObject.h \
- include/TArtRawDataObject.hh /opt/root61206/include/TNamed.h \
+ include/TArtConfig.hh /opt/root61600/include/TObject.h \
+ include/TArtRawDataObject.hh /opt/root61600/include/TNamed.h \
  include/TArtRawFADCDataObject.hh include/TArtCore.hh \
  include/TArtDecoderFactory.hh include/TArtStreamingDataSource.hh \
  include/TArtDataSource.hh include/TArtDecoderFixed16.hh \
- include/TArtDecoderLUPO.hh include/TArtReconstruction.hh \
- /opt/root61206/include/TString.h include/TArtDecoderV1740.hh \
+ include/TArtCore.hh include/TArtDecoderLUPO.hh \
+ include/TArtDecoderAMTTDC.hh include/TArtDecoderV1740.hh \
  include/TArtRawDataObject.hh include/TArtSemaphore.hh \
  /usr/include/sys/ipc.h /usr/include/bits/ipctypes.h \
  /usr/include/bits/ipc.h /usr/include/sys/sem.h /usr/include/bits/sem.h \
- include/TArtStoreManager.hh /opt/root61206/include/TList.h \
- /opt/root61206/include/TTree.h \
- /opt/root61206/include/ROOT/TIOFeatures.hxx \
- /opt/root61206/include/TBasket.h /opt/root61206/include/TKey.h \
- /opt/root61206/include/TClass.h /usr/include/c++/4.9.4/sstream \
- /usr/include/c++/4.9.4/bits/sstream.tcc /opt/root61206/include/TArrayD.h \
- /opt/root61206/include/TArray.h /opt/root61206/include/TArrayI.h \
- /opt/root61206/include/TAttFill.h /opt/root61206/include/TAttLine.h \
- /opt/root61206/include/TAttMarker.h /opt/root61206/include/TBranch.h \
- /opt/root61206/include/TDataType.h \
- /opt/root61206/include/TVirtualTreePlayer.h \
- /opt/root61206/include/TClonesArray.h include/TArtRawEventObject.hh \
- include/TArtRawScalerObject.hh include/TArtRawSegmentObject.hh \
+ include/TArtStoreManager.hh /opt/root61600/include/TList.h \
+ /opt/root61600/include/TTree.h /opt/root61600/include/Compression.h \
+ /opt/root61600/include/ROOT/TIOFeatures.hxx \
+ /opt/root61600/include/TBasket.h /opt/root61600/include/TKey.h \
+ /opt/root61600/include/TClass.h /usr/include/c++/4.9.4/sstream \
+ /usr/include/c++/4.9.4/bits/sstream.tcc /opt/root61600/include/TArrayD.h \
+ /opt/root61600/include/TArray.h /opt/root61600/include/TArrayI.h \
+ /opt/root61600/include/TAttFill.h /opt/root61600/include/TAttLine.h \
+ /opt/root61600/include/TAttMarker.h /opt/root61600/include/TBranch.h \
+ /opt/root61600/include/TDataType.h \
+ /opt/root61600/include/TBranchCacheInfo.h /opt/root61600/include/TBits.h \
+ /opt/root61600/include/TVirtualTreePlayer.h \
+ /opt/root61600/include/TClonesArray.h include/TArtRawEventObject.hh \
+ include/TArtRawScalerObject.hh include/TArtDecoderV1190C.hh \
  include/TArtDecoderV7XX.hh include/TArtDecoderCTM405.hh \
- include/TArtDecoderV767.hh include/TArtDecoderAMTTDC.hh \
- include/TArtMath.hh include/TArtDecoderFixed32.hh \
- include/TArtParserFactory.hh include/TArtParser.hh \
  include/TArtEventStore.hh /usr/include/sys/shm.h /usr/include/bits/shm.h \
  /usr/include/c++/4.9.4/fstream \
  /usr/include/c++/4.9.4/x86_64-unknown-linux-gnu/bits/basic_file.h \
  /usr/include/c++/4.9.4/x86_64-unknown-linux-gnu/bits/c++io.h \
- /usr/include/c++/4.9.4/bits/fstream.tcc include/TArtStoreManager.hh \
- include/TArtSharedMemory.hh include/TArtConfig.hh \
- include/TArtDecoderA3100.hh include/TArtCore.hh \
+ /usr/include/c++/4.9.4/bits/fstream.tcc include/TArtParser.hh \
+ include/TArtStoreManager.hh include/TArtMath.hh \
+ include/TArtDecoderFixed32.hh include/TArtParserFactory.hh \
+ include/TArtDecoder.hh include/TArtSharedMemory.hh include/TArtConfig.hh \
+ include/TArtDecoderA3100.hh include/TArtParser.hh \
  include/TArtDecoderMADC32.hh include/TArtSharedMemoryDataSource.hh \
  include/TArtSharedMemory.hh include/TArtSemaphore.hh \
  include/TArtDecoderFixed24.hh include/TArtDecoderV1290.hh \
- include/TArtDataObject.hh include/TArtDecoderV1190.hh \
- include/TArtDecoderP716X.hh include/TArtRawEventObject.hh \
- include/TArtParserRDF.hh include/TArtParser.hh \
- include/TArtDecoderV550.hh include/TArtDecoderDSP.hh \
- include/TArtFileDataSource.hh /usr/include/zlib.h /usr/include/zconf.h \
- /usr/include/c++/4.9.4/iostream /usr/include/sys/stat.h \
- /usr/include/bits/stat.h include/TArtMap.hh \
- /opt/root61206/include/Riostream.h include/TArtDecoderP716XZ.hh \
+ include/TArtDataObject.hh /opt/root61600/include/TString.h \
+ include/TArtDecoderV1190.hh include/TArtDecoderP716X.hh \
+ include/TArtRawEventObject.hh include/TArtRawSegmentObject.hh \
+ include/TArtParserRDF.hh include/TArtDecoderV550.hh \
+ include/TArtDecoderDSP.hh include/TArtFileDataSource.hh \
+ /usr/include/zlib.h /usr/include/zconf.h /usr/include/c++/4.9.4/iostream \
+ /usr/include/sys/stat.h /usr/include/bits/stat.h include/TArtMap.hh \
+ /opt/root61600/include/Riostream.h include/TArtDecoderP716XZ.hh \
  include/TArtDecoderAD413A.hh include/TArtRawFADCDataObject.hh \
- include/TArtRawScalerObject.hh include/TArtDecoder.hh \
- include/segidlist.hh include/TArtDataSource.hh include/TArtEventInfo.hh \
+ include/TArtRawScalerObject.hh include/TArtDataSource.hh \
+ include/segidlist.hh include/TArtReconstruction.hh \
+ include/TArtDecoderV767.hh include/TArtEventInfo.hh \
  include/TArtDecoderV830.hh include/TArtParserRIDF.hh \
  include/TArtEventStore.hh include/TArtDecoderL3377d.hh \
- include/TArtDecoderV1190C.hh include/TArtUtil.hh
+ include/TArtUtil.hh
 
 /usr/include/stdc-predef.h:
 
@@ -347,31 +355,33 @@ anacore_dict.lo: anacore_dict.cc /usr/include/stdc-predef.h \
 
 /usr/include/assert.h:
 
-/opt/root61206/include/RConfig.h:
+/opt/root61600/include/RConfig.h:
 
-/opt/root61206/include/RVersion.h:
+/opt/root61600/include/ROOT/RConfig.h:
 
-/opt/root61206/include/TClass.h:
+/opt/root61600/include/ROOT/../RVersion.h:
 
-/opt/root61206/include/TDictionary.h:
+/opt/root61600/include/RConfigure.h:
 
-/opt/root61206/include/TNamed.h:
+/opt/root61600/include/TClass.h:
 
-/opt/root61206/include/TObject.h:
+/opt/root61600/include/TDictionary.h:
 
-/opt/root61206/include/RConfigure.h:
+/opt/root61600/include/TNamed.h:
 
-/opt/root61206/include/Rtypes.h:
+/opt/root61600/include/TObject.h:
 
-/opt/root61206/include/RtypesCore.h:
+/opt/root61600/include/RConfigure.h:
 
-/opt/root61206/include/RConfig.h:
+/opt/root61600/include/Rtypes.h:
 
-/opt/root61206/include/DllImport.h:
+/opt/root61600/include/RtypesCore.h:
 
-/opt/root61206/include/snprintf.h:
+/opt/root61600/include/DllImport.h:
 
-/opt/root61206/include/strlcpy.h:
+/opt/root61600/include/snprintf.h:
+
+/opt/root61600/include/strlcpy.h:
 
 /usr/include/unistd.h:
 
@@ -415,7 +425,7 @@ anacore_dict.lo: anacore_dict.cc /usr/include/stdc-predef.h \
 
 /usr/include/c++/4.9.4/bits/hash_bytes.h:
 
-/opt/root61206/include/TGenericClassInfo.h:
+/opt/root61600/include/TGenericClassInfo.h:
 
 /usr/include/c++/4.9.4/vector:
 
@@ -479,7 +489,7 @@ anacore_dict.lo: anacore_dict.cc /usr/include/stdc-predef.h \
 
 /usr/include/c++/4.9.4/bits/vector.tcc:
 
-/opt/root61206/include/TSchemaHelper.h:
+/opt/root61600/include/TSchemaHelper.h:
 
 /usr/include/c++/4.9.4/string:
 
@@ -559,17 +569,19 @@ anacore_dict.lo: anacore_dict.cc /usr/include/stdc-predef.h \
 
 /usr/include/c++/4.9.4/bits/basic_string.tcc:
 
-/opt/root61206/include/TIsAProxy.h:
+/opt/root61600/include/TIsAProxy.h:
 
-/opt/root61206/include/TVirtualIsAProxy.h:
+/opt/root61600/include/TVirtualIsAProxy.h:
 
-/opt/root61206/include/TStorage.h:
+/opt/root61600/include/TStorage.h:
 
-/opt/root61206/include/TVersionCheck.h:
+/opt/root61600/include/TVersionCheck.h:
 
-/opt/root61206/include/TString.h:
+/opt/root61600/include/RVersion.h:
 
-/opt/root61206/include/TMathBase.h:
+/opt/root61600/include/TString.h:
+
+/opt/root61600/include/TMathBase.h:
 
 /usr/include/c++/4.9.4/cmath:
 
@@ -588,10 +600,6 @@ anacore_dict.lo: anacore_dict.cc /usr/include/stdc-predef.h \
 /usr/include/bits/mathdef.h:
 
 /usr/include/bits/mathcalls.h:
-
-/opt/root61206/include/RStringView.h:
-
-/opt/root61206/include/RWrap_libcpp_string_view.h:
 
 /usr/include/c++/4.9.4/algorithm:
 
@@ -697,6 +705,10 @@ anacore_dict.lo: anacore_dict.cc /usr/include/stdc-predef.h \
 
 /usr/include/c++/4.9.4/bits/stl_numeric.h:
 
+/opt/root61600/include/ROOT/RStringView.hxx:
+
+/opt/root61600/include/ROOT/RWrap_libcpp_string_view.h:
+
 /usr/include/c++/4.9.4/iterator:
 
 /usr/include/c++/4.9.4/ostream:
@@ -759,21 +771,9 @@ anacore_dict.lo: anacore_dict.cc /usr/include/stdc-predef.h \
 
 /usr/include/c++/4.9.4/stdexcept:
 
-/opt/root61206/include/libcpp_string_view.h:
+/opt/root61600/include/ROOT/libcpp_string_view.h:
 
-/opt/root61206/include/ESTLType.h:
-
-/opt/root61206/include/TObjArray.h:
-
-/opt/root61206/include/TSeqCollection.h:
-
-/opt/root61206/include/TCollection.h:
-
-/opt/root61206/include/TIterator.h:
-
-/opt/root61206/include/TVirtualRWMutex.h:
-
-/opt/root61206/include/TVirtualMutex.h:
+/opt/root61600/include/ROOT/TypeTraits.hxx:
 
 /usr/include/c++/4.9.4/memory:
 
@@ -799,7 +799,27 @@ anacore_dict.lo: anacore_dict.cc /usr/include/stdc-predef.h \
 
 /usr/include/c++/4.9.4/backward/auto_ptr.h:
 
-/opt/root61206/include/TObjString.h:
+/opt/root61600/include/ROOT/RSpan.hxx:
+
+/opt/root61600/include/ROOT/span.hxx:
+
+/usr/include/c++/4.9.4/cstddef:
+
+/opt/root61600/include/ESTLType.h:
+
+/opt/root61600/include/TObjArray.h:
+
+/opt/root61600/include/TSeqCollection.h:
+
+/opt/root61600/include/TCollection.h:
+
+/opt/root61600/include/TIterator.h:
+
+/opt/root61600/include/TVirtualRWMutex.h:
+
+/opt/root61600/include/TVirtualMutex.h:
+
+/opt/root61600/include/TObjString.h:
 
 /usr/include/c++/4.9.4/map:
 
@@ -823,45 +843,47 @@ anacore_dict.lo: anacore_dict.cc /usr/include/stdc-predef.h \
 
 /usr/include/c++/4.9.4/bits/unordered_set.h:
 
-/opt/root61206/include/ThreadLocalStorage.h:
+/opt/root61600/include/ThreadLocalStorage.h:
 
-/opt/root61206/include/TDictAttributeMap.h:
+/opt/root61600/include/TDictAttributeMap.h:
 
-/opt/root61206/include/THashTable.h:
+/opt/root61600/include/THashTable.h:
 
-/opt/root61206/include/TInterpreter.h:
+/opt/root61600/include/TInterpreter.h:
 
-/opt/root61206/include/TROOT.h:
+/opt/root61600/include/TInterpreterValue.h:
 
-/opt/root61206/include/TDirectory.h:
+/opt/root61600/include/TROOT.h:
 
-/opt/root61206/include/TBuffer.h:
+/opt/root61600/include/TDirectory.h:
 
-/opt/root61206/include/TList.h:
+/opt/root61600/include/TBuffer.h:
 
-/opt/root61206/include/TDatime.h:
+/opt/root61600/include/TList.h:
 
-/opt/root61206/include/TUUID.h:
+/opt/root61600/include/TDatime.h:
 
-/opt/root61206/include/TBuffer.h:
+/opt/root61600/include/TUUID.h:
 
-/opt/root61206/include/TMemberInspector.h:
+/opt/root61600/include/TBuffer.h:
 
-/opt/root61206/include/TVirtualMutex.h:
+/opt/root61600/include/TMemberInspector.h:
 
-/opt/root61206/include/TError.h:
+/opt/root61600/include/TVirtualMutex.h:
 
-/opt/root61206/include/RtypesImp.h:
+/opt/root61600/include/TError.h:
 
-/opt/root61206/include/TMemberInspector.h:
+/opt/root61600/include/RtypesImp.h:
 
-/opt/root61206/include/TError.h:
+/opt/root61600/include/TMemberInspector.h:
 
-/opt/root61206/include/TIsAProxy.h:
+/opt/root61600/include/TError.h:
 
-/opt/root61206/include/TFileMergeInfo.h:
+/opt/root61600/include/TIsAProxy.h:
 
-/opt/root61206/include/TCollectionProxyInfo.h:
+/opt/root61600/include/TFileMergeInfo.h:
+
+/opt/root61600/include/TCollectionProxyInfo.h:
 
 /usr/include/c++/4.9.4/forward_list:
 
@@ -869,7 +891,7 @@ anacore_dict.lo: anacore_dict.cc /usr/include/stdc-predef.h \
 
 /usr/include/c++/4.9.4/bits/forward_list.tcc:
 
-/opt/root61206/include/TDataMember.h:
+/opt/root61600/include/TDataMember.h:
 
 include/TArtDecoderCBLT.hh:
 
@@ -879,11 +901,11 @@ include/TArtRawSegmentObject.hh:
 
 include/TArtConfig.hh:
 
-/opt/root61206/include/TObject.h:
+/opt/root61600/include/TObject.h:
 
 include/TArtRawDataObject.hh:
 
-/opt/root61206/include/TNamed.h:
+/opt/root61600/include/TNamed.h:
 
 include/TArtRawFADCDataObject.hh:
 
@@ -897,11 +919,11 @@ include/TArtDataSource.hh:
 
 include/TArtDecoderFixed16.hh:
 
+include/TArtCore.hh:
+
 include/TArtDecoderLUPO.hh:
 
-include/TArtReconstruction.hh:
-
-/opt/root61206/include/TString.h:
+include/TArtDecoderAMTTDC.hh:
 
 include/TArtDecoderV1740.hh:
 
@@ -921,63 +943,57 @@ include/TArtSemaphore.hh:
 
 include/TArtStoreManager.hh:
 
-/opt/root61206/include/TList.h:
+/opt/root61600/include/TList.h:
 
-/opt/root61206/include/TTree.h:
+/opt/root61600/include/TTree.h:
 
-/opt/root61206/include/ROOT/TIOFeatures.hxx:
+/opt/root61600/include/Compression.h:
 
-/opt/root61206/include/TBasket.h:
+/opt/root61600/include/ROOT/TIOFeatures.hxx:
 
-/opt/root61206/include/TKey.h:
+/opt/root61600/include/TBasket.h:
 
-/opt/root61206/include/TClass.h:
+/opt/root61600/include/TKey.h:
+
+/opt/root61600/include/TClass.h:
 
 /usr/include/c++/4.9.4/sstream:
 
 /usr/include/c++/4.9.4/bits/sstream.tcc:
 
-/opt/root61206/include/TArrayD.h:
+/opt/root61600/include/TArrayD.h:
 
-/opt/root61206/include/TArray.h:
+/opt/root61600/include/TArray.h:
 
-/opt/root61206/include/TArrayI.h:
+/opt/root61600/include/TArrayI.h:
 
-/opt/root61206/include/TAttFill.h:
+/opt/root61600/include/TAttFill.h:
 
-/opt/root61206/include/TAttLine.h:
+/opt/root61600/include/TAttLine.h:
 
-/opt/root61206/include/TAttMarker.h:
+/opt/root61600/include/TAttMarker.h:
 
-/opt/root61206/include/TBranch.h:
+/opt/root61600/include/TBranch.h:
 
-/opt/root61206/include/TDataType.h:
+/opt/root61600/include/TDataType.h:
 
-/opt/root61206/include/TVirtualTreePlayer.h:
+/opt/root61600/include/TBranchCacheInfo.h:
 
-/opt/root61206/include/TClonesArray.h:
+/opt/root61600/include/TBits.h:
+
+/opt/root61600/include/TVirtualTreePlayer.h:
+
+/opt/root61600/include/TClonesArray.h:
 
 include/TArtRawEventObject.hh:
 
 include/TArtRawScalerObject.hh:
 
-include/TArtRawSegmentObject.hh:
+include/TArtDecoderV1190C.hh:
 
 include/TArtDecoderV7XX.hh:
 
 include/TArtDecoderCTM405.hh:
-
-include/TArtDecoderV767.hh:
-
-include/TArtDecoderAMTTDC.hh:
-
-include/TArtMath.hh:
-
-include/TArtDecoderFixed32.hh:
-
-include/TArtParserFactory.hh:
-
-include/TArtParser.hh:
 
 include/TArtEventStore.hh:
 
@@ -993,7 +1009,17 @@ include/TArtEventStore.hh:
 
 /usr/include/c++/4.9.4/bits/fstream.tcc:
 
+include/TArtParser.hh:
+
 include/TArtStoreManager.hh:
+
+include/TArtMath.hh:
+
+include/TArtDecoderFixed32.hh:
+
+include/TArtParserFactory.hh:
+
+include/TArtDecoder.hh:
 
 include/TArtSharedMemory.hh:
 
@@ -1001,7 +1027,7 @@ include/TArtConfig.hh:
 
 include/TArtDecoderA3100.hh:
 
-include/TArtCore.hh:
+include/TArtParser.hh:
 
 include/TArtDecoderMADC32.hh:
 
@@ -1017,15 +1043,17 @@ include/TArtDecoderV1290.hh:
 
 include/TArtDataObject.hh:
 
+/opt/root61600/include/TString.h:
+
 include/TArtDecoderV1190.hh:
 
 include/TArtDecoderP716X.hh:
 
 include/TArtRawEventObject.hh:
 
-include/TArtParserRDF.hh:
+include/TArtRawSegmentObject.hh:
 
-include/TArtParser.hh:
+include/TArtParserRDF.hh:
 
 include/TArtDecoderV550.hh:
 
@@ -1045,7 +1073,7 @@ include/TArtFileDataSource.hh:
 
 include/TArtMap.hh:
 
-/opt/root61206/include/Riostream.h:
+/opt/root61600/include/Riostream.h:
 
 include/TArtDecoderP716XZ.hh:
 
@@ -1055,11 +1083,13 @@ include/TArtRawFADCDataObject.hh:
 
 include/TArtRawScalerObject.hh:
 
-include/TArtDecoder.hh:
+include/TArtDataSource.hh:
 
 include/segidlist.hh:
 
-include/TArtDataSource.hh:
+include/TArtReconstruction.hh:
+
+include/TArtDecoderV767.hh:
 
 include/TArtEventInfo.hh:
 
@@ -1070,7 +1100,5 @@ include/TArtParserRIDF.hh:
 include/TArtEventStore.hh:
 
 include/TArtDecoderL3377d.hh:
-
-include/TArtDecoderV1190C.hh:
 
 include/TArtUtil.hh:
