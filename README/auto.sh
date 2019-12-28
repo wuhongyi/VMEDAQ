@@ -15,3 +15,5 @@ cp -r build/html/* ../docs/
 cp build/latex/vmedaq.pdf ../README.pdf
 
 make clean
+
+cp source/README.rst ../README.rst

@@ -10,7 +10,7 @@ VMEDAQ
    :maxdepth: 3
    :caption: content:
 
-Welcome to VMEDAQ's guides.
+感谢您选择 VMEDAQ。更多开源程序，请访问我们组的 `Github <https://github.com/pkuNucExp>`_ 和 `吴鸿毅的Github <https://github.com/wuhongyi>`_
 
 #################################
 
@@ -18,7 +18,7 @@ Welcome to VMEDAQ's guides.
    :maxdepth: 3
    :caption: 简介
 
-   README.md
+   README.rst
 
 #################################
 
@@ -26,7 +26,7 @@ Welcome to VMEDAQ's guides.
    :maxdepth: 3
    :caption: 安装
    
-   INSTALL.md
+   INSTALL.rst
 
 #################################
 
@@ -34,7 +34,7 @@ Welcome to VMEDAQ's guides.
    :maxdepth: 3
    :caption: 固件
    
-   Firmware.md
+   Firmware.rst
 
 #################################
 
@@ -42,13 +42,13 @@ Welcome to VMEDAQ's guides.
    :maxdepth: 3
    :caption: 配置
 
-   Setting.md
-   analysis.md
-   anaroot.md
-   checkcnt.md
-   cutpedo.md
-   DAQConfig.md
-   httponline.md
-   online.md
-   r2root.md
-   statistics.md
+   Setting.rst
+   analysis.rst
+   anaroot.rst
+   checkcnt.rst
+   cutpedo.rst
+   DAQConfig.rst
+   httponline.rst
+   online.rst
+   r2root.rst
+   statistics.rst

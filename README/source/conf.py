@@ -22,7 +22,7 @@ copyright = '2019, Hongyi Wu(吴鸿毅)'
 author = 'Hongyi Wu(吴鸿毅)'
 
 # The full version, including alpha/beta/rc tags
-release = '0.0'
+release = '2019.12.28'
 
 
 # -- General configuration ---------------------------------------------------
@@ -92,16 +92,16 @@ latex_elements = {
 # Latex figure (float) alignment
     #'figure_align': 'htbp',
 
-'preamble' : r'''
-  \usepackage[slantfont,boldfont]{xeCJK} 
-\newCJKfontfamily{\song}{SimSun}
-\newCJKfontfamily{\hei}{SimHei}
-\newCJKfontfamily{\kai}{KaiTi}
-\newCJKfontfamily{\fangsong}{FangSong}
+# 'preamble' : r'''
+#   \usepackage[slantfont,boldfont]{xeCJK} 
+# \newCJKfontfamily{\song}{SimSun}
+# \newCJKfontfamily{\hei}{SimHei}
+# \newCJKfontfamily{\kai}{KaiTi}
+# \newCJKfontfamily{\fangsong}{FangSong}
 
-\setmainfont{Times New Roman}%文档正文默认英语字体,设置衬线字体
-\setCJKmainfont[BoldFont={SimSun},ItalicFont={KaiTi}]{SimSun}%设置默认中文字体
-\setCJKsansfont{SimHei}
-\setCJKmonofont{FangSong}% 设置等宽字体
-        ''',
+# \setmainfont{Times New Roman}%文档正文默认英语字体,设置衬线字体
+# \setCJKmainfont[BoldFont={SimSun},ItalicFont={KaiTi}]{SimSun}%设置默认中文字体
+# \setCJKsansfont{SimHei}
+# \setCJKmonofont{FangSong}% 设置等宽字体
+#         ''',
 }

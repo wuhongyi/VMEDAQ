@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>获取配置 &mdash; VMEDAQ 0.0 文档</title>
+  <title>获取配置 &mdash; VMEDAQ 2019.12.28 文档</title>
   
 
   
@@ -98,13 +98,15 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">获取配置</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#id2">程序修改建议顺序</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#v2718">V2718</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#v1718-v2718">V1718/V2718</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#busy">软件 BUSY 模式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">硬件 BUSY 模式</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="analysis.html">analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="anaroot.html">anaroot</a></li>
 <li class="toctree-l1"><a class="reference internal" href="checkcnt.html">checkcnt</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cutpedo.html">cutpedo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cutpedo.html">cutpedestal</a></li>
 <li class="toctree-l1"><a class="reference internal" href="DAQConfig.html">DAQConfig</a></li>
 <li class="toctree-l1"><a class="reference internal" href="httponline.html">httponline</a></li>
 <li class="toctree-l1"><a class="reference internal" href="online.html">online</a></li>
@@ -161,7 +163,7 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/Setting.md.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/Setting.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -174,36 +176,35 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <!-- Setting.md --- 
-;; 
-;; Description: 
-;; Author: Hongyi Wu(吴鸿毅)
-;; Email: wuhongyi@qq.com 
-;; Created: 一 12月  3 10:44:54 2018 (+0800)
-;; Last-Updated: 一 12月  3 11:04:46 2018 (+0800)
-;;           By: Hongyi Wu(吴鸿毅)
-;;     Update #: 3
-;; URL: http://wuhongyi.cn --><div class="section" id="id1">
+  <div class="section" id="id1">
 <h1>获取配置<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
 <div class="section" id="id2">
 <h2>程序修改建议顺序<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
 <li><p>anaroot/CBLT.hh</p></li>
-<li><p>DAQConfig/babies/bbmodules.h</p></li>
-<li><p>DAQConfig/babies/start.c</p></li>
-<li><p>DAQConfig/babies/evt.c</p></li>
-<li><p>DAQConfig/babies/clear.c</p></li>
-<li><p>DAQConfig/babies/stop.c</p></li>
-<li><p>DAQConfig/init/daqinitrc.sh</p></li>
+<li><p>DAQConfig/bbcaenvme/babies/bbmodules.h</p></li>
+<li><p>DAQConfig/bbcaenvme/babies/start.c</p></li>
+<li><p>DAQConfig/bbcaenvme/babies/evt.c</p></li>
+<li><p>DAQConfig/bbcaenvme/babies/clear.c</p></li>
+<li><p>DAQConfig/bbcaenvme/babies/stop.c</p></li>
+<li><p>DAQConfig/bbcaenvme/init/daqinitrc.sh</p></li>
 </ul>
 </div>
 <hr class="docutils" />
-<div class="section" id="v2718">
-<h2>V2718<a class="headerlink" href="#v2718" title="永久链接至标题">¶</a></h2>
-<p>V2718PCB板上DIP开关：Prog: 0 off, 1 off, 2 off, 3 on, 4 off, I/O NIM</p>
-<p>V2718前面板5个输出PORT，分别为0-4</p>
-<p>通电时候PORT0-3处于高电平，PORT4处于低电平。因此软件BUSY模式时候采用PORT4，硬件BUSY模式采用PORT3。</p>
-<!-- Setting.md ends here --></div>
+<div class="section" id="v1718-v2718">
+<h2>V1718/V2718<a class="headerlink" href="#v1718-v2718" title="永久链接至标题">¶</a></h2>
+<p>V1718/V2718 PCB 板上 DIP 开关：Prog: 0 off, 1 off, 2 off, 3 on, 4 off, I/O NIM</p>
+<p>v1718/V2718 前面板 5 个 LEMO 输出口，分别为 0-4</p>
+<p>通电时候输出口 0-3 处于高电平，输出口 4 处于低电平。因此软件 BUSY 模式时候采用输出口 4，硬件 BUSY 模式采用输出口 3。</p>
+</div>
+<div class="section" id="busy">
+<h2>软件 BUSY 模式<a class="headerlink" href="#busy" title="永久链接至标题">¶</a></h2>
+<p><strong>待补充</strong></p>
+</div>
+<div class="section" id="id3">
+<h2>硬件 BUSY 模式<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p><strong>待补充</strong></p>
+</div>
 </div>
 
 

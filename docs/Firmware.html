@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>固件要求 &mdash; VMEDAQ 0.0 文档</title>
+  <title>固件要求 &mdash; VMEDAQ 2019.12.28 文档</title>
   
 
   
@@ -112,7 +112,7 @@
 <li class="toctree-l1"><a class="reference internal" href="analysis.html">analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="anaroot.html">anaroot</a></li>
 <li class="toctree-l1"><a class="reference internal" href="checkcnt.html">checkcnt</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cutpedo.html">cutpedo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cutpedo.html">cutpedestal</a></li>
 <li class="toctree-l1"><a class="reference internal" href="DAQConfig.html">DAQConfig</a></li>
 <li class="toctree-l1"><a class="reference internal" href="httponline.html">httponline</a></li>
 <li class="toctree-l1"><a class="reference internal" href="online.html">online</a></li>
@@ -169,7 +169,7 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/Firmware.md.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/Firmware.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -182,25 +182,18 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <!-- Firmware.md --- 
-;; 
-;; Description: 
-;; Author: Hongyi Wu(吴鸿毅)
-;; Email: wuhongyi@qq.com 
-;; Created: 一 12月  3 10:26:33 2018 (+0800)
-;; Last-Updated: 二 7月  9 14:03:45 2019 (+0800)
-;;           By: Hongyi Wu(吴鸿毅)
-;;     Update #: 11
-;; URL: http://wuhongyi.cn --><div class="section" id="id1">
+  <div class="section" id="id1">
 <h1>固件要求<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
-<blockquote>
-<div><p><strong>注意</strong></p>
-<p>请确保所使用的所有插件固件版本与以下一致。</p>
-<p>我们尽可能保证采用最新的固件。</p>
-</div></blockquote>
+<p><strong>注意</strong></p>
+<ul class="simple">
+<li><p>请确保所使用的所有插件固件版本与以下一致。</p></li>
+<li><p>我们尽可能及时更新保证采用较新/最新的固件。</p></li>
+<li><p>由于新版本软件/固件我们需要经过大量评估测试，用户请不要随意升级我们未推荐的版本。</p></li>
+</ul>
 <div class="section" id="id2">
 <h2>当前固件版本<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>V2718 FW CONET2 Compliant 	2.14_1.5    
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>V1718   2.14
+V2718 FW CONET2 Compliant    2.14_1.5
 
 A2818  新版的CONET2 1.0  旧版的CONET1 0.8
 A3818   0.5
@@ -215,53 +208,55 @@ MADC32  0224
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>CAENUpgraderGUI
 </pre></div>
 </div>
-<p>升级固件时候，Browse 选择固件之后会弹出一个警告窗口，提示你“You have chosen to use a raw binary file”，点击确认，然后点击右下角的 Upgrade。等待升级结束，将会有一个窗口提示你重启。</p>
+<p>升级固件时候，Browse 选择固件之后会弹出一个警告窗口，提示你 “You have chosen to use a raw binary file”，点击确认，然后点击右下角的 Upgrade。等待升级结束，将会有一个窗口提示你重启。</p>
 <div class="section" id="v1718">
 <h3>V1718<a class="headerlink" href="#v1718" title="永久链接至标题">¶</a></h3>
 <p>如下图，查看 V1718 的固件版本，点击 <em>Get Fw Rel</em> 按钮。</p>
-<p><img alt="_images/V1718GetVersion.png" src="_images/V1718GetVersion.png" />Get V1718 Version</p>
+<img alt="_images/V1718GetVersion.png" src="_images/V1718GetVersion.png" />
 <p>如果该固件版本不是 <strong>当前固件版本</strong> 所列版本，则升级固件。</p>
 <p>升级界面如下图所示：</p>
-<p><img alt="_images/V1718UpdateVersion.png" src="_images/V1718UpdateVersion.png" />Update V1718</p>
+<img alt="_images/V1718UpdateVersion.png" src="_images/V1718UpdateVersion.png" />
 </div>
 <div class="section" id="v2718">
 <h3>V2718<a class="headerlink" href="#v2718" title="永久链接至标题">¶</a></h3>
-<p>V2718上固件包括主板V2718及子板上的A2719。</p>
+<p>V2718 上固件包括主板 V2718 及子板上的 A2719。</p>
 <p>如下图，查看 V2718 主板的固件版本，点击 <em>Get Fw Rel</em> 按钮。</p>
-<p><img alt="_images/V2718GetVersion.png" src="_images/V2718GetVersion.png" />Get V2718 Version</p>
+<img alt="_images/V2718GetVersion.png" src="_images/V2718GetVersion.png" />
 <p>如果该固件版本不是 <strong>当前固件版本</strong> 所列版本，则升级固件。</p>
 <p>升级界面如下图所示：</p>
-<p><img alt="_images/V2718UpdateVersion.png" src="_images/V2718UpdateVersion.png" />Update V2718</p>
+<img alt="_images/V2718UpdateVersion.png" src="_images/V2718UpdateVersion.png" />
 <p>如下图，查看子板 A2719 的固件版本，点击 <em>Get Fw Rel</em> 按钮。</p>
-<p><img alt="_images/A2719GetVersion.png" src="_images/A2719GetVersion.png" />Get A2719 Version</p>
+<img alt="_images/A2719GetVersion.png" src="_images/A2719GetVersion.png" />
 <p>如果该固件版本不是 <strong>当前固件版本</strong> 所列版本，则升级固件。</p>
 <p>升级界面如下图所示：</p>
-<p><img alt="_images/A2719UpdateVersion.png" src="_images/A2719UpdateVersion.png" />Update A2719</p>
+<img alt="_images/A2719UpdateVersion.png" src="_images/A2719UpdateVersion.png" />
 </div>
 <div class="section" id="a2818">
 <h3>A2818<a class="headerlink" href="#a2818" title="永久链接至标题">¶</a></h3>
 <p>如下图，查看 A2818 的固件版本，点击 <em>Get Fw Rel</em> 按钮。</p>
-<p><img alt="_images/A2818GetVersion.png" src="_images/A2818GetVersion.png" />Get A2818 Version</p>
+<img alt="_images/A2818GetVersion.png" src="_images/A2818GetVersion.png" />
 <p>如果该固件版本不是 <strong>当前固件版本</strong> 所列版本，则升级固件。</p>
 <p>升级界面如下图所示：</p>
-<p><img alt="_images/A2818UpdateVersion.png" src="_images/A2818UpdateVersion.png" />Update A2818</p>
+<img alt="_images/A2818UpdateVersion.png" src="_images/A2818UpdateVersion.png" />
 </div>
 <div class="section" id="a3818">
 <h3>A3818<a class="headerlink" href="#a3818" title="永久链接至标题">¶</a></h3>
 <p>如下图，查看 A3818 的固件版本，点击 <em>Get Fw Rel</em> 按钮。</p>
-<p><img alt="_images/A3818GetVersion.png" src="_images/A3818GetVersion.png" />Get A3818 Version</p>
+<img alt="_images/A3818GetVersion.png" src="_images/A3818GetVersion.png" />
 <p>如果该固件版本不是 <strong>当前固件版本</strong> 所列版本，则升级固件。</p>
 <p>升级界面如下图所示：</p>
-<p><img alt="_images/A3818UpdateVersion.png" src="_images/A3818UpdateVersion.png" />Update A3818</p>
+<img alt="_images/A3818UpdateVersion.png" src="_images/A3818UpdateVersion.png" />
 </div>
 <div class="section" id="v1x90">
 <h3>V1x90<a class="headerlink" href="#v1x90" title="永久链接至标题">¶</a></h3>
 <ul class="simple">
-<li><p>V1190/V1290</p>
-<ul>
+<li><dl class="simple">
+<dt>V1190/V1290</dt><dd><ul>
 <li><p>Firmware Revision Register(Base Address + 0x1026, read only, D16)</p></li>
 <li><p>This register contains the firmware revision number coded on 8 bit.</p></li>
 </ul>
+</dd>
+</dl>
 </li>
 </ul>
 <p><strong>待补充</strong></p>
@@ -269,14 +264,16 @@ MADC32  0224
 <div class="section" id="madc32">
 <h3>MADC32<a class="headerlink" href="#madc32" title="永久链接至标题">¶</a></h3>
 <ul class="simple">
-<li><p>madc32</p>
-<ul>
+<li><dl class="simple">
+<dt>madc32</dt><dd><ul>
 <li><p>0x600E firmware_revision</p></li>
 </ul>
+</dd>
+</dl>
 </li>
 </ul>
 <p><strong>待补充</strong></p>
-<!-- Firmware.md ends here --></div>
+</div>
 </div>
 </div>
 

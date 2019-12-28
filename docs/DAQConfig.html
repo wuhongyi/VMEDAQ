@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>DAQConfig &mdash; VMEDAQ 0.0 文档</title>
+  <title>DAQConfig &mdash; VMEDAQ 2019.12.28 文档</title>
   
 
   
@@ -38,7 +38,7 @@
     <link rel="index" title="索引" href="genindex.html" />
     <link rel="search" title="搜索" href="search.html" />
     <link rel="next" title="httponline" href="httponline.html" />
-    <link rel="prev" title="cutpedo" href="cutpedo.html" /> 
+    <link rel="prev" title="cutpedestal" href="cutpedo.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -100,7 +100,7 @@
 <li class="toctree-l1"><a class="reference internal" href="analysis.html">analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="anaroot.html">anaroot</a></li>
 <li class="toctree-l1"><a class="reference internal" href="checkcnt.html">checkcnt</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cutpedo.html">cutpedo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cutpedo.html">cutpedestal</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">DAQConfig</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#babies-bbmodules-h">babies/bbmodules.h</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#babies-start-c">babies/start.c</a></li>
@@ -165,7 +165,7 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/DAQConfig.md.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/DAQConfig.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -178,25 +178,16 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <!-- DAQConfig.md --- 
-;; 
-;; Description: 
-;; Author: Hongyi Wu(吴鸿毅)
-;; Email: wuhongyi@qq.com 
-;; Created: 一 12月  3 11:03:17 2018 (+0800)
-;; Last-Updated: 一 12月  3 11:03:53 2018 (+0800)
-;;           By: Hongyi Wu(吴鸿毅)
-;;     Update #: 2
-;; URL: http://wuhongyi.cn --><div class="section" id="daqconfig">
+  <div class="section" id="daqconfig">
 <h1>DAQConfig<a class="headerlink" href="#daqconfig" title="永久链接至标题">¶</a></h1>
-<p>修改bbcaenvme文件夹下babies、init文件夹内文件</p>
+<p>修改 bbcaenvme 文件夹下 babies、init 文件夹内文件</p>
 <div class="section" id="babies-bbmodules-h">
 <h2>babies/bbmodules.h<a class="headerlink" href="#babies-bbmodules-h" title="永久链接至标题">¶</a></h2>
-<p>修改ADCADDR、MADCADDR、V1190ADDR、SCAADDR使之与硬件地址匹配（可以多余设置，不可少设置）。其它不要修改。</p>
+<p>修改 ADCADDR、MADCADDR、V1190ADDR、SCAADDR 使之与硬件地址匹配（可以多余设置，不可少设置）。其它不要修改。</p>
 </div>
 <div class="section" id="babies-start-c">
 <h2>babies/start.c<a class="headerlink" href="#babies-start-c" title="永久链接至标题">¶</a></h2>
-<p>根据文件内提示设置，有该类型插件则开启对应代码，开启对应类型busy代码。其它不要修改。</p>
+<p>根据文件内提示设置，有该类型插件则开启对应代码，开启对应类型 busy 代码。其它不要修改。</p>
 </div>
 <div class="section" id="babies-evt-c">
 <h2>babies/evt.c<a class="headerlink" href="#babies-evt-c" title="永久链接至标题">¶</a></h2>
@@ -204,17 +195,17 @@
 </div>
 <div class="section" id="babies-clear-c">
 <h2>babies/clear.c<a class="headerlink" href="#babies-clear-c" title="永久链接至标题">¶</a></h2>
-<p>根据文件内提示设置，有该类型插件则开启对应代码，开启对应类型busy代码。其它不要修改。</p>
+<p>根据文件内提示设置，有该类型插件则开启对应代码，开启对应类型 busy 代码。其它不要修改。</p>
 </div>
 <div class="section" id="babies-stop-c">
 <h2>babies/stop.c<a class="headerlink" href="#babies-stop-c" title="永久链接至标题">¶</a></h2>
-<p>根据文件内提示设置，有该类型插件则开启对应代码，开启对应类型busy代码。其它不要修改。</p>
+<p>根据文件内提示设置，有该类型插件则开启对应代码，开启对应类型 busy 代码。其它不要修改。</p>
 </div>
 <div class="section" id="init-daqinitrc-sh">
 <h2>init/daqinitrc.sh<a class="headerlink" href="#init-daqinitrc-sh" title="永久链接至标题">¶</a></h2>
 <p>修改该文件内对应脚本，使之与获取插件对应，用来初始化插件。</p>
-<p><strong>重点是修改 cblt.hh 文件，对启用的插件设置CBLT ADDR 为0xbb，其中MADC还得设置MCST ADDR为0xdd。还得设置每一个插件在CBLT中的顺序，first、mid、last。至少得两个插件才能组成CBLT</strong></p>
-<!-- DAQConfig.md ends here --></div>
+<p><strong>重点是修改 cblt.hh 文件，对启用的插件设置CBLT ADDR 为 0xbb，其中 MADC 还得设置 MCST ADDR 为 0xdd。还得设置每一个插件在 CBLT 中的顺序，first、mid、last。至少得两个插件才能组成CBLT.</strong></p>
+</div>
 </div>
 
 
@@ -228,7 +219,7 @@
         <a href="httponline.html" class="btn btn-neutral float-right" title="httponline" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="cutpedo.html" class="btn btn-neutral float-left" title="cutpedo" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="cutpedo.html" class="btn btn-neutral float-left" title="cutpedestal" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

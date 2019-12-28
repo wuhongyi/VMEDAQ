@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>软件安装 &mdash; VMEDAQ 0.0 文档</title>
+  <title>软件安装 &mdash; VMEDAQ 2019.12.28 文档</title>
   
 
   
@@ -98,7 +98,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#a3818">A3818驱动</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#riken-babirl">RIKEN babirl</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#babicon">初始化babicon</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id3">防火墙设置</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">防火墙设置</a></li>
 </ul>
 </li>
 </ul>
@@ -112,7 +112,7 @@
 <li class="toctree-l1"><a class="reference internal" href="analysis.html">analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="anaroot.html">anaroot</a></li>
 <li class="toctree-l1"><a class="reference internal" href="checkcnt.html">checkcnt</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cutpedo.html">cutpedo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cutpedo.html">cutpedestal</a></li>
 <li class="toctree-l1"><a class="reference internal" href="DAQConfig.html">DAQConfig</a></li>
 <li class="toctree-l1"><a class="reference internal" href="httponline.html">httponline</a></li>
 <li class="toctree-l1"><a class="reference internal" href="online.html">online</a></li>
@@ -169,7 +169,7 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/INSTALL.md.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/INSTALL.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -182,23 +182,14 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <!-- INSTALL.md --- 
-;; 
-;; Description: 
-;; Author: Hongyi Wu(吴鸿毅)
-;; Email: wuhongyi@qq.com 
-;; Created: 一 12月  3 10:24:55 2018 (+0800)
-;; Last-Updated: 三 12月  5 21:19:18 2018 (+0800)
-;;           By: Hongyi Wu(吴鸿毅)
-;;     Update #: 20
-;; URL: http://wuhongyi.cn --><div class="section" id="id1">
+  <div class="section" id="id1">
 <h1>软件安装<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
-<!-- toc --><p>本页面安装软件放置在 source 文件夹内，里面包括<strong>获取驱动、依赖库等以及自动安装脚本</strong>。</p>
+<p>本页面安装软件放置在 source 文件夹内，里面包括 <strong>获取驱动、依赖库等以及自动安装脚本</strong> 。</p>
 <div class="section" id="id2">
 <h2>系统要求<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p>本获取经过 Scientific Linux 6/7 系统测试。建议采用 CentOS 6/7 或者 Scientific Linux 6/7。</p>
 <p>本获取要求 CERN ROOT 5/6，建议优先选择 ROOT 6。</p>
-<p>如果没有合适的系统，可参考我们的获取系统安装 <a class="reference external" href="http://wuhongyi.cn/CodeProject/ScientisicLinux72.html">Install Scientific 7</a>。安装好系统之后，还需要对基础依赖工具做一些安装及升级，可以下载执行<a class="reference external" href="https://github.com/wuhongyi/BasicConfiguration">自动化安装脚本</a>自动配置或者按照教程手动安装。</p>
+<p>如果没有合适的系统，可参考我们的获取系统安装 <a class="reference external" href="http://wuhongyi.cn/CodeProject/ScientisicLinux72.html">Install Scientific 7</a> 。安装好系统之后，还需要对基础依赖工具做一些安装及升级，可以下载执行 <a class="reference external" href="https://github.com/wuhongyi/BasicConfiguration">自动化安装脚本</a> 自动配置或者按照教程手动安装。</p>
 </div>
 <hr class="docutils" />
 <div class="section" id="caen-lib">
@@ -207,7 +198,6 @@
 <p>其中 CAENVMELib/CAENComm 为获取运行必须的库。CAENUpgrader 用来更新固件。</p>
 <p>进入 source 文件夹内，在 ROOT 权限下执行 setup.sh 脚本，将会自动安装以上三个依赖库。</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 在 source 文件夹内，ROOT 权限下执行以下命令</span>
-
 sh setup.sh    <span class="c1">#需要ROOT权限</span>
 </pre></div>
 </div>
@@ -223,7 +213,7 @@ make
 <div class="section" id="caenupgrader">
 <h2>检查CAENUpgrader安装<a class="headerlink" href="#caenupgrader" title="永久链接至标题">¶</a></h2>
 <p>安装后在终端中输入</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CAENUpgraderGUI</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>CAENUpgraderGUI
 </pre></div>
 </div>
 <p>将会弹出 CAEN Upgrader GUI 的图形界面。</p>
@@ -256,14 +246,14 @@ make                               <span class="c1">#需要ROOT权限</span>
 <span class="c1">#或者在开启电脑之后执行以上命令</span>
 </pre></div>
 </div>
-<p>重启机箱后，在终端内输入 <strong>dmesg|grep a2818</strong> 将会看到以下的A2818驱动加载信息</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a2818</span><span class="p">:</span> <span class="n">CAEN</span> <span class="n">A2818</span> <span class="n">CONET</span> <span class="n">controller</span> <span class="n">driver</span> <span class="n">v1</span><span class="o">.</span><span class="mi">20</span><span class="n">s</span>
-<span class="n">a2818</span><span class="p">:</span>   <span class="n">Copyright</span> <span class="mi">2004</span><span class="p">,</span> <span class="n">CAEN</span> <span class="n">SpA</span>
-<span class="n">pci</span> <span class="mi">0000</span><span class="p">:</span><span class="mi">05</span><span class="p">:</span><span class="mf">02.0</span><span class="p">:</span> <span class="n">enabling</span> <span class="n">device</span> <span class="p">(</span><span class="mi">0000</span> <span class="o">-&gt;</span> <span class="mi">0003</span><span class="p">)</span>
-<span class="n">pci</span> <span class="mi">0000</span><span class="p">:</span><span class="mi">05</span><span class="p">:</span><span class="mf">02.0</span><span class="p">:</span> <span class="n">PCI</span> <span class="n">INT</span> <span class="n">A</span> <span class="o">-&gt;</span> <span class="n">GSI</span> <span class="mi">19</span> <span class="p">(</span><span class="n">level</span><span class="p">,</span> <span class="n">low</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">IRQ</span> <span class="mi">19</span>
-<span class="n">a2818</span><span class="p">:</span> <span class="n">found</span> <span class="n">A2818</span> <span class="n">adapter</span> <span class="n">at</span> <span class="n">iomem</span> <span class="mh">0xf7800000</span> <span class="n">irq</span> <span class="mi">0</span><span class="p">,</span> <span class="n">PLX</span> <span class="n">at</span> <span class="mh">0xf7900000</span>
-<span class="n">a2818</span><span class="p">:</span>   <span class="n">CAEN</span> <span class="n">A2818</span> <span class="n">Loaded</span><span class="o">.</span>
-<span class="n">a2818</span><span class="p">:</span>   <span class="n">CAEN</span> <span class="n">A2818</span><span class="p">:</span> <span class="mi">1</span> <span class="n">device</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">found</span><span class="o">.</span>
+<p>重启机箱后，在终端内输入 <strong>dmesg|grep a2818</strong> 将会看到以下的 A2818 驱动加载信息</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>a2818: CAEN A2818 CONET controller driver v1.20s
+a2818:   Copyright <span class="m">2004</span>, CAEN SpA
+pci <span class="m">0000</span>:05:02.0: enabling device <span class="o">(</span><span class="m">0000</span> -&gt; <span class="m">0003</span><span class="o">)</span>
+pci <span class="m">0000</span>:05:02.0: PCI INT A -&gt; GSI <span class="m">19</span> <span class="o">(</span>level, low<span class="o">)</span> -&gt; IRQ <span class="m">19</span>
+a2818: found A2818 adapter at iomem 0xf7800000 irq <span class="m">0</span>, PLX at 0xf7900000
+a2818:   CAEN A2818 Loaded.
+a2818:   CAEN A2818: <span class="m">1</span> device<span class="o">(</span>s<span class="o">)</span> found.
 </pre></div>
 </div>
 </div>
@@ -273,24 +263,24 @@ make                               <span class="c1">#需要ROOT权限</span>
 <p>如果您使用 A3818，则安装以下驱动。安装该驱动时，电脑机箱必须插入 A3818 卡，否则将会报安装失败。</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tar -zxvf A3818Drv-1.6.1.tgz
 <span class="nb">cd</span> A3818Drv-1.6.1
-make 
+make
 make install       <span class="c1">#需要ROOT权限</span>
 </pre></div>
 </div>
-<p>然后在终端内输入 dmesg 将会看到以下的A3818驱动加载信息</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fuse</span> <span class="n">init</span> <span class="p">(</span><span class="n">API</span> <span class="n">version</span> <span class="mf">7.14</span><span class="p">)</span>
-<span class="n">CAEN</span> <span class="n">A3818</span> <span class="n">PCI</span> <span class="n">Express</span> <span class="n">CONET2</span> <span class="n">controller</span> <span class="n">driver</span> <span class="n">v1</span><span class="o">.</span><span class="mf">6.0</span><span class="n">s</span>
-  <span class="n">Copyright</span> <span class="mi">2013</span><span class="p">,</span> <span class="n">CAEN</span> <span class="n">SpA</span>
-<span class="n">pci</span> <span class="mi">0000</span><span class="p">:</span><span class="mi">02</span><span class="p">:</span><span class="mf">00.0</span><span class="p">:</span> <span class="n">PCI</span> <span class="n">INT</span> <span class="n">A</span> <span class="o">-&gt;</span> <span class="n">GSI</span> <span class="mi">16</span> <span class="p">(</span><span class="n">level</span><span class="p">,</span> <span class="n">low</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">IRQ</span> <span class="mi">16</span>
-  <span class="n">alloc</span> <span class="n">irq_desc</span> <span class="k">for</span> <span class="mi">33</span> <span class="n">on</span> <span class="n">node</span> <span class="o">-</span><span class="mi">1</span>
-  <span class="n">alloc</span> <span class="n">kstat_irqs</span> <span class="n">on</span> <span class="n">node</span> <span class="o">-</span><span class="mi">1</span>
-<span class="n">pci</span> <span class="mi">0000</span><span class="p">:</span><span class="mi">02</span><span class="p">:</span><span class="mf">00.0</span><span class="p">:</span> <span class="n">irq</span> <span class="mi">33</span> <span class="k">for</span> <span class="n">MSI</span><span class="o">/</span><span class="n">MSI</span><span class="o">-</span><span class="n">X</span>
-<span class="n">pci</span> <span class="mi">0000</span><span class="p">:</span><span class="mi">02</span><span class="p">:</span><span class="mf">00.0</span><span class="p">:</span> <span class="n">setting</span> <span class="n">latency</span> <span class="n">timer</span> <span class="n">to</span> <span class="mi">64</span>
-<span class="n">Found</span> <span class="n">A3818</span> <span class="o">-</span> <span class="n">Common</span> <span class="n">BAR</span> <span class="n">at</span> <span class="n">iomem</span> <span class="n">ffffc900067d4000</span> <span class="n">irq</span> <span class="mi">0</span>
-<span class="n">Found</span> <span class="n">A3818</span> <span class="k">with</span> <span class="mi">1</span> <span class="n">link</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
-<span class="n">found</span> <span class="n">A3818</span> <span class="n">Link</span> <span class="mi">0</span> <span class="n">BAR</span> <span class="n">at</span> <span class="n">iomem</span> <span class="n">ffffc900067d6000</span> <span class="n">irq</span> <span class="mi">0</span>
-  <span class="n">CAEN</span> <span class="n">A3818</span> <span class="n">Loaded</span><span class="o">.</span>
-  <span class="n">CAEN</span> <span class="n">PCIe</span><span class="p">:</span> <span class="mi">1</span> <span class="n">device</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">found</span><span class="o">.</span>
+<p>然后在终端内输入 dmesg 将会看到以下的 A3818 驱动加载信息</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>fuse init <span class="o">(</span>API version <span class="m">7</span>.14<span class="o">)</span>
+CAEN A3818 PCI Express CONET2 controller driver v1.6.0s
+  Copyright <span class="m">2013</span>, CAEN SpA
+pci <span class="m">0000</span>:02:00.0: PCI INT A -&gt; GSI <span class="m">16</span> <span class="o">(</span>level, low<span class="o">)</span> -&gt; IRQ <span class="m">16</span>
+  alloc irq_desc <span class="k">for</span> <span class="m">33</span> on node -1
+  alloc kstat_irqs on node -1
+pci <span class="m">0000</span>:02:00.0: irq <span class="m">33</span> <span class="k">for</span> MSI/MSI-X
+pci <span class="m">0000</span>:02:00.0: setting latency timer to <span class="m">64</span>
+Found A3818 - Common BAR at iomem ffffc900067d4000 irq <span class="m">0</span>
+Found A3818 with <span class="m">1</span> link<span class="o">(</span>s<span class="o">)</span>
+found A3818 Link <span class="m">0</span> BAR at iomem ffffc900067d6000 irq <span class="m">0</span>
+  CAEN A3818 Loaded.
+  CAEN PCIe: <span class="m">1</span> device<span class="o">(</span>s<span class="o">)</span> found.
 </pre></div>
 </div>
 </div>
@@ -298,21 +288,20 @@ make install       <span class="c1">#需要ROOT权限</span>
 <div class="section" id="riken-babirl">
 <h2>RIKEN babirl<a class="headerlink" href="#riken-babirl" title="永久链接至标题">¶</a></h2>
 <p>babirl自动化安装方法</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#在个人用户目录下安装理研babirl库</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#在个人用户目录下安装理研 babirl 库</span>
 <span class="c1">#在普通权限下执行以下脚本</span>
-
 sh autoinstallbabirl.sh
 </pre></div>
 </div>
-<p>#会自动添加环境变量
+<p>安装脚本会自动添加环境变量
 安装结束后查看 .bashrc 文件，最后将多了三行如下内容</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:/home/wuhongyi/babirl/bin/
 <span class="nb">export</span> <span class="nv">TARTSYS</span><span class="o">=</span>/home/wuhongyi/VMEDAQ/anaroot
 <span class="nb">export</span> <span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span><span class="nv">$LD_LIBRARY_PATH</span>:<span class="nv">$TARTSYS</span>/lib:<span class="nv">$TARTSYS</span>/sources/Core
+<span class="c1">#其中 wuhongyi 为电脑当前用户名</span>
 </pre></div>
 </div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#在ROOT权限下执行以下脚本</span>
-
 sh afterinstallbabirl.sh <span class="o">[</span>user name<span class="o">]</span>     <span class="c1">#需要ROOT权限</span>
 
 <span class="c1">#其中这里的 [user name] 换成你的帐号用户名，例如我的用户名为wuhongyi</span>
@@ -330,7 +319,7 @@ sh afterinstallbabirl.sh <span class="o">[</span>user name<span class="o">]</spa
 </pre></div>
 </div>
 <p>回车之后将看到以下界面</p>
-<p><img alt="_images/babicon.png" src="_images/babicon.png" />babicon</p>
+<img alt="_images/babicon.png" src="_images/babicon.png" />
 <p>以下进行基本的变量设置</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>seteflist <span class="m">10</span> add localhost localhost
 sethdlist <span class="m">0</span> path /home/wuhongyi/data    <span class="c1">#这里为数据存储路径</span>
@@ -338,33 +327,34 @@ setclinfo <span class="m">0</span> add localhost  <span class="c1">#localhost为
 setclinfo <span class="m">0</span> id  <span class="m">0</span>
 
 <span class="c1">#如果设置给远程电脑</span>
-setclinfo <span class="m">0</span> add <span class="o">[</span>ip<span class="o">]</span>   <span class="c1">#[ip] 为接收端电脑IP </span>
+setclinfo <span class="m">0</span> add <span class="o">[</span>ip<span class="o">]</span>   <span class="c1">#[ip] 为接收端电脑IP</span>
 setclinfo <span class="m">0</span> id  <span class="m">0</span>
 </pre></div>
 </div>
-<p><img alt="_images/babicon_setting.png" src="_images/babicon_setting.png" />babicon setting</p>
+<img alt="_images/babicon_setting.png" src="_images/babicon_setting.png" />
 </div>
 <hr class="docutils" />
-<div class="section" id="id3">
-<h2>防火墙设置<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
-<p>将共享数据发送到Online电脑，需要做以下设置或者关闭防火墙</p>
-<p>对Scientific Linux 6，终端ROOT权限下输入<strong>setup</strong>，选择<strong>防火墙配置</strong>，去掉<strong>启用</strong>。对cientific Linux 7，ROOT权限下终端输入以下信息关闭firewall</p>
+<div class="section" id="id4">
+<h2>防火墙设置<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<p>将共享数据发送到 Online 电脑，需要做以下设置或者关闭防火墙</p>
+<p>对Scientific Linux 6，终端 ROOT 权限下输入 <strong>setup</strong> ，选择 <strong>防火墙配置</strong> ，去掉 <strong>启用</strong> 。
+对cientific Linux 7，ROOT 权限下终端输入以下信息关闭 firewall</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>systemctl stop firewalld.service <span class="c1">#停止firewall</span>
 systemctl disable firewalld.service <span class="c1">#禁止firewall开机启动</span>
 firewall-cmd --state <span class="c1">#查看默认防火墙状态（关闭后显示notrunning，开启后显示running）</span>
 </pre></div>
 </div>
-<p>如果机器不联网，可以不需要开启以下iptables防火墙，反正不会被黑</p>
+<p>如果机器不联网，可以不需要开启以下 iptables 防火墙，反正不会被黑</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#在 /etc/sysconfig/iptables 添加以下一行（不能放到最后一行，其中IP替换为发送DAQ电脑的IP）</span>
 -A INPUT -p udp -m state --state NEW -m udp --dport <span class="m">17500</span>:17510 -s <span class="m">222</span>.29.111.201 -j ACCEPT
 </pre></div>
 </div>
-<p>之后在ROOT权限下执行以下命令</p>
+<p>之后在 ROOT 权限下执行以下命令</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>systemctl restart iptables.service <span class="c1">#最后重启防火墙使配置生效</span>
 systemctl <span class="nb">enable</span> iptables.service <span class="c1">#设置防火墙开机启动</span>
 </pre></div>
 </div>
-<!-- INSTALL.md ends here --></div>
+</div>
 </div>
 
 
