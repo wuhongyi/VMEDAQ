@@ -4,9 +4,9 @@
 .. Author: Hongyi Wu(吴鸿毅)
 .. Email: wuhongyi@qq.com 
 .. Created: 一 12月  3 10:44:54 2018 (+0800)
-.. Last-Updated: 六 12月 28 21:12:29 2019 (+0800)
+.. Last-Updated: 日 12月 29 14:43:10 2019 (+0800)
 ..           By: Hongyi Wu(吴鸿毅)
-..     Update #: 6
+..     Update #: 8
 .. URL: http://wuhongyi.cn 
 
 =================================
@@ -14,10 +14,23 @@
 =================================
 
 ---------------------------------
-程序修改建议顺序
+模块安放顺序
 ---------------------------------
 
+为了方便用户配置 DAQ，这里我们建议用户按照以下顺序依次插入采集模块（如果没有某些类型模块，则调过相应类型的模块）：
+
+- 控制器 V1718/V2718
+- 定标器 V830
+- V7xx
+- V1x90
+- MADC32  
+
+---------------------------------
+程序修改建议顺序
+---------------------------------
 - anaroot/CBLT.hh
+- DAQConfig/StartDAQ.sh
+- DAQConfig/StopDAQ.sh
 - DAQConfig/bbcaenvme/babies/bbmodules.h
 - DAQConfig/bbcaenvme/babies/start.c
 - DAQConfig/bbcaenvme/babies/evt.c
@@ -25,6 +38,8 @@
 - DAQConfig/bbcaenvme/babies/stop.c
 - DAQConfig/bbcaenvme/init/daqinitrc.sh
 
+修改程序，请先仔细阅读 DAQConfig 页面中的说明。
+  
 ----
 
 ---------------------------------

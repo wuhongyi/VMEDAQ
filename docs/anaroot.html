@@ -178,45 +178,45 @@
 </div>
 <p>修改 <strong>CBLT.hh</strong> 文件，其中设置应该与CBLT模式下的插件设置顺序一致。</p>
 <p>当前 CBLT chain 支持 v830、v7xx、v1190、v1290、madc 五种类型的插件，如下所示：</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#define v830m</span>
-<span class="c1">#define v7xxm</span>
-<span class="c1">#define v1190m</span>
-<span class="c1">#define v1290m</span>
-<span class="c1">#define madcm</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#define v830m</span>
+<span class="cp">#define v7xxm</span>
+<span class="cp">#define v1190m</span>
+<span class="cp">#define v1290m</span>
+<span class="cp">#define madcm</span>
 </pre></div>
 </div>
 <p><strong>获取中如果没有哪一种类型插件，则需注释掉该类型的定义！！！</strong></p>
 <p>以下 <em>xxxn</em> 为启用插件的数据顺序，从 0 开始编码，如果五种类型插件都有，则为以下设置：</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#define v830n 0</span>
-<span class="c1">#define v7xxn 1</span>
-<span class="c1">#define v1190n 2</span>
-<span class="c1">#define v1290n 3</span>
-<span class="c1">#define madcn 4</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#define v830n 0</span>
+<span class="cp">#define v7xxn 1</span>
+<span class="cp">#define v1190n 2</span>
+<span class="cp">#define v1290n 3</span>
+<span class="cp">#define madcn 4</span>
 </pre></div>
 </div>
 <p>如果只含有 v7xx、madc 两种类型的插件，则定义如下：</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#define v7xxn 0</span>
-<span class="c1">#define madcn 1</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#define v7xxn 0</span>
+<span class="cp">#define madcn 1</span>
 </pre></div>
 </div>
 <p>如果只含有 v830、v7xx、madc 三种类型的插件，则定义如下：</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#define v830n 0</span>
-<span class="c1">#define v7xxn 1</span>
-<span class="c1">#define madcn 2</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#define v830n 0</span>
+<span class="cp">#define v7xxn 1</span>
+<span class="cp">#define madcn 2</span>
 </pre></div>
 </div>
 <p>以下定义用来指定每种类型插件的个数</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#define v830num</span>
-<span class="c1">#define v7xxnum</span>
-<span class="c1">#define v1190num</span>
-<span class="c1">#define v1290num</span>
-<span class="c1">#define madcnum</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#define v830num</span>
+<span class="cp">#define v7xxnum</span>
+<span class="cp">#define v1190num</span>
+<span class="cp">#define v1290num</span>
+<span class="cp">#define madcnum</span>
 </pre></div>
 </div>
 <p>以下是v830的其它设置</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#define v830chn 8 // 这里设置830开启路数</span>
-<span class="c1">#define v830head 1 // 不要修改</span>
-<span class="c1">#define v830geo 0 // 不要修改</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#define v830chn 8 </span><span class="c1">// 这里设置830开启路数</span>
+<span class="cp">#define v830head 1 </span><span class="c1">// 不要修改</span>
+<span class="cp">#define v830geo 0 </span><span class="c1">// 不要修改</span>
 </pre></div>
 </div>
 </div>

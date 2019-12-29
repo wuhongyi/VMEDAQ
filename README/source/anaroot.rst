@@ -4,9 +4,9 @@
 .. Author: Hongyi Wu(吴鸿毅)
 .. Email: wuhongyi@qq.com 
 .. Created: 一 12月  3 11:01:30 2018 (+0800)
-.. Last-Updated: 六 12月 28 21:17:09 2019 (+0800)
+.. Last-Updated: 日 12月 29 15:41:57 2019 (+0800)
 ..           By: Hongyi Wu(吴鸿毅)
-..     Update #: 2
+..     Update #: 3
 .. URL: http://wuhongyi.cn 
 
 =================================   
@@ -25,7 +25,7 @@ anaroot
 
 当前 CBLT chain 支持 v830、v7xx、v1190、v1290、madc 五种类型的插件，如下所示：
 
-.. code:: bash
+.. code:: cpp
 	  
    #define v830m
    #define v7xxm
@@ -38,7 +38,7 @@ anaroot
 
 以下 *xxxn* 为启用插件的数据顺序，从 0 开始编码，如果五种类型插件都有，则为以下设置：
 
-.. code:: bash
+.. code:: cpp
 	  
    #define v830n 0
    #define v7xxn 1
@@ -49,7 +49,7 @@ anaroot
 
 如果只含有 v7xx、madc 两种类型的插件，则定义如下：
 
-.. code:: bash
+.. code:: cpp
 	  
    #define v7xxn 0
    #define madcn 1
@@ -57,7 +57,7 @@ anaroot
 
 如果只含有 v830、v7xx、madc 三种类型的插件，则定义如下：
 
-.. code:: bash
+.. code:: cpp
 	  
    #define v830n 0
    #define v7xxn 1
@@ -66,7 +66,7 @@ anaroot
 
 以下定义用来指定每种类型插件的个数
 
-.. code:: bash
+.. code:: cpp
 	  
    #define v830num
    #define v7xxnum
@@ -77,7 +77,7 @@ anaroot
 
 以下是v830的其它设置
 
-.. code:: bash
+.. code:: cpp
 	  
    #define v830chn 8 // 这里设置830开启路数
    #define v830head 1 // 不要修改

@@ -97,10 +97,11 @@
 <p class="caption"><span class="caption-text">配置</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">获取配置</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#id2">程序修改建议顺序</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">模块安放顺序</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">程序修改建议顺序</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#v1718-v2718">V1718/V2718</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#busy">软件 BUSY 模式</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id3">硬件 BUSY 模式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">硬件 BUSY 模式</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="analysis.html">analysis</a></li>
@@ -179,9 +180,22 @@
   <div class="section" id="id1">
 <h1>获取配置<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
 <div class="section" id="id2">
-<h2>程序修改建议顺序<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<h2>模块安放顺序<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>为了方便用户配置 DAQ，这里我们建议用户按照以下顺序依次插入采集模块（如果没有某些类型模块，则调过相应类型的模块）：</p>
+<ul class="simple">
+<li><p>控制器 V1718/V2718</p></li>
+<li><p>定标器 V830</p></li>
+<li><p>V7xx</p></li>
+<li><p>V1x90</p></li>
+<li><p>MADC32</p></li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h2>程序修改建议顺序<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
 <li><p>anaroot/CBLT.hh</p></li>
+<li><p>DAQConfig/StartDAQ.sh</p></li>
+<li><p>DAQConfig/StopDAQ.sh</p></li>
 <li><p>DAQConfig/bbcaenvme/babies/bbmodules.h</p></li>
 <li><p>DAQConfig/bbcaenvme/babies/start.c</p></li>
 <li><p>DAQConfig/bbcaenvme/babies/evt.c</p></li>
@@ -189,6 +203,7 @@
 <li><p>DAQConfig/bbcaenvme/babies/stop.c</p></li>
 <li><p>DAQConfig/bbcaenvme/init/daqinitrc.sh</p></li>
 </ul>
+<p>修改程序，请先仔细阅读 DAQConfig 页面中的说明。</p>
 </div>
 <hr class="docutils" />
 <div class="section" id="v1718-v2718">
@@ -201,8 +216,8 @@
 <h2>软件 BUSY 模式<a class="headerlink" href="#busy" title="永久链接至标题">¶</a></h2>
 <p><strong>待补充</strong></p>
 </div>
-<div class="section" id="id3">
-<h2>硬件 BUSY 模式<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id4">
+<h2>硬件 BUSY 模式<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
 <p><strong>待补充</strong></p>
 </div>
 </div>
