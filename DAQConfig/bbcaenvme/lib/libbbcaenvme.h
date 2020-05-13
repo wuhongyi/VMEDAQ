@@ -3,6 +3,8 @@
  *
  * Modified By JingLi/Lee @PKU
  * E-mail: lijinger02@126.com
+ * Modified By Hongyi WU @PKU
+ * E-mail: wuhongyi@qq.com
  * **************************/
 
 #ifndef LIBBBCAENVME_H
@@ -39,26 +41,26 @@ int vme_wait_interrupt(int tout);
 /** better to user vme_check_interrupt instead of wait interrupt*/
 int vme_check_interrupt(void);
 
-int v2718_init_ioport(unsigned int ioport, unsigned int polarity, unsigned int ledpol);
+int vx718_init_ioport(unsigned int ioport, unsigned int polarity, unsigned int ledpol);
 /* This function: set the front panel output propagate on software appointment
  * ioport: 0-4 --> 1st-5th LEMO output of V2718
  * polarity: 0 Normal, 1 Inverted
  * ledpol : 0 LED emits on signal high level, 1 on low level
  */
 
-int v2718_clear_ioport(unsigned int ioport);
+int vx718_clear_ioport(unsigned int ioport);
 /* set the ioport to be permanent ground level */
 
-int v2718_set_ioport(unsigned int ioport);
+int vx718_set_ioport(unsigned int ioport);
 /* Set the ioport to be permanent signal level */
 
-int v2718_pulse_ioport(unsigned int ioport);
+int vx718_pulse_ioport(unsigned int ioport);
 /* generate a pulse at specific ioport */
 
-int v2718_mon_berr(void);
+int vx718_mon_berr(void);
 /* set 4th output to moniter BERR signal */
 
-int v2718_pulsea_configure(unsigned int ioport, unsigned int period, unsigned int width, unsigned int unit, unsigned int pulseno);
+int vx718_pulsea_configure(unsigned int ioport, unsigned int period, unsigned int width, unsigned int unit, unsigned int pulseno);
 /* Set the front panel lemo output 1 or 2 to generate pulese
  * ioport: 0-->1
  * period: 0-->255
@@ -67,6 +69,6 @@ int v2718_pulsea_configure(unsigned int ioport, unsigned int period, unsigned in
  * pulserno: 0 --> infinite 1-255
  */
 
-int v2718_start_pulsea();
+int vx718_start_pulsea();
 
-int v2718_stop_pulsea();
+int vx718_stop_pulsea();

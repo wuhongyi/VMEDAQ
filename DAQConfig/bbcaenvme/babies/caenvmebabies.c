@@ -70,22 +70,26 @@ void evtloop(void){
       break;
     case STAT_RUN_START:
     case STAT_RUN_NSSTA:
-      //      if(vme_check_interrupt()){
-      //	/* continue */
-      //	//printf("interrupt ok\n");
-      //      }else{
-      //	//printf("interrupt non\n");
-      //	usleep(10);
-      //	break;
-      //      }
-      //printf("evtloop\n");
+
+#ifdef V2718
       if(vme_wait_interrupt(1000)){
-	/* wait 10s for the interrupt, time units: ms*/
+      	/* wait 10s for the interrupt, time units: ms*/
       }else {
         /*printf(" no interrupt in 10 sec !\n");*/
         printf(" babies will loop again!\n");
         break;
       }
+#else
+      if(vme_check_interrupt()){
+      	/* continue */
+      	/* printf("interrupt ok\n"); */
+      }else{
+      	/* printf("interrupt non\n"); */
+	printf(" babies will loop again!\n");
+      	usleep(10);
+      	break;
+      }
+#endif 
       
       evt();
 
@@ -109,7 +113,7 @@ void evtloop(void){
       break;
     case STAT_RUN_WAITSTOP:
       // for the last sequense of run
-      v2718_set_ioport(3);//硬件BUSY VETO
+      vx718_set_ioport(3);//硬件BUSY VETO
       //      sca();
       while(vme_check_interrupt()){
 	//      while(vme_wait_interrupt(10000)){
@@ -152,11 +156,15 @@ int main(int argc, char *argv[]){
   babies_check();
 
   /* init vme */
+#ifdef V2718
   init_caen_v2718();
+#else
+  init_caen_v1718();
+#endif  
   vme_amsr(0x09);
   
-  v2718_init_ioport(3,0,0);//硬件BUSY VETO
-  v2718_set_ioport(3);//硬件BUSY VETO
+  vx718_init_ioport(3,0,0);//硬件BUSY VETO
+  vx718_set_ioport(3);//硬件BUSY VETO
 
   //mkpid to use babimo
   //default = /var/run/babies

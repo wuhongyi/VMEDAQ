@@ -202,6 +202,16 @@
 <p>修改 ADCADDR、MADCADDR、V1x90ADDR、SCAADDR 使之与硬件地址匹配（可以多余设置，不可少设置）。其它不要修改。</p>
 <p>这里我们按照之前的约定，V7xx 硬件地址从 0x1000 开始编号，用 ADC[x]ADDR 来表示不同模块。MADC32 硬件地址从 0x2000 开始编号，用 MADC[x]ADDR 来表示不同模块。V1x90 硬件地址从 0x4000 开始编号，用 V1x90ADDR[x] 来表示不同模块。 V830 硬件地址从 0x5000 开始编号，用 SCAADDR[x] 来表示不同模块。（其中 [x] 代表不同的数字）</p>
 <p><strong>如果您依照我们的约定来设置，则不需要修改本文件。</strong></p>
+<p>如果您使用控制器V1718，则需要注释以下代码。否则开启以下代码</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......</span>
+<span class="c1">// 以下部分用户需要修改</span>
+
+<span class="cp">#define V2718   </span><span class="c1">//如果使用 V1718 则注释本行</span>
+
+<span class="c1">// 以上部分用户需要修改</span>
+<span class="c1">//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="babies-start-c">
 <h2>babies/start.c<a class="headerlink" href="#babies-start-c" title="永久链接至标题">¶</a></h2>

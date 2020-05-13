@@ -5,9 +5,9 @@
 # Author: Hongyi Wu(吴鸿毅)
 # Email: wuhongyi@qq.com 
 # Created: 一 12月  3 17:22:32 2018 (+0800)
-# Last-Updated: 一 12月  3 17:23:22 2018 (+0800)
+# Last-Updated: 一 5月 11 12:02:09 2020 (+0800)
 #           By: Hongyi Wu(吴鸿毅)
-#     Update #: 1
+#     Update #: 2
 # URL: http://wuhongyi.cn 
 
 if [ `whoami` = "root" ];then 
@@ -33,15 +33,15 @@ cd CAENComm-1.2/lib
 sh install_x64
 cd ../../
 
-tar -xvzf CAENUpgrader-1.6.3-build20170511.tgz
-cd CAENUpgrader-1.6.3
+tar -xvzf CAENUpgrader-1.6.6.tgz
+cd CAENUpgrader-1.6.6
 ./configure
 make -j$num
 make install
 cd ..
 
 
-rm -rf CAENVMELib-2.50  CAENComm-1.2 CAENUpgrader-1.6.3 
+rm -rf CAENVMELib-2.50  CAENComm-1.2 CAENUpgrader-1.6.6 
 echo "Install all software done !"
 
 # 

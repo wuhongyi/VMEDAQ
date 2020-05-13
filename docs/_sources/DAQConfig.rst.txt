@@ -4,9 +4,9 @@
 .. Author: Hongyi Wu(吴鸿毅)
 .. Email: wuhongyi@qq.com 
 .. Created: 一 12月  3 11:03:17 2018 (+0800)
-.. Last-Updated: 日 12月 29 15:39:35 2019 (+0800)
+.. Last-Updated: 三 5月 13 22:34:29 2020 (+0800)
 ..           By: Hongyi Wu(吴鸿毅)
-..     Update #: 10
+..     Update #: 11
 .. URL: http://wuhongyi.cn 
 
 =================================
@@ -43,6 +43,19 @@ babies/bbmodules.h
 这里我们按照之前的约定，V7xx 硬件地址从 0x1000 开始编号，用 ADC[x]ADDR 来表示不同模块。MADC32 硬件地址从 0x2000 开始编号，用 MADC[x]ADDR 来表示不同模块。V1x90 硬件地址从 0x4000 开始编号，用 V1x90ADDR[x] 来表示不同模块。 V830 硬件地址从 0x5000 开始编号，用 SCAADDR[x] 来表示不同模块。（其中 [x] 代表不同的数字）
 
 **如果您依照我们的约定来设置，则不需要修改本文件。**
+
+如果您使用控制器V1718，则需要注释以下代码。否则开启以下代码
+
+.. code:: cpp
+
+  //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
+  // 以下部分用户需要修改
+   
+  #define V2718   //如果使用 V1718 则注释本行
+   
+  // 以上部分用户需要修改
+  //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
+
 
 
 ---------------------------------

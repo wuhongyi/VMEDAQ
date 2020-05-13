@@ -4,9 +4,9 @@
 .. Author: Hongyi Wu(吴鸿毅)
 .. Email: wuhongyi@qq.com 
 .. Created: 六 8月  5 12:10:59 2017 (+0800)
-.. Last-Updated: 日 12月 29 15:36:24 2019 (+0800)
+.. Last-Updated: 三 5月 13 22:26:31 2020 (+0800)
 ..	     By: Hongyi Wu(吴鸿毅)
-..     Update #: 29
+..     Update #: 30
 .. URL: http://wuhongyi.cn 
 
 .. 请勿修改主目录下的 README.rst，该文件 由 README/source/README.rst 复制生成。
@@ -44,7 +44,7 @@
 准预览版本
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**准预览版本 2018.12.29**  
+**准预览版本 2020.05.13**  
 
 程序下载请访问:  `VMEDAQ <https://github.com/wuhongyi/VMEDAQ>`_ 
 
@@ -78,6 +78,7 @@
 ---------------------------------
 
 - 本获取经过 Scientific Linux 6/7 系统测试。
+- 程序默认支持控制器CAEN V1718/V2718，CAEN V830 Scaler，CAEN V7xx 系列 ADC/QDC/TDC，CAENV1190/V1290 TDC，MESYTEC MADC32  
 - 支持多个机箱同步获取。将插件分散在多个机箱，可大大减少数据传输的死时间。
 - 本获取分软件 busy 跟硬件 busy 两种模式。
 - 对软件 busy 模式

@@ -4,9 +4,9 @@
 // Author: Hongyi Wu(吴鸿毅)
 // Email: wuhongyi@qq.com 
 // Created: 五 9月  8 19:52:09 2017 (+0800)
-// Last-Updated: 四 2月  1 16:36:30 2018 (+0800)
+// Last-Updated: 三 5月 13 22:17:27 2020 (+0800)
 //           By: Hongyi Wu(吴鸿毅)
-//     Update #: 44
+//     Update #: 45
 // URL: http://wuhongyi.cn 
 
 #include "pedo.hh"
@@ -376,7 +376,7 @@ void pedo::Record()
 	  std::cout<<"can't open file: "<<shellfilename<<std::endl;
 	}
       writesh<<"#!/bin/sh"<<endl;
-      writesh<<"cmd=\"../cmdvme/cmdvme\""<<endl;
+      writesh<<"cmd=\"../cmdvme/cmdvme -bd V2718\""<<endl;
       writesh<<"BASEADDR=0x1"<<setw(3)<<setfill('0')<<hex<<i<<endl;
       writesh<<endl<<endl;
       writesh<<"####################################"<<endl<<endl;
@@ -403,7 +403,7 @@ void pedo::Record()
       std::cout<<"can't open file: "<<shellfilename<<std::endl;
     }
   writesh<<"#!/bin/sh"<<endl;
-  writesh<<"cmd=\"../cmdvme/cmdvme\""<<endl;
+  writesh<<"cmd=\"../cmdvme/cmdvme -bd V2718\""<<endl;
   writesh<<"BASEADDR=0x1000"<<endl;
   writesh<<endl<<endl;
   writesh<<"####################################"<<endl<<endl;
@@ -439,7 +439,7 @@ void pedo::Record()
 	  std::cout<<"can't open file: "<<shellfilename<<std::endl;
 	}
       writesh<<"#!/bin/sh"<<endl;
-      writesh<<"cmd=\"../cmdvme/cmdvme\""<<endl;
+      writesh<<"cmd=\"../cmdvme/cmdvme -bd V2718\""<<endl;
 #ifdef v785_pedo
       writesh<<"BASEADDR=0x1"<<setw(3)<<setfill('0')<<hex<<i+v785num<<endl;
 #else
@@ -474,7 +474,7 @@ void pedo::Record()
       std::cout<<"can't open file: "<<shellfilename<<std::endl;
     }
   writesh<<"#!/bin/sh"<<endl;
-  writesh<<"cmd=\"../cmdvme/cmdvme\""<<endl;
+  writesh<<"cmd=\"../cmdvme/cmdvme -bd V2718\""<<endl;
 #ifdef v785_pedo
   writesh<<"BASEADDR=0x1"<<setw(3)<<setfill('0')<<hex<<v785num<<endl;
 #else
@@ -510,7 +510,7 @@ void pedo::Record()
 	  std::cout<<"can't open file: "<<shellfilename<<std::endl;
 	}
       writesh<<"#!/bin/sh"<<endl;
-      writesh<<"cmd=\"../cmdvme/cmdvme\""<<endl;
+      writesh<<"cmd=\"../cmdvme/cmdvme -bd V2718\""<<endl;
       writesh<<"BASEADDR=0x2"<<setw(3)<<setfill('0')<<hex<<i<<endl;
       writesh<<endl<<endl;
       writesh<<"####################################"<<endl<<endl;
@@ -528,7 +528,7 @@ void pedo::Record()
       std::cout<<"can't open file: "<<shellfilename<<std::endl;
     }
   writesh<<"#!/bin/sh"<<endl;
-  writesh<<"cmd=\"../cmdvme/cmdvme\""<<endl;
+  writesh<<"cmd=\"../cmdvme/cmdvme -bd V2718\""<<endl;
   writesh<<"BASEADDR=0x2000"<<endl;
   writesh<<endl<<endl;
   writesh<<"####################################"<<endl<<endl;

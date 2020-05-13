@@ -2,8 +2,13 @@
 #define MAXBUFF 3000
 #define VME
 #define VMEINT
-#define V2718
+//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
+// 以下部分用户需要修改
 
+#define V2718   //如果使用 V1718 则注释本行
+
+// 以上部分用户需要修改
+//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 #define DBUFF
 
 #define INTLEVEL   1

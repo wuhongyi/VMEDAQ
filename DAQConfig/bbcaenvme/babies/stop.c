@@ -21,12 +21,12 @@ void stop(void){
   // 以下部分用户需要修改
   
   // 硬件busy / 软件busy多机箱同步
-  // v2718_set_ioport(3);
+  // vx718_set_ioport(3);
 
   // 以上部分用户需要修改
   //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
   
-  v2718_stop_pulsea();
+  vx718_stop_pulsea();
   
   printf("Stop\n");
 }

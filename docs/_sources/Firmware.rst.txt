@@ -4,9 +4,9 @@
 .. Author: Hongyi Wu(吴鸿毅)
 .. Email: wuhongyi@qq.com 
 .. Created: 一 12月  3 10:26:33 2018 (+0800)
-.. Last-Updated: 六 12月 28 21:43:42 2019 (+0800)
+.. Last-Updated: 三 5月 13 22:28:10 2020 (+0800)
 ..	     By: Hongyi Wu(吴鸿毅)
-..     Update #: 13
+..     Update #: 14
 .. URL: http://wuhongyi.cn 
 
 =================================
@@ -26,8 +26,8 @@
 
 .. code:: text
 
-   V1718   2.14
-   V2718 FW CONET2 Compliant 	2.14_1.5    
+   V1718   2.17
+   V2718 FW CONET2 Compliant 	2.17_1.5    
     
    A2818  新版的CONET2 1.0  旧版的CONET1 0.8
    A3818   0.5

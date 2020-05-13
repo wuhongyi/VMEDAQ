@@ -206,7 +206,7 @@ CVOutputRegisterBits choose_ioport(unsigned int ioport)
   return outsel;
 }
 
-int v2718_init_ioport(unsigned int ioport, unsigned int polarity, unsigned int ledpol)
+int vx718_init_ioport(unsigned int ioport, unsigned int polarity, unsigned int ledpol)
 {
   CVOutputSelect outsel;
   CVIOPolarity outpol;
@@ -241,12 +241,12 @@ int v2718_init_ioport(unsigned int ioport, unsigned int polarity, unsigned int l
   return (int)((CVErrorCodes)CAENVME_SetOutputConf(BHandle, outsel, outpol, LEDpol, source));
 }
 
-int v2718_mon_berr(void)
+int vx718_mon_berr(void)
 {
   return (int)((CVErrorCodes)CAENVME_SetOutputConf(BHandle, cvOutput3, cvDirect, cvActiveHigh, cvVMESignals));
 }
 
-int v2718_clear_ioport(unsigned int ioport)
+int vx718_clear_ioport(unsigned int ioport)
 {
   CVOutputRegisterBits outsel;
   outsel = choose_ioport(ioport);
@@ -254,7 +254,7 @@ int v2718_clear_ioport(unsigned int ioport)
   return (int)((CVErrorCodes)CAENVME_ClearOutputRegister(BHandle, outsel));
 }
 
-int v2718_set_ioport(unsigned int ioport)
+int vx718_set_ioport(unsigned int ioport)
 {
   CVOutputRegisterBits outsel;
   outsel = choose_ioport(ioport);
@@ -262,7 +262,7 @@ int v2718_set_ioport(unsigned int ioport)
   return (int)((CVErrorCodes)CAENVME_SetOutputRegister(BHandle, outsel));
 }
 
-int v2718_pulse_ioport(unsigned int ioport)
+int vx718_pulse_ioport(unsigned int ioport)
 {
   CVOutputRegisterBits outsel;
   outsel = choose_ioport(ioport);
@@ -270,7 +270,7 @@ int v2718_pulse_ioport(unsigned int ioport)
   return (int)((CVErrorCodes)CAENVME_PulseOutputRegister(BHandle, outsel));
 }
 
-int v2718_pulsea_configure(unsigned int ioport, unsigned int period, unsigned int width, unsigned int unit, unsigned int pulseno){
+int vx718_pulsea_configure(unsigned int ioport, unsigned int period, unsigned int width, unsigned int unit, unsigned int pulseno){
   if(ioport>1) ioport=1;
   if(width>period) width=period;
 
@@ -278,10 +278,10 @@ int v2718_pulsea_configure(unsigned int ioport, unsigned int period, unsigned in
   return (int)((CVErrorCodes)CAENVME_SetPulserConf(BHandle, cvPulserA, period, width, unit, pulseno, cvManualSW,cvManualSW));
 }
 
-int v2718_start_pulsea(){
+int vx718_start_pulsea(){
   return (int)((CVErrorCodes)CAENVME_StartPulser(BHandle, cvPulserA));
 }
 
-int v2718_stop_pulsea(){
+int vx718_stop_pulsea(){
   return (int)((CVErrorCodes)CAENVME_StopPulser(BHandle,cvPulserA));
 }

@@ -2,10 +2,10 @@ void evt(void) {
 
   //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
   // 测试
-  // v2718_pulse_ioport(2);
-  // v2718_pulse_ioport(2);
-  // v2718_set_ioport(3);
-  // v2718_set_ioport(2);
+  // vx718_pulse_ioport(2);
+  // vx718_pulse_ioport(2);
+  // vx718_set_ioport(3);
+  // vx718_set_ioport(2);
   //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
   
@@ -43,7 +43,7 @@ void evt(void) {
 
   //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
   // 测试
-  // v2718_clear_ioport(2);
+  // vx718_clear_ioport(2);
   //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 

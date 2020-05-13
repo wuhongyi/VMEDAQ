@@ -1,8 +1,8 @@
 #!/bin/sh
 
-cmd="../cmdvme/cmdvme"
+cmd="../cmdvme/cmdvme" 
 BASEADDR=0x4001
-opt=""
+opt="-bd V2718" #V1718/V2718
 
 
 echo "load tdc setting ..."
@@ -52,7 +52,7 @@ sleep 1
 
 # Set Triger Matching Mode
 echo "set trigger matting mode..."
-${cmd} $opt -qn ${BASEADDR}0000 0x0000  # Automatic_Reject and keep_token are automatically enabled 
+${cmd} -qn ${BASEADDR}0000 0x0000 $opt # Automatic_Reject and keep_token are automatically enabled 
 sleep 1
 echo "done"
 
@@ -62,7 +62,7 @@ echo "done"
 # 10.5us = 10500ns = 420
 # 15.5us = 15500ns = 620
 # 40.5us = 15500ns = 1620
-${cmd} $opt -qw ${BASEADDR}0000 0x1000 240
+${cmd} -qw ${BASEADDR}0000 0x1000 240 $opt
 sleep 1
 
 ##以下参数为上面数值加8然后取相反数
@@ -73,31 +73,31 @@ sleep 1
 # -10us = -10000ns = -400
 # -15us = -15000ns = -600
 # -40us = -15000ns = -1600
-${cmd} $opt -qw ${BASEADDR}0000 0x1100 -248
+${cmd} -qw ${BASEADDR}0000 0x1100 -248 $opt
 sleep 1
 
 # Set Edge Detection (1=trailing, 2=leading, 3=both)
 #It allows to set the TDCs’ edge detection. After this OPCODE is sent, a 16-bit word must be written at the MICRO register address. The microcontroller will remain in a wait status until a 16 bit word is written. This word’s two LSBs have the following meaning: 00 -> pair mode; 01 -> only trailing; 10 -> only leading; 11 ->trailing and leading.
-${cmd} $opt -qw ${BASEADDR}0000 0x2200 2
+${cmd} -qw ${BASEADDR}0000 0x2200 2 $opt
 sleep 1
 
 # Set Extra Search Margin (1=25ns, default=8)
 #It allows to set the extra search field of the match window. After this OPCODE is sent, a 16-bit word must be written at the same location of the OPCODE itself. The microcontroller will remain in a wait status until a 16-bit word is written. The margin value(clock cycles) can be any 12 bit value(bits [12:15] are meaningless), though reasonable values are not greater than 50.
 #Default setting: 0x08 -> 200 ns
-${cmd} $opt -qw ${BASEADDR}0000 0x1200 8
+${cmd} -qw ${BASEADDR}0000 0x1200 8 $opt
 sleep 1
 
 
 # Set Reject Margin (1=25ns, default=4)
 #It allows to set the reject margin, expressed in clock cycles. After this OPCODE is sent, a 16-bit word must be written at the same location of the OPCODE itself. The microcontroller will remain in a wait status until a 16-bit word is written. The margin value can be any 12 bit value (bits [12:15] are meaning less), 0 sets the margin at the beginning of the match window; it is recommended to set the margin ≥ 1.
 #Default setting: 0x04 -> 100 ns
-${cmd} $opt -qw ${BASEADDR}0000 0x1300 4
+${cmd} -qw ${BASEADDR}0000 0x1300 4 $opt
 sleep 1
 
 
 # Enable Subtraction of Trigger Time
 #It allows to enable the trigger time tag subtraction: in this operating mode the time measurements are referred to the beggining of the match window.
-${cmd} $opt -qn ${BASEADDR}0000 0x1400
+${cmd} -qn ${BASEADDR}0000 0x1400 $opt
 sleep 1
 
 
@@ -107,7 +107,7 @@ sleep 1
 
 # enable TDC Header, Trailer
 #It allows to enable the TDCs’ Header and Trailer during data readout.
-${cmd} $opt -qn ${BASEADDR}0000 0x3000
+${cmd} -qn ${BASEADDR}0000 0x3000 $opt
 sleep 0
 
 # BLT Event Number Register
