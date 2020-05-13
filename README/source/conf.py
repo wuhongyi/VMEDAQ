@@ -18,11 +18,11 @@
 # -- Project information -----------------------------------------------------
 
 project = 'VMEDAQ'
-copyright = '2019, Hongyi Wu(吴鸿毅)'
+copyright = '2020, Hongyi Wu(吴鸿毅)'
 author = 'Hongyi Wu(吴鸿毅)'
 
 # The full version, including alpha/beta/rc tags
-release = '2019.12.28'
+release = '2020.05.13'
 
 
 # -- General configuration ---------------------------------------------------

@@ -10,7 +10,7 @@ VMEDAQ
    :maxdepth: 3
    :caption: content:
 
-感谢您选择 VMEDAQ。更多开源程序，请访问我们的 `Github <https://github.com/pkuNucExp>`_ 和 `吴鸿毅的Github <https://github.com/wuhongyi>`_
+感谢您选择 PKU VMEDAQ。更多开源程序，请访问我们的 `Github <https://github.com/pkuNucExp>`_ 和 `吴鸿毅的Github <https://github.com/wuhongyi>`_
 
 #################################
 
