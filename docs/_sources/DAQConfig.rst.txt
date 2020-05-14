@@ -4,9 +4,9 @@
 .. Author: Hongyi Wu(吴鸿毅)
 .. Email: wuhongyi@qq.com 
 .. Created: 一 12月  3 11:03:17 2018 (+0800)
-.. Last-Updated: 三 5月 13 22:34:29 2020 (+0800)
+.. Last-Updated: 四 5月 14 16:07:39 2020 (+0800)
 ..           By: Hongyi Wu(吴鸿毅)
-..     Update #: 11
+..     Update #: 12
 .. URL: http://wuhongyi.cn 
 
 =================================
@@ -341,6 +341,17 @@ babies/stop.c
   //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 
+---------------------------------
+cmdvme/cmdvme.c
+---------------------------------
+
+如果使用制器器 V1718，则需要修改文件中以下代码。将 *V2718* 改为 *V1718* 即可。
+
+.. code:: cpp
+
+    enum board bd = V2718;
+	  
+  
 ---------------------------------
 init/daqinitrc.sh
 ---------------------------------

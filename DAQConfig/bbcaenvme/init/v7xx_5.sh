@@ -1,5 +1,5 @@
 #!/bin/sh
-cmd="../cmdvme/cmdvme -bd V2718" #V1718/V2718
+cmd="../cmdvme/cmdvme"
 BASEADDR=0x1005
 
 ###用户可能需要修改的参数为BASEADDR/GEO,阈值设置在pedo文件
