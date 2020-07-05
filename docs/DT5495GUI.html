@@ -1,0 +1,861 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>网页控制界面 &mdash; VMEDAQ 2020.05.13 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/translations.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" />
+    <link rel="prev" title="网页控制界面的安装" href="DT5495INSTALL.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> VMEDAQ
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">简介</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="README.html">简介</a></li>
+</ul>
+<p class="caption"><span class="caption-text">安装</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="INSTALL.html">软件安装</a></li>
+</ul>
+<p class="caption"><span class="caption-text">固件</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Firmware.html">固件要求</a></li>
+</ul>
+<p class="caption"><span class="caption-text">配置</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Setting.html">获取配置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analysis.html">analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="anaroot.html">anaroot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="checkcnt.html">checkcnt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cutpedo.html">cutpedestal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DAQConfig.html">DAQConfig</a></li>
+<li class="toctree-l1"><a class="reference internal" href="httponline.html">httponline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="online.html">online</a></li>
+<li class="toctree-l1"><a class="reference internal" href="r2root.html">r2root</a></li>
+<li class="toctree-l1"><a class="reference internal" href="statistics.html">statistics</a></li>
+</ul>
+<p class="caption"><span class="caption-text">可编程逻辑</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="DT5495.html">基于可编程逻辑模块的触发系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DT5495INSTALL.html">网页控制界面的安装</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">网页控制界面</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">控制界面</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">寄存器界面</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">状态监视界面</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">在线时间差测量</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">VMEDAQ</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>网页控制界面</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/DT5495GUI.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>网页控制界面<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id2">
+<h2>控制界面<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>通过控制寄存器来改变实验触发模式，逻辑信号的延迟与展宽等。</p>
+<img alt="_images/webgui_control.png" src="_images/webgui_control.png" />
+<p>按钮 “Program FPGA” 用于初始化系统配置，当可编程逻辑模块上电之后第一时间点击该按钮来完成系统的初始化。</p>
+<p>可以保存 5 个实验设置参数，分别为 “Experimental setup 1-5”。通过修改寄存器进行实验逻辑配置之后，可以点击按钮 “Save” 保存，将会把当前 FPGA 寄存器参数保存到选定的实验配置中。按钮 “Load” 用于将选择的实验配置加载到 FPGA 中。</p>
+<p>示波器监视部分用于选择 4 个 LEMO 输出通道的输出信号，下表中列出了当前所有可供选择的选项。点击 “Read” 按钮即可读取当前的设置参数，按钮 “Change” 用于将当前输入框的参数写入 FPGA 中。</p>
+<table class="colwidths-given docutils align-default" id="id6">
+<caption><span class="caption-text">4 通道 LEMO 输出</span><a class="headerlink" href="#id6" title="永久链接至表格">¶</a></caption>
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 87%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>vaule</p></th>
+<th class="head"><p>signal</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>00</p></td>
+<td><p>ungated trigger</p></td>
+</tr>
+<tr class="row-odd"><td><p>01</p></td>
+<td><p>status</p></td>
+</tr>
+<tr class="row-even"><td><p>02</p></td>
+<td><p>clear</p></td>
+</tr>
+<tr class="row-odd"><td><p>03</p></td>
+<td><p>gate adc</p></td>
+</tr>
+<tr class="row-even"><td><p>04</p></td>
+<td><p>gate 1x90</p></td>
+</tr>
+<tr class="row-odd"><td><p>05</p></td>
+<td><p>GIN(0)</p></td>
+</tr>
+<tr class="row-even"><td><p>06</p></td>
+<td><p>GIN(1)</p></td>
+</tr>
+<tr class="row-odd"><td><p>07</p></td>
+<td><p>reset</p></td>
+</tr>
+<tr class="row-even"><td><p>08</p></td>
+<td><p>hardware busy</p></td>
+</tr>
+<tr class="row-odd"><td><p>09</p></td>
+<td><p>long trigger(20 us)</p></td>
+</tr>
+<tr class="row-even"><td><p>10</p></td>
+<td><p>veto</p></td>
+</tr>
+<tr class="row-odd"><td><p>11</p></td>
+<td><p>保留</p></td>
+</tr>
+<tr class="row-even"><td><p>12</p></td>
+<td><p>保留</p></td>
+</tr>
+<tr class="row-odd"><td><p>13</p></td>
+<td><p>保留</p></td>
+</tr>
+<tr class="row-even"><td><p>14</p></td>
+<td><p>保留</p></td>
+</tr>
+<tr class="row-odd"><td><p>15</p></td>
+<td><p>保留</p></td>
+</tr>
+<tr class="row-even"><td><p>16</p></td>
+<td><p>OR32_00</p></td>
+</tr>
+<tr class="row-odd"><td><p>17</p></td>
+<td><p>OR32_01</p></td>
+</tr>
+<tr class="row-even"><td><p>18</p></td>
+<td><p>OR32_02</p></td>
+</tr>
+<tr class="row-odd"><td><p>19</p></td>
+<td><p>OR32_03</p></td>
+</tr>
+<tr class="row-even"><td><p>20</p></td>
+<td><p>OR32_04</p></td>
+</tr>
+<tr class="row-odd"><td><p>21</p></td>
+<td><p>OR32_05</p></td>
+</tr>
+<tr class="row-even"><td><p>22</p></td>
+<td><p>OR32_06</p></td>
+</tr>
+<tr class="row-odd"><td><p>23</p></td>
+<td><p>OR32_07</p></td>
+</tr>
+<tr class="row-even"><td><p>24</p></td>
+<td><p>保留</p></td>
+</tr>
+<tr class="row-odd"><td><p>25</p></td>
+<td><p>保留</p></td>
+</tr>
+<tr class="row-even"><td><p>26</p></td>
+<td><p>保留</p></td>
+</tr>
+<tr class="row-odd"><td><p>27</p></td>
+<td><p>保留</p></td>
+</tr>
+<tr class="row-even"><td><p>28</p></td>
+<td><p>保留</p></td>
+</tr>
+<tr class="row-odd"><td><p>29</p></td>
+<td><p>保留</p></td>
+</tr>
+<tr class="row-even"><td><p>30</p></td>
+<td><p>保留</p></td>
+</tr>
+<tr class="row-odd"><td><p>31</p></td>
+<td><p>保留</p></td>
+</tr>
+<tr class="row-even"><td><p>32</p></td>
+<td><p>A(0)  GDG</p></td>
+</tr>
+<tr class="row-odd"><td><p>33</p></td>
+<td><p>A(1)  GDG</p></td>
+</tr>
+<tr class="row-even"><td><p>34</p></td>
+<td><p>A(2)  GDG</p></td>
+</tr>
+<tr class="row-odd"><td><p>35</p></td>
+<td><p>A(3)  GDG</p></td>
+</tr>
+<tr class="row-even"><td><p>36</p></td>
+<td><p>A(4)  GDG</p></td>
+</tr>
+<tr class="row-odd"><td><p>37</p></td>
+<td><p>A(5)  GDG</p></td>
+</tr>
+<tr class="row-even"><td><p>38</p></td>
+<td><p>A(6)  GDG</p></td>
+</tr>
+<tr class="row-odd"><td><p>39</p></td>
+<td><p>A(7)  GDG</p></td>
+</tr>
+<tr class="row-even"><td><p>40</p></td>
+<td><p>A(8)  GDG</p></td>
+</tr>
+<tr class="row-odd"><td><p>41</p></td>
+<td><p>A(9)  GDG</p></td>
+</tr>
+<tr class="row-even"><td><p>42</p></td>
+<td><p>A(10) GDG</p></td>
+</tr>
+<tr class="row-odd"><td><p>43</p></td>
+<td><p>A(11) GDG</p></td>
+</tr>
+<tr class="row-even"><td><p>44</p></td>
+<td><p>A(12) GDG</p></td>
+</tr>
+<tr class="row-odd"><td><p>45</p></td>
+<td><p>A(13) GDG</p></td>
+</tr>
+<tr class="row-even"><td><p>46</p></td>
+<td><p>A(14) GDG</p></td>
+</tr>
+<tr class="row-odd"><td><p>47</p></td>
+<td><p>A(15) GDG</p></td>
+</tr>
+<tr class="row-even"><td><p>48</p></td>
+<td><p>A(16) GDG</p></td>
+</tr>
+<tr class="row-odd"><td><p>49</p></td>
+<td><p>A(17) GDG</p></td>
+</tr>
+<tr class="row-even"><td><p>50</p></td>
+<td><p>A(18) GDG</p></td>
+</tr>
+<tr class="row-odd"><td><p>51</p></td>
+<td><p>A(19) GDG</p></td>
+</tr>
+<tr class="row-even"><td><p>52</p></td>
+<td><p>A(20) GDG</p></td>
+</tr>
+<tr class="row-odd"><td><p>53</p></td>
+<td><p>A(21) GDG</p></td>
+</tr>
+<tr class="row-even"><td><p>54</p></td>
+<td><p>A(22) GDG</p></td>
+</tr>
+<tr class="row-odd"><td><p>55</p></td>
+<td><p>A(23) GDG</p></td>
+</tr>
+<tr class="row-even"><td><p>56</p></td>
+<td><p>A(24) GDG</p></td>
+</tr>
+<tr class="row-odd"><td><p>57</p></td>
+<td><p>A(25) GDG</p></td>
+</tr>
+<tr class="row-even"><td><p>58</p></td>
+<td><p>A(26) GDG</p></td>
+</tr>
+<tr class="row-odd"><td><p>59</p></td>
+<td><p>A(27) GDG</p></td>
+</tr>
+<tr class="row-even"><td><p>60</p></td>
+<td><p>A(28) GDG</p></td>
+</tr>
+<tr class="row-odd"><td><p>61</p></td>
+<td><p>A(29) GDG</p></td>
+</tr>
+<tr class="row-even"><td><p>62</p></td>
+<td><p>A(30) GDG</p></td>
+</tr>
+<tr class="row-odd"><td><p>63</p></td>
+<td><p>A(31) GDG</p></td>
+</tr>
+</tbody>
+</table>
+<p>寄存器设置部分用于读取或者修改寄存器设置参数。读取寄存器时，需要输入要读取寄存器的地址，然后点击按钮 “Read”；修改寄存器时，输入要修改寄存器的地址以及参数值，然后点击按钮“Write”。</p>
+<table class="colwidths-given docutils align-default" id="id7">
+<caption><span class="caption-text">control register</span><a class="headerlink" href="#id7" title="永久链接至表格">¶</a></caption>
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 87%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>vaule</p></th>
+<th class="head"><p>function</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0x1900</p></td>
+<td><p>OR32  A[31:0]</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x1904</p></td>
+<td><p>OR32  A[31:0]</p></td>
+</tr>
+<tr class="row-even"><td><p>0x1908</p></td>
+<td><p>OR32  A[31:0]</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x190C</p></td>
+<td><p>OR32  A[31:0]</p></td>
+</tr>
+<tr class="row-even"><td><p>0x1910</p></td>
+<td><p>OR32  A[31:0]</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x1914</p></td>
+<td><p>OR32  A[31:0]</p></td>
+</tr>
+<tr class="row-even"><td><p>0x1918</p></td>
+<td><p>OR32  A[31:0]</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x191C</p></td>
+<td><p>OR32  A[31:0]</p></td>
+</tr>
+<tr class="row-even"><td><p>0x1920</p></td>
+<td><p>AND32 A[31:0]</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x1924</p></td>
+<td><p>AND32 A[31:0]</p></td>
+</tr>
+<tr class="row-even"><td><p>0x1928</p></td>
+<td><p>AND32 A[31:0]</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x192C</p></td>
+<td><p>AND32 A[31:0]</p></td>
+</tr>
+<tr class="row-even"><td><p>0x1930</p></td>
+<td><p>AND32 A[31:0]</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x1934</p></td>
+<td><p>AND32 A[31:0]</p></td>
+</tr>
+<tr class="row-even"><td><p>0x1938</p></td>
+<td><p>AND32 A[31:0]</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x193C</p></td>
+<td><p>AND32 A[31:0]</p></td>
+</tr>
+<tr class="row-even"><td><p>0x1968</p></td>
+<td><p>trigger select(见下方关于触发源的选择)</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x1970</p></td>
+<td><p>port B enable/disable in hard busy   A[31:0]</p></td>
+</tr>
+<tr class="row-even"><td><p>0x1974</p></td>
+<td><p>[25:16]ADC Gate [9:0]V1x90 Delay</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x0978</p></td>
+<td><p>[0] software/hardware busy</p></td>
+</tr>
+<tr class="row-even"><td><p>0x19F8</p></td>
+<td><p>[0] debug mode（test mode pars copy when 1）</p></td>
+</tr>
+</tbody>
+</table>
+<table class="colwidths-given docutils align-default" id="id8">
+<caption><span class="caption-text">触发源的选择</span><a class="headerlink" href="#id8" title="永久链接至表格">¶</a></caption>
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 87%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>vaule</p></th>
+<th class="head"><p>function</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>00</p></td>
+<td><p>A(0)</p></td>
+</tr>
+<tr class="row-odd"><td><p>01</p></td>
+<td><p>A(1)</p></td>
+</tr>
+<tr class="row-even"><td><p>02</p></td>
+<td><p>A(2)</p></td>
+</tr>
+<tr class="row-odd"><td><p>03</p></td>
+<td><p>A(3)</p></td>
+</tr>
+<tr class="row-even"><td><p>04</p></td>
+<td><p>A(4)</p></td>
+</tr>
+<tr class="row-odd"><td><p>05</p></td>
+<td><p>A(5)</p></td>
+</tr>
+<tr class="row-even"><td><p>06</p></td>
+<td><p>A(6)</p></td>
+</tr>
+<tr class="row-odd"><td><p>07</p></td>
+<td><p>A(7)</p></td>
+</tr>
+<tr class="row-even"><td><p>08</p></td>
+<td><p>A(8)</p></td>
+</tr>
+<tr class="row-odd"><td><p>09</p></td>
+<td><p>A(9)</p></td>
+</tr>
+<tr class="row-even"><td><p>10</p></td>
+<td><p>A(10)</p></td>
+</tr>
+<tr class="row-odd"><td><p>11</p></td>
+<td><p>A(11)</p></td>
+</tr>
+<tr class="row-even"><td><p>12</p></td>
+<td><p>A(12)</p></td>
+</tr>
+<tr class="row-odd"><td><p>13</p></td>
+<td><p>A(13)</p></td>
+</tr>
+<tr class="row-even"><td><p>14</p></td>
+<td><p>A(14)</p></td>
+</tr>
+<tr class="row-odd"><td><p>15</p></td>
+<td><p>A(15)</p></td>
+</tr>
+<tr class="row-even"><td><p>16</p></td>
+<td><p>A(16)</p></td>
+</tr>
+<tr class="row-odd"><td><p>17</p></td>
+<td><p>A(17)</p></td>
+</tr>
+<tr class="row-even"><td><p>18</p></td>
+<td><p>A(18)</p></td>
+</tr>
+<tr class="row-odd"><td><p>19</p></td>
+<td><p>A(19)</p></td>
+</tr>
+<tr class="row-even"><td><p>20</p></td>
+<td><p>A(20)</p></td>
+</tr>
+<tr class="row-odd"><td><p>21</p></td>
+<td><p>A(21)</p></td>
+</tr>
+<tr class="row-even"><td><p>22</p></td>
+<td><p>A(22)</p></td>
+</tr>
+<tr class="row-odd"><td><p>23</p></td>
+<td><p>A(23)</p></td>
+</tr>
+<tr class="row-even"><td><p>24</p></td>
+<td><p>A(24)</p></td>
+</tr>
+<tr class="row-odd"><td><p>25</p></td>
+<td><p>A(25)</p></td>
+</tr>
+<tr class="row-even"><td><p>26</p></td>
+<td><p>A(26)</p></td>
+</tr>
+<tr class="row-odd"><td><p>27</p></td>
+<td><p>A(27)</p></td>
+</tr>
+<tr class="row-even"><td><p>28</p></td>
+<td><p>A(28)</p></td>
+</tr>
+<tr class="row-odd"><td><p>29</p></td>
+<td><p>A(29)</p></td>
+</tr>
+<tr class="row-even"><td><p>30</p></td>
+<td><p>A(30)</p></td>
+</tr>
+<tr class="row-odd"><td><p>31</p></td>
+<td><p>A(31)</p></td>
+</tr>
+<tr class="row-even"><td><p>32</p></td>
+<td><p>OR32_00</p></td>
+</tr>
+<tr class="row-odd"><td><p>33</p></td>
+<td><p>OR32_01</p></td>
+</tr>
+<tr class="row-even"><td><p>34</p></td>
+<td><p>OR32_02</p></td>
+</tr>
+<tr class="row-odd"><td><p>35</p></td>
+<td><p>OR32_03</p></td>
+</tr>
+<tr class="row-even"><td><p>36</p></td>
+<td><p>OR32_04</p></td>
+</tr>
+<tr class="row-odd"><td><p>37</p></td>
+<td><p>OR32_05</p></td>
+</tr>
+<tr class="row-even"><td><p>38</p></td>
+<td><p>OR32_06</p></td>
+</tr>
+<tr class="row-odd"><td><p>39</p></td>
+<td><p>OR32_07</p></td>
+</tr>
+<tr class="row-even"><td><p>40</p></td>
+<td><p>AND32_00</p></td>
+</tr>
+<tr class="row-odd"><td><p>41</p></td>
+<td><p>AND32_01</p></td>
+</tr>
+<tr class="row-even"><td><p>42</p></td>
+<td><p>AND32_02</p></td>
+</tr>
+<tr class="row-odd"><td><p>43</p></td>
+<td><p>AND32_03</p></td>
+</tr>
+<tr class="row-even"><td><p>44</p></td>
+<td><p>AND32_04</p></td>
+</tr>
+<tr class="row-odd"><td><p>45</p></td>
+<td><p>AND32_05</p></td>
+</tr>
+<tr class="row-even"><td><p>46</p></td>
+<td><p>AND32_06</p></td>
+</tr>
+<tr class="row-odd"><td><p>47</p></td>
+<td><p>AND32_07</p></td>
+</tr>
+</tbody>
+</table>
+<p>GDG 控制部分用于控制 32 通道信号的延迟和展宽。</p>
+<p>读取信号的延迟和展宽时，需要输入要读取的通道，然后点击按钮 “Read”；修改某通道的延迟和展宽时，输入要修改通道编号以及参数值，然后点击按钮“Write”。</p>
+</div>
+<div class="section" id="id3">
+<h2>寄存器界面<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<img alt="_images/webgui_register.png" src="_images/webgui_register.png" />
+<p>当您访问寄存器界面时，该界面刷新一次。该界面展示了可以设置的寄存器的参数，主要用来进行参数的核查。</p>
+</div>
+<div class="section" id="id4">
+<h2>状态监视界面<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<p>当您访问状态页面时，该页面将每 5 秒钟自动刷新一次。</p>
+<img alt="_images/webgui_status.png" src="_images/webgui_status.png" />
+<p>该页面主要用于实时的计数率监视。当前版本包含了 A 口 32 个输入通道的计数率，4 个 LEMO 输出通道的计数率，OR_00-07 的计数率，AND_00-07 的计数率， ungated trigger、gate trigger 等信号的计数率等。</p>
+</div>
+<div class="section" id="id5">
+<h2>在线时间差测量<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<img alt="_images/webgui_timediff.png" src="_images/webgui_timediff.png" />
+<p>该页面实现了任意两个逻辑信号的时间差谱测量（chA-chB，时间差大于 0 表示 chA 信号晚于 chB 信号）。按钮 “Read” 用于读取信号源参数；按钮 “Write” 用于更改信号源；按钮 “Clear” 用于清除 FPGA 中的时间差谱，当更改信号源后必须清除 FPGA 中的时间差谱。按钮 “Update” 可用于从 FPGA 中读取当前的时间差谱并显示在网页上。</p>
+<table class="colwidths-given docutils align-default" id="id9">
+<caption><span class="caption-text">time difference meaurement sources</span><a class="headerlink" href="#id9" title="永久链接至表格">¶</a></caption>
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 87%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>vaule</p></th>
+<th class="head"><p>signal</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>00</p></td>
+<td><p>A(0)  GDG</p></td>
+</tr>
+<tr class="row-odd"><td><p>01</p></td>
+<td><p>A(1)  GDG</p></td>
+</tr>
+<tr class="row-even"><td><p>02</p></td>
+<td><p>A(2)  GDG</p></td>
+</tr>
+<tr class="row-odd"><td><p>03</p></td>
+<td><p>A(3)  GDG</p></td>
+</tr>
+<tr class="row-even"><td><p>04</p></td>
+<td><p>A(4)  GDG</p></td>
+</tr>
+<tr class="row-odd"><td><p>05</p></td>
+<td><p>A(5)  GDG</p></td>
+</tr>
+<tr class="row-even"><td><p>06</p></td>
+<td><p>A(6)  GDG</p></td>
+</tr>
+<tr class="row-odd"><td><p>07</p></td>
+<td><p>A(7)  GDG</p></td>
+</tr>
+<tr class="row-even"><td><p>08</p></td>
+<td><p>A(8)  GDG</p></td>
+</tr>
+<tr class="row-odd"><td><p>09</p></td>
+<td><p>A(9)  GDG</p></td>
+</tr>
+<tr class="row-even"><td><p>10</p></td>
+<td><p>A(10) GDG</p></td>
+</tr>
+<tr class="row-odd"><td><p>11</p></td>
+<td><p>A(11) GDG</p></td>
+</tr>
+<tr class="row-even"><td><p>12</p></td>
+<td><p>A(12) GDG</p></td>
+</tr>
+<tr class="row-odd"><td><p>13</p></td>
+<td><p>A(13) GDG</p></td>
+</tr>
+<tr class="row-even"><td><p>14</p></td>
+<td><p>A(14) GDG</p></td>
+</tr>
+<tr class="row-odd"><td><p>15</p></td>
+<td><p>A(15) GDG</p></td>
+</tr>
+<tr class="row-even"><td><p>16</p></td>
+<td><p>A(16) GDG</p></td>
+</tr>
+<tr class="row-odd"><td><p>17</p></td>
+<td><p>A(17) GDG</p></td>
+</tr>
+<tr class="row-even"><td><p>18</p></td>
+<td><p>A(18) GDG</p></td>
+</tr>
+<tr class="row-odd"><td><p>19</p></td>
+<td><p>A(19) GDG</p></td>
+</tr>
+<tr class="row-even"><td><p>20</p></td>
+<td><p>A(20) GDG</p></td>
+</tr>
+<tr class="row-odd"><td><p>21</p></td>
+<td><p>A(21) GDG</p></td>
+</tr>
+<tr class="row-even"><td><p>22</p></td>
+<td><p>A(22) GDG</p></td>
+</tr>
+<tr class="row-odd"><td><p>23</p></td>
+<td><p>A(23) GDG</p></td>
+</tr>
+<tr class="row-even"><td><p>24</p></td>
+<td><p>A(24) GDG</p></td>
+</tr>
+<tr class="row-odd"><td><p>25</p></td>
+<td><p>A(25) GDG</p></td>
+</tr>
+<tr class="row-even"><td><p>26</p></td>
+<td><p>A(26) GDG</p></td>
+</tr>
+<tr class="row-odd"><td><p>27</p></td>
+<td><p>A(27) GDG</p></td>
+</tr>
+<tr class="row-even"><td><p>28</p></td>
+<td><p>A(28) GDG</p></td>
+</tr>
+<tr class="row-odd"><td><p>29</p></td>
+<td><p>A(29) GDG</p></td>
+</tr>
+<tr class="row-even"><td><p>30</p></td>
+<td><p>A(30) GDG</p></td>
+</tr>
+<tr class="row-odd"><td><p>31</p></td>
+<td><p>A(31) GDG</p></td>
+</tr>
+<tr class="row-even"><td><p>32</p></td>
+<td><p>OR32_00</p></td>
+</tr>
+<tr class="row-odd"><td><p>33</p></td>
+<td><p>OR32_01</p></td>
+</tr>
+<tr class="row-even"><td><p>34</p></td>
+<td><p>OR32_02</p></td>
+</tr>
+<tr class="row-odd"><td><p>35</p></td>
+<td><p>OR32_03</p></td>
+</tr>
+<tr class="row-even"><td><p>36</p></td>
+<td><p>OR32_04</p></td>
+</tr>
+<tr class="row-odd"><td><p>37</p></td>
+<td><p>OR32_05</p></td>
+</tr>
+<tr class="row-even"><td><p>38</p></td>
+<td><p>OR32_06</p></td>
+</tr>
+<tr class="row-odd"><td><p>39</p></td>
+<td><p>OR32_07</p></td>
+</tr>
+<tr class="row-even"><td><p>40</p></td>
+<td><p>AND32_00</p></td>
+</tr>
+<tr class="row-odd"><td><p>41</p></td>
+<td><p>AND32_01</p></td>
+</tr>
+<tr class="row-even"><td><p>42</p></td>
+<td><p>AND32_02</p></td>
+</tr>
+<tr class="row-odd"><td><p>43</p></td>
+<td><p>AND32_03</p></td>
+</tr>
+<tr class="row-even"><td><p>44</p></td>
+<td><p>AND32_04</p></td>
+</tr>
+<tr class="row-odd"><td><p>45</p></td>
+<td><p>AND32_05</p></td>
+</tr>
+<tr class="row-even"><td><p>46</p></td>
+<td><p>AND32_06</p></td>
+</tr>
+<tr class="row-odd"><td><p>47</p></td>
+<td><p>AND32_07</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="DT5495INSTALL.html" class="btn btn-neutral float-left" title="网页控制界面的安装" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Hongyi Wu(吴鸿毅)
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

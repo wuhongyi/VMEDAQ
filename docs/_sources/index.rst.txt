@@ -52,3 +52,16 @@ VMEDAQ
    online.rst
    r2root.rst
    statistics.rst
+
+#################################
+
+.. toctree::
+   :maxdepth: 3
+   :caption: 可编程逻辑
+
+   DT5495.rst
+   DT5495INSTALL.rst
+   DT5495GUI.rst
+   
+
+	     

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>搜索 &mdash; VMEDAQ 2020.05.13 文档</title>
+  <title>网页控制界面的安装 &mdash; VMEDAQ 2020.05.13 文档</title>
   
 
   
@@ -26,7 +26,6 @@
         <script type="text/javascript" src="_static/doctools.js"></script>
         <script type="text/javascript" src="_static/language_data.js"></script>
         <script type="text/javascript" src="_static/translations.js"></script>
-        <script type="text/javascript" src="_static/searchtools.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -37,7 +36,9 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
     <link rel="index" title="索引" href="genindex.html" />
-    <link rel="search" title="搜索" href="#" /> 
+    <link rel="search" title="搜索" href="search.html" />
+    <link rel="next" title="网页控制界面" href="DT5495GUI.html" />
+    <link rel="prev" title="基于可编程逻辑模块的触发系统" href="DT5495.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -64,7 +65,7 @@
 
           
 <div role="search">
-  <form id="rtd-search-form" class="wy-form" action="#" method="get">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -107,9 +108,13 @@
 <li class="toctree-l1"><a class="reference internal" href="statistics.html">statistics</a></li>
 </ul>
 <p class="caption"><span class="caption-text">可编程逻辑</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="DT5495.html">基于可编程逻辑模块的触发系统</a></li>
-<li class="toctree-l1"><a class="reference internal" href="DT5495INSTALL.html">网页控制界面的安装</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">网页控制界面的安装</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#plulib">PLULib 驱动安装</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#apache">apache</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="DT5495GUI.html">网页控制界面</a></li>
 </ul>
 
@@ -156,12 +161,14 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>搜索</li>
+      <li>网页控制界面的安装</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
+            <a href="_sources/DT5495INSTALL.rst.txt" rel="nofollow"> View page source</a>
+          
         
       </li>
     
@@ -173,24 +180,77 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <noscript>
-  <div id="fallback" class="admonition warning">
-    <p class="last">
-      Please activate JavaScript to enable the search
-      functionality.
-    </p>
-  </div>
-  </noscript>
+  <div class="section" id="id1">
+<h1>网页控制界面的安装<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<div class="section" id="plulib">
+<h2>PLULib 驱动安装<a class="headerlink" href="#plulib" title="永久链接至标题">¶</a></h2>
+<p>PLULib 依赖 gcc 5.0 及以上的版本。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tar -zxvf CAEN_PLULib-1.1.0-Build20190924.tgz
+<span class="nb">cd</span> CAEN_PLU-1.1
+sh install_x64
+<span class="nb">cd</span> ..
+</pre></div>
+</div>
+</div>
+<div class="section" id="apache">
+<h2>apache<a class="headerlink" href="#apache" title="永久链接至标题">¶</a></h2>
+<p>CentOS 7(Scientific Linux 7) 配置文件路径</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>/etc/httpd/conf/httpd.conf
+</pre></div>
+</div>
+<p><strong>selinux 关闭</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>getenforce <span class="c1"># 查看selinux状态</span>
+setenforce <span class="m">0</span> <span class="c1"># 临时关闭</span>
+修改/etc/selinux/config 文件，将SELINUX<span class="o">=</span><span class="nv">enforcing改为SELINUX</span><span class="o">=</span>disabled <span class="c1">#永久关闭</span>
+</pre></div>
+</div>
+<p><strong>修改 /etc/httpd/conf/httpd.conf</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#</span>
+<span class="c1"># &quot;/var/www/cgi-bin&quot; should be changed to whatever your ScriptAliased</span>
+<span class="c1"># CGI directory exists, if you have that configured.</span>
+<span class="c1">#</span>
+&lt;Directory <span class="s2">&quot;/var/www/cgi-bin&quot;</span>&gt;
+    AllowOverride None
+    Options ExecCGI
+    Require all granted
+&lt;/Directory&gt;
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#</span>
+<span class="c1"># AddHandler allows you to map certain file extensions to &quot;handlers&quot;:</span>
+<span class="c1"># actions unrelated to filetype. These can be either built into the server</span>
+<span class="c1"># or added with the Action directive (see below)</span>
+<span class="c1">#</span>
+<span class="c1"># To use CGI scripts outside of ScriptAliased directories:</span>
+<span class="c1"># (You will also need to add &quot;ExecCGI&quot; to the &quot;Options&quot; directive.)</span>
+<span class="c1">#</span>
+AddHandler cgi-script .cgi .py .sh
+</pre></div>
+</div>
+<p>将文件夹 <em>cgi-bin</em> 内文件复制到 <em>/var/www/cgi-bin</em>，将文件夹 <em>html</em> 内文件复制到 <em>/var/www/html</em>。</p>
+<p><strong>linux 下 apache启动、停止、重启命令</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>service httpd start  <span class="c1">#启动</span>
+service httpd restart <span class="c1">#重新启动</span>
+service httpd stop <span class="c1">#停止服务</span>
+</pre></div>
+</div>
+</div>
+</div>
 
-  
-  <div id="search-results">
-  
-  </div>
 
            </div>
            
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="DT5495GUI.html" class="btn btn-neutral float-right" title="网页控制界面" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="DT5495.html" class="btn btn-neutral float-left" title="基于可编程逻辑模块的触发系统" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>
@@ -223,14 +283,7 @@
   
   
     
-  
-  <script type="text/javascript">
-    jQuery(function() { Search.loadIndex("searchindex.js"); });
-  </script>
-  
-  <script type="text/javascript" id="searchindexloader"></script>
    
-
 
 </body>
 </html>
