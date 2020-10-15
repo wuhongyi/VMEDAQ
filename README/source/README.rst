@@ -4,9 +4,9 @@
 .. Author: Hongyi Wu(吴鸿毅)
 .. Email: wuhongyi@qq.com 
 .. Created: 六 8月  5 12:10:59 2017 (+0800)
-.. Last-Updated: 四 5月 14 16:04:21 2020 (+0800)
+.. Last-Updated: 四 10月 15 11:03:25 2020 (+0800)
 ..	     By: Hongyi Wu(吴鸿毅)
-..     Update #: 31
+..     Update #: 32
 .. URL: http://wuhongyi.cn 
 
 .. 请勿修改主目录下的 README.rst，该文件 由 README/source/README.rst 复制生成。
@@ -58,17 +58,17 @@
 
 本程序历史维护：
 
-- 李智焕
-- 李晶
+- `李智焕 <https://github.com/zhihuanli>`_ 
+- `李晶 <https://github.com/nijinger>`_ 
 - 臧宏亮
 - 吴鸿毅(wuhongyi@qq.com / wuhongyi@pku.edu.cn)
 
-说明书贡献者（按姓名笔画排序）：
+说明书贡献者：
 
-- 王东玺（中国原子能科学研究院）
+- `王东玺（中国原子能科学研究院） <https://github.com/dragon-xi>`_  
 - 孙立杰（中国原子能科学研究院）
-- 吴鸿毅
-
+- `武晨光 <https://github.com/mission-young>`_  
+- `吴鸿毅 <https://github.com/wuhongyi>`_
 
   
 ----
