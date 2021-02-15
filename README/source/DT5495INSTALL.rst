@@ -4,9 +4,9 @@
 .. Author: Hongyi Wu(吴鸿毅)
 .. Email: wuhongyi@qq.com 
 .. Created: 日 7月  5 19:33:34 2020 (+0800)
-.. Last-Updated: 日 7月  5 19:44:24 2020 (+0800)
+.. Last-Updated: 一 2月 15 19:03:06 2021 (+0800)
 ..           By: Hongyi Wu(吴鸿毅)
-..     Update #: 1
+..     Update #: 4
 .. URL: http://wuhongyi.cn 
 
 ##################################################
@@ -18,7 +18,7 @@
 PLULib 驱动安装
 ============================================================
 
-PLULib 依赖 gcc 5.0 及以上的版本。 
+**PLULib 依赖 gcc 5.0 及以上的版本。CAEN 给我们提供了驱动源代码，因此使用我们的程序包则不需要安装PLULib 驱动。**
 
 .. code:: bash
 
@@ -93,6 +93,104 @@ CentOS 7(Scientific Linux 7) 配置文件路径
    service httpd start  #启动
    service httpd restart #重新启动
    service httpd stop #停止服务
+
+
+============================================================
+apache 无法启动
+============================================================
+
+检查log文件 **/var/log/httpd/error_log**
+
+
+如果有以下内容，则说明由于SSL证书过期导致无法正常启动
+
+.. code:: bash
+
+  [Mon Feb 15 18:44:20.458085 2021] [:error] [pid 1482] SSL Library Error: -8181 Certificate has expired
+  [Mon Feb 15 18:44:20.458106 2021] [:error] [pid 1482] Unable to verify certificate 'Server-Cert'. Add "NSSEnforceValidCerts off" to nss.conf so the server can start until the problem can be resolved.
+
+也可通过以下命令来检查证书是否过期
+
+.. code:: bash
+
+   certutil -d /etc/httpd/alias -L -n Server-Cert
+   
+简单的处理方法是先设置禁止检查证书，待更新证书后再取消此设置，操作方法：在 **/etc/httpd/conf.d/nss.conf** 中加入 **NSSEnforceValidCerts off** 此行设置
+   
+
+
+============================================================
+firewalld
+============================================================
+
+
+.. code:: bash
+	  
+   # 取消firewalld的锁定
+   systemctl unmask firewalld 
+   ## 使用systemctl start firewalld命令开启防火墙的时候，却开不成功，出现Failed to start firewalld.service: Unit is masked的错误，是firewalld服务被锁定了
+
+
+.. code:: bash
+	  
+   # 查看firewalld状态
+   systemctl status firewalld
+
+
+.. code:: bash
+	  
+   # 开启防火墙
+   systemctl start firewalld
+   ##没有任何提示即开启成功
+
+
+.. code:: bash
+	  
+   # 关闭防火墙
+   systemctl stop firewalld
+
+
+.. code:: bash
+	  
+   # 重启防火墙
+   firewall-cmd --reload
+
+
+
+.. code:: bash
+	  
+   # 查询TCP/UDP的80端口占用情况
+   firewall-cmd --query-port=80/tcp
+   firewall-cmd --query-port=80/udp
+   ## 如果返回结果为“no”，则表示该端口尚未开放
+
+
+.. code:: bash
+	  
+   # 永久开放TCP/UDP的端口
+   firewall-cmd --permanent --zone=public --add-port=3306/tcp
+   firewall-cmd --permanent --zone=public --add-port=80/tcp
+   firewall-cmd --permanent --zone=public --add-port=80/udp
+    
+   ## 提示FirewallD is not running，则防火墙没开启
+
+
+
+.. code:: bash
+	  
+   # 启动 Apache
+   systemctl start httpd
+    
+   # 重启http服务
+   systemctl restart httpd
+    
+   ##查询状态
+   systemctl status httpd
+    
+   ##  默认监听80端口 /var/www/html
+
+
+
 
 .. 
 .. DT5495INSTALL.rst ends here
