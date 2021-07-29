@@ -112,9 +112,13 @@
 <li class="toctree-l1"><a class="reference internal" href="DT5495.html">基于可编程逻辑模块的触发系统</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">网页控制界面的安装</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#plulib">PLULib 驱动安装</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#apache">apache</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id2">apache 无法启动</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#firewalld">firewalld</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#centos-7">CentOS 7</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#apache">apache</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">apache 无法启动</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#firewalld">firewalld</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#ubuntu-20-04">Ubuntu 20.04</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="DT5495GUI.html">网页控制界面</a></li>
@@ -186,17 +190,20 @@
 <h1>网页控制界面的安装<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
 <div class="section" id="plulib">
 <h2>PLULib 驱动安装<a class="headerlink" href="#plulib" title="永久链接至标题">¶</a></h2>
-<p><strong>PLULib 依赖 gcc 5.0 及以上的版本。CAEN 给我们提供了驱动源代码，因此使用我们的程序包则不需要安装PLULib 驱动。</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tar -zxvf CAEN_PLULib-1.1.0-Build20190924.tgz
+<p><strong>PLULib 依赖 gcc 5.0 及以上的版本。CAEN 给我们提供了驱动源代码，因此使用我们的程序包则不需要安装以下 PLULib 驱动。</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">### 使用 吴鸿毅 提供的网页控制程序，请不要安装以下驱动！！！！！！</span>
+tar -zxvf CAEN_PLULib-1.1.0-Build20190924.tgz
 <span class="nb">cd</span> CAEN_PLU-1.1
 sh install_x64
 <span class="nb">cd</span> ..
 </pre></div>
 </div>
 </div>
+<div class="section" id="centos-7">
+<h2>CentOS 7<a class="headerlink" href="#centos-7" title="永久链接至标题">¶</a></h2>
 <div class="section" id="apache">
-<h2>apache<a class="headerlink" href="#apache" title="永久链接至标题">¶</a></h2>
-<p>CentOS 7(Scientific Linux 7) 配置文件路径</p>
+<h3>apache<a class="headerlink" href="#apache" title="永久链接至标题">¶</a></h3>
+<p><strong>CentOS 7(Scientific Linux 7) 配置文件路径</strong></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>/etc/httpd/conf/httpd.conf
 </pre></div>
 </div>
@@ -238,7 +245,7 @@ service httpd stop <span class="c1">#停止服务</span>
 </div>
 </div>
 <div class="section" id="id2">
-<h2>apache 无法启动<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<h3>apache 无法启动<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h3>
 <p>检查log文件 <strong>/var/log/httpd/error_log</strong></p>
 <p>如果有以下内容，则说明由于SSL证书过期导致无法正常启动</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>Mon Feb <span class="m">15</span> <span class="m">18</span>:44:20.458085 <span class="m">2021</span><span class="o">]</span> <span class="o">[</span>:error<span class="o">]</span> <span class="o">[</span>pid <span class="m">1482</span><span class="o">]</span> SSL Library Error: -8181 Certificate has expired
@@ -252,7 +259,7 @@ service httpd stop <span class="c1">#停止服务</span>
 <p>简单的处理方法是先设置禁止检查证书，待更新证书后再取消此设置，操作方法：在 <strong>/etc/httpd/conf.d/nss.conf</strong> 中加入 <strong>NSSEnforceValidCerts off</strong> 此行设置</p>
 </div>
 <div class="section" id="firewalld">
-<h2>firewalld<a class="headerlink" href="#firewalld" title="永久链接至标题">¶</a></h2>
+<h3>firewalld<a class="headerlink" href="#firewalld" title="永久链接至标题">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 取消firewalld的锁定</span>
 systemctl unmask firewalld
 <span class="c1">## 使用systemctl start firewalld命令开启防火墙的时候，却开不成功，出现Failed to start firewalld.service: Unit is masked的错误，是firewalld服务被锁定了</span>
@@ -301,6 +308,12 @@ systemctl status httpd
 <span class="c1">##  默认监听80端口 /var/www/html</span>
 </pre></div>
 </div>
+</div>
+</div>
+<div class="section" id="ubuntu-20-04">
+<h2>Ubuntu 20.04<a class="headerlink" href="#ubuntu-20-04" title="永久链接至标题">¶</a></h2>
+<p><strong>Ubuntu 20.04 配置文件路径</strong></p>
+<p>等待补充。。。</p>
 </div>
 </div>
 

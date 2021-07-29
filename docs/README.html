@@ -91,8 +91,8 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#id7">关于</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id13">性能介绍</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id14">目录</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id12">性能介绍</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id13">目录</a></li>
 </ul>
 </li>
 </ul>
@@ -188,7 +188,7 @@
             
   <div class="section" id="id1">
 <h1>简介<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
-<p>本程序为 <strong>北京大学实验核物理组</strong> 当前使用的 VME 获取。</p>
+<p>本程序为 <strong>北京大学实验核物理组</strong> 当前使用的模拟获取系统，简称为 VMEDAQ。</p>
 <p><strong>该获取基于 RIKEN 的获取发展而来。我们已经对原本程序进行较大的修改。如果使用本程序，请严格使用本程序包内程序，请勿随意升级/替换程序包内部程序/固件。</strong></p>
 <p><strong>我们将尽快完善本说明书。</strong></p>
 <hr class="docutils" />
@@ -203,7 +203,7 @@
 </div>
 <div class="section" id="id5">
 <h3>准预览版本<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
-<p><strong>准预览版本 2020.05.14</strong></p>
+<p><strong>准预览版本 2021.07.29</strong></p>
 <p>程序下载请访问:  <a class="reference external" href="https://github.com/wuhongyi/VMEDAQ">VMEDAQ</a></p>
 <p>网页版说明书请访问:  <a class="reference external" href="http://wuhongyi.cn/VMEDAQ/">说明书</a></p>
 </div>
@@ -222,15 +222,14 @@
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/dragon-xi">王东玺（中国原子能科学研究院）</a></p></li>
 <li><p>孙立杰（中国原子能科学研究院）</p></li>
-<li><p><a class="reference external" href="https://github.com/mission-young">武晨光</a></p></li>
 <li><p><a class="reference external" href="https://github.com/wuhongyi">吴鸿毅</a></p></li>
 </ul>
 </div>
 <hr class="docutils" />
-<div class="section" id="id13">
-<h2>性能介绍<a class="headerlink" href="#id13" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id12">
+<h2>性能介绍<a class="headerlink" href="#id12" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
-<li><p>本获取经过 Scientific Linux 6/7 系统测试。</p></li>
+<li><p>本获取经过 Scientific Linux 6/7 系统测试。即将进行 Ubuntu 20.04 测试。</p></li>
 <li><p>程序默认支持控制器CAEN V1718/V2718，CAEN V830 Scaler，CAEN V7xx 系列 ADC/QDC/TDC，CAENV1190/V1290 TDC，MESYTEC MADC32</p></li>
 <li><p>支持多个机箱同步获取。将插件分散在多个机箱，可大大减少数据传输的死时间。</p></li>
 <li><p>本获取分软件 busy 跟硬件 busy 两种模式。</p></li>
@@ -239,7 +238,7 @@
 <li><p>该模式下，一个事件的死时间由 trigger 门宽，7 us左右模数转换时间，20 us 数据传输中断请求及数据传输时间组成。其中除了数据传输时间，其它三个时间是固定的，大约为 30 us。</p></li>
 <li><p>限制该模式下计数率的因素为数据传输时间，数据越大，所需传输时间也就越长。</p></li>
 <li><p>以一个机箱，300-500 路左右输入为例，平均 10000 个触发能够记录 5000-6000 个事件，效率在 50-60%</p></li>
-<li><p>如果以两三个插件为例，则能够达到 70%+ 以上</p></li>
+<li><p>如果以两三个插件为例，则能够达到 70% 以上</p></li>
 </ul>
 </dd>
 </dl>
@@ -247,10 +246,10 @@
 <li><dl class="simple">
 <dt>对硬件 busy 模式</dt><dd><ul>
 <li><p>该模下式，一个事件的死时间由 trigger 门宽，7 us 左右模数转换时间两部分组成。</p></li>
-<li><p>意味着该模式下一个事件的死时间大约在 11 us 左右。</p></li>
+<li><p>意味着该模式下，一个事件的死时间大约在 11 us 左右。</p></li>
 <li><p>该模式模数转换及数据传输同步进行，因而数据高速传输产生的高频信号会对前放/主放的信号带来微小的影响。</p></li>
 <li><p>通过适当抬高阈值可消除该影响。</p></li>
-<li><p>该模式下获取效率极高，平均 10000 个触发能够记录 9000+ 个事件，效率达到90%</p></li>
+<li><p>该模式下获取效率极高，平均 10000 个触发能够记录 9000 多个事件，效率达到 90% 以上。</p></li>
 </ul>
 </dd>
 </dl>
@@ -258,8 +257,8 @@
 </ul>
 </div>
 <hr class="docutils" />
-<div class="section" id="id14">
-<h2>目录<a class="headerlink" href="#id14" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id13">
+<h2>目录<a class="headerlink" href="#id13" title="永久链接至标题">¶</a></h2>
 <p>文件夹内有以下文件/文件夹：</p>
 <ul class="simple">
 <li><p>analysis（一些用来辅助分析的代码）</p></li>
