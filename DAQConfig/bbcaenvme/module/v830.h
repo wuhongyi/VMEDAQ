@@ -8,7 +8,7 @@ int  v830_segndata(unsigned int maddr, int nch);
 int  v830_dmasegdata(unsigned int maddr, int cnt);
 int  v830_fxdmasegdata(unsigned int maddr, int rsize);
 void  v830_intlevel(unsigned int maddr, short level);
-
+void v830_fulllevel(unsigned int maddr, short level);// add by Hongyi Wu, 20211225
 
 #define V830_NCH                         32
 #define V830_MODE1                       0x0004

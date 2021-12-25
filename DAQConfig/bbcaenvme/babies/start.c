@@ -1,14 +1,10 @@
 void start(void){
   // Reconfigure 5th lemo output on v1718/v2718 front panel
   
-  //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-  // 以下部分用户需要修改
-  
+#ifdef SOFTWAREBUSY
   // 软件busy
   vx718_init_ioport(4,0,0);
-
-  // 以上部分用户需要修改
-  //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
+#endif
 
   //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
   // 测试
@@ -29,7 +25,7 @@ void start(void){
   // 以下部分用户需要修改
   
   // 有 V830 插件
-  // v830_clear_all(SCAADDR0);
+  v830_clear_all(SCAADDR0);
 
   // 以上部分用户需要修改
   //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
@@ -43,19 +39,19 @@ void start(void){
   v7xx_rst_counter(ADC0ADDR);
   v7xx_rst_counter(ADC1ADDR);
   v7xx_rst_counter(ADC2ADDR);
-  v7xx_rst_counter(ADC3ADDR);
-  v7xx_rst_counter(ADC4ADDR);
-  v7xx_rst_counter(ADC5ADDR);
-  // v7xx_rst_counter(ADC6ADDR);
+  /* v7xx_rst_counter(ADC3ADDR); */
+  /* v7xx_rst_counter(ADC4ADDR); */
+  /* v7xx_rst_counter(ADC5ADDR); */
+  /* v7xx_rst_counter(ADC6ADDR); */
   // v7xx_rst_counter(ADC7ADDR);
   
   v7xx_clear(ADC0ADDR);
   v7xx_clear(ADC1ADDR);
   v7xx_clear(ADC2ADDR);
-  v7xx_clear(ADC3ADDR);
-  v7xx_clear(ADC4ADDR);
-  v7xx_clear(ADC5ADDR);
-  // v7xx_clear(ADC6ADDR);
+  /* v7xx_clear(ADC3ADDR); */
+  /* v7xx_clear(ADC4ADDR); */
+  /* v7xx_clear(ADC5ADDR); */
+  /* v7xx_clear(ADC6ADDR); */
   // v7xx_clear(ADC7ADDR);
 
   // 以上部分用户需要修改
@@ -67,7 +63,7 @@ void start(void){
   
   // 有 V1190/V1290 插件
   // 每个插件单独clear
-  v1190_clear(V1x90ADDR0);
+  // v1190_clear(V1x90ADDR0);
   // v1290_clear(V1x90ADDR1);
 
   // v1190_clear(V1x90ADDR0);
@@ -83,11 +79,11 @@ void start(void){
   // 以下部分用户需要修改
   
   // 有 MADC32 插件
-  madc32_mclear(MSTMDCADDR);
-  madc32_mirq_level(MSTMDCADDR,0);
-  madc32_mreset_ctra_counters(MSTMDCADDR);
-  madc32_mfifo_reset(MSTMDCADDR);
-  madc32_mstart_acq(MSTMDCADDR);
+  // madc32_mclear(MSTMDCADDR);
+  // madc32_mirq_level(MSTMDCADDR,0);
+  // madc32_mreset_ctra_counters(MSTMDCADDR);
+  // madc32_mfifo_reset(MSTMDCADDR);
+  // madc32_mstart_acq(MSTMDCADDR);
 
 
   // 也可以采用以下方式每个插件单独设置
@@ -107,24 +103,36 @@ void start(void){
 
 
   // ==================
-
+#ifdef V7XXINTERRUPT
   v7xx_intlevel(ADC0ADDR, intlevel);
-  vme_define_intlevel(intlevel);
-  vme_enable_interrupt();
-
-  //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-  // 以下部分用户需要修改
-
-  // 硬件busy / 软件busy中的多机箱同步
-  // vx718_clear_ioport(3);
+#endif
+#ifdef SCAINTERRUPT
+  v830_fulllevel(SCAADDR0,9);//herder+8ch
+  v830_intlevel(SCAADDR0, intlevel);
+#endif
+#ifdef V1X90INTERRUPT
+  v1190_intlevel(V1x90ADDR0, intlevel);
+#endif
+#ifdef MADC32INTERRUPT
+  madc32_irq_level(MADC0ADDR, intlevel);
+#endif
   
+  vme_define_intlevel(intlevel);
+  vme_enable_interrupt(); 
+
+
+#ifdef SOFTWAREBUSY
   // 软件busy
   vx718_pulse_ioport(4);
+#ifdef SOFTWAREBUSYMULTICRATE
+  // 软件busy中的多机箱同步
+  vx718_clear_ioport(3);
+#endif
+#else
+  // 硬件busy 
+  vx718_clear_ioport(3);
+#endif
 
-
-  
-  // 以上部分用户需要修改
-  //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
   
   printf("Start\n");
 }

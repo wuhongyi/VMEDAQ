@@ -6,14 +6,10 @@ void clear(void){
   // vx718_clear_ioport(2);
   //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-   
-  //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-  // 以下部分用户需要修改
-  
+#ifdef SOFTWAREBUSY
   // 软件busy
   vx718_pulse_ioport(4);
-
-  // 以上部分用户需要修改
-  //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
+#endif   
+ 
 }
 

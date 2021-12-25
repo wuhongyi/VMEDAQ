@@ -4,9 +4,9 @@
 .. Author: Hongyi Wu(吴鸿毅)
 .. Email: wuhongyi@qq.com 
 .. Created: 一 12月  3 11:03:17 2018 (+0800)
-.. Last-Updated: 四 5月 14 16:07:39 2020 (+0800)
+.. Last-Updated: 六 12月 25 23:03:47 2021 (+0800)
 ..           By: Hongyi Wu(吴鸿毅)
-..     Update #: 12
+..     Update #: 14
 .. URL: http://wuhongyi.cn 
 
 =================================
@@ -56,29 +56,53 @@ babies/bbmodules.h
   // 以上部分用户需要修改
   //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-
-
----------------------------------
-babies/start.c
----------------------------------
-
-**根据文件内提示设置，有该类型插件则开启对应代码，开启对应类型 busy 代码。其它不要修改。**
-
-
-**busy 模式**
-
+  
 如果您使用软件 busy 模式时，则开启以下代码行，如果您使用硬件 busy 模式时，则注释掉以下行代码。
 
 .. code:: cpp
 
   //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
   // 以下部分用户需要修改
-  
-  // 软件busy
-  v2718_init_ioport(4,0,0);
-
+   
+  #define SOFTWAREBUSY
+   
   // 以上部分用户需要修改
   //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
+
+如果您使用常规的busy模式，且需要多个机箱同步运行，则开启以下代码，否则注释掉
+
+.. code:: cpp
+
+  //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
+  // 以下部分用户需要修改
+   
+  #define SOFTWAREBUSYMULTICRATE
+   
+  // 以上部分用户需要修改
+  //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
+
+
+选择合适的插件类型作为 INTERRUPT 源，以下4行代码仅能开启一个。选择的依据是系统中的模块在一个事件中，谁最后完成数据的 MEB 写入，这样能够避免有些模块已经开始读取数据，而一些模块数据还未转换结束。当有 v7xx 模块时，默认选择该类型模块，如果系统有 MADC32 时，需要考虑读取它之前是否完成数据的转换。
+
+.. code:: cpp
+
+  //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
+  // 以下部分用户需要修改
+   
+  #define V7XXINTERRUPT
+  // #define SCAINTERRUPT
+  // #define MADC32INTERRUPT
+  // #define V1X90INTERRUPT
+   
+  // 以上部分用户需要修改
+  //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
+
+
+---------------------------------
+babies/start.c
+---------------------------------
+
+**根据文件内提示设置，有该类型插件则开启对应代码。其它不要修改。**
 
 
 
@@ -228,35 +252,7 @@ babies/start.c
 
 用户需要修改以上代码段，如果您不使用 MADC32 模块，则注释掉以上区域的代码。如果您使用了 MADC32 模块，不管使用了多少个模块，只需要开启以上代码即可对所有的模块完成初始化。
 
-**busy 模式**
 
-.. code:: cpp
-
-  //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-  // 以下部分用户需要修改
-
-  // 硬件busy / 软件busy中的多机箱同步
-  // v2718_clear_ioport(3);
-  
-  // 软件busy
-  v2718_pulse_ioport(4);
-  
-  // 以上部分用户需要修改
-  //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-  
-如果您是软件 busy 模式，则开启代码：
-
-.. code:: cpp
-
-   v2718_pulse_ioport(4);
-
-如果您是硬件 busy 模式或者软件 busy 模式下的多机箱同步方案下，则需要开启代码：
-  
-.. code:: cpp
-
-   v2718_clear_ioport(3);
-
-   
 
 ---------------------------------
 babies/evt.c
@@ -283,24 +279,56 @@ babies/evt.c
 当然，在软件 busy 模式下，对每个模块的寄存器进行相应的寄存器配置，可以不用以上清除指令自动进行清除，此时每个事件能够节约 20 us 左右的时间，该方案建议对 DAQ 比较熟悉的用户使用。
 
 
----------------------------------
-babies/clear.c
----------------------------------
-
-**根据文件内提示设置，有该类型插件则开启对应代码，开启对应类型 busy 代码。其它不要修改。**
-
-如果您使用软件 busy 模式时，则开启以下代码行，如果您使用硬件 busy 模式时，则注释掉以下行代码。
+当系统中有两个及以上模块时。采用 CBLT 方式读取数据，这是最高效的数据读取方式。但是当系统中只有一个模块时，则注释掉 CBLT 的数据读取，开启对应插件的读取。
 
 .. code:: cpp
 
   //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
   // 以下部分用户需要修改
+
+  // Read data 
+  babies_init_segment(MKSEGID(0, 0, PLAQ, CBLT));
+  #ifdef V7XXINTERRUPT
+  v7xx_dmasegdata(MSTTDCADDR, 4000);
+  #endif
+  #ifdef SCAINTERRUPT
+  usleep(10);
+  v830_dmasegdata(MSTTDCADDR, 4000);
+  #endif
+  #ifdef V1X90INTERRUPT
+  v1190_dmasegdata(MSTTDCADDR, 4000);
+  #endif
+  #ifdef MADC32INTERRUPT
+  madc32_dmasegdata(MSTTDCADDR, 4000);
+  #endif
+  babies_end_segment();
   
-  // 软件busy
-  v2718_pulse_ioport(4);
+
+  // 插件
+  // babies_init_segment(MKSEGID(0, 0, PLAQ, V785));
+  // v7xx_dmasegdata(ADC0ADDR, 34);
+  // babies_end_segment();
+
+  // babies_init_segment(MKSEGID(0, 0, PLAQ, V830));
+  // v830_dmasegdata(SCAADDR0, 34);
+  // babies_end_segment();
+
+  // babies_init_segment(MKSEGID(0, 0, PLAQ, V1190));//V1290
+  // v1190_dmasegdata(V1x90ADDR0, 1000);
+  // babies_end_segment();
+
+  // babies_init_segment(MKSEGID(0, 0, PLAQ, MADC));
+  // madc32_dmasegdata(MADC0ADDR, 34);
+  // babies_end_segment();  
 
   // 以上部分用户需要修改
   //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
+  
+
+
+
+
+
 
 	  
 ---------------------------------
@@ -325,27 +353,12 @@ babies/stop.c
 用户需要修改以上代码段，如果您不使用 MADC32 模块，则注释掉以上区域的代码。如果您使用了 MADC32 模块，不管使用了多少个模块，只需要开启以上代码即可对所有的模块发送结束采集指令。
 
 
-**busy 模式**
-
-如果您是硬件 busy 模式或者软件 busy 模式下的多机箱同步方案下，则需要开启代码，否则注释掉以下代码：
-  
-.. code:: cpp
-
-  //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-  // 以下部分用户需要修改
-  
-  // 硬件busy / 软件busy多机箱同步
-  // v2718_set_ioport(3);
-
-  // 以上部分用户需要修改
-  //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-
 
 ---------------------------------
 cmdvme/cmdvme.c
 ---------------------------------
 
-如果使用制器器 V1718，则需要修改文件中以下代码。将 *V2718* 改为 *V1718* 即可。
+如果使用控制器 V1718，则需要修改文件中以下代码。将 *V2718* 改为 *V1718* 即可。
 
 .. code:: cpp
 

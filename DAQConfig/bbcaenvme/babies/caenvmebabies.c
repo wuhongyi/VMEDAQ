@@ -107,7 +107,9 @@ void evtloop(void){
       //      v1290_clear(V1190ADDR0);
       //      v7xx_clear(ADC1ADDR);
 
+/* #ifdef SOFTWAREBUSY */
       vme_enable_interrupt();
+/* #endif   */    
       clear();
 
       break;

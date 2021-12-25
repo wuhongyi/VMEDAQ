@@ -7,6 +7,15 @@
 
 #define V2718   //如果使用 V1718 则注释本行
 
+#define SOFTWAREBUSY   // 如果定义该变量，则启用常规模式。如果该变量被注释，则采用硬件busy模式。
+// #define SOFTWAREBUSYMULTICRATE   // 多机箱且使用常规模式，开启该变量定义
+
+
+#define V7XXINTERRUPT
+// #define SCAINTERRUPT
+// #define MADC32INTERRUPT
+// #define V1X90INTERRUPT
+
 // 以上部分用户需要修改
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 #define DBUFF

@@ -76,6 +76,12 @@ void v830_intlevel(unsigned int maddr,short level){
    vwrite16(maddr+V830_INTERRUPT_LEVEL,&level);
 }
 
+
+void v830_fulllevel(unsigned int maddr, short level)
+{
+  vwrite16(maddr+V830_ALMOST_FULL_LEVEL,&level);
+}
+
 /*
 int v830_ridf_ncscaler(unsigned int maddr){
    volatile int i;

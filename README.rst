@@ -4,9 +4,9 @@
 .. Author: Hongyi Wu(吴鸿毅)
 .. Email: wuhongyi@qq.com 
 .. Created: 六 8月  5 12:10:59 2017 (+0800)
-.. Last-Updated: 四 7月 29 22:12:18 2021 (+0800)
+.. Last-Updated: 六 12月 25 23:04:33 2021 (+0800)
 ..	     By: Hongyi Wu(吴鸿毅)
-..     Update #: 34
+..     Update #: 35
 .. URL: http://wuhongyi.cn 
 
 .. 请勿修改主目录下的 README.rst，该文件 由 README/source/README.rst 复制生成。
@@ -44,7 +44,7 @@
 准预览版本
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**准预览版本 2021.07.29**  
+**准预览版本 2021.12.25**  
 
 程序下载请访问:  `VMEDAQ <https://github.com/wuhongyi/VMEDAQ>`_ 
 
