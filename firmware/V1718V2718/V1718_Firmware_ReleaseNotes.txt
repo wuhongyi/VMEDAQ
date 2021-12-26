@@ -2,12 +2,12 @@
 C.A.E.N. S.p.A.  -  Viareggio
 
 This file describes the revision history of the FPGA codes (firmware) for the 
-CAEN's VME bridge (V2718 and V1718).
+CAEN's VME bridge V1718.
 
 
 
 ###############################################################################
-Motherboard of V1718/V2718
+Board: V1718
 File name : v1718vub_RevX.Y.rbf   (where X.Y is the revision number)
 ###############################################################################
 
@@ -223,72 +223,9 @@ Rev. 2.18 (26/10/21)
 1) Fixed bug on the bus release after a berr
 
 
-###############################################################################
-Piggy Back Board A2719 (only for V2718)
-File name : a2719ci_RevX.Y.rbf   (where X.Y is the revision number)
-###############################################################################
+How to get support
+------------------
 
-
-Rev 0.0 (26/07/04)
--------------------------------------------------------------------------------
-
-Rev 0.1 (02/09/04)
--------------------------------------------------------------------------------
-1) Bug fixed in VME D16/D08 single read access.
-
-Rev 0.2 (27/09/04)
--------------------------------------------------------------------------------
-1) Interrupt transfer from VME to PCI implemented at hardware level.
-
-
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! WARNING !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-The revision 0.2 and older are only compatible with the software release 1.2 
-and older. 
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-
-Rev 0.3 (03/11/04)
--------------------------------------------------------------------------------
-1) Changed the data transfer protocol for the internal register read cycle.
-2) Bug fixed in BLT with certain size and with very fast slaves.
-
-Rev 0.4 (06/12/04)
--------------------------------------------------------------------------------
-1) Changed the VME interrupt transfer from V2718 to A2818 (this modification
-   is transparent to the user).
-
-Rev 0.5 (19/01/05)
--------------------------------------------------------------------------------
-1) Added Optical Link LED driving signal for the 9U version (it must work with 
-   Rev 2.01 of the V1718VUB)
-
-
-Rev 1.0 (01/01/11)
--------------------------------------------------------------------------------
-
-! CONET 2 Protocol Installed
-	
-!!CONET 2 revisions are NOT backcompatible with CONET 1 previous revisions!!
-!!CONET 1 revisions won't be supported anymore!!
-
-Rev 1.1 (12/01/12)
--------------------------------------------------------------------------------
-- CONET2 compliant
-1) Fixed bug causing some problems in VME interrupt handling
-
-Rev 1.2 ( - )
--------------------------------------------------------------------------------
-Not documented
-
-Rev 1.3 (04/12/12)
--------------------------------------------------------------------------------
-1) Fixed bug causing some problems in VME interrupt handling
-2) Fixed bug causing optical link communication error with particular data pattern
-
-Rev 1.4 (07/03/13)
--------------------------------------------------------------------------------
-1) Fixed bug causing communication problems between the V2718 and the A3818/A2818
-
-Rev 1.5 (30/08/13)
--------------------------------------------------------------------------------
-1) Fixed potential timing problems
+Our Software Support Group is available for questions, support and any other 
+software related issue concerning CAEN products; for software support
+visit the page https://www.caen.it/support-services/support-form/

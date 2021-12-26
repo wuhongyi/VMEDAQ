@@ -4,9 +4,9 @@
 .. Author: Hongyi Wu(吴鸿毅)
 .. Email: wuhongyi@qq.com 
 .. Created: 六 8月  5 12:10:59 2017 (+0800)
-.. Last-Updated: 六 12月 25 23:04:33 2021 (+0800)
+.. Last-Updated: 日 12月 26 15:31:30 2021 (+0800)
 ..	     By: Hongyi Wu(吴鸿毅)
-..     Update #: 35
+..     Update #: 36
 .. URL: http://wuhongyi.cn 
 
 .. 请勿修改主目录下的 README.rst，该文件 由 README/source/README.rst 复制生成。
@@ -44,7 +44,7 @@
 准预览版本
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**准预览版本 2021.12.25**  
+**准预览版本 2021.12.26**  
 
 程序下载请访问:  `VMEDAQ <https://github.com/wuhongyi/VMEDAQ>`_ 
 
@@ -61,7 +61,7 @@
 - `李智焕 <https://github.com/zhihuanli>`_ 
 - `李晶 <https://github.com/nijinger>`_ 
 - 臧宏亮
-- 吴鸿毅(wuhongyi@qq.com / wuhongyi@pku.edu.cn)
+- `吴鸿毅 <https://github.com/wuhongyi>`_ (wuhongyi@qq.com / wuhongyi@pku.edu.cn)
 
 说明书贡献者：
 
@@ -77,7 +77,7 @@
 ---------------------------------
 
 - 本获取经过 Scientific Linux 6/7 系统测试。即将进行 Ubuntu 20.04 测试。
-- 程序默认支持控制器CAEN V1718/V2718，CAEN V830 Scaler，CAEN V7xx 系列 ADC/QDC/TDC，CAENV1190/V1290 TDC，MESYTEC MADC32  
+- 程序默认支持控制器 CAEN V1718/V2718，CAEN V830 Scaler，CAEN V7xx 系列 ADC/QDC/TDC，CAENV1190/V1290 TDC，MESYTEC MADC32  
 - 支持多个机箱同步获取。将插件分散在多个机箱，可大大减少数据传输的死时间。
 - 本获取分软件 busy 跟硬件 busy 两种模式。
 - 对软件 busy 模式

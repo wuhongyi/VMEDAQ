@@ -4,9 +4,9 @@
 .. Author: Hongyi Wu(吴鸿毅)
 .. Email: wuhongyi@qq.com 
 .. Created: 一 12月  3 10:24:55 2018 (+0800)
-.. Last-Updated: 六 12月 28 20:42:33 2019 (+0800)
+.. Last-Updated: 日 12月 26 15:32:38 2021 (+0800)
 ..           By: Hongyi Wu(吴鸿毅)
-..     Update #: 23
+..     Update #: 27
 .. URL: http://wuhongyi.cn 
 
 =================================
@@ -24,6 +24,7 @@
 本获取要求 CERN ROOT 5/6，建议优先选择 ROOT 6。
 
 如果没有合适的系统，可参考我们的获取系统安装 `Install Scientific 7 <http://wuhongyi.cn/CodeProject/ScientisicLinux72.html>`_ 。安装好系统之后，还需要对基础依赖工具做一些安装及升级，可以下载执行 `自动化安装脚本 <https://github.com/wuhongyi/BasicConfiguration>`_ 自动配置或者按照教程手动安装。
+
 
 ----
 
@@ -43,6 +44,13 @@ CAEN Lib
    sh setup.sh    #需要ROOT权限
 
 
+- CAENVMELib-3.3.0-build20210806.tgz
+   - 在 Centos 7 下测试存在问题，判断是中断请求问题
+   - 问题应该在于 A2818 驱动版本太低，说明书中要求版本大于等于 6.3.1，而实际最新版本只有 1.23
+- CAENVMELib-2.50.tgz
+   - 推荐使用
+
+   
 ---------------------------------
 检查CAENVMELib安装
 ---------------------------------
@@ -88,6 +96,16 @@ V1718
 ---------------------------------
 A2818驱动
 ---------------------------------
+
+- A2818Drv-1.20.tgz
+   - 测试正常
+- A2818Drv-1.21.tgz
+   - 测试正常     
+- A2818Drv-1.22.tgz
+   - 在 Centos 7 下编译无法通过
+- A2818Drv-1.23.tgz
+   - 测试正常，推荐使用
+     
 
 如果您使用 A2818，则安装以下驱动。
 

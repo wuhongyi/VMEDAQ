@@ -8,7 +8,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>软件安装 &mdash; VMEDAQ 2020.05.13 文档</title>
+  <title>软件安装 &mdash; VMEDAQ 20211226 文档</title>
   
 
   
@@ -218,6 +218,23 @@
 sh setup.sh    <span class="c1">#需要ROOT权限</span>
 </pre></div>
 </div>
+<ul class="simple">
+<li><dl class="simple">
+<dt>CAENVMELib-3.3.0-build20210806.tgz</dt><dd><ul>
+<li><p>在 Centos 7 下测试存在问题，判断是中断请求问题</p></li>
+<li><p>问题应该在于 A2818 驱动版本太低，说明书中要求版本大于等于 6.3.1，而实际最新版本只有 1.23</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>CAENVMELib-2.50.tgz</dt><dd><ul>
+<li><p>推荐使用</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
 </section>
 <section id="caenvmelib">
 <h2>检查CAENVMELib安装<a class="headerlink" href="#caenvmelib" title="永久链接至标题">¶</a></h2>
@@ -248,6 +265,36 @@ make install     <span class="c1">#需要ROOT权限</span>
 </section>
 <section id="a2818">
 <h2>A2818驱动<a class="headerlink" href="#a2818" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li><dl class="simple">
+<dt>A2818Drv-1.20.tgz</dt><dd><ul>
+<li><p>测试正常</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>A2818Drv-1.21.tgz</dt><dd><ul>
+<li><p>测试正常</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>A2818Drv-1.22.tgz</dt><dd><ul>
+<li><p>在 Centos 7 下编译无法通过</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>A2818Drv-1.23.tgz</dt><dd><ul>
+<li><p>测试正常，推荐使用</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
 <p>如果您使用 A2818，则安装以下驱动。</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># A2818Drv-1.20-build20161118.tgz</span>
 <span class="c1">#将该文件夹复制到 /opt 并安装在该位置</span>
@@ -388,7 +435,7 @@ systemctl <span class="nb">enable</span> iptables.service <span class="c1">#设�
 
   <div role="contentinfo">
     <p>
-        &#169; 版权所有 2020, Hongyi Wu(吴鸿毅).
+        &#169; 版权所有 2021, Hongyi Wu(吴鸿毅).
 
     </p>
   </div>
