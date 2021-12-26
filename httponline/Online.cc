@@ -20,18 +20,19 @@
 
 #include <signal.h>
 #include <iostream>
-using namespace std;
 
 //function to exit loop at keyboard interrupt
 bool stoploop = false;
-void stop_interrupt()
+void stop_interrupt(int sig)
 {
   std::cout<<"keyboard interrupt"<<std::endl;
+  if(stoploop) gSystem->Exit(0);
+  stoploop = true;
 }
 
 void Online()
 {
-  //signal(SIGINT,stop_interrupt); //this function has some bug, when you wnat to stop the loop in root use crtl+c
+  signal(SIGINT,stop_interrupt);
 
   gSystem->Load("libanacore.so");//load lib of ana root
   gSystem->Load("libanaroot.so");
@@ -57,9 +58,9 @@ void Online()
   //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
   // v7xx
+#ifdef V7XX_CRATE
   TH2I *v7xx[12];
   TH1I *v7xxspe[12][32];
-#ifdef V7XX_CRATE
   for (int i = 0; i < V7XX_CRATE_NUM; ++i)
     {
       v7xx[i] = new TH2I(TString::Format("v7xx%02d",i).Data(),"V7XX",V7XX_HIST_BIN,V7XX_HIST_MIN,V7XX_HIST_MAX,32,-0.5,31.5);
@@ -74,9 +75,9 @@ void Online()
 #endif
   
   // madc32
+#ifdef MADC_CRATE
   TH2I *madc[12];
-  TH1I *madcspe[12][32];
-#ifdef MADC_CRATE  
+  TH1I *madcspe[12][32];  
   for (int i = 0; i < MADC_CRATE_NUM; ++i)
     {
       madc[i] = new TH2I(TString::Format("madc%02d",i).Data(),"MADC32",MADC_HIST_BIN,MADC_HIST_MIN,MADC_HIST_MAX,32,-0.5,31.5);
@@ -91,9 +92,9 @@ void Online()
 #endif
   
   // v1190
-  TH2I *v1190[12];
-  TH1I *v1190spe[12][128];
 #ifdef V1190_CRATE
+  TH2I *v1190[12];
+  TH1I *v1190spe[12][128];  
   for (int i = 0; i < V1190_CRATE_NUM; ++i)
     {
       v1190[i] = new TH2I(TString::Format("v1190_%02d",i).Data(),"V1190",128,-0.5,127.5,V1190_HIST_BIN,V1190_HIST_MIN,V1190_HIST_MAX);
@@ -108,9 +109,9 @@ void Online()
 #endif  
   
   //v1290
-  TH2I *v1290[12];
-  TH1I *v1290spe[12][32];
 #ifdef V1290_CRATE
+  TH2I *v1290[12];
+  TH1I *v1290spe[12][32];  
   for (int i = 0; i < V1290_CRATE_NUM; ++i)
     {
       v1290[i] = new TH2I(TString::Format("v1290_%02d",i).Data(),"V1290",32,-0.5,31.5,V1290_HIST_BIN,V1290_HIST_MIN,V1290_HIST_MAX);
