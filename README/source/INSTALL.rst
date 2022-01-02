@@ -4,9 +4,9 @@
 .. Author: Hongyi Wu(吴鸿毅)
 .. Email: wuhongyi@qq.com 
 .. Created: 一 12月  3 10:24:55 2018 (+0800)
-.. Last-Updated: 日 12月 26 15:32:38 2021 (+0800)
+.. Last-Updated: 五 12月 31 14:23:56 2021 (+0800)
 ..           By: Hongyi Wu(吴鸿毅)
-..     Update #: 27
+..     Update #: 28
 .. URL: http://wuhongyi.cn 
 
 =================================
@@ -137,6 +137,31 @@ A2818驱动
    a2818:   CAEN A2818 Loaded.
    a2818:   CAEN A2818: 1 device(s) found.
 
+
+**Centos7**
+   
+.. code:: bash
+
+   make -C /lib/modules/3.10.0-1160.el7.x86_64/build M=/opt/A2818Drv-1.23 LDDINCDIR=/opt/A2818Drv-1.23/../include modules
+   make[1]: 进入目录“/usr/src/kernels/3.10.0-1160.el7.x86_64”
+arch/x86/Makefile:166: *** CONFIG_RETPOLINE=y, but not supported by the compiler. Compiler update recommended.。 停止。
+   make[1]: 离开目录“/usr/src/kernels/3.10.0-1160.el7.x86_64”
+
+
+
+以上为错误发生时候的输出提示。
+
+此时，用户可以修改 **/usr/src/kernels/3.10.0-1160.el7.x86_64/arch/x86/Makefile** 文件，通过注释以下代码来避免这个错误发生。
+
+.. code:: bash	
+
+    ifneq ($(RETPOLINE_CFLAGS),)
+        KBUILD_CFLAGS += $(RETPOLINE_CFLAGS) -DRETPOLINE
+    else
+        $(error CONFIG_RETPOLINE=y, but not supported by the compiler. Compiler update recommended.)
+    endif
+
+   
 
 ----
 

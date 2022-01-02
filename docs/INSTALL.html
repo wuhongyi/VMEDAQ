@@ -106,7 +106,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#a3818">A3818驱动</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#riken-babirl">RIKEN babirl</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#babicon">初始化babicon</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id4">防火墙设置</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id6">防火墙设置</a></li>
 </ul>
 </li>
 </ul>
@@ -320,6 +320,24 @@ a2818:   CAEN A2818 Loaded.
 a2818:   CAEN A2818: <span class="m">1</span> device<span class="o">(</span>s<span class="o">)</span> found.
 </pre></div>
 </div>
+<p><strong>Centos7</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make -C /lib/modules/3.10.0-1160.el7.x86_64/build <span class="nv">M</span><span class="o">=</span>/opt/A2818Drv-1.23 <span class="nv">LDDINCDIR</span><span class="o">=</span>/opt/A2818Drv-1.23/../include modules
+make<span class="o">[</span><span class="m">1</span><span class="o">]</span>: 进入目录“/usr/src/kernels/3.10.0-1160.el7.x86_64”
+</pre></div>
+</div>
+<dl class="simple">
+<dt>arch/x86/Makefile:166: <a href="#id4"><span class="problematic" id="id5">**</span></a>* CONFIG_RETPOLINE=y, but not supported by the compiler. Compiler update recommended.。 停止。</dt><dd><p>make[1]: 离开目录“/usr/src/kernels/3.10.0-1160.el7.x86_64”</p>
+</dd>
+</dl>
+<p>以上为错误发生时候的输出提示。</p>
+<p>此时，用户可以修改 <strong>/usr/src/kernels/3.10.0-1160.el7.x86_64/arch/x86/Makefile</strong> 文件，通过注释以下代码来避免这个错误发生。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ifneq <span class="o">(</span><span class="k">$(</span>RETPOLINE_CFLAGS<span class="k">)</span>,<span class="o">)</span>
+    <span class="nv">KBUILD_CFLAGS</span> <span class="o">+=</span> <span class="k">$(</span>RETPOLINE_CFLAGS<span class="k">)</span> -DRETPOLINE
+<span class="k">else</span>
+    <span class="k">$(</span>error <span class="nv">CONFIG_RETPOLINE</span><span class="o">=</span>y, but not supported by the compiler. Compiler update recommended.<span class="k">)</span>
+endif
+</pre></div>
+</div>
 </section>
 <hr class="docutils" />
 <section id="a3818">
@@ -398,8 +416,8 @@ setclinfo <span class="m">0</span> id  <span class="m">0</span>
 <img alt="_images/babicon_setting.png" src="_images/babicon_setting.png" />
 </section>
 <hr class="docutils" />
-<section id="id4">
-<h2>防火墙设置<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<section id="id6">
+<h2>防火墙设置<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
 <p>将共享数据发送到 Online 电脑，需要做以下设置或者关闭防火墙</p>
 <p>对Scientific Linux 6，终端 ROOT 权限下输入 <strong>setup</strong> ，选择 <strong>防火墙配置</strong> ，去掉 <strong>启用</strong> 。
 对cientific Linux 7，ROOT 权限下终端输入以下信息关闭 firewall</p>
