@@ -190,7 +190,65 @@
   <section id="r2root">
 <h1>r2root<a class="headerlink" href="#r2root" title="永久链接至标题">¶</a></h1>
 <p>仅仅需要修改插件定义即可，无需修改其它代码。</p>
-<p>修改文件 UserDefine.hh，按照提示修改即可。</p>
+<p>修改文件 <strong>UserDefine.hh</strong> ，按照提示修改即可。</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#define ROOTFILEPATH &quot;/home/wuhongyi/data/rootfile/&quot;</span>
+<span class="cp">#define RAWFILEPATH &quot;/home/wuhongyi/data/&quot;</span>
+<span class="cp">#define RAWFILENAME &quot;data&quot;</span>
+
+<span class="c1">// RAWFILEPATH 原始数据路径</span>
+<span class="c1">// RAWFILENAME 原始数据文件名</span>
+<span class="c1">// ROOTFILEPATH 生成的 ROOT 文件的存放位置</span>
+</pre></div>
+</div>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// scaler</span>
+<span class="cp">#define v830_r2root </span><span class="c1">//没有该插件则注释本行</span>
+<span class="cp">#define v830num 1</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">v830geo</span><span class="p">[</span><span class="n">v830num</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">30</span><span class="p">};</span><span class="c1">//元素个数必须与 v830num 一致</span>
+
+
+<span class="c1">// adc</span>
+<span class="cp">#define v785_r2root </span><span class="c1">//没有该插件则注释本行</span>
+<span class="cp">#define v785num 1</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">v785geo</span><span class="p">[</span><span class="n">v785num</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">0</span><span class="p">};</span><span class="c1">//元素个数必须与 v785num 一致</span>
+
+
+<span class="c1">// qdc</span>
+<span class="cp">#define v792_r2root </span><span class="c1">//没有该插件则注释本行</span>
+<span class="cp">#define v792num 1</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">v792geo</span><span class="p">[</span><span class="n">v792num</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">};</span><span class="c1">//元素个数必须与 v792num 一致</span>
+
+
+<span class="c1">// tdc</span>
+<span class="cp">#define v775_r2root </span><span class="c1">//没有该插件则注释本行</span>
+<span class="cp">#define v775num 1</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">v775geo</span><span class="p">[</span><span class="n">v775num</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">2</span><span class="p">};</span><span class="c1">//元素个数必须与 v775num 一致</span>
+
+
+<span class="c1">// gdc</span>
+<span class="cp">#define v1x90_r2root </span><span class="c1">//没有该插件则注释本行</span>
+<span class="cp">#define v1x90num 2</span>
+<span class="cp">#define v1x90multi 5 </span><span class="c1">//gdc 数组第三维度</span>
+<span class="cp">#define v1x90hitmax 3000</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">v1x90geo</span><span class="p">[</span><span class="n">v1x90num</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">20</span><span class="p">,</span><span class="mi">21</span><span class="p">};</span><span class="c1">//元素个数必须与 v1x90num 一致</span>
+
+
+<span class="c1">// madc</span>
+<span class="cp">#define madc32_r2root </span><span class="c1">//没有该插件则注释本行</span>
+<span class="cp">#define madc32num 2</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">madc32geo</span><span class="p">[</span><span class="n">madc32num</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">10</span><span class="p">,</span><span class="mi">11</span><span class="p">};</span><span class="c1">//元素个数必须与 madc32num 一致</span>
+</pre></div>
+</div>
+<p>修改文件 <strong>UserDefine.hh</strong> 之后，按照以下指令进行编译</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make clean
+make
+<span class="c1"># 编译成功会在目录中生成可执行文件 convert</span>
+
+<span class="c1"># 数据转换指令</span>
+./convert <span class="o">[</span>run number<span class="o">]</span>
+<span class="c1"># 其中 [run number] 为要转换的文件编号，例如转换编号为 652 的文件命令如下</span>
+./convert <span class="m">652</span>
+</pre></div>
+</div>
 </section>
 
 

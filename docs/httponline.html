@@ -190,6 +190,52 @@
   <section id="httponline">
 <h1>httponline<a class="headerlink" href="#httponline" title="永久链接至标题">¶</a></h1>
 <p>基于网页的在线监视。</p>
+<p>仅仅需要修改插件定义即可，无需修改其它代码。</p>
+<p>修改文件 <strong>UserDefine.hh</strong> ，按照提示修改即可。</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// V7XX</span>
+<span class="cp">#define V7XX_CRATE </span><span class="c1">//没有该插件则注释本行</span>
+<span class="cp">#define V7XX_CRATE_NUM 3  </span><span class="c1">//插件数</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">V7XX_CRATE_GEO</span><span class="p">[</span><span class="n">V7XX_CRATE_NUM</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">};</span><span class="w"></span>
+<span class="cp">#define V7XX_HIST_BIN 4200</span>
+<span class="cp">#define V7XX_HIST_MIN 0</span>
+<span class="cp">#define V7XX_HIST_MAX 4200</span>
+
+<span class="c1">// MADC</span>
+<span class="cp">#define MADC_CRATE </span><span class="c1">//没有该插件则注释本行</span>
+<span class="cp">#define MADC_CRATE_NUM 2  </span><span class="c1">//插件数</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">MADC_CRATE_GEO</span><span class="p">[</span><span class="n">MADC_CRATE_NUM</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">10</span><span class="p">,</span><span class="mi">11</span><span class="p">};</span><span class="w"></span>
+<span class="cp">#define MADC_HIST_BIN 2000</span>
+<span class="cp">#define MADC_HIST_MIN 0</span>
+<span class="cp">#define MADC_HIST_MAX 8000</span>
+
+<span class="c1">// V1190</span>
+<span class="cp">#define V1190_CRATE </span><span class="c1">//没有该插件则注释本行</span>
+<span class="cp">#define V1190_CRATE_NUM 1  </span><span class="c1">//插件数</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">V1190_CRATE_GEO</span><span class="p">[</span><span class="n">V1190_CRATE_NUM</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">20</span><span class="p">};</span><span class="w"></span>
+<span class="cp">#define V1190_HIST_BIN 5000</span>
+<span class="cp">#define V1190_HIST_MIN 0</span>
+<span class="cp">#define V1190_HIST_MAX 50000</span>
+
+<span class="c1">// V1290</span>
+<span class="cp">#define V1290_CRATE </span><span class="c1">//没有该插件则注释本行</span>
+<span class="cp">#define V1290_CRATE_NUM 1  </span><span class="c1">//插件数</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">V1290_CRATE_GEO</span><span class="p">[</span><span class="n">V1290_CRATE_NUM</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">21</span><span class="p">};</span><span class="w"></span>
+<span class="cp">#define V1290_HIST_BIN 5000</span>
+<span class="cp">#define V1290_HIST_MIN 0</span>
+<span class="cp">#define V1290_HIST_MAX 500000</span>
+</pre></div>
+</div>
+<p>修改文件 <strong>UserDefine.hh</strong> 之后，按照以下指令进行编译</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make clean
+make
+<span class="c1"># 编译成功会在目录中生成可执行文件 online</span>
+
+<span class="c1"># 开启 http online 后台进程</span>
+./online
+<span class="c1"># 默认端口 8888，可通过 ip:8888 访问</span>
+<span class="c1"># 访问网页需要用户名/密码，其中 用户名 admin 密码 admin，拥有最高权限；用户名 guest 没有密码。仅可以查看</span>
+</pre></div>
+</div>
 </section>
 
 

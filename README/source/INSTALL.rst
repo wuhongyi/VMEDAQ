@@ -4,9 +4,9 @@
 .. Author: Hongyi Wu(吴鸿毅)
 .. Email: wuhongyi@qq.com 
 .. Created: 一 12月  3 10:24:55 2018 (+0800)
-.. Last-Updated: 五 12月 31 14:23:56 2021 (+0800)
+.. Last-Updated: 二 1月  4 11:23:02 2022 (+0800)
 ..           By: Hongyi Wu(吴鸿毅)
-..     Update #: 28
+..     Update #: 30
 .. URL: http://wuhongyi.cn 
 
 =================================
@@ -45,10 +45,9 @@ CAEN Lib
 
 
 - CAENVMELib-3.3.0-build20210806.tgz
-   - 在 Centos 7 下测试存在问题，判断是中断请求问题
-   - 问题应该在于 A2818 驱动版本太低，说明书中要求版本大于等于 6.3.1，而实际最新版本只有 1.23
+   - 该版本驱动存在问题，对 V1718/V2718 I/O寄存器控制存在bug
 - CAENVMELib-2.50.tgz
-   - 推荐使用
+   - 暂时推荐使用
 
    
 ---------------------------------
@@ -144,9 +143,8 @@ A2818驱动
 
    make -C /lib/modules/3.10.0-1160.el7.x86_64/build M=/opt/A2818Drv-1.23 LDDINCDIR=/opt/A2818Drv-1.23/../include modules
    make[1]: 进入目录“/usr/src/kernels/3.10.0-1160.el7.x86_64”
-arch/x86/Makefile:166: *** CONFIG_RETPOLINE=y, but not supported by the compiler. Compiler update recommended.。 停止。
+   arch/x86/Makefile:166: *** CONFIG_RETPOLINE=y, but not supported by the compiler. Compiler update recommended.。 停止。
    make[1]: 离开目录“/usr/src/kernels/3.10.0-1160.el7.x86_64”
-
 
 
 以上为错误发生时候的输出提示。
