@@ -1,4 +1,4 @@
-OBJS = online
+OBJS = httponline
 sourcefile = Online.cc
 
 ROOTCFLAGS  = $(shell root-config --cflags)
