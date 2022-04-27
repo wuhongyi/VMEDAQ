@@ -2,8 +2,10 @@
 
 module load texlive/2019
 
-rm -rf ../docs/*
+rm -rf ../docs/doctrees/
+rm -rf ../docs/zh/*
 
+cp index.html ../docs/
 touch ../docs/.nojekyll
 
 make clean
@@ -11,8 +13,8 @@ make clean
 make html
 make latexpdf
 
-cp -r build/html/* ../docs/
-cp build/latex/vmedaq.pdf ../README.pdf
+cp -r build/html/* ../docs/zh/
+cp build/latex/vmedaq.pdf ../README_zh.pdf
 
 make clean
 
