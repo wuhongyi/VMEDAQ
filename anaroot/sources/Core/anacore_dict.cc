@@ -1,6 +1,7 @@
 // Do NOT change. Changes will be lost next time file is generated
 
 #define R__DICTIONARY_FILENAME anacore_dict
+#define R__NO_DEPRECATION
 
 /*******************************************************************/
 #include <stddef.h>
@@ -33,9 +34,6 @@
 
 #include "TDataMember.h"
 
-// Since CINT ignores the std namespace, we need to do so in this file.
-namespace std {} using namespace std;
-
 // Header files passed as explicit arguments
 #include "include/TArtDecoderCBLT.hh"
 #include "include/TArtDecoderFactory.hh"
@@ -43,15 +41,17 @@ namespace std {} using namespace std;
 #include "include/TArtDecoderFixed16.hh"
 #include "include/TArtCore.hh"
 #include "include/TArtDecoderLUPO.hh"
-#include "include/TArtDecoderAMTTDC.hh"
+#include "include/TArtReconstruction.hh"
 #include "include/TArtDecoderV1740.hh"
+#include "include/TArtRawFADCDataObject.hh"
 #include "include/TArtRawDataObject.hh"
 #include "include/TArtSemaphore.hh"
 #include "include/TArtStoreManager.hh"
-#include "include/TArtDecoderV1190C.hh"
+#include "include/TArtEventInfo.hh"
 #include "include/TArtDecoderV7XX.hh"
 #include "include/TArtDecoderCTM405.hh"
-#include "include/TArtEventStore.hh"
+#include "include/TArtDecoderV767.hh"
+#include "include/TArtDecoderAMTTDC.hh"
 #include "include/TArtMath.hh"
 #include "include/TArtDecoderFixed32.hh"
 #include "include/TArtParserFactory.hh"
@@ -59,36 +59,37 @@ namespace std {} using namespace std;
 #include "include/TArtSharedMemory.hh"
 #include "include/TArtConfig.hh"
 #include "include/TArtDecoderA3100.hh"
-#include "include/TArtParser.hh"
+#include "include/segidlist.hh"
 #include "include/TArtDecoderMADC32.hh"
 #include "include/TArtSharedMemoryDataSource.hh"
 #include "include/TArtDecoderFixed24.hh"
 #include "include/TArtDecoderV1290.hh"
 #include "include/TArtDataObject.hh"
 #include "include/TArtDecoderV1190.hh"
-#include "include/TArtDecoderP716X.hh"
+#include "include/TArtEventStore.hh"
+#include "include/TArtDecoderP716XZ.hh"
 #include "include/TArtRawEventObject.hh"
-#include "include/TArtRawSegmentObject.hh"
 #include "include/TArtParserRDF.hh"
+#include "include/TArtParser.hh"
 #include "include/TArtDecoderV550.hh"
 #include "include/TArtDecoderDSP.hh"
 #include "include/TArtFileDataSource.hh"
 #include "include/TArtMap.hh"
-#include "include/TArtDecoderP716XZ.hh"
 #include "include/TArtDecoderAD413A.hh"
-#include "include/TArtRawFADCDataObject.hh"
+#include "include/TArtParserRIDF.hh"
 #include "include/TArtRawScalerObject.hh"
 #include "include/TArtDataSource.hh"
-#include "include/segidlist.hh"
-#include "include/TArtReconstruction.hh"
-#include "include/TArtDecoderV767.hh"
-#include "include/TArtEventInfo.hh"
+#include "include/TArtRawSegmentObject.hh"
 #include "include/TArtDecoderV830.hh"
-#include "include/TArtParserRIDF.hh"
 #include "include/TArtDecoderL3377d.hh"
+#include "include/TArtDecoderV1190C.hh"
 #include "include/TArtUtil.hh"
+#include "include/TArtDecoderP716X.hh"
 
 // Header files passed via #pragma extra_include
+
+// The generated code does not explicitly qualify STL entities
+namespace std {} using namespace std;
 
 namespace ROOT {
    static void *new_TArtRawDataObject(void *p = 0);
@@ -510,44 +511,31 @@ namespace ROOT {
 } // end of namespace ROOT
 
 namespace ROOT {
-   static TClass *TArtDecoderAMTTDC_Dictionary();
-   static void TArtDecoderAMTTDC_TClassManip(TClass*);
-   static void delete_TArtDecoderAMTTDC(void *p);
-   static void deleteArray_TArtDecoderAMTTDC(void *p);
-   static void destruct_TArtDecoderAMTTDC(void *p);
+   static void delete_TArtReconstruction(void *p);
+   static void deleteArray_TArtReconstruction(void *p);
+   static void destruct_TArtReconstruction(void *p);
 
    // Function generating the singleton type initializer
-   static TGenericClassInfo *GenerateInitInstanceLocal(const ::TArtDecoderAMTTDC*)
+   static TGenericClassInfo *GenerateInitInstanceLocal(const ::TArtReconstruction*)
    {
-      ::TArtDecoderAMTTDC *ptr = 0;
-      static ::TVirtualIsAProxy* isa_proxy = new ::TIsAProxy(typeid(::TArtDecoderAMTTDC));
+      ::TArtReconstruction *ptr = 0;
+      static ::TVirtualIsAProxy* isa_proxy = new ::TInstrumentedIsAProxy< ::TArtReconstruction >(0);
       static ::ROOT::TGenericClassInfo 
-         instance("TArtDecoderAMTTDC", "TArtDecoderAMTTDC.hh", 5,
-                  typeid(::TArtDecoderAMTTDC), ::ROOT::Internal::DefineBehavior(ptr, ptr),
-                  &TArtDecoderAMTTDC_Dictionary, isa_proxy, 3,
-                  sizeof(::TArtDecoderAMTTDC) );
-      instance.SetDelete(&delete_TArtDecoderAMTTDC);
-      instance.SetDeleteArray(&deleteArray_TArtDecoderAMTTDC);
-      instance.SetDestructor(&destruct_TArtDecoderAMTTDC);
+         instance("TArtReconstruction", ::TArtReconstruction::Class_Version(), "TArtReconstruction.hh", 11,
+                  typeid(::TArtReconstruction), ::ROOT::Internal::DefineBehavior(ptr, ptr),
+                  &::TArtReconstruction::Dictionary, isa_proxy, 4,
+                  sizeof(::TArtReconstruction) );
+      instance.SetDelete(&delete_TArtReconstruction);
+      instance.SetDeleteArray(&deleteArray_TArtReconstruction);
+      instance.SetDestructor(&destruct_TArtReconstruction);
       return &instance;
    }
-   TGenericClassInfo *GenerateInitInstance(const ::TArtDecoderAMTTDC*)
+   TGenericClassInfo *GenerateInitInstance(const ::TArtReconstruction*)
    {
-      return GenerateInitInstanceLocal((::TArtDecoderAMTTDC*)0);
+      return GenerateInitInstanceLocal((::TArtReconstruction*)0);
    }
    // Static variable to force the class initialization
-   static ::ROOT::TGenericClassInfo *_R__UNIQUE_DICT_(Init) = GenerateInitInstanceLocal((const ::TArtDecoderAMTTDC*)0x0); R__UseDummy(_R__UNIQUE_DICT_(Init));
-
-   // Dictionary for non-ClassDef classes
-   static TClass *TArtDecoderAMTTDC_Dictionary() {
-      TClass* theClass =::ROOT::GenerateInitInstanceLocal((const ::TArtDecoderAMTTDC*)0x0)->GetClass();
-      TArtDecoderAMTTDC_TClassManip(theClass);
-   return theClass;
-   }
-
-   static void TArtDecoderAMTTDC_TClassManip(TClass* ){
-   }
-
+   static ::ROOT::TGenericClassInfo *_R__UNIQUE_DICT_(Init) = GenerateInitInstanceLocal((const ::TArtReconstruction*)0x0); R__UseDummy(_R__UNIQUE_DICT_(Init));
 } // end of namespace ROOT
 
 namespace ROOT {
@@ -725,44 +713,35 @@ namespace ROOT {
 } // end of namespace ROOT
 
 namespace ROOT {
-   static TClass *TArtDecoderV1190C_Dictionary();
-   static void TArtDecoderV1190C_TClassManip(TClass*);
-   static void delete_TArtDecoderV1190C(void *p);
-   static void deleteArray_TArtDecoderV1190C(void *p);
-   static void destruct_TArtDecoderV1190C(void *p);
+   static void *new_TArtEventInfo(void *p = 0);
+   static void *newArray_TArtEventInfo(Long_t size, void *p);
+   static void delete_TArtEventInfo(void *p);
+   static void deleteArray_TArtEventInfo(void *p);
+   static void destruct_TArtEventInfo(void *p);
 
    // Function generating the singleton type initializer
-   static TGenericClassInfo *GenerateInitInstanceLocal(const ::TArtDecoderV1190C*)
+   static TGenericClassInfo *GenerateInitInstanceLocal(const ::TArtEventInfo*)
    {
-      ::TArtDecoderV1190C *ptr = 0;
-      static ::TVirtualIsAProxy* isa_proxy = new ::TIsAProxy(typeid(::TArtDecoderV1190C));
+      ::TArtEventInfo *ptr = 0;
+      static ::TVirtualIsAProxy* isa_proxy = new ::TInstrumentedIsAProxy< ::TArtEventInfo >(0);
       static ::ROOT::TGenericClassInfo 
-         instance("TArtDecoderV1190C", "TArtDecoderV1190C.hh", 14,
-                  typeid(::TArtDecoderV1190C), ::ROOT::Internal::DefineBehavior(ptr, ptr),
-                  &TArtDecoderV1190C_Dictionary, isa_proxy, 3,
-                  sizeof(::TArtDecoderV1190C) );
-      instance.SetDelete(&delete_TArtDecoderV1190C);
-      instance.SetDeleteArray(&deleteArray_TArtDecoderV1190C);
-      instance.SetDestructor(&destruct_TArtDecoderV1190C);
+         instance("TArtEventInfo", ::TArtEventInfo::Class_Version(), "TArtEventInfo.hh", 6,
+                  typeid(::TArtEventInfo), ::ROOT::Internal::DefineBehavior(ptr, ptr),
+                  &::TArtEventInfo::Dictionary, isa_proxy, 4,
+                  sizeof(::TArtEventInfo) );
+      instance.SetNew(&new_TArtEventInfo);
+      instance.SetNewArray(&newArray_TArtEventInfo);
+      instance.SetDelete(&delete_TArtEventInfo);
+      instance.SetDeleteArray(&deleteArray_TArtEventInfo);
+      instance.SetDestructor(&destruct_TArtEventInfo);
       return &instance;
    }
-   TGenericClassInfo *GenerateInitInstance(const ::TArtDecoderV1190C*)
+   TGenericClassInfo *GenerateInitInstance(const ::TArtEventInfo*)
    {
-      return GenerateInitInstanceLocal((::TArtDecoderV1190C*)0);
+      return GenerateInitInstanceLocal((::TArtEventInfo*)0);
    }
    // Static variable to force the class initialization
-   static ::ROOT::TGenericClassInfo *_R__UNIQUE_DICT_(Init) = GenerateInitInstanceLocal((const ::TArtDecoderV1190C*)0x0); R__UseDummy(_R__UNIQUE_DICT_(Init));
-
-   // Dictionary for non-ClassDef classes
-   static TClass *TArtDecoderV1190C_Dictionary() {
-      TClass* theClass =::ROOT::GenerateInitInstanceLocal((const ::TArtDecoderV1190C*)0x0)->GetClass();
-      TArtDecoderV1190C_TClassManip(theClass);
-   return theClass;
-   }
-
-   static void TArtDecoderV1190C_TClassManip(TClass* ){
-   }
-
+   static ::ROOT::TGenericClassInfo *_R__UNIQUE_DICT_(Init) = GenerateInitInstanceLocal((const ::TArtEventInfo*)0x0); R__UseDummy(_R__UNIQUE_DICT_(Init));
 } // end of namespace ROOT
 
 namespace ROOT {
@@ -848,63 +827,85 @@ namespace ROOT {
 } // end of namespace ROOT
 
 namespace ROOT {
-   static void delete_TArtParser(void *p);
-   static void deleteArray_TArtParser(void *p);
-   static void destruct_TArtParser(void *p);
+   static TClass *TArtDecoderV767_Dictionary();
+   static void TArtDecoderV767_TClassManip(TClass*);
+   static void delete_TArtDecoderV767(void *p);
+   static void deleteArray_TArtDecoderV767(void *p);
+   static void destruct_TArtDecoderV767(void *p);
 
    // Function generating the singleton type initializer
-   static TGenericClassInfo *GenerateInitInstanceLocal(const ::TArtParser*)
+   static TGenericClassInfo *GenerateInitInstanceLocal(const ::TArtDecoderV767*)
    {
-      ::TArtParser *ptr = 0;
-      static ::TVirtualIsAProxy* isa_proxy = new ::TInstrumentedIsAProxy< ::TArtParser >(0);
+      ::TArtDecoderV767 *ptr = 0;
+      static ::TVirtualIsAProxy* isa_proxy = new ::TIsAProxy(typeid(::TArtDecoderV767));
       static ::ROOT::TGenericClassInfo 
-         instance("TArtParser", ::TArtParser::Class_Version(), "TArtParser.hh", 16,
-                  typeid(::TArtParser), ::ROOT::Internal::DefineBehavior(ptr, ptr),
-                  &::TArtParser::Dictionary, isa_proxy, 4,
-                  sizeof(::TArtParser) );
-      instance.SetDelete(&delete_TArtParser);
-      instance.SetDeleteArray(&deleteArray_TArtParser);
-      instance.SetDestructor(&destruct_TArtParser);
+         instance("TArtDecoderV767", "TArtDecoderV767.hh", 14,
+                  typeid(::TArtDecoderV767), ::ROOT::Internal::DefineBehavior(ptr, ptr),
+                  &TArtDecoderV767_Dictionary, isa_proxy, 3,
+                  sizeof(::TArtDecoderV767) );
+      instance.SetDelete(&delete_TArtDecoderV767);
+      instance.SetDeleteArray(&deleteArray_TArtDecoderV767);
+      instance.SetDestructor(&destruct_TArtDecoderV767);
       return &instance;
    }
-   TGenericClassInfo *GenerateInitInstance(const ::TArtParser*)
+   TGenericClassInfo *GenerateInitInstance(const ::TArtDecoderV767*)
    {
-      return GenerateInitInstanceLocal((::TArtParser*)0);
+      return GenerateInitInstanceLocal((::TArtDecoderV767*)0);
    }
    // Static variable to force the class initialization
-   static ::ROOT::TGenericClassInfo *_R__UNIQUE_DICT_(Init) = GenerateInitInstanceLocal((const ::TArtParser*)0x0); R__UseDummy(_R__UNIQUE_DICT_(Init));
+   static ::ROOT::TGenericClassInfo *_R__UNIQUE_DICT_(Init) = GenerateInitInstanceLocal((const ::TArtDecoderV767*)0x0); R__UseDummy(_R__UNIQUE_DICT_(Init));
+
+   // Dictionary for non-ClassDef classes
+   static TClass *TArtDecoderV767_Dictionary() {
+      TClass* theClass =::ROOT::GenerateInitInstanceLocal((const ::TArtDecoderV767*)0x0)->GetClass();
+      TArtDecoderV767_TClassManip(theClass);
+   return theClass;
+   }
+
+   static void TArtDecoderV767_TClassManip(TClass* ){
+   }
+
 } // end of namespace ROOT
 
 namespace ROOT {
-   static void *new_TArtEventStore(void *p = 0);
-   static void *newArray_TArtEventStore(Long_t size, void *p);
-   static void delete_TArtEventStore(void *p);
-   static void deleteArray_TArtEventStore(void *p);
-   static void destruct_TArtEventStore(void *p);
+   static TClass *TArtDecoderAMTTDC_Dictionary();
+   static void TArtDecoderAMTTDC_TClassManip(TClass*);
+   static void delete_TArtDecoderAMTTDC(void *p);
+   static void deleteArray_TArtDecoderAMTTDC(void *p);
+   static void destruct_TArtDecoderAMTTDC(void *p);
 
    // Function generating the singleton type initializer
-   static TGenericClassInfo *GenerateInitInstanceLocal(const ::TArtEventStore*)
+   static TGenericClassInfo *GenerateInitInstanceLocal(const ::TArtDecoderAMTTDC*)
    {
-      ::TArtEventStore *ptr = 0;
-      static ::TVirtualIsAProxy* isa_proxy = new ::TInstrumentedIsAProxy< ::TArtEventStore >(0);
+      ::TArtDecoderAMTTDC *ptr = 0;
+      static ::TVirtualIsAProxy* isa_proxy = new ::TIsAProxy(typeid(::TArtDecoderAMTTDC));
       static ::ROOT::TGenericClassInfo 
-         instance("TArtEventStore", ::TArtEventStore::Class_Version(), "TArtEventStore.hh", 32,
-                  typeid(::TArtEventStore), ::ROOT::Internal::DefineBehavior(ptr, ptr),
-                  &::TArtEventStore::Dictionary, isa_proxy, 4,
-                  sizeof(::TArtEventStore) );
-      instance.SetNew(&new_TArtEventStore);
-      instance.SetNewArray(&newArray_TArtEventStore);
-      instance.SetDelete(&delete_TArtEventStore);
-      instance.SetDeleteArray(&deleteArray_TArtEventStore);
-      instance.SetDestructor(&destruct_TArtEventStore);
+         instance("TArtDecoderAMTTDC", "TArtDecoderAMTTDC.hh", 5,
+                  typeid(::TArtDecoderAMTTDC), ::ROOT::Internal::DefineBehavior(ptr, ptr),
+                  &TArtDecoderAMTTDC_Dictionary, isa_proxy, 3,
+                  sizeof(::TArtDecoderAMTTDC) );
+      instance.SetDelete(&delete_TArtDecoderAMTTDC);
+      instance.SetDeleteArray(&deleteArray_TArtDecoderAMTTDC);
+      instance.SetDestructor(&destruct_TArtDecoderAMTTDC);
       return &instance;
    }
-   TGenericClassInfo *GenerateInitInstance(const ::TArtEventStore*)
+   TGenericClassInfo *GenerateInitInstance(const ::TArtDecoderAMTTDC*)
    {
-      return GenerateInitInstanceLocal((::TArtEventStore*)0);
+      return GenerateInitInstanceLocal((::TArtDecoderAMTTDC*)0);
    }
    // Static variable to force the class initialization
-   static ::ROOT::TGenericClassInfo *_R__UNIQUE_DICT_(Init) = GenerateInitInstanceLocal((const ::TArtEventStore*)0x0); R__UseDummy(_R__UNIQUE_DICT_(Init));
+   static ::ROOT::TGenericClassInfo *_R__UNIQUE_DICT_(Init) = GenerateInitInstanceLocal((const ::TArtDecoderAMTTDC*)0x0); R__UseDummy(_R__UNIQUE_DICT_(Init));
+
+   // Dictionary for non-ClassDef classes
+   static TClass *TArtDecoderAMTTDC_Dictionary() {
+      TClass* theClass =::ROOT::GenerateInitInstanceLocal((const ::TArtDecoderAMTTDC*)0x0)->GetClass();
+      TArtDecoderAMTTDC_TClassManip(theClass);
+   return theClass;
+   }
+
+   static void TArtDecoderAMTTDC_TClassManip(TClass* ){
+   }
+
 } // end of namespace ROOT
 
 namespace ROOT {
@@ -991,6 +992,34 @@ namespace ROOT {
    static void TArtDecoderFixed32_TClassManip(TClass* ){
    }
 
+} // end of namespace ROOT
+
+namespace ROOT {
+   static void delete_TArtParser(void *p);
+   static void deleteArray_TArtParser(void *p);
+   static void destruct_TArtParser(void *p);
+
+   // Function generating the singleton type initializer
+   static TGenericClassInfo *GenerateInitInstanceLocal(const ::TArtParser*)
+   {
+      ::TArtParser *ptr = 0;
+      static ::TVirtualIsAProxy* isa_proxy = new ::TInstrumentedIsAProxy< ::TArtParser >(0);
+      static ::ROOT::TGenericClassInfo 
+         instance("TArtParser", ::TArtParser::Class_Version(), "TArtParser.hh", 16,
+                  typeid(::TArtParser), ::ROOT::Internal::DefineBehavior(ptr, ptr),
+                  &::TArtParser::Dictionary, isa_proxy, 4,
+                  sizeof(::TArtParser) );
+      instance.SetDelete(&delete_TArtParser);
+      instance.SetDeleteArray(&deleteArray_TArtParser);
+      instance.SetDestructor(&destruct_TArtParser);
+      return &instance;
+   }
+   TGenericClassInfo *GenerateInitInstance(const ::TArtParser*)
+   {
+      return GenerateInitInstanceLocal((::TArtParser*)0);
+   }
+   // Static variable to force the class initialization
+   static ::ROOT::TGenericClassInfo *_R__UNIQUE_DICT_(Init) = GenerateInitInstanceLocal((const ::TArtParser*)0x0); R__UseDummy(_R__UNIQUE_DICT_(Init));
 } // end of namespace ROOT
 
 namespace ROOT {
@@ -1358,42 +1387,74 @@ namespace ROOT {
 } // end of namespace ROOT
 
 namespace ROOT {
-   static TClass *TArtDecoderP716X_Dictionary();
-   static void TArtDecoderP716X_TClassManip(TClass*);
-   static void delete_TArtDecoderP716X(void *p);
-   static void deleteArray_TArtDecoderP716X(void *p);
-   static void destruct_TArtDecoderP716X(void *p);
+   static void *new_TArtEventStore(void *p = 0);
+   static void *newArray_TArtEventStore(Long_t size, void *p);
+   static void delete_TArtEventStore(void *p);
+   static void deleteArray_TArtEventStore(void *p);
+   static void destruct_TArtEventStore(void *p);
 
    // Function generating the singleton type initializer
-   static TGenericClassInfo *GenerateInitInstanceLocal(const ::TArtDecoderP716X*)
+   static TGenericClassInfo *GenerateInitInstanceLocal(const ::TArtEventStore*)
    {
-      ::TArtDecoderP716X *ptr = 0;
-      static ::TVirtualIsAProxy* isa_proxy = new ::TIsAProxy(typeid(::TArtDecoderP716X));
+      ::TArtEventStore *ptr = 0;
+      static ::TVirtualIsAProxy* isa_proxy = new ::TInstrumentedIsAProxy< ::TArtEventStore >(0);
       static ::ROOT::TGenericClassInfo 
-         instance("TArtDecoderP716X", "TArtDecoderP716X.hh", 14,
-                  typeid(::TArtDecoderP716X), ::ROOT::Internal::DefineBehavior(ptr, ptr),
-                  &TArtDecoderP716X_Dictionary, isa_proxy, 3,
-                  sizeof(::TArtDecoderP716X) );
-      instance.SetDelete(&delete_TArtDecoderP716X);
-      instance.SetDeleteArray(&deleteArray_TArtDecoderP716X);
-      instance.SetDestructor(&destruct_TArtDecoderP716X);
+         instance("TArtEventStore", ::TArtEventStore::Class_Version(), "TArtEventStore.hh", 32,
+                  typeid(::TArtEventStore), ::ROOT::Internal::DefineBehavior(ptr, ptr),
+                  &::TArtEventStore::Dictionary, isa_proxy, 4,
+                  sizeof(::TArtEventStore) );
+      instance.SetNew(&new_TArtEventStore);
+      instance.SetNewArray(&newArray_TArtEventStore);
+      instance.SetDelete(&delete_TArtEventStore);
+      instance.SetDeleteArray(&deleteArray_TArtEventStore);
+      instance.SetDestructor(&destruct_TArtEventStore);
       return &instance;
    }
-   TGenericClassInfo *GenerateInitInstance(const ::TArtDecoderP716X*)
+   TGenericClassInfo *GenerateInitInstance(const ::TArtEventStore*)
    {
-      return GenerateInitInstanceLocal((::TArtDecoderP716X*)0);
+      return GenerateInitInstanceLocal((::TArtEventStore*)0);
    }
    // Static variable to force the class initialization
-   static ::ROOT::TGenericClassInfo *_R__UNIQUE_DICT_(Init) = GenerateInitInstanceLocal((const ::TArtDecoderP716X*)0x0); R__UseDummy(_R__UNIQUE_DICT_(Init));
+   static ::ROOT::TGenericClassInfo *_R__UNIQUE_DICT_(Init) = GenerateInitInstanceLocal((const ::TArtEventStore*)0x0); R__UseDummy(_R__UNIQUE_DICT_(Init));
+} // end of namespace ROOT
+
+namespace ROOT {
+   static TClass *TArtDecoderP716XZ_Dictionary();
+   static void TArtDecoderP716XZ_TClassManip(TClass*);
+   static void delete_TArtDecoderP716XZ(void *p);
+   static void deleteArray_TArtDecoderP716XZ(void *p);
+   static void destruct_TArtDecoderP716XZ(void *p);
+
+   // Function generating the singleton type initializer
+   static TGenericClassInfo *GenerateInitInstanceLocal(const ::TArtDecoderP716XZ*)
+   {
+      ::TArtDecoderP716XZ *ptr = 0;
+      static ::TVirtualIsAProxy* isa_proxy = new ::TIsAProxy(typeid(::TArtDecoderP716XZ));
+      static ::ROOT::TGenericClassInfo 
+         instance("TArtDecoderP716XZ", "TArtDecoderP716XZ.hh", 14,
+                  typeid(::TArtDecoderP716XZ), ::ROOT::Internal::DefineBehavior(ptr, ptr),
+                  &TArtDecoderP716XZ_Dictionary, isa_proxy, 3,
+                  sizeof(::TArtDecoderP716XZ) );
+      instance.SetDelete(&delete_TArtDecoderP716XZ);
+      instance.SetDeleteArray(&deleteArray_TArtDecoderP716XZ);
+      instance.SetDestructor(&destruct_TArtDecoderP716XZ);
+      return &instance;
+   }
+   TGenericClassInfo *GenerateInitInstance(const ::TArtDecoderP716XZ*)
+   {
+      return GenerateInitInstanceLocal((::TArtDecoderP716XZ*)0);
+   }
+   // Static variable to force the class initialization
+   static ::ROOT::TGenericClassInfo *_R__UNIQUE_DICT_(Init) = GenerateInitInstanceLocal((const ::TArtDecoderP716XZ*)0x0); R__UseDummy(_R__UNIQUE_DICT_(Init));
 
    // Dictionary for non-ClassDef classes
-   static TClass *TArtDecoderP716X_Dictionary() {
-      TClass* theClass =::ROOT::GenerateInitInstanceLocal((const ::TArtDecoderP716X*)0x0)->GetClass();
-      TArtDecoderP716X_TClassManip(theClass);
+   static TClass *TArtDecoderP716XZ_Dictionary() {
+      TClass* theClass =::ROOT::GenerateInitInstanceLocal((const ::TArtDecoderP716XZ*)0x0)->GetClass();
+      TArtDecoderP716XZ_TClassManip(theClass);
    return theClass;
    }
 
-   static void TArtDecoderP716X_TClassManip(TClass* ){
+   static void TArtDecoderP716XZ_TClassManip(TClass* ){
    }
 
 } // end of namespace ROOT
@@ -1590,47 +1651,6 @@ namespace ROOT {
 } // end of namespace ROOT
 
 namespace ROOT {
-   static TClass *TArtDecoderP716XZ_Dictionary();
-   static void TArtDecoderP716XZ_TClassManip(TClass*);
-   static void delete_TArtDecoderP716XZ(void *p);
-   static void deleteArray_TArtDecoderP716XZ(void *p);
-   static void destruct_TArtDecoderP716XZ(void *p);
-
-   // Function generating the singleton type initializer
-   static TGenericClassInfo *GenerateInitInstanceLocal(const ::TArtDecoderP716XZ*)
-   {
-      ::TArtDecoderP716XZ *ptr = 0;
-      static ::TVirtualIsAProxy* isa_proxy = new ::TIsAProxy(typeid(::TArtDecoderP716XZ));
-      static ::ROOT::TGenericClassInfo 
-         instance("TArtDecoderP716XZ", "TArtDecoderP716XZ.hh", 14,
-                  typeid(::TArtDecoderP716XZ), ::ROOT::Internal::DefineBehavior(ptr, ptr),
-                  &TArtDecoderP716XZ_Dictionary, isa_proxy, 3,
-                  sizeof(::TArtDecoderP716XZ) );
-      instance.SetDelete(&delete_TArtDecoderP716XZ);
-      instance.SetDeleteArray(&deleteArray_TArtDecoderP716XZ);
-      instance.SetDestructor(&destruct_TArtDecoderP716XZ);
-      return &instance;
-   }
-   TGenericClassInfo *GenerateInitInstance(const ::TArtDecoderP716XZ*)
-   {
-      return GenerateInitInstanceLocal((::TArtDecoderP716XZ*)0);
-   }
-   // Static variable to force the class initialization
-   static ::ROOT::TGenericClassInfo *_R__UNIQUE_DICT_(Init) = GenerateInitInstanceLocal((const ::TArtDecoderP716XZ*)0x0); R__UseDummy(_R__UNIQUE_DICT_(Init));
-
-   // Dictionary for non-ClassDef classes
-   static TClass *TArtDecoderP716XZ_Dictionary() {
-      TClass* theClass =::ROOT::GenerateInitInstanceLocal((const ::TArtDecoderP716XZ*)0x0)->GetClass();
-      TArtDecoderP716XZ_TClassManip(theClass);
-   return theClass;
-   }
-
-   static void TArtDecoderP716XZ_TClassManip(TClass* ){
-   }
-
-} // end of namespace ROOT
-
-namespace ROOT {
    static TClass *TArtDecoderAD413A_Dictionary();
    static void TArtDecoderAD413A_TClassManip(TClass*);
    static void delete_TArtDecoderAD413A(void *p);
@@ -1669,107 +1689,6 @@ namespace ROOT {
    static void TArtDecoderAD413A_TClassManip(TClass* ){
    }
 
-} // end of namespace ROOT
-
-namespace ROOT {
-   static void delete_TArtReconstruction(void *p);
-   static void deleteArray_TArtReconstruction(void *p);
-   static void destruct_TArtReconstruction(void *p);
-
-   // Function generating the singleton type initializer
-   static TGenericClassInfo *GenerateInitInstanceLocal(const ::TArtReconstruction*)
-   {
-      ::TArtReconstruction *ptr = 0;
-      static ::TVirtualIsAProxy* isa_proxy = new ::TInstrumentedIsAProxy< ::TArtReconstruction >(0);
-      static ::ROOT::TGenericClassInfo 
-         instance("TArtReconstruction", ::TArtReconstruction::Class_Version(), "TArtReconstruction.hh", 11,
-                  typeid(::TArtReconstruction), ::ROOT::Internal::DefineBehavior(ptr, ptr),
-                  &::TArtReconstruction::Dictionary, isa_proxy, 4,
-                  sizeof(::TArtReconstruction) );
-      instance.SetDelete(&delete_TArtReconstruction);
-      instance.SetDeleteArray(&deleteArray_TArtReconstruction);
-      instance.SetDestructor(&destruct_TArtReconstruction);
-      return &instance;
-   }
-   TGenericClassInfo *GenerateInitInstance(const ::TArtReconstruction*)
-   {
-      return GenerateInitInstanceLocal((::TArtReconstruction*)0);
-   }
-   // Static variable to force the class initialization
-   static ::ROOT::TGenericClassInfo *_R__UNIQUE_DICT_(Init) = GenerateInitInstanceLocal((const ::TArtReconstruction*)0x0); R__UseDummy(_R__UNIQUE_DICT_(Init));
-} // end of namespace ROOT
-
-namespace ROOT {
-   static TClass *TArtDecoderV767_Dictionary();
-   static void TArtDecoderV767_TClassManip(TClass*);
-   static void delete_TArtDecoderV767(void *p);
-   static void deleteArray_TArtDecoderV767(void *p);
-   static void destruct_TArtDecoderV767(void *p);
-
-   // Function generating the singleton type initializer
-   static TGenericClassInfo *GenerateInitInstanceLocal(const ::TArtDecoderV767*)
-   {
-      ::TArtDecoderV767 *ptr = 0;
-      static ::TVirtualIsAProxy* isa_proxy = new ::TIsAProxy(typeid(::TArtDecoderV767));
-      static ::ROOT::TGenericClassInfo 
-         instance("TArtDecoderV767", "TArtDecoderV767.hh", 14,
-                  typeid(::TArtDecoderV767), ::ROOT::Internal::DefineBehavior(ptr, ptr),
-                  &TArtDecoderV767_Dictionary, isa_proxy, 3,
-                  sizeof(::TArtDecoderV767) );
-      instance.SetDelete(&delete_TArtDecoderV767);
-      instance.SetDeleteArray(&deleteArray_TArtDecoderV767);
-      instance.SetDestructor(&destruct_TArtDecoderV767);
-      return &instance;
-   }
-   TGenericClassInfo *GenerateInitInstance(const ::TArtDecoderV767*)
-   {
-      return GenerateInitInstanceLocal((::TArtDecoderV767*)0);
-   }
-   // Static variable to force the class initialization
-   static ::ROOT::TGenericClassInfo *_R__UNIQUE_DICT_(Init) = GenerateInitInstanceLocal((const ::TArtDecoderV767*)0x0); R__UseDummy(_R__UNIQUE_DICT_(Init));
-
-   // Dictionary for non-ClassDef classes
-   static TClass *TArtDecoderV767_Dictionary() {
-      TClass* theClass =::ROOT::GenerateInitInstanceLocal((const ::TArtDecoderV767*)0x0)->GetClass();
-      TArtDecoderV767_TClassManip(theClass);
-   return theClass;
-   }
-
-   static void TArtDecoderV767_TClassManip(TClass* ){
-   }
-
-} // end of namespace ROOT
-
-namespace ROOT {
-   static void *new_TArtEventInfo(void *p = 0);
-   static void *newArray_TArtEventInfo(Long_t size, void *p);
-   static void delete_TArtEventInfo(void *p);
-   static void deleteArray_TArtEventInfo(void *p);
-   static void destruct_TArtEventInfo(void *p);
-
-   // Function generating the singleton type initializer
-   static TGenericClassInfo *GenerateInitInstanceLocal(const ::TArtEventInfo*)
-   {
-      ::TArtEventInfo *ptr = 0;
-      static ::TVirtualIsAProxy* isa_proxy = new ::TInstrumentedIsAProxy< ::TArtEventInfo >(0);
-      static ::ROOT::TGenericClassInfo 
-         instance("TArtEventInfo", ::TArtEventInfo::Class_Version(), "TArtEventInfo.hh", 6,
-                  typeid(::TArtEventInfo), ::ROOT::Internal::DefineBehavior(ptr, ptr),
-                  &::TArtEventInfo::Dictionary, isa_proxy, 4,
-                  sizeof(::TArtEventInfo) );
-      instance.SetNew(&new_TArtEventInfo);
-      instance.SetNewArray(&newArray_TArtEventInfo);
-      instance.SetDelete(&delete_TArtEventInfo);
-      instance.SetDeleteArray(&deleteArray_TArtEventInfo);
-      instance.SetDestructor(&destruct_TArtEventInfo);
-      return &instance;
-   }
-   TGenericClassInfo *GenerateInitInstance(const ::TArtEventInfo*)
-   {
-      return GenerateInitInstanceLocal((::TArtEventInfo*)0);
-   }
-   // Static variable to force the class initialization
-   static ::ROOT::TGenericClassInfo *_R__UNIQUE_DICT_(Init) = GenerateInitInstanceLocal((const ::TArtEventInfo*)0x0); R__UseDummy(_R__UNIQUE_DICT_(Init));
 } // end of namespace ROOT
 
 namespace ROOT {
@@ -1846,6 +1765,47 @@ namespace ROOT {
 } // end of namespace ROOT
 
 namespace ROOT {
+   static TClass *TArtDecoderV1190C_Dictionary();
+   static void TArtDecoderV1190C_TClassManip(TClass*);
+   static void delete_TArtDecoderV1190C(void *p);
+   static void deleteArray_TArtDecoderV1190C(void *p);
+   static void destruct_TArtDecoderV1190C(void *p);
+
+   // Function generating the singleton type initializer
+   static TGenericClassInfo *GenerateInitInstanceLocal(const ::TArtDecoderV1190C*)
+   {
+      ::TArtDecoderV1190C *ptr = 0;
+      static ::TVirtualIsAProxy* isa_proxy = new ::TIsAProxy(typeid(::TArtDecoderV1190C));
+      static ::ROOT::TGenericClassInfo 
+         instance("TArtDecoderV1190C", "TArtDecoderV1190C.hh", 14,
+                  typeid(::TArtDecoderV1190C), ::ROOT::Internal::DefineBehavior(ptr, ptr),
+                  &TArtDecoderV1190C_Dictionary, isa_proxy, 3,
+                  sizeof(::TArtDecoderV1190C) );
+      instance.SetDelete(&delete_TArtDecoderV1190C);
+      instance.SetDeleteArray(&deleteArray_TArtDecoderV1190C);
+      instance.SetDestructor(&destruct_TArtDecoderV1190C);
+      return &instance;
+   }
+   TGenericClassInfo *GenerateInitInstance(const ::TArtDecoderV1190C*)
+   {
+      return GenerateInitInstanceLocal((::TArtDecoderV1190C*)0);
+   }
+   // Static variable to force the class initialization
+   static ::ROOT::TGenericClassInfo *_R__UNIQUE_DICT_(Init) = GenerateInitInstanceLocal((const ::TArtDecoderV1190C*)0x0); R__UseDummy(_R__UNIQUE_DICT_(Init));
+
+   // Dictionary for non-ClassDef classes
+   static TClass *TArtDecoderV1190C_Dictionary() {
+      TClass* theClass =::ROOT::GenerateInitInstanceLocal((const ::TArtDecoderV1190C*)0x0)->GetClass();
+      TArtDecoderV1190C_TClassManip(theClass);
+   return theClass;
+   }
+
+   static void TArtDecoderV1190C_TClassManip(TClass* ){
+   }
+
+} // end of namespace ROOT
+
+namespace ROOT {
    static TClass *TArtUtil_Dictionary();
    static void TArtUtil_TClassManip(TClass*);
    static void *new_TArtUtil(void *p = 0);
@@ -1886,6 +1846,47 @@ namespace ROOT {
    }
 
    static void TArtUtil_TClassManip(TClass* ){
+   }
+
+} // end of namespace ROOT
+
+namespace ROOT {
+   static TClass *TArtDecoderP716X_Dictionary();
+   static void TArtDecoderP716X_TClassManip(TClass*);
+   static void delete_TArtDecoderP716X(void *p);
+   static void deleteArray_TArtDecoderP716X(void *p);
+   static void destruct_TArtDecoderP716X(void *p);
+
+   // Function generating the singleton type initializer
+   static TGenericClassInfo *GenerateInitInstanceLocal(const ::TArtDecoderP716X*)
+   {
+      ::TArtDecoderP716X *ptr = 0;
+      static ::TVirtualIsAProxy* isa_proxy = new ::TIsAProxy(typeid(::TArtDecoderP716X));
+      static ::ROOT::TGenericClassInfo 
+         instance("TArtDecoderP716X", "TArtDecoderP716X.hh", 14,
+                  typeid(::TArtDecoderP716X), ::ROOT::Internal::DefineBehavior(ptr, ptr),
+                  &TArtDecoderP716X_Dictionary, isa_proxy, 3,
+                  sizeof(::TArtDecoderP716X) );
+      instance.SetDelete(&delete_TArtDecoderP716X);
+      instance.SetDeleteArray(&deleteArray_TArtDecoderP716X);
+      instance.SetDestructor(&destruct_TArtDecoderP716X);
+      return &instance;
+   }
+   TGenericClassInfo *GenerateInitInstance(const ::TArtDecoderP716X*)
+   {
+      return GenerateInitInstanceLocal((::TArtDecoderP716X*)0);
+   }
+   // Static variable to force the class initialization
+   static ::ROOT::TGenericClassInfo *_R__UNIQUE_DICT_(Init) = GenerateInitInstanceLocal((const ::TArtDecoderP716X*)0x0); R__UseDummy(_R__UNIQUE_DICT_(Init));
+
+   // Dictionary for non-ClassDef classes
+   static TClass *TArtDecoderP716X_Dictionary() {
+      TClass* theClass =::ROOT::GenerateInitInstanceLocal((const ::TArtDecoderP716X*)0x0)->GetClass();
+      TArtDecoderP716X_TClassManip(theClass);
+   return theClass;
+   }
+
+   static void TArtDecoderP716X_TClassManip(TClass* ){
    }
 
 } // end of namespace ROOT
@@ -2031,6 +2032,41 @@ TClass *TArtStreamingDataSource::Class()
 }
 
 //______________________________________________________________________________
+atomic_TClass_ptr TArtReconstruction::fgIsA(0);  // static to hold class pointer
+
+//______________________________________________________________________________
+const char *TArtReconstruction::Class_Name()
+{
+   return "TArtReconstruction";
+}
+
+//______________________________________________________________________________
+const char *TArtReconstruction::ImplFileName()
+{
+   return ::ROOT::GenerateInitInstanceLocal((const ::TArtReconstruction*)0x0)->GetImplFileName();
+}
+
+//______________________________________________________________________________
+int TArtReconstruction::ImplFileLine()
+{
+   return ::ROOT::GenerateInitInstanceLocal((const ::TArtReconstruction*)0x0)->GetImplFileLine();
+}
+
+//______________________________________________________________________________
+TClass *TArtReconstruction::Dictionary()
+{
+   fgIsA = ::ROOT::GenerateInitInstanceLocal((const ::TArtReconstruction*)0x0)->GetClass();
+   return fgIsA;
+}
+
+//______________________________________________________________________________
+TClass *TArtReconstruction::Class()
+{
+   if (!fgIsA.load()) { R__LOCKGUARD(gInterpreterMutex); fgIsA = ::ROOT::GenerateInitInstanceLocal((const ::TArtReconstruction*)0x0)->GetClass(); }
+   return fgIsA;
+}
+
+//______________________________________________________________________________
 atomic_TClass_ptr TArtRawScalerObject::fgIsA(0);  // static to hold class pointer
 
 //______________________________________________________________________________
@@ -2136,6 +2172,41 @@ TClass *TArtStoreManager::Class()
 }
 
 //______________________________________________________________________________
+atomic_TClass_ptr TArtEventInfo::fgIsA(0);  // static to hold class pointer
+
+//______________________________________________________________________________
+const char *TArtEventInfo::Class_Name()
+{
+   return "TArtEventInfo";
+}
+
+//______________________________________________________________________________
+const char *TArtEventInfo::ImplFileName()
+{
+   return ::ROOT::GenerateInitInstanceLocal((const ::TArtEventInfo*)0x0)->GetImplFileName();
+}
+
+//______________________________________________________________________________
+int TArtEventInfo::ImplFileLine()
+{
+   return ::ROOT::GenerateInitInstanceLocal((const ::TArtEventInfo*)0x0)->GetImplFileLine();
+}
+
+//______________________________________________________________________________
+TClass *TArtEventInfo::Dictionary()
+{
+   fgIsA = ::ROOT::GenerateInitInstanceLocal((const ::TArtEventInfo*)0x0)->GetClass();
+   return fgIsA;
+}
+
+//______________________________________________________________________________
+TClass *TArtEventInfo::Class()
+{
+   if (!fgIsA.load()) { R__LOCKGUARD(gInterpreterMutex); fgIsA = ::ROOT::GenerateInitInstanceLocal((const ::TArtEventInfo*)0x0)->GetClass(); }
+   return fgIsA;
+}
+
+//______________________________________________________________________________
 atomic_TClass_ptr TArtParser::fgIsA(0);  // static to hold class pointer
 
 //______________________________________________________________________________
@@ -2171,41 +2242,6 @@ TClass *TArtParser::Class()
 }
 
 //______________________________________________________________________________
-atomic_TClass_ptr TArtEventStore::fgIsA(0);  // static to hold class pointer
-
-//______________________________________________________________________________
-const char *TArtEventStore::Class_Name()
-{
-   return "TArtEventStore";
-}
-
-//______________________________________________________________________________
-const char *TArtEventStore::ImplFileName()
-{
-   return ::ROOT::GenerateInitInstanceLocal((const ::TArtEventStore*)0x0)->GetImplFileName();
-}
-
-//______________________________________________________________________________
-int TArtEventStore::ImplFileLine()
-{
-   return ::ROOT::GenerateInitInstanceLocal((const ::TArtEventStore*)0x0)->GetImplFileLine();
-}
-
-//______________________________________________________________________________
-TClass *TArtEventStore::Dictionary()
-{
-   fgIsA = ::ROOT::GenerateInitInstanceLocal((const ::TArtEventStore*)0x0)->GetClass();
-   return fgIsA;
-}
-
-//______________________________________________________________________________
-TClass *TArtEventStore::Class()
-{
-   if (!fgIsA.load()) { R__LOCKGUARD(gInterpreterMutex); fgIsA = ::ROOT::GenerateInitInstanceLocal((const ::TArtEventStore*)0x0)->GetClass(); }
-   return fgIsA;
-}
-
-//______________________________________________________________________________
 atomic_TClass_ptr TArtDataObject::fgIsA(0);  // static to hold class pointer
 
 //______________________________________________________________________________
@@ -2237,6 +2273,41 @@ TClass *TArtDataObject::Dictionary()
 TClass *TArtDataObject::Class()
 {
    if (!fgIsA.load()) { R__LOCKGUARD(gInterpreterMutex); fgIsA = ::ROOT::GenerateInitInstanceLocal((const ::TArtDataObject*)0x0)->GetClass(); }
+   return fgIsA;
+}
+
+//______________________________________________________________________________
+atomic_TClass_ptr TArtEventStore::fgIsA(0);  // static to hold class pointer
+
+//______________________________________________________________________________
+const char *TArtEventStore::Class_Name()
+{
+   return "TArtEventStore";
+}
+
+//______________________________________________________________________________
+const char *TArtEventStore::ImplFileName()
+{
+   return ::ROOT::GenerateInitInstanceLocal((const ::TArtEventStore*)0x0)->GetImplFileName();
+}
+
+//______________________________________________________________________________
+int TArtEventStore::ImplFileLine()
+{
+   return ::ROOT::GenerateInitInstanceLocal((const ::TArtEventStore*)0x0)->GetImplFileLine();
+}
+
+//______________________________________________________________________________
+TClass *TArtEventStore::Dictionary()
+{
+   fgIsA = ::ROOT::GenerateInitInstanceLocal((const ::TArtEventStore*)0x0)->GetClass();
+   return fgIsA;
+}
+
+//______________________________________________________________________________
+TClass *TArtEventStore::Class()
+{
+   if (!fgIsA.load()) { R__LOCKGUARD(gInterpreterMutex); fgIsA = ::ROOT::GenerateInitInstanceLocal((const ::TArtEventStore*)0x0)->GetClass(); }
    return fgIsA;
 }
 
@@ -2307,76 +2378,6 @@ TClass *TArtRIDFMap::Dictionary()
 TClass *TArtRIDFMap::Class()
 {
    if (!fgIsA.load()) { R__LOCKGUARD(gInterpreterMutex); fgIsA = ::ROOT::GenerateInitInstanceLocal((const ::TArtRIDFMap*)0x0)->GetClass(); }
-   return fgIsA;
-}
-
-//______________________________________________________________________________
-atomic_TClass_ptr TArtReconstruction::fgIsA(0);  // static to hold class pointer
-
-//______________________________________________________________________________
-const char *TArtReconstruction::Class_Name()
-{
-   return "TArtReconstruction";
-}
-
-//______________________________________________________________________________
-const char *TArtReconstruction::ImplFileName()
-{
-   return ::ROOT::GenerateInitInstanceLocal((const ::TArtReconstruction*)0x0)->GetImplFileName();
-}
-
-//______________________________________________________________________________
-int TArtReconstruction::ImplFileLine()
-{
-   return ::ROOT::GenerateInitInstanceLocal((const ::TArtReconstruction*)0x0)->GetImplFileLine();
-}
-
-//______________________________________________________________________________
-TClass *TArtReconstruction::Dictionary()
-{
-   fgIsA = ::ROOT::GenerateInitInstanceLocal((const ::TArtReconstruction*)0x0)->GetClass();
-   return fgIsA;
-}
-
-//______________________________________________________________________________
-TClass *TArtReconstruction::Class()
-{
-   if (!fgIsA.load()) { R__LOCKGUARD(gInterpreterMutex); fgIsA = ::ROOT::GenerateInitInstanceLocal((const ::TArtReconstruction*)0x0)->GetClass(); }
-   return fgIsA;
-}
-
-//______________________________________________________________________________
-atomic_TClass_ptr TArtEventInfo::fgIsA(0);  // static to hold class pointer
-
-//______________________________________________________________________________
-const char *TArtEventInfo::Class_Name()
-{
-   return "TArtEventInfo";
-}
-
-//______________________________________________________________________________
-const char *TArtEventInfo::ImplFileName()
-{
-   return ::ROOT::GenerateInitInstanceLocal((const ::TArtEventInfo*)0x0)->GetImplFileName();
-}
-
-//______________________________________________________________________________
-int TArtEventInfo::ImplFileLine()
-{
-   return ::ROOT::GenerateInitInstanceLocal((const ::TArtEventInfo*)0x0)->GetImplFileLine();
-}
-
-//______________________________________________________________________________
-TClass *TArtEventInfo::Dictionary()
-{
-   fgIsA = ::ROOT::GenerateInitInstanceLocal((const ::TArtEventInfo*)0x0)->GetClass();
-   return fgIsA;
-}
-
-//______________________________________________________________________________
-TClass *TArtEventInfo::Class()
-{
-   if (!fgIsA.load()) { R__LOCKGUARD(gInterpreterMutex); fgIsA = ::ROOT::GenerateInitInstanceLocal((const ::TArtEventInfo*)0x0)->GetClass(); }
    return fgIsA;
 }
 
@@ -2652,19 +2653,31 @@ namespace ROOT {
    }
 } // end of namespace ROOT for class ::TArtDecoderLUPO
 
+//______________________________________________________________________________
+void TArtReconstruction::Streamer(TBuffer &R__b)
+{
+   // Stream an object of class TArtReconstruction.
+
+   if (R__b.IsReading()) {
+      R__b.ReadClassBuffer(TArtReconstruction::Class(),this);
+   } else {
+      R__b.WriteClassBuffer(TArtReconstruction::Class(),this);
+   }
+}
+
 namespace ROOT {
    // Wrapper around operator delete
-   static void delete_TArtDecoderAMTTDC(void *p) {
-      delete ((::TArtDecoderAMTTDC*)p);
+   static void delete_TArtReconstruction(void *p) {
+      delete ((::TArtReconstruction*)p);
    }
-   static void deleteArray_TArtDecoderAMTTDC(void *p) {
-      delete [] ((::TArtDecoderAMTTDC*)p);
+   static void deleteArray_TArtReconstruction(void *p) {
+      delete [] ((::TArtReconstruction*)p);
    }
-   static void destruct_TArtDecoderAMTTDC(void *p) {
-      typedef ::TArtDecoderAMTTDC current_t;
+   static void destruct_TArtReconstruction(void *p) {
+      typedef ::TArtReconstruction current_t;
       ((current_t*)p)->~current_t();
    }
-} // end of namespace ROOT for class ::TArtDecoderAMTTDC
+} // end of namespace ROOT for class ::TArtReconstruction
 
 namespace ROOT {
    // Wrapper around operator delete
@@ -2786,19 +2799,38 @@ namespace ROOT {
    }
 } // end of namespace ROOT for class ::TArtStoreManager
 
+//______________________________________________________________________________
+void TArtEventInfo::Streamer(TBuffer &R__b)
+{
+   // Stream an object of class TArtEventInfo.
+
+   if (R__b.IsReading()) {
+      R__b.ReadClassBuffer(TArtEventInfo::Class(),this);
+   } else {
+      R__b.WriteClassBuffer(TArtEventInfo::Class(),this);
+   }
+}
+
 namespace ROOT {
+   // Wrappers around operator new
+   static void *new_TArtEventInfo(void *p) {
+      return  p ? new(p) ::TArtEventInfo : new ::TArtEventInfo;
+   }
+   static void *newArray_TArtEventInfo(Long_t nElements, void *p) {
+      return p ? new(p) ::TArtEventInfo[nElements] : new ::TArtEventInfo[nElements];
+   }
    // Wrapper around operator delete
-   static void delete_TArtDecoderV1190C(void *p) {
-      delete ((::TArtDecoderV1190C*)p);
+   static void delete_TArtEventInfo(void *p) {
+      delete ((::TArtEventInfo*)p);
    }
-   static void deleteArray_TArtDecoderV1190C(void *p) {
-      delete [] ((::TArtDecoderV1190C*)p);
+   static void deleteArray_TArtEventInfo(void *p) {
+      delete [] ((::TArtEventInfo*)p);
    }
-   static void destruct_TArtDecoderV1190C(void *p) {
-      typedef ::TArtDecoderV1190C current_t;
+   static void destruct_TArtEventInfo(void *p) {
+      typedef ::TArtEventInfo current_t;
       ((current_t*)p)->~current_t();
    }
-} // end of namespace ROOT for class ::TArtDecoderV1190C
+} // end of namespace ROOT for class ::TArtEventInfo
 
 namespace ROOT {
    // Wrapper around operator delete
@@ -2828,64 +2860,33 @@ namespace ROOT {
    }
 } // end of namespace ROOT for class ::TArtDecoderCTM405
 
-//______________________________________________________________________________
-void TArtParser::Streamer(TBuffer &R__b)
-{
-   // Stream an object of class TArtParser.
-
-   if (R__b.IsReading()) {
-      R__b.ReadClassBuffer(TArtParser::Class(),this);
-   } else {
-      R__b.WriteClassBuffer(TArtParser::Class(),this);
+namespace ROOT {
+   // Wrapper around operator delete
+   static void delete_TArtDecoderV767(void *p) {
+      delete ((::TArtDecoderV767*)p);
    }
-}
+   static void deleteArray_TArtDecoderV767(void *p) {
+      delete [] ((::TArtDecoderV767*)p);
+   }
+   static void destruct_TArtDecoderV767(void *p) {
+      typedef ::TArtDecoderV767 current_t;
+      ((current_t*)p)->~current_t();
+   }
+} // end of namespace ROOT for class ::TArtDecoderV767
 
 namespace ROOT {
    // Wrapper around operator delete
-   static void delete_TArtParser(void *p) {
-      delete ((::TArtParser*)p);
+   static void delete_TArtDecoderAMTTDC(void *p) {
+      delete ((::TArtDecoderAMTTDC*)p);
    }
-   static void deleteArray_TArtParser(void *p) {
-      delete [] ((::TArtParser*)p);
+   static void deleteArray_TArtDecoderAMTTDC(void *p) {
+      delete [] ((::TArtDecoderAMTTDC*)p);
    }
-   static void destruct_TArtParser(void *p) {
-      typedef ::TArtParser current_t;
+   static void destruct_TArtDecoderAMTTDC(void *p) {
+      typedef ::TArtDecoderAMTTDC current_t;
       ((current_t*)p)->~current_t();
    }
-} // end of namespace ROOT for class ::TArtParser
-
-//______________________________________________________________________________
-void TArtEventStore::Streamer(TBuffer &R__b)
-{
-   // Stream an object of class TArtEventStore.
-
-   if (R__b.IsReading()) {
-      R__b.ReadClassBuffer(TArtEventStore::Class(),this);
-   } else {
-      R__b.WriteClassBuffer(TArtEventStore::Class(),this);
-   }
-}
-
-namespace ROOT {
-   // Wrappers around operator new
-   static void *new_TArtEventStore(void *p) {
-      return  p ? new(p) ::TArtEventStore : new ::TArtEventStore;
-   }
-   static void *newArray_TArtEventStore(Long_t nElements, void *p) {
-      return p ? new(p) ::TArtEventStore[nElements] : new ::TArtEventStore[nElements];
-   }
-   // Wrapper around operator delete
-   static void delete_TArtEventStore(void *p) {
-      delete ((::TArtEventStore*)p);
-   }
-   static void deleteArray_TArtEventStore(void *p) {
-      delete [] ((::TArtEventStore*)p);
-   }
-   static void destruct_TArtEventStore(void *p) {
-      typedef ::TArtEventStore current_t;
-      ((current_t*)p)->~current_t();
-   }
-} // end of namespace ROOT for class ::TArtEventStore
+} // end of namespace ROOT for class ::TArtDecoderAMTTDC
 
 namespace ROOT {
    // Wrappers around operator new
@@ -2921,6 +2922,32 @@ namespace ROOT {
       ((current_t*)p)->~current_t();
    }
 } // end of namespace ROOT for class ::TArtDecoderFixed32
+
+//______________________________________________________________________________
+void TArtParser::Streamer(TBuffer &R__b)
+{
+   // Stream an object of class TArtParser.
+
+   if (R__b.IsReading()) {
+      R__b.ReadClassBuffer(TArtParser::Class(),this);
+   } else {
+      R__b.WriteClassBuffer(TArtParser::Class(),this);
+   }
+}
+
+namespace ROOT {
+   // Wrapper around operator delete
+   static void delete_TArtParser(void *p) {
+      delete ((::TArtParser*)p);
+   }
+   static void deleteArray_TArtParser(void *p) {
+      delete [] ((::TArtParser*)p);
+   }
+   static void destruct_TArtParser(void *p) {
+      typedef ::TArtParser current_t;
+      ((current_t*)p)->~current_t();
+   }
+} // end of namespace ROOT for class ::TArtParser
 
 namespace ROOT {
    // Wrapper around operator delete
@@ -3074,19 +3101,52 @@ namespace ROOT {
    }
 } // end of namespace ROOT for class ::TArtDecoderV1190
 
+//______________________________________________________________________________
+void TArtEventStore::Streamer(TBuffer &R__b)
+{
+   // Stream an object of class TArtEventStore.
+
+   if (R__b.IsReading()) {
+      R__b.ReadClassBuffer(TArtEventStore::Class(),this);
+   } else {
+      R__b.WriteClassBuffer(TArtEventStore::Class(),this);
+   }
+}
+
 namespace ROOT {
+   // Wrappers around operator new
+   static void *new_TArtEventStore(void *p) {
+      return  p ? new(p) ::TArtEventStore : new ::TArtEventStore;
+   }
+   static void *newArray_TArtEventStore(Long_t nElements, void *p) {
+      return p ? new(p) ::TArtEventStore[nElements] : new ::TArtEventStore[nElements];
+   }
    // Wrapper around operator delete
-   static void delete_TArtDecoderP716X(void *p) {
-      delete ((::TArtDecoderP716X*)p);
+   static void delete_TArtEventStore(void *p) {
+      delete ((::TArtEventStore*)p);
    }
-   static void deleteArray_TArtDecoderP716X(void *p) {
-      delete [] ((::TArtDecoderP716X*)p);
+   static void deleteArray_TArtEventStore(void *p) {
+      delete [] ((::TArtEventStore*)p);
    }
-   static void destruct_TArtDecoderP716X(void *p) {
-      typedef ::TArtDecoderP716X current_t;
+   static void destruct_TArtEventStore(void *p) {
+      typedef ::TArtEventStore current_t;
       ((current_t*)p)->~current_t();
    }
-} // end of namespace ROOT for class ::TArtDecoderP716X
+} // end of namespace ROOT for class ::TArtEventStore
+
+namespace ROOT {
+   // Wrapper around operator delete
+   static void delete_TArtDecoderP716XZ(void *p) {
+      delete ((::TArtDecoderP716XZ*)p);
+   }
+   static void deleteArray_TArtDecoderP716XZ(void *p) {
+      delete [] ((::TArtDecoderP716XZ*)p);
+   }
+   static void destruct_TArtDecoderP716XZ(void *p) {
+      typedef ::TArtDecoderP716XZ current_t;
+      ((current_t*)p)->~current_t();
+   }
+} // end of namespace ROOT for class ::TArtDecoderP716XZ
 
 //______________________________________________________________________________
 void TArtParserRDF::Streamer(TBuffer &R__b)
@@ -3205,20 +3265,6 @@ namespace ROOT {
 
 namespace ROOT {
    // Wrapper around operator delete
-   static void delete_TArtDecoderP716XZ(void *p) {
-      delete ((::TArtDecoderP716XZ*)p);
-   }
-   static void deleteArray_TArtDecoderP716XZ(void *p) {
-      delete [] ((::TArtDecoderP716XZ*)p);
-   }
-   static void destruct_TArtDecoderP716XZ(void *p) {
-      typedef ::TArtDecoderP716XZ current_t;
-      ((current_t*)p)->~current_t();
-   }
-} // end of namespace ROOT for class ::TArtDecoderP716XZ
-
-namespace ROOT {
-   // Wrapper around operator delete
    static void delete_TArtDecoderAD413A(void *p) {
       delete ((::TArtDecoderAD413A*)p);
    }
@@ -3230,79 +3276,6 @@ namespace ROOT {
       ((current_t*)p)->~current_t();
    }
 } // end of namespace ROOT for class ::TArtDecoderAD413A
-
-//______________________________________________________________________________
-void TArtReconstruction::Streamer(TBuffer &R__b)
-{
-   // Stream an object of class TArtReconstruction.
-
-   if (R__b.IsReading()) {
-      R__b.ReadClassBuffer(TArtReconstruction::Class(),this);
-   } else {
-      R__b.WriteClassBuffer(TArtReconstruction::Class(),this);
-   }
-}
-
-namespace ROOT {
-   // Wrapper around operator delete
-   static void delete_TArtReconstruction(void *p) {
-      delete ((::TArtReconstruction*)p);
-   }
-   static void deleteArray_TArtReconstruction(void *p) {
-      delete [] ((::TArtReconstruction*)p);
-   }
-   static void destruct_TArtReconstruction(void *p) {
-      typedef ::TArtReconstruction current_t;
-      ((current_t*)p)->~current_t();
-   }
-} // end of namespace ROOT for class ::TArtReconstruction
-
-namespace ROOT {
-   // Wrapper around operator delete
-   static void delete_TArtDecoderV767(void *p) {
-      delete ((::TArtDecoderV767*)p);
-   }
-   static void deleteArray_TArtDecoderV767(void *p) {
-      delete [] ((::TArtDecoderV767*)p);
-   }
-   static void destruct_TArtDecoderV767(void *p) {
-      typedef ::TArtDecoderV767 current_t;
-      ((current_t*)p)->~current_t();
-   }
-} // end of namespace ROOT for class ::TArtDecoderV767
-
-//______________________________________________________________________________
-void TArtEventInfo::Streamer(TBuffer &R__b)
-{
-   // Stream an object of class TArtEventInfo.
-
-   if (R__b.IsReading()) {
-      R__b.ReadClassBuffer(TArtEventInfo::Class(),this);
-   } else {
-      R__b.WriteClassBuffer(TArtEventInfo::Class(),this);
-   }
-}
-
-namespace ROOT {
-   // Wrappers around operator new
-   static void *new_TArtEventInfo(void *p) {
-      return  p ? new(p) ::TArtEventInfo : new ::TArtEventInfo;
-   }
-   static void *newArray_TArtEventInfo(Long_t nElements, void *p) {
-      return p ? new(p) ::TArtEventInfo[nElements] : new ::TArtEventInfo[nElements];
-   }
-   // Wrapper around operator delete
-   static void delete_TArtEventInfo(void *p) {
-      delete ((::TArtEventInfo*)p);
-   }
-   static void deleteArray_TArtEventInfo(void *p) {
-      delete [] ((::TArtEventInfo*)p);
-   }
-   static void destruct_TArtEventInfo(void *p) {
-      typedef ::TArtEventInfo current_t;
-      ((current_t*)p)->~current_t();
-   }
-} // end of namespace ROOT for class ::TArtEventInfo
 
 //______________________________________________________________________________
 void TArtParserRIDF::Streamer(TBuffer &R__b)
@@ -3352,6 +3325,20 @@ namespace ROOT {
 } // end of namespace ROOT for class ::TArtDecoderL3377d
 
 namespace ROOT {
+   // Wrapper around operator delete
+   static void delete_TArtDecoderV1190C(void *p) {
+      delete ((::TArtDecoderV1190C*)p);
+   }
+   static void deleteArray_TArtDecoderV1190C(void *p) {
+      delete [] ((::TArtDecoderV1190C*)p);
+   }
+   static void destruct_TArtDecoderV1190C(void *p) {
+      typedef ::TArtDecoderV1190C current_t;
+      ((current_t*)p)->~current_t();
+   }
+} // end of namespace ROOT for class ::TArtDecoderV1190C
+
+namespace ROOT {
    // Wrappers around operator new
    static void *new_TArtUtil(void *p) {
       return  p ? new(p) ::TArtUtil : new ::TArtUtil;
@@ -3373,6 +3360,20 @@ namespace ROOT {
 } // end of namespace ROOT for class ::TArtUtil
 
 namespace ROOT {
+   // Wrapper around operator delete
+   static void delete_TArtDecoderP716X(void *p) {
+      delete ((::TArtDecoderP716X*)p);
+   }
+   static void deleteArray_TArtDecoderP716X(void *p) {
+      delete [] ((::TArtDecoderP716X*)p);
+   }
+   static void destruct_TArtDecoderP716X(void *p) {
+      typedef ::TArtDecoderP716X current_t;
+      ((current_t*)p)->~current_t();
+   }
+} // end of namespace ROOT for class ::TArtDecoderP716X
+
+namespace ROOT {
    static TClass *vectorlEintgR_Dictionary();
    static void vectorlEintgR_TClassManip(TClass*);
    static void *new_vectorlEintgR(void *p = 0);
@@ -3387,7 +3388,7 @@ namespace ROOT {
       vector<int> *ptr = 0;
       static ::TVirtualIsAProxy* isa_proxy = new ::TIsAProxy(typeid(vector<int>));
       static ::ROOT::TGenericClassInfo 
-         instance("vector<int>", -2, "vector", 214,
+         instance("vector<int>", -2, "vector", 386,
                   typeid(vector<int>), ::ROOT::Internal::DefineBehavior(ptr, ptr),
                   &vectorlEintgR_Dictionary, isa_proxy, 0,
                   sizeof(vector<int>) );
@@ -3397,6 +3398,8 @@ namespace ROOT {
       instance.SetDeleteArray(&deleteArray_vectorlEintgR);
       instance.SetDestructor(&destruct_vectorlEintgR);
       instance.AdoptCollectionProxyInfo(TCollectionProxyInfo::Generate(TCollectionProxyInfo::Pushback< vector<int> >()));
+
+      ::ROOT::AddClassAlternate("vector<int>","std::vector<int, std::allocator<int> >");
       return &instance;
    }
    // Static variable to force the class initialization
@@ -3450,7 +3453,7 @@ namespace ROOT {
       vector<TArtRawSegmentObject*> *ptr = 0;
       static ::TVirtualIsAProxy* isa_proxy = new ::TIsAProxy(typeid(vector<TArtRawSegmentObject*>));
       static ::ROOT::TGenericClassInfo 
-         instance("vector<TArtRawSegmentObject*>", -2, "vector", 214,
+         instance("vector<TArtRawSegmentObject*>", -2, "vector", 386,
                   typeid(vector<TArtRawSegmentObject*>), ::ROOT::Internal::DefineBehavior(ptr, ptr),
                   &vectorlETArtRawSegmentObjectmUgR_Dictionary, isa_proxy, 0,
                   sizeof(vector<TArtRawSegmentObject*>) );
@@ -3460,6 +3463,8 @@ namespace ROOT {
       instance.SetDeleteArray(&deleteArray_vectorlETArtRawSegmentObjectmUgR);
       instance.SetDestructor(&destruct_vectorlETArtRawSegmentObjectmUgR);
       instance.AdoptCollectionProxyInfo(TCollectionProxyInfo::Generate(TCollectionProxyInfo::Pushback< vector<TArtRawSegmentObject*> >()));
+
+      ::ROOT::AddClassAlternate("vector<TArtRawSegmentObject*>","std::vector<TArtRawSegmentObject*, std::allocator<TArtRawSegmentObject*> >");
       return &instance;
    }
    // Static variable to force the class initialization
@@ -3513,7 +3518,7 @@ namespace ROOT {
       vector<TArtRawScalerObject*> *ptr = 0;
       static ::TVirtualIsAProxy* isa_proxy = new ::TIsAProxy(typeid(vector<TArtRawScalerObject*>));
       static ::ROOT::TGenericClassInfo 
-         instance("vector<TArtRawScalerObject*>", -2, "vector", 214,
+         instance("vector<TArtRawScalerObject*>", -2, "vector", 386,
                   typeid(vector<TArtRawScalerObject*>), ::ROOT::Internal::DefineBehavior(ptr, ptr),
                   &vectorlETArtRawScalerObjectmUgR_Dictionary, isa_proxy, 0,
                   sizeof(vector<TArtRawScalerObject*>) );
@@ -3523,6 +3528,8 @@ namespace ROOT {
       instance.SetDeleteArray(&deleteArray_vectorlETArtRawScalerObjectmUgR);
       instance.SetDestructor(&destruct_vectorlETArtRawScalerObjectmUgR);
       instance.AdoptCollectionProxyInfo(TCollectionProxyInfo::Generate(TCollectionProxyInfo::Pushback< vector<TArtRawScalerObject*> >()));
+
+      ::ROOT::AddClassAlternate("vector<TArtRawScalerObject*>","std::vector<TArtRawScalerObject*, std::allocator<TArtRawScalerObject*> >");
       return &instance;
    }
    // Static variable to force the class initialization
@@ -3576,7 +3583,7 @@ namespace ROOT {
       vector<TArtRawFADCDataObject*> *ptr = 0;
       static ::TVirtualIsAProxy* isa_proxy = new ::TIsAProxy(typeid(vector<TArtRawFADCDataObject*>));
       static ::ROOT::TGenericClassInfo 
-         instance("vector<TArtRawFADCDataObject*>", -2, "vector", 214,
+         instance("vector<TArtRawFADCDataObject*>", -2, "vector", 386,
                   typeid(vector<TArtRawFADCDataObject*>), ::ROOT::Internal::DefineBehavior(ptr, ptr),
                   &vectorlETArtRawFADCDataObjectmUgR_Dictionary, isa_proxy, 0,
                   sizeof(vector<TArtRawFADCDataObject*>) );
@@ -3586,6 +3593,8 @@ namespace ROOT {
       instance.SetDeleteArray(&deleteArray_vectorlETArtRawFADCDataObjectmUgR);
       instance.SetDestructor(&destruct_vectorlETArtRawFADCDataObjectmUgR);
       instance.AdoptCollectionProxyInfo(TCollectionProxyInfo::Generate(TCollectionProxyInfo::Pushback< vector<TArtRawFADCDataObject*> >()));
+
+      ::ROOT::AddClassAlternate("vector<TArtRawFADCDataObject*>","std::vector<TArtRawFADCDataObject*, std::allocator<TArtRawFADCDataObject*> >");
       return &instance;
    }
    // Static variable to force the class initialization
@@ -3639,7 +3648,7 @@ namespace ROOT {
       vector<TArtRawDataObject*> *ptr = 0;
       static ::TVirtualIsAProxy* isa_proxy = new ::TIsAProxy(typeid(vector<TArtRawDataObject*>));
       static ::ROOT::TGenericClassInfo 
-         instance("vector<TArtRawDataObject*>", -2, "vector", 214,
+         instance("vector<TArtRawDataObject*>", -2, "vector", 386,
                   typeid(vector<TArtRawDataObject*>), ::ROOT::Internal::DefineBehavior(ptr, ptr),
                   &vectorlETArtRawDataObjectmUgR_Dictionary, isa_proxy, 0,
                   sizeof(vector<TArtRawDataObject*>) );
@@ -3649,6 +3658,8 @@ namespace ROOT {
       instance.SetDeleteArray(&deleteArray_vectorlETArtRawDataObjectmUgR);
       instance.SetDestructor(&destruct_vectorlETArtRawDataObjectmUgR);
       instance.AdoptCollectionProxyInfo(TCollectionProxyInfo::Generate(TCollectionProxyInfo::Pushback< vector<TArtRawDataObject*> >()));
+
+      ::ROOT::AddClassAlternate("vector<TArtRawDataObject*>","std::vector<TArtRawDataObject*, std::allocator<TArtRawDataObject*> >");
       return &instance;
    }
    // Static variable to force the class initialization
@@ -3696,15 +3707,17 @@ namespace {
 "include/TArtDecoderFixed16.hh",
 "include/TArtCore.hh",
 "include/TArtDecoderLUPO.hh",
-"include/TArtDecoderAMTTDC.hh",
+"include/TArtReconstruction.hh",
 "include/TArtDecoderV1740.hh",
+"include/TArtRawFADCDataObject.hh",
 "include/TArtRawDataObject.hh",
 "include/TArtSemaphore.hh",
 "include/TArtStoreManager.hh",
-"include/TArtDecoderV1190C.hh",
+"include/TArtEventInfo.hh",
 "include/TArtDecoderV7XX.hh",
 "include/TArtDecoderCTM405.hh",
-"include/TArtEventStore.hh",
+"include/TArtDecoderV767.hh",
+"include/TArtDecoderAMTTDC.hh",
 "include/TArtMath.hh",
 "include/TArtDecoderFixed32.hh",
 "include/TArtParserFactory.hh",
@@ -3712,41 +3725,39 @@ namespace {
 "include/TArtSharedMemory.hh",
 "include/TArtConfig.hh",
 "include/TArtDecoderA3100.hh",
-"include/TArtParser.hh",
+"include/segidlist.hh",
 "include/TArtDecoderMADC32.hh",
 "include/TArtSharedMemoryDataSource.hh",
 "include/TArtDecoderFixed24.hh",
 "include/TArtDecoderV1290.hh",
 "include/TArtDataObject.hh",
 "include/TArtDecoderV1190.hh",
-"include/TArtDecoderP716X.hh",
+"include/TArtEventStore.hh",
+"include/TArtDecoderP716XZ.hh",
 "include/TArtRawEventObject.hh",
-"include/TArtRawSegmentObject.hh",
 "include/TArtParserRDF.hh",
+"include/TArtParser.hh",
 "include/TArtDecoderV550.hh",
 "include/TArtDecoderDSP.hh",
 "include/TArtFileDataSource.hh",
 "include/TArtMap.hh",
-"include/TArtDecoderP716XZ.hh",
 "include/TArtDecoderAD413A.hh",
-"include/TArtRawFADCDataObject.hh",
+"include/TArtParserRIDF.hh",
 "include/TArtRawScalerObject.hh",
 "include/TArtDataSource.hh",
-"include/segidlist.hh",
-"include/TArtReconstruction.hh",
-"include/TArtDecoderV767.hh",
-"include/TArtEventInfo.hh",
+"include/TArtRawSegmentObject.hh",
 "include/TArtDecoderV830.hh",
-"include/TArtParserRIDF.hh",
 "include/TArtDecoderL3377d.hh",
+"include/TArtDecoderV1190C.hh",
 "include/TArtUtil.hh",
+"include/TArtDecoderP716X.hh",
 0
     };
     static const char* includePaths[] = {
 "../../sources/Core/include",
-"/opt/root61600/include",
-"/opt/root61600/include",
-"/home/wuhongyi/workgithub/DAQ/VMEDAQ/anaroot/sources/Core/",
+"/opt/ROOT/root62402/include",
+"/opt/ROOT/root62402/include/",
+"/media/wuhongyi/99526dbc-cdd5-4683-827c-b1b1a9a54c96/workgithub/DAQ/VMEDAQ/anaroot/sources/Core/",
 0
     };
     static const char* fwdDeclCode = R"DICTFWDDCLS(
@@ -3754,7 +3765,7 @@ namespace {
 #pragma clang diagnostic ignored "-Wkeyword-compat"
 #pragma clang diagnostic ignored "-Wignored-attributes"
 #pragma clang diagnostic ignored "-Wreturn-type-c-linkage"
-extern int __Cling_Autoloading_Map;
+extern int __Cling_AutoLoading_Map;
 class __attribute__((annotate("$clingAutoload$TArtRawDataObject.hh")))  __attribute__((annotate("$clingAutoload$include/TArtDecoderCBLT.hh")))  TArtRawDataObject;
 class __attribute__((annotate("$clingAutoload$TArtCore.hh")))  __attribute__((annotate("$clingAutoload$include/TArtDecoderCBLT.hh")))  TArtCore;
 class __attribute__((annotate("$clingAutoload$TArtRawFADCDataObject.hh")))  __attribute__((annotate("$clingAutoload$include/TArtDecoderCBLT.hh")))  TArtRawFADCDataObject;
@@ -3766,19 +3777,20 @@ class __attribute__((annotate("$clingAutoload$TArtDataSource.hh")))  __attribute
 class __attribute__((annotate("$clingAutoload$include/TArtStreamingDataSource.hh")))  TArtStreamingDataSource;
 class __attribute__((annotate("$clingAutoload$include/TArtDecoderFixed16.hh")))  TArtDecoderFixed16;
 class __attribute__((annotate("$clingAutoload$include/TArtDecoderLUPO.hh")))  TArtDecoderLUPO;
-class __attribute__((annotate("$clingAutoload$include/TArtDecoderAMTTDC.hh")))  TArtDecoderAMTTDC;
+class __attribute__((annotate("$clingAutoload$include/TArtReconstruction.hh")))  TArtReconstruction;
 class __attribute__((annotate("$clingAutoload$include/TArtDecoderV1740.hh")))  TArtDecoderV1740;
 class __attribute__((annotate("$clingAutoload$include/TArtSemaphore.hh")))  TArtSemaphore;
 class __attribute__((annotate("$clingAutoload$TArtRawScalerObject.hh")))  __attribute__((annotate("$clingAutoload$include/TArtStoreManager.hh")))  TArtRawScalerObject;
 class __attribute__((annotate("$clingAutoload$TArtRawEventObject.hh")))  __attribute__((annotate("$clingAutoload$include/TArtStoreManager.hh")))  TArtRawEventObject;
 class __attribute__((annotate("$clingAutoload$include/TArtStoreManager.hh")))  TArtStoreManager;
-class __attribute__((annotate("$clingAutoload$include/TArtDecoderV1190C.hh")))  TArtDecoderV1190C;
+class __attribute__((annotate("$clingAutoload$include/TArtEventInfo.hh")))  TArtEventInfo;
 class __attribute__((annotate("$clingAutoload$include/TArtDecoderV7XX.hh")))  TArtDecoderV7XX;
 class __attribute__((annotate("$clingAutoload$include/TArtDecoderCTM405.hh")))  TArtDecoderCTM405;
-class __attribute__((annotate("$clingAutoload$TArtParser.hh")))  __attribute__((annotate("$clingAutoload$include/TArtEventStore.hh")))  TArtParser;
-class __attribute__((annotate("$clingAutoload$include/TArtEventStore.hh")))  TArtEventStore;
+class __attribute__((annotate("$clingAutoload$include/TArtDecoderV767.hh")))  TArtDecoderV767;
+class __attribute__((annotate("$clingAutoload$include/TArtDecoderAMTTDC.hh")))  TArtDecoderAMTTDC;
 class __attribute__((annotate("$clingAutoload$include/TArtMath.hh")))  TArtMath;
 class __attribute__((annotate("$clingAutoload$include/TArtDecoderFixed32.hh")))  TArtDecoderFixed32;
+class __attribute__((annotate("$clingAutoload$TArtParser.hh")))  __attribute__((annotate("$clingAutoload$include/TArtParserFactory.hh")))  TArtParser;
 class __attribute__((annotate("$clingAutoload$include/TArtParserFactory.hh")))  TArtParserFactory;
 class __attribute__((annotate("$clingAutoload$include/TArtSharedMemory.hh")))  TArtSharedMemory;
 class __attribute__((annotate("$clingAutoload$include/TArtDecoderA3100.hh")))  TArtDecoderA3100;
@@ -3788,44 +3800,43 @@ class __attribute__((annotate("$clingAutoload$include/TArtDecoderFixed24.hh"))) 
 class __attribute__((annotate("$clingAutoload$include/TArtDecoderV1290.hh")))  TArtDecoderV1290;
 class __attribute__((annotate("$clingAutoload$include/TArtDataObject.hh")))  TArtDataObject;
 class __attribute__((annotate("$clingAutoload$include/TArtDecoderV1190.hh")))  TArtDecoderV1190;
-class __attribute__((annotate("$clingAutoload$include/TArtDecoderP716X.hh")))  TArtDecoderP716X;
+class __attribute__((annotate("$clingAutoload$include/TArtEventStore.hh")))  TArtEventStore;
+class __attribute__((annotate("$clingAutoload$include/TArtDecoderP716XZ.hh")))  TArtDecoderP716XZ;
 class __attribute__((annotate("$clingAutoload$include/TArtParserRDF.hh")))  TArtParserRDF;
 class __attribute__((annotate("$clingAutoload$include/TArtDecoderV550.hh")))  TArtDecoderV550;
 class __attribute__((annotate("$clingAutoload$include/TArtDecoderDSP.hh")))  TArtDecoderDSP;
 class __attribute__((annotate("$clingAutoload$include/TArtFileDataSource.hh")))  TArtFileDataSource;
 class __attribute__((annotate("$clingAutoload$include/TArtMap.hh")))  TArtRIDFMap;
-class __attribute__((annotate("$clingAutoload$include/TArtDecoderP716XZ.hh")))  TArtDecoderP716XZ;
 class __attribute__((annotate("$clingAutoload$include/TArtDecoderAD413A.hh")))  TArtDecoderAD413A;
-class __attribute__((annotate("$clingAutoload$include/TArtReconstruction.hh")))  TArtReconstruction;
-class __attribute__((annotate("$clingAutoload$include/TArtDecoderV767.hh")))  TArtDecoderV767;
-class __attribute__((annotate("$clingAutoload$include/TArtEventInfo.hh")))  TArtEventInfo;
 class __attribute__((annotate("$clingAutoload$include/TArtParserRIDF.hh")))  TArtParserRIDF;
 class __attribute__((annotate("$clingAutoload$include/TArtDecoderL3377d.hh")))  TArtDecoderL3377d;
+class __attribute__((annotate("$clingAutoload$include/TArtDecoderV1190C.hh")))  TArtDecoderV1190C;
 class __attribute__((annotate("$clingAutoload$include/TArtUtil.hh")))  TArtUtil;
+class __attribute__((annotate("$clingAutoload$include/TArtDecoderP716X.hh")))  TArtDecoderP716X;
 )DICTFWDDCLS";
     static const char* payloadCode = R"DICTPAYLOAD(
 #line 1 "anacore_dict dictionary payload"
 
-#ifndef G__VECTOR_HAS_CLASS_ITERATOR
-  #define G__VECTOR_HAS_CLASS_ITERATOR 1
-#endif
 
 #define _BACKWARD_BACKWARD_WARNING_H
+// Inline headers
 #include "include/TArtDecoderCBLT.hh"
 #include "include/TArtDecoderFactory.hh"
 #include "include/TArtStreamingDataSource.hh"
 #include "include/TArtDecoderFixed16.hh"
 #include "include/TArtCore.hh"
 #include "include/TArtDecoderLUPO.hh"
-#include "include/TArtDecoderAMTTDC.hh"
+#include "include/TArtReconstruction.hh"
 #include "include/TArtDecoderV1740.hh"
+#include "include/TArtRawFADCDataObject.hh"
 #include "include/TArtRawDataObject.hh"
 #include "include/TArtSemaphore.hh"
 #include "include/TArtStoreManager.hh"
-#include "include/TArtDecoderV1190C.hh"
+#include "include/TArtEventInfo.hh"
 #include "include/TArtDecoderV7XX.hh"
 #include "include/TArtDecoderCTM405.hh"
-#include "include/TArtEventStore.hh"
+#include "include/TArtDecoderV767.hh"
+#include "include/TArtDecoderAMTTDC.hh"
 #include "include/TArtMath.hh"
 #include "include/TArtDecoderFixed32.hh"
 #include "include/TArtParserFactory.hh"
@@ -3833,38 +3844,36 @@ class __attribute__((annotate("$clingAutoload$include/TArtUtil.hh")))  TArtUtil;
 #include "include/TArtSharedMemory.hh"
 #include "include/TArtConfig.hh"
 #include "include/TArtDecoderA3100.hh"
-#include "include/TArtParser.hh"
+#include "include/segidlist.hh"
 #include "include/TArtDecoderMADC32.hh"
 #include "include/TArtSharedMemoryDataSource.hh"
 #include "include/TArtDecoderFixed24.hh"
 #include "include/TArtDecoderV1290.hh"
 #include "include/TArtDataObject.hh"
 #include "include/TArtDecoderV1190.hh"
-#include "include/TArtDecoderP716X.hh"
+#include "include/TArtEventStore.hh"
+#include "include/TArtDecoderP716XZ.hh"
 #include "include/TArtRawEventObject.hh"
-#include "include/TArtRawSegmentObject.hh"
 #include "include/TArtParserRDF.hh"
+#include "include/TArtParser.hh"
 #include "include/TArtDecoderV550.hh"
 #include "include/TArtDecoderDSP.hh"
 #include "include/TArtFileDataSource.hh"
 #include "include/TArtMap.hh"
-#include "include/TArtDecoderP716XZ.hh"
 #include "include/TArtDecoderAD413A.hh"
-#include "include/TArtRawFADCDataObject.hh"
+#include "include/TArtParserRIDF.hh"
 #include "include/TArtRawScalerObject.hh"
 #include "include/TArtDataSource.hh"
-#include "include/segidlist.hh"
-#include "include/TArtReconstruction.hh"
-#include "include/TArtDecoderV767.hh"
-#include "include/TArtEventInfo.hh"
+#include "include/TArtRawSegmentObject.hh"
 #include "include/TArtDecoderV830.hh"
-#include "include/TArtParserRIDF.hh"
 #include "include/TArtDecoderL3377d.hh"
+#include "include/TArtDecoderV1190C.hh"
 #include "include/TArtUtil.hh"
+#include "include/TArtDecoderP716X.hh"
 
 #undef  _BACKWARD_BACKWARD_WARNING_H
 )DICTPAYLOAD";
-    static const char* classesHeaders[]={
+    static const char* classesHeaders[] = {
 "TArtCore", payloadCode, "@",
 "TArtDataObject", payloadCode, "@",
 "TArtDataSource", payloadCode, "@",
@@ -3912,13 +3921,13 @@ class __attribute__((annotate("$clingAutoload$include/TArtUtil.hh")))  TArtUtil;
 "TArtStoreManager", payloadCode, "@",
 "TArtStreamingDataSource", payloadCode, "@",
 "TArtUtil", payloadCode, "@",
-nullptr};
-
+nullptr
+};
     static bool isInitialized = false;
     if (!isInitialized) {
       TROOT::RegisterModule("anacore_dict",
         headers, includePaths, payloadCode, fwdDeclCode,
-        TriggerDictionaryInitialization_anacore_dict_Impl, {}, classesHeaders, /*has no C++ module*/false);
+        TriggerDictionaryInitialization_anacore_dict_Impl, {}, classesHeaders, /*hasCxxModule*/false);
       isInitialized = true;
     }
   }
