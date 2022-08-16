@@ -464,6 +464,20 @@
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">enum</span> <span class="nc">board</span><span class="w"> </span><span class="n">bd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">V2718</span><span class="p">;</span><span class="w"></span>
 </pre></div>
 </div>
+<p>如果编译中出现以下类似的错误，</p>
+<div class="highlight-txt notranslate"><div class="highlight"><pre><span></span>cmdvme.c:29:8: error: initialization of flexible array member in a nested context
+29 |   {WR, &quot;-wr&quot;},
+   |        ^~~~~
+cmdvme.c:29:8: note: (near initialization for ‘chkmode[0]’)
+</pre></div>
+</div>
+<p>则代码修改如下</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span> <span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">enum</span> <span class="nc">mode</span><span class="w"> </span><span class="n">md</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">mdchar</span><span class="p">[</span><span class="mi">3</span><span class="p">];</span><span class="c1">//指定数组长度</span>
+<span class="p">}</span><span class="n">stchkmode</span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
 </section>
 <section id="init-daqinitrc-sh">
 <h2>init/daqinitrc.sh<a class="headerlink" href="#init-daqinitrc-sh" title="永久链接至标题">¶</a></h2>

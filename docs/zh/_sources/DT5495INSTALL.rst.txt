@@ -4,9 +4,9 @@
 .. Author: Hongyi Wu(吴鸿毅)
 .. Email: wuhongyi@qq.com 
 .. Created: 日 7月  5 19:33:34 2020 (+0800)
-.. Last-Updated: 四 7月 29 21:51:43 2021 (+0800)
+.. Last-Updated: 二 8月 16 16:02:26 2022 (+0800)
 ..           By: Hongyi Wu(吴鸿毅)
-..     Update #: 7
+..     Update #: 11
 .. URL: http://wuhongyi.cn 
 
 ##################################################
@@ -29,6 +29,8 @@ PLULib 驱动安装
    cd ..
 	  
 
+
+   
 ============================================================
 CentOS 7
 ============================================================
@@ -191,18 +193,55 @@ firewalld
     
    ##  默认监听80端口 /var/www/html
 
-
-============================================================
-Ubuntu 20.04
-============================================================
-
-
-**Ubuntu 20.04 配置文件路径**
-
-等待补充。。。
     
+============================================================
+Ubuntu 20
+============================================================
+
+----------------------------------------------------------------------
+CGI 配置
+----------------------------------------------------------------------
+
+修改 apache 的 **/etc/apache2/conf-enabled/serve-cgi-bin.conf** 文件
+
+改为
+
+.. code-block:: bash
+
+	<IfDefine ENABLE_USR_LIB_CGI_BIN>
+		ScriptAlias /cgi-bin/ /var/www/cgi-bin/
+		<Directory "/var/www/cgi-bin">
+			AllowOverride All
+			Options +ExecCGI -MultiViews +SymLinksIfOwnerMatch
+			Require all granted
+			AddHandler cgi-script .cgi .sh
+		</Directory>
+	</IfDefine>
+
+启用 cgi mod
+	
+.. code-block:: bash
+		
+   sudo ln -s /etc/apache2/mods-available/cgid.conf /etc/apache2/mods-enabled/cgid.conf
+   sudo ln -s /etc/apache2/mods-available/cgid.load /etc/apache2/mods-enabled/cgid.load
+   sudo ln -s /etc/apache2/mods-available/cgi.load /etc/apache2/mods-enabled/cgi.load
 
 
+重启apache服务
+
+.. code-block:: bash
+		
+   sudo /etc/init.d/apache2 restart 
+
+
+
+============================================================
+网页配置
+============================================================
+   
+以上 CentOS/Ubuntu，共用一套网页控制源码，将 *www* 中 **cgi-bin** 和 **html** 两个文件夹中的程序，复制到 */var/www* 中的相应文件夹中。
+
+然后进入 */var/www/cgi-bin* 文件夹，使用 root 权限执行，make clean ，然后执行 make
 
    
 

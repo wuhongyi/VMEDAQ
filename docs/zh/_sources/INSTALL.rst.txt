@@ -4,9 +4,9 @@
 .. Author: Hongyi Wu(吴鸿毅)
 .. Email: wuhongyi@qq.com 
 .. Created: 一 12月  3 10:24:55 2018 (+0800)
-.. Last-Updated: 二 1月  4 11:23:02 2022 (+0800)
+.. Last-Updated: 二 8月 16 11:38:15 2022 (+0800)
 ..           By: Hongyi Wu(吴鸿毅)
-..     Update #: 30
+..     Update #: 31
 .. URL: http://wuhongyi.cn 
 
 =================================
@@ -86,8 +86,8 @@ V1718
 
 .. code:: bash
 	  
-   tar -xzvf CAENUSBdrvB-1.5.2.tgz
-   cd CAENUSBdrvB-1.5.2
+   tar -xzvf CAENUSBdrvB-1.5.4.tgz
+   cd CAENUSBdrvB-1.5.4
    make
    make install     #需要ROOT权限
 
@@ -103,8 +103,9 @@ A2818驱动
 - A2818Drv-1.22.tgz
    - 在 Centos 7 下编译无法通过
 - A2818Drv-1.23.tgz
-   - 测试正常，推荐使用
-     
+   - CentOS7 测试正常，推荐使用
+- A2818Drv-1.24.tgz
+   - Ubuntu20测试正常，推荐使用     
 
 如果您使用 A2818，则安装以下驱动。
 

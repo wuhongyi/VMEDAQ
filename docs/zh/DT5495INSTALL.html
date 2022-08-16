@@ -126,7 +126,11 @@
 <li class="toctree-l3"><a class="reference internal" href="#firewalld">firewalld</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#ubuntu-20-04">Ubuntu 20.04</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ubuntu-20">Ubuntu 20</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#cgi">CGI 配置</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">网页配置</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="DT5495GUI.html">网页控制界面</a></li>
@@ -321,10 +325,39 @@ systemctl status httpd
 </div>
 </section>
 </section>
-<section id="ubuntu-20-04">
-<h2>Ubuntu 20.04<a class="headerlink" href="#ubuntu-20-04" title="永久链接至标题">¶</a></h2>
-<p><strong>Ubuntu 20.04 配置文件路径</strong></p>
-<p>等待补充。。。</p>
+<section id="ubuntu-20">
+<h2>Ubuntu 20<a class="headerlink" href="#ubuntu-20" title="永久链接至标题">¶</a></h2>
+<section id="cgi">
+<h3>CGI 配置<a class="headerlink" href="#cgi" title="永久链接至标题">¶</a></h3>
+<p>修改 apache 的 <strong>/etc/apache2/conf-enabled/serve-cgi-bin.conf</strong> 文件</p>
+<p>改为</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&lt;IfDefine ENABLE_USR_LIB_CGI_BIN&gt;
+        ScriptAlias /cgi-bin/ /var/www/cgi-bin/
+        &lt;Directory <span class="s2">&quot;/var/www/cgi-bin&quot;</span>&gt;
+                AllowOverride All
+                Options +ExecCGI -MultiViews +SymLinksIfOwnerMatch
+                Require all granted
+                AddHandler cgi-script .cgi .sh
+        &lt;/Directory&gt;
+&lt;/IfDefine&gt;
+</pre></div>
+</div>
+<p>启用 cgi mod</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo ln -s /etc/apache2/mods-available/cgid.conf /etc/apache2/mods-enabled/cgid.conf
+sudo ln -s /etc/apache2/mods-available/cgid.load /etc/apache2/mods-enabled/cgid.load
+sudo ln -s /etc/apache2/mods-available/cgi.load /etc/apache2/mods-enabled/cgi.load
+</pre></div>
+</div>
+<p>重启apache服务</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo /etc/init.d/apache2 restart
+</pre></div>
+</div>
+</section>
+</section>
+<section id="id3">
+<h2>网页配置<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>以上 CentOS/Ubuntu，共用一套网页控制源码，将 <em>www</em> 中 <strong>cgi-bin</strong> 和 <strong>html</strong> 两个文件夹中的程序，复制到 <em>/var/www</em> 中的相应文件夹中。</p>
+<p>然后进入 <em>/var/www/cgi-bin</em> 文件夹，使用 root 权限执行，make clean ，然后执行 make</p>
 </section>
 </section>
 

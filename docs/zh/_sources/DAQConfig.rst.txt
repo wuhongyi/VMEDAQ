@@ -4,9 +4,9 @@
 .. Author: Hongyi Wu(吴鸿毅)
 .. Email: wuhongyi@qq.com 
 .. Created: 一 12月  3 11:03:17 2018 (+0800)
-.. Last-Updated: 六 12月 25 23:03:47 2021 (+0800)
+.. Last-Updated: 二 8月 16 11:55:06 2022 (+0800)
 ..           By: Hongyi Wu(吴鸿毅)
-..     Update #: 14
+..     Update #: 15
 .. URL: http://wuhongyi.cn 
 
 =================================
@@ -364,7 +364,25 @@ cmdvme/cmdvme.c
 
     enum board bd = V2718;
 	  
-  
+
+如果编译中出现以下类似的错误，
+    
+.. code:: txt
+	  
+   cmdvme.c:29:8: error: initialization of flexible array member in a nested context
+   29 |   {WR, "-wr"},
+      |        ^~~~~
+   cmdvme.c:29:8: note: (near initialization for ‘chkmode[0]’)
+
+则代码修改如下
+
+.. code:: cpp
+
+   typedef struct {
+     enum mode md;
+     const char mdchar[3];//指定数组长度
+   }stchkmode;
+    
 ---------------------------------
 init/daqinitrc.sh
 ---------------------------------

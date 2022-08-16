@@ -17,9 +17,6 @@ void evt(void) {
   //device, focalplane, detector, can be defined as you want
 
 
-  //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-  // 以下部分用户需要修改
-
   // Read data 
   babies_init_segment(MKSEGID(0, 0, PLAQ, CBLT));
 #ifdef V7XXINTERRUPT
@@ -55,9 +52,6 @@ void evt(void) {
   // madc32_dmasegdata(MADC0ADDR, 34);
   // babies_end_segment();  
 
-  // 以上部分用户需要修改
-  //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-  
 
   // End of event
   babies_end_event();
