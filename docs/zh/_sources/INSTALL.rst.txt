@@ -4,9 +4,9 @@
 .. Author: Hongyi Wu(吴鸿毅)
 .. Email: wuhongyi@qq.com 
 .. Created: 一 12月  3 10:24:55 2018 (+0800)
-.. Last-Updated: 二 8月 16 11:38:15 2022 (+0800)
+.. Last-Updated: 三 8月 24 21:03:59 2022 (+0800)
 ..           By: Hongyi Wu(吴鸿毅)
-..     Update #: 31
+..     Update #: 32
 .. URL: http://wuhongyi.cn 
 
 =================================
@@ -66,6 +66,12 @@ CAEN Lib
 检查CAENUpgrader安装
 ---------------------------------
 
+- CAENUpgrader-1.6.6
+   - 测试正常
+- CAENUpgrader-1.7.2
+   - Ubuntu20.04 异常
+
+     
 安装后在终端中输入
 
 .. code:: bash
