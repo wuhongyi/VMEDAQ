@@ -8,7 +8,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>网页控制界面 &mdash; VMEDAQ 20211226 文档</title>
+  <title>网页控制界面 &mdash; VMEDAQ 20220904 文档</title>
   
 
   
@@ -123,6 +123,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#id3">寄存器界面</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#id4">状态监视界面</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#id5">在线时间差测量</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id6">计数器</a></li>
 </ul>
 </li>
 </ul>
@@ -201,8 +202,8 @@
 <p>按钮 “Program FPGA” 用于初始化系统配置，当可编程逻辑模块上电之后第一时间点击该按钮来完成系统的初始化。</p>
 <p>可以保存 5 个实验设置参数，分别为 “Experimental setup 1-5”。通过修改寄存器进行实验逻辑配置之后，可以点击按钮 “Save” 保存，将会把当前 FPGA 寄存器参数保存到选定的实验配置中。按钮 “Load” 用于将选择的实验配置加载到 FPGA 中。</p>
 <p>示波器监视部分用于选择 4 个 LEMO 输出通道的输出信号，下表中列出了当前所有可供选择的选项。点击 “Read” 按钮即可读取当前的设置参数，按钮 “Change” 用于将当前输入框的参数写入 FPGA 中。</p>
-<table class="colwidths-given docutils align-default" id="id6">
-<caption><span class="caption-text">4 通道 LEMO 输出</span><a class="headerlink" href="#id6" title="永久链接至表格">¶</a></caption>
+<table class="colwidths-given docutils align-default" id="id7">
+<caption><span class="caption-text">4 通道 LEMO 输出</span><a class="headerlink" href="#id7" title="永久链接至表格">¶</a></caption>
 <colgroup>
 <col style="width: 13%" />
 <col style="width: 87%" />
@@ -408,8 +409,8 @@
 </tbody>
 </table>
 <p>寄存器设置部分用于读取或者修改寄存器设置参数。读取寄存器时，需要输入要读取寄存器的地址，然后点击按钮 “Read”；修改寄存器时，输入要修改寄存器的地址以及参数值，然后点击按钮“Write”。</p>
-<table class="colwidths-given docutils align-default" id="id7">
-<caption><span class="caption-text">control register</span><a class="headerlink" href="#id7" title="永久链接至表格">¶</a></caption>
+<table class="colwidths-given docutils align-default" id="id8">
+<caption><span class="caption-text">control register</span><a class="headerlink" href="#id8" title="永久链接至表格">¶</a></caption>
 <colgroup>
 <col style="width: 13%" />
 <col style="width: 87%" />
@@ -485,8 +486,8 @@
 </tr>
 </tbody>
 </table>
-<table class="colwidths-given docutils align-default" id="id8">
-<caption><span class="caption-text">触发源的选择</span><a class="headerlink" href="#id8" title="永久链接至表格">¶</a></caption>
+<table class="colwidths-given docutils align-default" id="id9">
+<caption><span class="caption-text">触发源的选择</span><a class="headerlink" href="#id9" title="永久链接至表格">¶</a></caption>
 <colgroup>
 <col style="width: 13%" />
 <col style="width: 87%" />
@@ -661,8 +662,8 @@
 <h2>在线时间差测量<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
 <img alt="_images/webgui_timediff.png" src="_images/webgui_timediff.png" />
 <p>该页面实现了任意两个逻辑信号的时间差谱测量（chA-chB，时间差大于 0 表示 chA 信号晚于 chB 信号）。按钮 “Read” 用于读取信号源参数；按钮 “Write” 用于更改信号源；按钮 “Clear” 用于清除 FPGA 中的时间差谱，当更改信号源后必须清除 FPGA 中的时间差谱。按钮 “Update” 可用于从 FPGA 中读取当前的时间差谱并显示在网页上。</p>
-<table class="colwidths-given docutils align-default" id="id9">
-<caption><span class="caption-text">time difference meaurement sources</span><a class="headerlink" href="#id9" title="永久链接至表格">¶</a></caption>
+<table class="colwidths-given docutils align-default" id="id10">
+<caption><span class="caption-text">time difference meaurement sources</span><a class="headerlink" href="#id10" title="永久链接至表格">¶</a></caption>
 <colgroup>
 <col style="width: 13%" />
 <col style="width: 87%" />
@@ -820,6 +821,11 @@
 </tbody>
 </table>
 </section>
+<section id="id6">
+<h2>计数器<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
+<img alt="_images/webgui_counter.png" src="_images/webgui_counter.png" />
+<p>该页面实现了 x495 A 输入口 32 通道的计数器功能。使用该功能需要将 V1718/V2718 port 3 连接到 G1 口。当检测到 port 3 口脉冲下降沿时，计数开始，当 port 3 信号为低电平时进行计数。可随时读取计数状态，也可将计数结果保存在文件中。</p>
+</section>
 </section>
 
 
@@ -835,7 +841,7 @@
 
   <div role="contentinfo">
     <p>
-        &#169; 版权所有 2021, Hongyi Wu(吴鸿毅).
+        &#169; 版权所有 2022, Hongyi Wu(吴鸿毅).
 
     </p>
   </div>

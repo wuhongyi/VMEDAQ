@@ -5,9 +5,9 @@
 # Author: Hongyi Wu(吴鸿毅)
 # Email: wuhongyi@qq.com 
 # Created: 一 12月  3 17:22:32 2018 (+0800)
-# Last-Updated: 三 8月 24 21:02:06 2022 (+0800)
+# Last-Updated: 日 9月  4 19:42:31 2022 (+0800)
 #           By: Hongyi Wu(吴鸿毅)
-#     Update #: 11
+#     Update #: 12
 # URL: http://wuhongyi.cn 
 
 if [ `whoami` = "root" ];then 
@@ -23,15 +23,15 @@ fi
 
 num=`cat /proc/cpuinfo | grep processor | wc -l`
 
-tar -xzvf CAENVMELib-2.50.tgz
-cd CAENVMELib-2.50/lib
-sh install_x64
-cd ../../
-
-# tar -xzvf CAENVMELib-3.3.0-build20210806.tgz
-# cd CAENVMELib-3.3.0/lib
+# tar -xzvf CAENVMELib-2.50.tgz
+# cd CAENVMELib-2.50/lib
 # sh install_x64
 # cd ../../
+
+tar -xzvf CAENVMELib-3.3.6.tgz
+cd CAENVMELib-3.3.6/lib
+sh install_x64
+cd ../../
 
 tar -xvzf CAENComm-1.5.0-build20210804.tgz
 cd CAENComm-1.5.0/lib
@@ -54,7 +54,7 @@ cd ..
 # cd ..
 
 
-rm -rf CAENVMELib-2.50  CAENComm-1.5.0 CAENUpgrader-1.6.6
+rm -rf CAENVMELib-3.3.6  CAENComm-1.5.0 CAENUpgrader-1.6.6
 echo "Install all software done !"
 
 # 

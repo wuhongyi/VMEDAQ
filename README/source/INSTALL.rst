@@ -4,9 +4,9 @@
 .. Author: Hongyi Wu(吴鸿毅)
 .. Email: wuhongyi@qq.com 
 .. Created: 一 12月  3 10:24:55 2018 (+0800)
-.. Last-Updated: 三 8月 24 21:03:59 2022 (+0800)
+.. Last-Updated: 日 9月  4 19:43:39 2022 (+0800)
 ..           By: Hongyi Wu(吴鸿毅)
-..     Update #: 32
+..     Update #: 33
 .. URL: http://wuhongyi.cn 
 
 =================================
@@ -19,7 +19,7 @@
 系统要求
 ---------------------------------
 
-本获取经过 Scientific Linux 6/7 系统测试。建议采用 CentOS 6/7 或者 Scientific Linux 6/7。
+本获取经过 CentOS 6/7，Scientific Linux 6/7 和 Ubuntu 18.04/20.04 系统测试。
 
 本获取要求 CERN ROOT 5/6，建议优先选择 ROOT 6。
 
@@ -43,11 +43,12 @@ CAEN Lib
    # 在 source 文件夹内，ROOT 权限下执行以下命令
    sh setup.sh    #需要ROOT权限
 
-
+- CAENVMELib-3.3.6.tgz
+   - 推荐使用
 - CAENVMELib-3.3.0-build20210806.tgz
    - 该版本驱动存在问题，对 V1718/V2718 I/O寄存器控制存在bug
 - CAENVMELib-2.50.tgz
-   - 暂时推荐使用
+   - 推荐使用
 
    
 ---------------------------------
@@ -111,7 +112,7 @@ A2818驱动
 - A2818Drv-1.23.tgz
    - CentOS7 测试正常，推荐使用
 - A2818Drv-1.24.tgz
-   - Ubuntu20测试正常，推荐使用     
+   - Ubuntu20 测试正常，推荐使用     
 
 如果您使用 A2818，则安装以下驱动。
 
