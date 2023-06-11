@@ -13,7 +13,7 @@ GXX = g++
 all:$(OBJ)
 
 $(OBJ): $(sourcefile)
-	$(GXX) $(CFLAGS) $(ROOTCFLAGS) $(ROOTLIBS) -o $@ $(filter %.cc ,$(sourcefile))
+	$(GXX) $(CFLAGS) $(ROOTCFLAGS) -o $@ $(filter %.cc ,$(sourcefile)) $(ROOTLIBS)
 
 clean:
 	rm -f *~ *.o $(OBJ) *.pdf

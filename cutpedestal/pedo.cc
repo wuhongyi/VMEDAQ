@@ -4,15 +4,15 @@
 // Author: Hongyi Wu(吴鸿毅)
 // Email: wuhongyi@qq.com 
 // Created: 五 9月  8 19:52:09 2017 (+0800)
-// Last-Updated: 三 5月 13 22:17:27 2020 (+0800)
+// Last-Updated: 日 6月 11 18:56:56 2023 (+0800)
 //           By: Hongyi Wu(吴鸿毅)
-//     Update #: 45
+//     Update #: 46
 // URL: http://wuhongyi.cn 
 
 #include "pedo.hh"
 #include <iostream>
 #include <fstream>
-
+#include <bits/stdc++.h>
 using namespace std;
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
